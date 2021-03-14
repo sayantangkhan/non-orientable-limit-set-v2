@@ -26,7 +26,6 @@
 ]{biblatex}
 \addbibresource{references.bib}
 
-% To refer to theorems that appear later
 \newtheorem*{rep@theorem}{\rep@title}
 \newcommand{\newreptheorem}[2]{%
 \newenvironment{rep#1}[1]{%
@@ -50,12 +49,14 @@
 
 \theoremstyle{definition}
 \newtheorem{example}[theorem]{Example}
+\newtheorem*{fact}{Fact}
 
 \theoremstyle{definition}
 \newtheorem{question}[theorem]{Question}
 
 \theoremstyle{remark}
-\newtheorem*{rem}{Remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{proofsketch}{Outline of proof}
 
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
@@ -84,6 +85,8 @@
     \import{./images/}{#2.pdf_tex}
 }
 
+
+
 % To be uncommented if we need autorefnames
 % \def\sectionautorefname{Section}
 % \def\thmautorefname{Theorem}
@@ -98,3 +101,19 @@
   \fi
 }
 \makeatother
+
+% \newcommand{\pml}{\mathbb{P}\mathcal{ML}}
+% \newcommand{\ml}{\mathcal{ML}}
+\newcommand{\pmf}{\mathbb{P}\mathcal{MF}}
+\newcommand{\mf}{\mathcal{MF}}
+\newcommand{\systole}{\mathcal{T}_{\varepsilon}^{-}}
+\newcommand{\mcg}{\mathrm{MCG}}
+\newcommand{\os}{\mathcal{S}}
+\newcommand{\no}{\mathcal{N}}
+\newcommand{\teich}{\mathcal{T}}
+\newcommand{\mg}{\mathcal{M}}
+\newcommand{\pslr}{\mathrm{PSL}(2, \mathbb{R})}
+\newcommand{\scc}{\mathscr{S}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\wt}{\widetilde}
+\newcommand{\cA}{\mathcal{A}}

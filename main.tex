@@ -2,23 +2,65 @@
 \pdfoutput=1
 \usepackage{mathpreamble}
 
-\title{Title of paper}
-\author{Author}
-\address{Address}
-\email{\href{mailto:email@domain.edu}{email@domain.edu}}
+\title{The limit set of non-orientable mapping class groups}
+\author{Sayantan Khan}
+\address{Department of Mathematics, University of Michigan, Ann Arbor, MI}
+\email{\href{mailto:saykhan@umich.edu}{saykhan@umich.edu}}
 \thanks{}
-\urladdr{\url{http://personal.page}}
+\urladdr{\url{http://www-personal.umich.edu/~saykhan/}}
 
-\keywords{}
-\subjclass[2010]{}
+\keywords{mapping class group, Teichm\"uller space, Thurston boundary}
+\subjclass[2010]{57K20}
 
 \date{\today}
 
 \begin{document}
-\begin{abstract}
-
-\end{abstract}
 \maketitle
+\begin{abstract}
+  Motivated by the similarities between geometrically finite infinite covolume Fuchsian groups and the mapping class group of compact non-orientable surfaces, we show that the limit set of the mapping class group is contains the set of uniquely ergodic foliations and is contained in the set of all projective measured foliations not containing any one-sided leaves.
+  Furthermore, we show that the image of limit set in the space of laminations contains all ending laminations.
+  This provides strong evidence for a conjecture of Gendulphe.
+  Using the limit set we also show that a conjectured convex core for the moduli space is in fact not even quasi-convex.
+\end{abstract}
+\tableofcontents
+
+\section{Introduction}
+\label{sec:introduction}
+
+\section{Closure of $\mf^+(\no_d, \Q)$}
+\label{sec:closure-mf}
+
+In this section, we show that the closure of the set of rational weighted two-sided curves $\mf^+(\no_d, \Q)$ in the set of all measured foliations $\mf(\no_d)$ contains all the measured foliations whose minimal components are uniquely ergodic, or rational two-sided multicurve.
+The idea of the proof is the following: given a uniquely ergodic measured foliation, consider the first return map to a specially chosen transverse segment.
+The first return map is an \emph{interval exchange transformation with flips} (abbreviated fIET); we then construct a rational approximation to the fIET such that all the intervals are periodic with even period.
+The even parity of the periods ensures that the corresponding weighted multicurve approximation to the given foliation only has two-sided curves, which then proves the claim.
+
+\subsection*{Foliation induced fIETs}
+% \label{sec:foli-induc-fiets}
+
+An interval exchange transformation with flips on a finite alphabet $\cA$ of cardinality $n$, abbreviated as $n$-fIET is a dynamical system on an interval given by the following data.
+\begin{description}
+\item[Combinatorial data $\pi$]: This is a pair of maps $\pi_t$ and $\pi_b$ (often called the top and bottom permutation).
+  The map $\pi_t$ is a bijective map from $\cA$ to $\{ 1, \ldots, n\}$, and the map $\pi_b$ is a map from $\cA$ to $\{-1, 1\} \times \{1, \ldots, n\}$ such that the projection to the second coordinate $(\pi_b)_2$ is a bijection between $\cA$ and $\{1, \ldots, n\}$.
+We also require that the projection to the first coordinate $(\pi_b)_1$ has $-1$ in the image.
+\item[Metric data $\ell$]: This a vector in $\mathbb{R}^{\cA}$ all of whose coordinates are positive.
+\end{description}
+One obtains the space on which this dynamical system acts by constructing an interval obtained by concatenating intervals of length $\ell_{\alpha}$ in the order specified by $\pi_t$, where $\alpha \in \cA$.
+The action on this interval is given by $\pi_b$, where the intervals $\ell_{\alpha}$ are rearranged in the order specified by $\pi_b$, and flipped if $\pi_b(\alpha)_1 = -1$.
+
+An fIET $(\pi, \ell)$ is said to be reducible if the associated permutation $(\pi_b)_2 \circ \pi_t^{-1}$ is a reducible permutation, i.e. there exists a $k < n$ such that for all $i \leq k$, $(\pi_b)_2 \circ \pi_t^{-1}(i) \leq k$.
+If the associated permutation is not reducible, the we call the fIET irreducible: any fIET can always be decomposed into irreducible components, and the dynamics of each irreducible component analyzed independently.
+
+Note that the first return map for a general transverse arc is usually not an fIET, but a more general dynamical system on an interval, namely a linear involution with flips (see \cite{ASENS_1990_4_23_3_469_0} for the details), but we can ensure that the first return map is an fIET if we pick the transverse arc carefully.
+Let $\gamma$ be a one-sided curve on $\no_d$, and let $S$ be the surface with boundary obtained by deleting $\gamma$ from $\no_d$.
+
+\section{Closure of $\systole$}
+\label{sec:closure-systole}
+
+\section{Failure of quasi-convexity for $\systole$}
+\label{sec:fail-quasi-conv}
+
+
 
 \printbibliography
 
