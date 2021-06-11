@@ -4,10 +4,13 @@
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usepackage{marginnote}
-\usepackage{amsmath, amsfonts, amssymb, amsthm}
 \usepackage{mathrsfs}
 \usepackage{bbm}
+\usepackage{thmtools}
+\usepackage{thm-restate}
 \usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
 \hypersetup{
   colorlinks   = true, %Colours links instead of ugly boxes
   urlcolor     = blue, %Colour for external hyperlinks
@@ -26,18 +29,13 @@
 ]{biblatex}
 \addbibresource{references.bib}
 
-\newtheorem*{rep@theorem}{\rep@title}
-\newcommand{\newreptheorem}[2]{%
-\newenvironment{rep#1}[1]{%
- \def\rep@title{#2 \ref{##1}}%
- \begin{rep@theorem}}%
- {\end{rep@theorem}}}
+% Only while writing
+\usepackage[inline]{showlabels}
 
 % Only sections appear in TOC
 \setcounter{tocdepth}{1}
 
 \newtheorem{theorem}{Theorem}[section]
-\newreptheorem{theorem}{Theorem}
 \newtheorem*{untheorem}{Theorem}
 
 \newtheorem{lemma}[theorem]{Lemma}
@@ -114,7 +112,11 @@
 \newcommand{\mg}{\mathcal{M}}
 \newcommand{\pslr}{\mathrm{PSL}(2, \mathbb{R})}
 \newcommand{\scc}{\mathscr{S}}
-\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\wt}{\widetilde}
 \newcommand{\cA}{\mathcal{A}}
 \newcommand{\cR}{\mathcal{R}}
+\newcommand{\dynlim}{\Lambda_{\mathrm{dyn}}}
+\newcommand{\geolim}{\Lambda_{\mathrm{geo}}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\expansion}{\mathcal{E}}
