@@ -83,8 +83,8 @@ McCarthy-Papadopoulos also exhibit a domain of discontinuity for the $\Gamma$ ac
 It is not obvious that the action of $\Gamma$ on $Z(\dynlim(\Gamma)) \setminus \dynlim(\Gamma)$ is not properly discontinuous.
 We prove that is indeed the case when $\Gamma = \mcg(\no_g)$ in \autoref{thm:dod-is-empty}, but the general case is unknown.
 
-\section{$\mcg(\no_g)$ lower bound}
-\label{sec:mcgno_g-lower-bound}
+\section{Lower bound for the limit set}
+\label{sec:lower-bound-limit-set}
 
 A natural lower bound for $\dynlim(\no_g)$ is the closure of the set of rational two-sided multicurves $\pmf^+(\no_g, \QQ)$.
 For any $\lambda \in \pmf^+(\no_g, \QQ)$, and any psuedo-Anosov $\gamma$, conjugating $\gamma$ with large enough powers of the Dehn multi-twist given by $\lambda$ gives us a sequence of pseudo-Anosov maps whose stable foliation approaches $\lambda$, which shows that $\dynlim(\no_g)$ must contain $\lambda$.
@@ -107,27 +107,101 @@ We prove a slightly weaker version of the above conjecture, by describing which 
   Furthermore, if $\lambda_i$ is minimal, but not uniquely ergodic, there exists some other foliation $\lambda_i^{\prime}$ supported on the same topological foliation as $\lambda_i$ that can be approximated by elements of $\pmf^+(\no_g, \QQ)$.
 \end{theorem}
 
-To prove \autoref{thm:rational-approximation}, we will need to use the following lemmas.
-
+To prove \autoref{thm:rational-approximation}, we will need to describe a method of resolving intersections of curves, and proves some lemmas.
+Given two two-sided simple curves $\gamma_1$ and $\gamma_2$, their union will not be a simple curve if $i(\gamma_1, \gamma_2) > 0$.
+However, at each point of intersection, there exist two possible surgeries (see \autoref{fig:surgery-types}) that resolve the intersection.
+\begin{figure}[h]
+  \centering
+  \includegraphics{example-image-a}
+  \caption{Two ways an intersection can be resolved.}
+  \label{fig:surgery-types}
+\end{figure}
+Resolving all the intersections by choosing surgeries at each of the points results in a simple multicurve (i.e. it may have more than one component).
+It is not necessarily the case that the resulting multicurve has two-sided components either.
+However, if it is the case that the resulting multicurve is a curve, then it will be a two-sided curve: that is because both $\gamma_1$ and $\gamma_2$ pass through an even number of crosscaps, and if the resolution of $\gamma_1 \cup \gamma_2$ has only one component, it must also pass through an even number of crosscaps.
+We prove that there always exists a choice of surgery that results in a simple curve.
 \begin{lemma}
   \label{lem:valid-surgery}
-  Let $\gamma_1$ and $\gamma_2$ be two-sided multicurves on $\no_g$ with $i(\gamma_1, \gamma_2) > 0$.
-  For each intersection point of $\gamma_1$ and $\gamma_2$, there exists a choice of surgery to resolve the intersection such that the multicurve obtained by resolving all of the singularities contains only two-sided components.
+  Let $\gamma_1$ and $\gamma_2$ be two-sided curves on $\no_g$ with $i(\gamma_1, \gamma_2) > 0$.
+  For each intersection point of $\gamma_1$ and $\gamma_2$, there exists a choice of surgery to resolve the intersection such that the multicurve obtained by resolving all of the singularities contains only one component.
 \end{lemma}
 \begin{proof}
-  TODO
+  We begin by turning the union of $\gamma_1$ and $\gamma_2$ into a non-simple curve.
+  Pick any intersection point, and resolve the singularity (the choice of resolution does not matter).
+  It is easily verified that the resulting object can be parameterized as a map from $S^1$ into the surface.
+  If $i(\gamma_1, \gamma_2) = 1$, we are done, since we have a simple curve.
+  If $i(\gamma_1, \gamma_2) > 1$, we have a non-simple curve.
+  At each intersection point, we resolve the singularity such that the strands corresponding to directions flowing into the singularity are glued together, and the strands corresponding to directions flowing out of the singularity are glued together (see \autoref{fig:good-surgery}).
+  \begin{figure}[h]
+    \centering
+    \includegraphics{example-image-b}
+    \caption{Surgery that results in a connected curve.}
+    \label{fig:good-surgery}
+  \end{figure}
+Again, it is easy to see that this surgery results in a connected curve, and after resolving all singularities in this manner, we have a simple curve.
+\end{proof}
+
+We will call the resulting simple curve $\res(\gamma_1, \gamma_2)$.
+For all that follows, we will pick an arbitrary hyperbolic metric on our surface.
+We want the geodesic representative of $\res(\gamma_1, \gamma_2)$ to have approximately the same intersection numbers with all curves as the $\gamma_1 \cup \gamma_2$ did.
+For that to happen, it is important the geodesic tightening of $\res(\gamma_1, \gamma_2)$ fellow travels with both $\gamma_1$ and $\gamma_2$ for a large fraction of their lengths.
+The next lemma describes the conditions for that to happen.
+\begin{lemma}
+  \label{lem:geodesic-tightening}
+  Let $\gamma_1^{\prime}$ and $\gamma_2^{\prime}$ be segments of the lifts of $\gamma_1$ and $\gamma_2$ to $\HH^2$ that are more than distance $\delta$ apart from the lifts of $\gamma_2$ and $\gamma_1$ respectively, where $\delta$ is the Gromov hyperbolicity constant of $\HH^2$.
+  Then $\gamma_1^{\prime} \cup \gamma_2^{\prime}$ is in a $4 \delta$ neighbourhood of the lift of $\res(\gamma_1, \gamma_2)$.
+\end{lemma}
+\begin{proof}
+  Consider $\res(\gamma_1, \gamma_2)$ without tightening to its geodesic representative.
+  If at the point of resolution of intersection, it so happens that two segments that travel in the same direction and stay fairly close are glued together, then after tightening to the geodesic representatives, those segments will get very short (see \autoref{fig:segment-together}).
+  \begin{figure}[h]
+    \centering
+    \includegraphics{example-image-a}
+    \caption{Resolved segments that get shorter under geodesic tightening.}
+    \label{fig:segment-together}
+  \end{figure}
+  {\color{red} Finish proof using notes.}
+\end{proof}
+
+Given a sequence of curves $\{\gamma_i\}$ converging to a projective measured foliation in $\pmf$, we can also study their convergence in $\mf$, after scaling by an appropriate constant.
+The next lemma shows that it suffices to scale by their hyperbolic length.
+\begin{lemma}
+  \label{lem:scaling-lemma}
+  If $\{\gamma_i\}$ converges to a projective measured foliation in $\pmf$, then $\displaystyle \frac{\gamma_i}{l(\gamma_i)}$ converges in $\mf$, possibly after passing to a subsequence. Here $l(\gamma_i)$ denotes the hyperbolic length of $\gamma_i$.
+\end{lemma}
+\begin{proof}
+  We claim that for any curve $k$, $i(\gamma_i, k) \leq c \cdot l(\gamma_i)$, where the constant $c$ only depends on the hyperbolic metric.
+  This is because the $l_i$ is bounded below by $i(\gamma_i, k) \cdot o_k$, where $o_k$ is the length of the shortest orthogeodesic arc beginning and ending at $k$.
+  As $k$ varies among all simple closed curves, $o_k$ is bounded below: this follows from hyperbolic trigonometry.
+  That proves the claim.
+
+  In particular, we have that intersection with $\displaystyle \frac{\gamma_i}{l(\gamma_i)}$ is a bounded transverse measure.
+  By compactness of bounded measures, we have convergence after passing to a subsequence.
 \end{proof}
 
 \begin{lemma}
   \label{lem:convex-combinations}
   Let $\gamma_1$ and $\gamma_2$ be two measured foliations supported on the same topological foliation such that the transverse measures induced by $\gamma_1$ and $\gamma_2$ are mutually singular.
-  Furthermore, suppose both $\gamma_1$ and $\gamma_2$ are approximable by simple two-sided multicurves.
-  Then any convex combination $c_1 \gamma_1 + c_2\gamma_2$ is also approximable by simple two-sided multicurves.
+  Furthermore, suppose both $\gamma_1$ and $\gamma_2$ are approximable by simple two-sided curves.
+  Then any convex combination $c_1 \gamma_1 + c_2\gamma_2$ is also approximable by simple two-sided curves.
 \end{lemma}
 
 \begin{proof}
   TODO
 \end{proof}
+
+To state our next lemma, we need to define the \emph{orbit measure} associated to simple curve, and define what it means for an orbit measure to be \emph{almost invariant}.
+Consider an arc $\eta$ transverse to a measured foliation $\lambda$.
+We assign one of the sides of $\eta$ to be the ``up'' direction, and the other side to be the ``down'' direction.
+This lets us define the first return map to $T$.
+\begin{definition}[First return map]
+  The first return map $T$ maps a point $p \in \eta$ to the point obtained by flowing along the foliation in the ``up'' direction until the flow intersections $\eta$ again.
+  The point of intersection is defined to be $T(p)$.
+  If the flow terminates at a singularity, $T(p)$ is left undefined: there are only countable many points in $\eta$ such that this happens.
+\end{definition}
+Since $\lambda$ is a measured foliation, it defines a measure on $\eta$: we can assume that it is a probability measure.
+It follows from the definition of transverse measures that the measure is $T$-invariant.
+It is a classical result of Katok \cite{zbMATH03467479}  and Veech \cite{Veech1978} that the set of $T$-invariant probability measures is a finite dimensional simplex contained in the Banach space of bounded measures on $\eta$.
 
 % \paragraph{Idea of proof}
 % First of all, note that one can approximate each minimal component on the subsurface on which the minimal components live in, and combine the rational approximations.
@@ -143,8 +217,8 @@ To prove \autoref{thm:rational-approximation}, we will need to use the following
 % For case (iii), we do the same thing as in case (ii), i.e. close up a long orbit so that it is simple and two-sided.
 % Unique ergodicity ensures that the resulting curve equidistributes with respect to the uniquely ergodic measure.
 
-\section{$\mcg(\no_g)$ upper bound}
-\label{sec:mcgno_g-upper-bound}
+\section{Upper bound for the limit set}
+\label{sec:upper-bound-limit-set}
 
 \section{Domain of discontinuity}
 \label{sec:domain-discontinuity}
