@@ -148,20 +148,30 @@ For that to happen, it is important the geodesic tightening of $\res(\gamma_1, \
 The next lemma describes the conditions for that to happen.
 \begin{lemma}
   \label{lem:geodesic-tightening}
-  Let $\gamma_1^{\prime}$ and $\gamma_2^{\prime}$ be segments of the lifts of $\gamma_1$ and $\gamma_2$ to $\HH^2$ that are more than distance $\delta$ apart from the lifts of $\gamma_2$ and $\gamma_1$ respectively, where $\delta$ is the Gromov hyperbolicity constant of $\HH^2$.
-  Then $\gamma_1^{\prime} \cup \gamma_2^{\prime}$ is in a $4 \delta$ neighbourhood of the lift of $\res(\gamma_1, \gamma_2)$.
+  Let $\alpha$, $\beta$ and $\gamma$ be three sides of a geodesic triangle in $\HH^2$.
+  Let $c_\alpha$ and $c_{\beta}$ be points on $\alpha$ and $\beta$ equidistant from the intersection of $\alpha$ and $\beta$ such that $d(\alpha, \beta) = 4 \delta$, where $\delta$ is the Gromov hyperbolicity constant of $\HH^2$.
+  Then the broken geodesic formed by going from the intersection of $\alpha$ and $\gamma$ to $c_{\alpha}$ to $c_{\beta}$ to the intersection of $\gamma$ and $\beta$ is in a $2\delta$-neighbourhood of $\gamma$ and $\gamma$ is in a $4\delta$-neighbourhood of this broken geodesic.
 \end{lemma}
 \begin{proof}
-  Consider $\res(\gamma_1, \gamma_2)$ without tightening to its geodesic representative.
-  If at the point of resolution of intersection, it so happens that two segments that travel in the same direction and stay fairly close are glued together, then after tightening to the geodesic representatives, those segments will get very short (see \autoref{fig:segment-together}).
+  Denote the segment between the intersection point of $\alpha$ and $\gamma$ and $c_{\alpha}$ by $\alpha^{\prime}$, and analogous segment on $\beta$ by $\beta^{\prime}$.
+  Denote the geodesic segment between $c_{\alpha}$ and $c_{\beta}$ by $\kappa$.
+  The segments $\gamma$, $\alpha^{\prime}$, $\kappa$ and $\beta^{\prime}$ form a geodesic quadrilateral.
+  By Gromov hyperbolicity, we have that $\gamma$ is in a $2\delta$-neighbourhood of the broken geodesic.
+  Since the distance between $\alpha^{\prime}$ and $\beta^{\prime}$ is more than $4 \delta$, the there must be some point in $\kappa$ that is within $2 \delta$ distance of $\gamma$.
+  To see that the opposite inclusion also holds, note that $\beta^{\prime}$ is in a $2\delta$-neighbourhood of $\gamma$, $\alpha^{\prime}$ and $\kappa$.
+  But $\alpha^{\prime}$ is more than $4 \delta$ distance away from $\beta^{\prime}$, and thus $\beta^{\prime}$ must be in a $2\delta$ neighbourhood of $\gamma$ and $\kappa$.
+  But since $\kappa$ itself is within $2\delta$ distance of $\gamma$, the $4\delta$-neighbourhood of $\gamma$ contains $\beta^{\prime}$.
+  The same argument also shows containment of $\alpha^{\prime}$ and $\kappa$, proving the lemma.
+  See \autoref{fig:segment-together} for a picture of the setup.
   \begin{figure}[h]
     \centering
     \includegraphics{example-image-a}
     \caption{Resolved segments that get shorter under geodesic tightening.}
     \label{fig:segment-together}
   \end{figure}
-  {\color{red} Finish proof using notes.}
 \end{proof}
+To use \autoref{lem:geodesic-tightening} in our situation, we will additionally need to argue that the lengths of $\alpha^{\prime}$ and $\beta^{\prime}$ are almost the entire length of $\alpha$ and $\beta$ respectively.
+That will show that the geodesic tightening does not affect $\gamma_1 \cup \gamma_2$ too much.
 
 Given a sequence of curves $\{\gamma_i\}$ converging to a projective measured foliation in $\pmf$, we can also study their convergence in $\mf$, after scaling by an appropriate constant.
 The next lemma shows that it suffices to scale by their hyperbolic length.
