@@ -95,16 +95,16 @@ In \cite{gendulphe_whats_2017}, Gendulphe made the following conjecture about $\
 \begin{conjecture}[Conjecture 9.1 of \cite{gendulphe_whats_2017}]
   For $g \geq 4$, $\pmf^+(\no_g) = \overline{\pmf^+(\no_g, \QQ)}$.
 \end{conjecture}
-We prove a slightly weaker version of the above conjecture, by describing which foliations can be approximated by foliations in $\pmf^+(\no_g, \QQ)$.
+We prove a slightly weaker version of the above conjecture, by describing subset of the foliations that can be approximated by multicurves in $\pmf^+(\no_g, \QQ)$.
 \begin{theorem}
   \label{thm:rational-approximation}
-  For $g \geq 3$, a foliation $\lambda \in \pmf^+(\no_g)$ can be approximated by foliations in $\pmf^+(\no_g, \QQ)$ if all the minimal components $\lambda_i$ of $\lambda$ satisfy at least one of the following criteria.
+  For $g \geq 3$, a foliation $\lambda \in \pmf^+(\no_g)$ can be approximated by foliations in $\pmf^+(\no_g, \QQ)$ if all the minimal components $\lambda_j$ of $\lambda$ satisfy one of the following criteria.
   \begin{enumerate}[(i)]
-  \item $\lambda_i$ is periodic.
-  \item $\lambda_i$ is orientable.
-  \item $\lambda_i$ is uniquely ergodic.
+  \item $\lambda_j$ is periodic.
+  \item $\lambda_j$ is orientable.
+  \item $\lambda_j$ is uniquely ergodic.
   \end{enumerate}
-  Furthermore, if $\lambda_i$ is minimal, but not uniquely ergodic, there exists some other foliation $\lambda_i^{\prime}$ supported on the same topological foliation as $\lambda_i$ that can be approximated by elements of $\pmf^+(\no_g, \QQ)$.
+  Furthermore, if $\lambda_j$ is minimal, but not uniquely ergodic, there exists some other foliation $\lambda_j^{\prime}$ supported on the same topological foliation as $\lambda_j$ that can be approximated by elements of $\pmf^+(\no_g, \QQ)$.
 \end{theorem}
 
 To prove \autoref{thm:rational-approximation}, we will need to describe a method of resolving intersections of curves, and proves some lemmas.
@@ -141,10 +141,10 @@ We prove that there always exists a choice of surgery that results in a simple c
 Again, it is easy to see that this surgery results in a connected curve, and after resolving all singularities in this manner, we have a simple curve.
 \end{proof}
 
-We will call the resulting simple curve $\res(\gamma_1, \gamma_2)$.
+We will call the resulting simple curve $\kappa$.
 For all that follows, we will pick an arbitrary hyperbolic metric on our surface.
-We want the geodesic representative of $\res(\gamma_1, \gamma_2)$ to have approximately the same intersection numbers with all curves as the $\gamma_1 \cup \gamma_2$ did.
-For that to happen, it is important the geodesic tightening of $\res(\gamma_1, \gamma_2)$ fellow travels with both $\gamma_1$ and $\gamma_2$ for a large fraction of their lengths.
+We want the geodesic representative of $\kappa$ to have approximately the same intersection numbers with all curves as the $\gamma_1 \cup \gamma_2$ did.
+For that to happen, it is important the geodesic tightening of $\kappa$ fellow travels with both $\gamma_1$ and $\gamma_2$ for a large fraction of their lengths.
 The next lemma describes the conditions for that to happen.
 \begin{lemma}
   \label{lem:geodesic-tightening}
@@ -173,19 +173,19 @@ The next lemma describes the conditions for that to happen.
 To use \autoref{lem:geodesic-tightening} in our situation, we will additionally need to argue that the lengths of $\alpha^{\prime}$ and $\beta^{\prime}$ are almost the entire length of $\alpha$ and $\beta$ respectively.
 That will show that the geodesic tightening does not affect $\gamma_1 \cup \gamma_2$ too much.
 
-Given a sequence of curves $\{\gamma_i\}$ converging to a projective measured foliation in $\pmf$, we can also study their convergence in $\mf$, after scaling by an appropriate constant.
+Given a sequence of curves $\{\gamma_j\}$ converging to a projective measured foliation in $\pmf$, we can also study their convergence in $\mf$, after scaling by an appropriate constant.
 The next lemma shows that it suffices to scale by their hyperbolic length.
 \begin{lemma}
   \label{lem:scaling-lemma}
-  If $\{\gamma_i\}$ converges to a projective measured foliation in $\pmf$, then $\displaystyle \frac{\gamma_i}{l(\gamma_i)}$ converges in $\mf$, possibly after passing to a subsequence. Here $l(\gamma_i)$ denotes the hyperbolic length of $\gamma_i$.
+  If $\{\gamma_j\}$ converges to a projective measured foliation in $\pmf$, then $\displaystyle \frac{\gamma_j}{l(\gamma_j)}$ converges in $\mf$, possibly after passing to a subsequence. Here $l(\gamma_j)$ denotes the hyperbolic length of $\gamma_j$.
 \end{lemma}
 \begin{proof}
-  We claim that for any curve $k$, $i(\gamma_i, k) \leq c \cdot l(\gamma_i)$, where the constant $c$ only depends on the hyperbolic metric.
-  This is because the $l_i$ is bounded below by $i(\gamma_i, k) \cdot o_k$, where $o_k$ is the length of the shortest orthogeodesic arc beginning and ending at $k$.
-  As $k$ varies among all simple closed curves, $o_k$ is bounded below: this follows from hyperbolic trigonometry.
+  We claim that for any curve $\xi$, $i(\gamma_j, \xi) \leq c \cdot l(\gamma_j)$, where the constant $c$ only depends on the hyperbolic metric.
+  This is because the $l_j$ is bounded below by $i(\gamma_j, \xi) \cdot o_\xi$, where $o_\xi$ is the length of the shortest orthogeodesic arc beginning and ending at $\xi$.
+  As $\xi$ varies among all simple closed curves, $o_\xi$ is bounded below: this follows from hyperbolic trigonometry.
   That proves the claim.
 
-  In particular, we have that intersection with $\displaystyle \frac{\gamma_i}{l(\gamma_i)}$ is a bounded transverse measure.
+  In particular, we have that intersection with $\displaystyle \frac{\gamma_j}{l(\gamma_j)}$ is a bounded transverse measure.
   By compactness of bounded measures, we have convergence after passing to a subsequence.
 \end{proof}
 
@@ -197,7 +197,93 @@ The next lemma shows that it suffices to scale by their hyperbolic length.
 \end{lemma}
 
 \begin{proof}
-  TODO
+  Let $\{\gamma_{1j}\}$ and $\{ \gamma_{2j}\}$ be sequences of simple $2$-sided curves converging to $\gamma_1$ and $\gamma_2$ in $\pmf$.
+  We can assume using \autoref{lem:scaling-lemma} that normalizing these curves by their hyperbolic length converges in $\mf$.
+  We pass to a subsequence of $\gamma_{2j}$ such that after passing to the subsequence,
+  the following holds.
+  \begin{align}
+    \label{eq:1}
+    \lim_{i \to \infty} \frac{l(\gamma_{2j})}{l(\gamma_{1j})} = \infty
+  \end{align}
+  We take the union of $m_j$ parallel copies of $\gamma_{1j}$ and $1$ copy of $\gamma_{2j}$, where we pick $m_j$ such the fraction $\displaystyle \frac{m_j \cdot l(\gamma_{1j})}{l(\gamma_{2j})}$ is as close to $\displaystyle \frac{c_1}{c_2}$ as possible.
+  Equation \eqref{eq:1} will ensure that the ratio of the lengths (with multiplicities) will approach $\displaystyle \frac{c_1}{c_2}$ as $i$ goes to $\infty$.
+
+  We now resolve the intersections of the $m_j$ copies of $\gamma_{1j}$ and $\gamma_{2j}$ so that the resulting multicurve has only one component.
+  If $m_j = 1$, \autoref{lem:valid-surgery} tells us that there is such a resolution of intersections.
+  If $m_j > 1$, we resolve the intersections the same way as in the case of $m_j = 1$, but also glue together the strands of $\gamma_{1j}$ as shown in \autoref{fig:parallel-surgery-modification}.
+  \begin{figure}[h]
+    \centering
+    \includegraphics{example-image-b}
+    \caption{Modifying the resolution when $m_j > 1$.}
+    \label{fig:parallel-surgery-modification}
+  \end{figure}
+
+  Denote the resolved curve by $\kappa_j$.
+  To show that $\kappa_j$ converges to $c_1 \gamma_1 + c_2 \gamma_2$ in $\pmf$, we need to show that the following limit holds for all simple closed curves $\xi$.
+  \begin{align}
+    \label{eq:2}
+    \lim_{i \to \infty} \frac{i(\kappa_j, \xi)}{m_j \cdot l(\gamma_{1j}) + l(\gamma_{2j})}
+    = \lim_{i \to \infty} c_1 \frac{i(\gamma_{1j}, \xi)}{l(\gamma_{1j})} + c_2 \frac{i(\gamma_{2j}, \xi)}{l(\gamma_{2j})}
+  \end{align}
+  The equality replaced with an inequality in one direction is easy to see: namely, the left hand side is less than or equal to the right hand side.
+  This is because resolving intersections can only reduce the intersection number with any given simple closed curve.
+  Thus, we only need to prove the other inequality to prove the lemma.
+  \begin{align}
+    \label{eq:3}
+    \lim_{i \to \infty} \frac{i(\kappa_j, \xi)}{m_j \cdot l(\gamma_{1j}) + l(\gamma_{2j})}
+    \geq \lim_{i \to \infty} c_1 \frac{i(\gamma_{1j}, \xi)}{l(\gamma_{1j})} + c_2 \frac{i(\gamma_{2j}, \xi)}{l(\gamma_{2j})}
+  \end{align}
+  Let $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ denote the segments of $\gamma_{1j}$ and $\gamma_{2j}$ that fellow travel within distance $4\delta$ after intersecting, and denote their complements in $\gamma_{1j}$ and $\gamma_{2j}$ by $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$.
+  \autoref{lem:geodesic-tightening} tells us that the geodesic representative of $\kappa_j$ will be within bounded distance of $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$.
+  For $j$ large enough, we can ensure that the angle of intersection of $\xi$ and $\gamma_{1j}$ and $\gamma_{2j}$ is larger than $\varepsilon_\xi$ for some $\varepsilon_\xi > 0$, where the angle $\varepsilon_\xi$ depends on $\xi$.
+  That means we can make $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ longer by a fixed amount, depending on $\varepsilon_\xi$ (and make $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$ correspondingly shorter) such that whenever $\xi$ intersects $\gamma_{1j}^{\prime \prime}$ or $\gamma_{2j}^{\prime \prime}$, it also intersects $\kappa_j$.
+  This fact gives us a lower bound on the intersection number with $\kappa_j$.
+  \begin{align}
+    \label{eq:4}
+    i(\kappa_j, \xi) \geq m_j \cdot i(\gamma_{1j}^{\prime \prime}, \xi) + i(\gamma_{2j}^{\prime \prime}, \xi)
+  \end{align}
+  We express the right hand side as the intersection number with $\gamma_{1j}$ and $\gamma_{2j}$ minus an error term $\err{\xi, j}$.
+  \begin{align*}
+    i(\kappa_j, \xi) &\geq \left( m_j \cdot  i(\gamma_{1j}, \xi) + i(\gamma_{2j}, \xi)  \right)
+    - \left( m_j \cdot  i(\gamma_{1j}^{\prime}, \xi) + i(\gamma_{2j}^{\prime}, \xi)  \right) \\
+    &= \left( m_j \cdot  i(\gamma_{1j}, \xi) + i(\gamma_{2j}, \xi)  \right) - \err{\xi, j}
+  \end{align*}
+  We claim that $\err{\xi, j}$ is $o(m_j \cdot  i(\gamma_{1j}, \xi) + i(\gamma_{2j}, \xi))$: this will prove inequality \eqref{eq:3} and thus the lemma.
+
+  To begin with, we show that the lengths of $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ are $o(l(\gamma_{1j}))$ and $o(l(\gamma_{2j}))$.
+  Suppose it was not the case, and $\displaystyle \frac{l(\gamma_{1j}^{\prime})}{\gamma_{1j}} \geq k_1$, for some positive constant $k_1$.
+  Then any short transverse arc that only intersected $\gamma_{1j}^{\prime}$ would get assigned a positive measure as $j$ went to $\infty$.
+  Since the lengths of $m_j \cdot \gamma_{1j}$ and $\gamma_{2j}$ approach a fixed ratio, we would have that $\displaystyle \frac{l(\gamma_{2j}^{\prime})}{\gamma_{2j}} \geq k_2$ for some other positive constant $k_2$.
+  Thus the same short arc would also get assigned a positive measure by $\gamma_{2j}$ as $j$ went to $\infty$.
+  This means that the transverse measure given $\gamma_1$ decomposes as $\gamma_1{\prime} + \gamma_1^{\prime \prime}$, where $\gamma_1^{\prime}$ is the limit of the transverse measures given by $\gamma_{1j}^{\prime}$ and $\gamma_1^{\prime \prime}$ is the limit of the transverse measures given by the limit of $\gamma_{1j}^{\prime \prime}$.
+  We get a similar decomposition of $\gamma_2$ into $\gamma_2^{\prime} + \gamma_2^{\prime \prime}$.
+  Our argument shows that $\gamma_{1}^{\prime}$ and $\gamma_2^{\prime}$ are absolutely continuous with respect to each other.
+  But this violates mutual singularity of the measures $\gamma_1$ and $\gamma_2$, and therefore, the lengths of $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ must be $o(l(\gamma_{1j}))$ and $o(l(\gamma_{2j}))$ respectively.
+  We sum up the result of this argument in the following inequalities.
+  \begin{align}
+    \label{eq:5}
+    \lim_{j \to \infty} \frac{l(\gamma_{1j}^{\prime})}{l(\gamma_{1j})} &= 0 \\
+    \label{eq:6}
+    \lim_{j \to \infty} \frac{l(\gamma_{2j}^{\prime})}{l(\gamma_{2j})} &= 0 \\
+  \end{align}
+
+  The bound on the length of $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ also gives a bound on $i(\xi, \gamma_{1j}^{\prime})$ and $i(\xi, \gamma_{2j}^{\prime})$.
+  This follows from the fact that the intersection number of any arc with a fixed curve is bounded above by a constant times the length of the arc, where the constant depends on the curve.
+  \begin{align}
+    \label{eq:7}
+    i(\xi, \gamma_{1j}^{\prime}) &\leq c_\xi l(\gamma_{1j}^{\prime}) \\
+    \label{eq:8}
+    i(\xi, \gamma_{2j}^{\prime}) &\leq c_\xi l(\gamma_{2j}^{\prime}) \\
+  \end{align}
+
+  Finally, \autoref{lem:scaling-lemma} gives us an upper bound for the ratio between intersection number and length of $\gamma_{1j}$ and $\gamma_{2j}$.
+  \begin{align}
+    \label{eq:9}
+    \frac{l(\gamma_{1j})}{i(\xi, \gamma_{1j})} &\leq k \\
+    \label{eq:10}
+    \frac{l(\gamma_{2j})}{i(\xi, \gamma_{2j})} &\leq k \\
+  \end{align}
+  Multiplying \eqref{eq:5}, \eqref{eq:7}, and \eqref{eq:9}, and \eqref{eq:6}, \eqref{eq:8}, and \eqref{eq:10} proves the claim about the error term, and therefore the lemma.
 \end{proof}
 
 To state our next lemma, we need to define the \emph{orbit measure} associated to simple curve, and define what it means for an orbit measure to be \emph{almost invariant}.
@@ -216,13 +302,13 @@ It is a classical result of Katok \cite{zbMATH03467479}  and Veech \cite{Veech19
 % \paragraph{Idea of proof}
 % First of all, note that one can approximate each minimal component on the subsurface on which the minimal components live in, and combine the rational approximations.
 % This works because the rational approximations are also on difference subsurfaces, and thus have zero intersection number with each other.
-% Case (i) is easy to deal with: since $\lambda_i \in \pmf^+(\no_g)$, the core curve is two-sided.
+% Case (i) is easy to deal with: since $\lambda_j \in \pmf^+(\no_g)$, the core curve is two-sided.
 % Approximating that two-sided curve with the same two-sided curve, but with rational weights does the job.
 % Cases (ii) and (iii) require more work.
-% In case (ii), we first approximate the ergodic measures supported on the topological foliation $\lambda_i$.
+% In case (ii), we first approximate the ergodic measures supported on the topological foliation $\lambda_j$.
 % We do so by following a long orbit that equidistributes with respect to the ergodic measure, and closing the orbit up so that the resulting curve is simple and two-sided.
 % To close up the orbit so that it still equidistributes with the same ergodic measure, we need to ensure that the foliation is orientable.
-% Once we have rational approximations for all the ergodic measures supported on the topological foliation $\lambda_i$, we can obtain rational approximations for any convex combinations by taking large enough Dehn twists about each of the rational approximants.
+% Once we have rational approximations for all the ergodic measures supported on the topological foliation $\lambda_j$, we can obtain rational approximations for any convex combinations by taking large enough Dehn twists about each of the rational approximants.
 % That proves the result for case (ii).
 % For case (iii), we do the same thing as in case (ii), i.e. close up a long orbit so that it is simple and two-sided.
 % Unique ergodicity ensures that the resulting curve equidistributes with respect to the uniquely ergodic measure.
