@@ -15,14 +15,17 @@
 \date{\today}
 
 \begin{document}
-\maketitle
-\begin{abstract}
 
+\begin{abstract}
+  Abstract
 \end{abstract}
+\maketitle
+
 \tableofcontents
 
 \section{Introduction}
 \label{sec:introduction}
+
 
 \section{Background on limit sets of mapping class groups}
 \label{sec:backgr-limit-sets}
@@ -96,6 +99,14 @@ In \cite{gendulphe_whats_2017}, Gendulphe made the following conjecture about $\
   For $g \geq 4$, $\pmf^+(\no_g) = \overline{\pmf^+(\no_g, \QQ)}$.
 \end{conjecture}
 We prove a slightly weaker version of the above conjecture, by describing subset of the foliations that can be approximated by multicurves in $\pmf^+(\no_g, \QQ)$.
+To state the theorem, we need to define what it means for a foliation to be orientable.
+\begin{definition}[Orientable foliation]
+  A foliation $\lambda$ is said to be orientable if there exists a small enough transverse arc $\eta$ such that any leaf exiting from one side of $\eta$ always returns from the other side.
+\end{definition}
+In the setting of orientable surfaces, the vertical foliations of translation surfaces are orientable, while there are some directions in half-translation surfaces (which are not translation surfaces) where the foliation is non-orientable.
+There exist similar examples of orientable and non-orientable foliations on non-orientable surfaces.
+
+Having defined the notion of orientable foliations, we can state the main theorem of this section.
 \begin{theorem}
   \label{thm:rational-approximation}
   For $g \geq 3$, a foliation $\lambda \in \pmf^+(\no_g)$ can be approximated by foliations in $\pmf^+(\no_g, \QQ)$ if all the minimal components $\lambda_j$ of $\lambda$ satisfy one of the following criteria.
@@ -196,6 +207,7 @@ The next lemma shows that it suffices to scale by their hyperbolic length.
   Then any convex combination $c_1 \gamma_1 + c_2\gamma_2$ is also approximable by simple two-sided curves.
 \end{lemma}
 
+  \todo[inline]{Make proof clearer by emphasizing on the importance of the multiplicity $m_j$.}
 \begin{proof}
   Let $\{\gamma_{1j}\}$ and $\{ \gamma_{2j}\}$ be sequences of simple $2$-sided curves converging to $\gamma_1$ and $\gamma_2$ in $\pmf$.
   We can assume using \autoref{lem:scaling-lemma} that normalizing these curves by their hyperbolic length converges in $\mf$.
@@ -291,13 +303,158 @@ Consider an arc $\eta$ transverse to a measured foliation $\lambda$.
 We assign one of the sides of $\eta$ to be the ``up'' direction, and the other side to be the ``down'' direction.
 This lets us define the first return map to $T$.
 \begin{definition}[First return map]
-  The first return map $T$ maps a point $p \in \eta$ to the point obtained by flowing along the foliation in the ``up'' direction until the flow intersections $\eta$ again.
+  The first return map $T$ maps a point $p \in \eta$ to the point obtained by flowing along the foliation in the ``up'' direction until the flow intersects $\eta$ again.
   The point of intersection is defined to be $T(p)$.
   If the flow terminates at a singularity, $T(p)$ is left undefined: there are only countable many points in $\eta$ such that this happens.
 \end{definition}
 Since $\lambda$ is a measured foliation, it defines a measure on $\eta$: we can assume that it is a probability measure.
 It follows from the definition of transverse measures that the measure is $T$-invariant.
-It is a classical result of Katok \cite{zbMATH03467479}  and Veech \cite{Veech1978} that the set of $T$-invariant probability measures is a finite dimensional simplex contained in the Banach space of bounded measures on $\eta$.
+It is a classical result of Katok \cite{zbMATH03467479}  and Veech \cite{Veech1978} that the set of $T$-invariant probability measures is a finite dimensional simplex contained in the Banach space of bounded signed measures on $\eta$.
+Given an orbit of a point $p$ under the $T$-action of length $L$, we can construct a probability measure on $\eta$, called the orbit measure of $p$.
+\begin{definition}[Orbit measure]
+  The orbit measure of length $L$ associated to the point $p$ is the following probability measure on $\eta$.
+  \begin{align*}
+    \mu_{p, L} \coloneqq \frac{1}{L} \sum_{i=0}^{L-1} \delta_{T^i(p)}
+  \end{align*}
+  Here, $\delta_{x}$ is the Dirac delta measure at the point $x$.
+\end{definition}
+One might expect that if a point $p$ equidistributes, then a long orbit measure starting at $p$ will be ``close'' to an invariant measure.
+We formalize this notion by metrizing the Banach space of signed finite measures on $\eta$.
+\begin{definition}[Lèvy-Prokhorov metric]
+  Define $\norm{\cdot}_{\mathrm{BL}}$ to be the following norm on the space of continuous functions on $\eta$.
+  \begin{align*}
+    \norm{f}_{\mathrm{BL}} \coloneqq \norm{f}_{\infty} + \sup_{x \neq y} \frac{\left| f(x) - f(y) \right|}{\left| x - y \right|}
+  \end{align*}
+\end{definition}
+Then the Lèvy-Prokhorov distance $d_{\mathrm{LP}}$ between the probability measures $\mu_1$ and $\mu_2$ is defined to be the following.
+\begin{align*}
+  d_{\mathrm{LP}}(\mu_1, \mu_2) \coloneqq \sup_{\norm{f}_{\mathrm{BL}} \leq 1} \int f (\dd \mu_1 - \dd \mu_2)
+\end{align*}
+Using the Lèvy-Prokhorov metric, we can define what it means for a probability measure to be $\varepsilon$-almost $T$-invariant.
+\begin{definition}[$\varepsilon$-almost $T$-invariance]
+  A measure $\mu$ is $\varepsilon$-almost $T$-invariant if $d_{\mathrm{LP}}(\mu, T \mu) \leq \varepsilon$. Here $T \mu$ is the pushforward of $\mu$ under $T$.
+\end{definition}
+We state the following easy fact about orbit measures without proof.
+\begin{fact}
+  An orbit measure of length $L$ is $\frac{2}{L}$-almost $T$-invariant.
+\end{fact}
+The following lemma shows that a long orbit measure is close to an invariant measure.
+\begin{lemma}
+  \label{lem:long-orbit-is-almost-invariant}
+  For any $\varepsilon > 0$, there exists an $L$ large enough such that any orbit measure longer than $L$ is within distance $\varepsilon$ of an invariant measure.
+\end{lemma}
+\begin{proof}
+  Let $M_L$ denote the set of all orbit measures of length greater than or equal to $L$.
+  The set $M_L$ is compact, because it is a closed subset of a compact set, and we have that $\bigcap_{L=1}^{\infty} M_L$ is the set of invariant measures.
+  By compactness, we have that for some large enough $L$, $M_L$ must be in a $\varepsilon$-neighbourhood of the set of invariant measures.
+\end{proof}
+We now prove a lemma that gives us a criterion for deducing when a long orbit measure is close to an ergodic measure.
+\begin{lemma}
+  \label{lem:convexity-argument}
+  Let $\{n_i\}$ be a sequence of positive integers, and let $\{p_{ij}\}$ and $\{L_{ij}\}$ be points in $\eta$ and positive integers respectively, where $1 \leq j \leq n_i$ and $\min_j L_{ij}$ goes to $\infty$ as $i$ goes to $\infty$.
+  Consider the following sequence of probability measures, indexed by $i$.
+  \begin{align*}
+    \mu_i \coloneqq \frac{\sum_{j=1}^{n_i} L_{ij} \cdot \mu_{p_{ij}, L_{ij}}}{\sum_{j=1}^{n_i} L_{ij}}
+  \end{align*}
+  If the sequence $\{\mu_i\}$ converges to an ergodic measure $\nu$, then there exists a subsequence of the orbit measures $\mu_{p_{ij}, L_{ij}}$ also converging to $\nu$.
+\end{lemma}
+\begin{proof}
+  Suppose for the sake of a contradiction that no subsequence of $\mu_{p_{ij}, L_{ij}}$ converged to $\nu$.
+  That would mean there exists a small enough $\varepsilon > 0$ and a large enough $i_0$ such that for all $i > i_0$, the measures $\mu_{p_{ij}, L_{ij}}$ are more than distance $\varepsilon$ from $\nu$.
+  Since $\min_{j} L_{ij}$ goes to $\infty$, there exists some other large enough $i_1 > i_0$ such that for all $i > i_1$, $\mu_{p_{ij}, L_{ij}}$ is within distance $\frac{\varepsilon}{k}$ of the simplex of invariant probability measures, where $k$ is a large integer we will pick later: this is a consequence of \autoref{lem:long-orbit-is-almost-invariant}.
+  Using this, we decompose $\mu_{p_{ij}, L_{ij}}$ as the sum of an invariant measure $\iota_{ij}$ and a signed measure $e_{ij}$, such that $d_{\mathrm{LP}}(0, e_{ij}) \leq \frac{\varepsilon}{k}$.
+  \begin{align*}
+    \mu_{p_{ij}, L_{ij}} = \iota_{ij} + e_{ij}
+  \end{align*}
+  Observe that the weighted average of $\mu_{p_{ij}, L_{ij}}$ will differ from the weighted average of $\iota_{ij}$ by at most $\frac{\varepsilon}{k}$.
+  Also note that all the invariant measures $\iota_{ij}$ are distance at least $\varepsilon - \frac{\varepsilon}{k}$ from $\nu$.
+  Since $\nu$ is the vertex of a finite-dimensional convex set, any weighted average of the $\iota_{ij}$ must be at least distance $\frac{\varepsilon}{k^{\prime}}$ from $\nu$, where $k^{\prime}$ is a positive number depending on the geometry of the convex set.
+  By picking $k > 2k^{\prime}$ we can ensure that any weighted average of the $\mu_{p_{ij}, L_{ij}}$ must be at least distance $\frac{\varepsilon}{2k^{\prime}}$ from $\nu$.
+  But this would contradict our hypothesis that the measures $\mu_i$ converge to $\nu$.
+  That would that there exists some subsequence of $\mu_{p_{ij}, L_{ij}}$ that converges to $\nu$, which proves the lemma.
+\end{proof}
+
+We now have everything we need to prove \autoref{thm:rational-approximation}.
+\todo[inline]{Make the proof clearer.}
+\begin{proof}[Proof of \autoref{thm:rational-approximation}]
+  If a minimal component $\lambda_j$ is periodic, then the proof is straightforward.
+  Since $\lambda$ contains no one-sided component, the core curve of $\lambda_j$ must be two-sided, possibly with an irrational coefficient.
+  Approximating the core curve with rational coefficients proves the result in case (i).
+
+  In case (ii), we have that $\lambda_j$ is not periodic, but a minimal orientable foliation.
+  If we know that all the ergodic measures supported on the underlying topological foliation can be approximated by simple two-sided curves, we can approximate any convex combination of those measures, using \autoref{lem:convex-combinations}, since all the ergodic measures are mutually singular.
+  It will therefore suffice to deal with the case that $\lambda_j$ is ergodic.
+
+  Pick an arc $\eta_0$ transverse to $\lambda_j$ such that the leaf passing through the left endpoint $p_0$ of $\eta_0$ equidistributes with respect to the ergodic transverse measure of $\lambda_j$.
+  We can find such a leaf because almost every leaf equidistributes with respect to the ergodic measure.
+  We now inductively define a sequence of points $\{p_i\}$, sequence of sub-intervals $\eta_i$, and a sequence of segments $\{a_i\}$ of the leaf passing through $p_0$.
+  Let $p_1$ be the first return of the leaf going up through $p_0$ to the interval $\eta_0$.
+  Define the sub-interval $\eta_1$ to be the sub-interval whose left endpoint is $p_0$ and right endpoint is $p_1$.
+  Let $a_1$ be the segment of the leaf starting at $p_0$ and ending at $p_1$.
+  Given a point $p_i$, define $p_{i+1}$ to be the first return to the interval $\eta_{i}$, $\eta_{i+1}$ to be the interval whose left endpoint is $p_0$ and right endpoint is $p_{i+1}$, and $a_{i+1}$ to be the segment of the leaf starting at $p_i$ and ending at $p_{i+1}$.
+  % Let $A_{i}$ be the concatenation of the leaf segments $\{a_1, \ldots, a_i\}$.
+
+  Since we have assumed $\lambda_j$ is an orientable foliation, we have that the leaf we are working with always enters $\eta_0$ from the bottom, and exits from the top.
+  If we pick $\eta_0$ to be small enough, we can pick a local orientation, and keep track of how a positively oriented frame returns to each $p_i$, i.e. with or without the orientation flipped (see \autoref{fig:two-possibilities}).
+  \begin{figure}[h]
+    \centering
+    \includegraphics{example-image-a}
+    \caption{Two possibilities for first return to $\eta_i$.}
+    \label{fig:two-possibilities}
+  \end{figure}
+  If the flow returns infinitely often without the orientation flipped, we join the endpoint $p_i$ to $p_0$ by going left along $\eta_i$ to get a simple closed curve that is two-sided.
+  Furthermore, the geodesic tightening of the resulting curve is very close to the original curve, because the initial and final tangent vectors can be made arbitrarily close since they both face the ``up'' direction: the Anosov closing lemma then tells us that an orbit that approximately closes up can be perturbed by a small amount to exactly close up.
+  This gives us a long geodesic that equidistributes with respect to the ergodic measure, and therefore an approximation by two-sided multicurves.
+
+  If the flow does not return without the orientation flipped infinitely often, it must always return with the orientation flipped after some large enough $i_0$.
+  In that case, consider the simple two-sided curves $c_i$ obtained by concatenating $a_i$ with the arc on $\eta_{i-1}$ joining $p_{i-1}$ and $p_i$ (see \autoref{fig:comes-with-flip}).
+  \begin{figure}[h]
+    \centering
+    \includegraphics{example-image-b}
+    \caption{Defining the curves $c_i$.}
+    \label{fig:comes-with-flip}
+  \end{figure}
+  We have that as $i$ goes to $\infty$, the length of $c_i$ must go to $\infty$ as well, otherwise a subsequence would converge to a closed vertical curve starting at $p_0$, which cannot happen since the leaf through $p_0$ equidistributes.
+  Also, note that the average of the curves $c_i$ weighted by their lengths for $i^{\prime} < i < i^{\prime \prime}$ where $i^{\prime \prime} \gg i^{\prime}$ is close to the ergodic measure, since we assumed that the leaf through $p_0$ equidistributes.
+  This lets us invoke \autoref{lem:convexity-argument} to claim that there is a subsequence of $c_i$ whose orbit measures converge to the ergodic measure.
+  Consequently, the geodesic representatives of $c_i$ converge to $\lambda_j$, since the geodesic tightening is close to the original curve, by the virtue of the initial and final tangent vectors being arbitrarily close.
+  This resolves the two cases that can appear in the case of an orientable foliation, proving the result for case (ii).
+
+  For case (iii), we define the points $p_i$, the nested intervals $\eta_i$, and the arcs $a_i$ in a similar manner as to case (ii).
+  The key difference is that we no longer have that the foliation is orientable, which means the leaf can approach $p_i$ in one of four possible ways: from the ``up'' or the ``down'' direction, and with or without the orientation flipped.
+
+  In case that the leaf approaches $p_i$ from the ``down'' direction without the orientation flipped infinitely often, the same closing argument as case (ii) works.
+  Suppose now that the leaf approaches $p_i$ from the ``up'' direction, but without the orientation flipping, infinitely often.
+  We then construct simple $2$-sided curves by concatenating the flow with the arc joining $p_i$ to $p_0$ (see \autoref{fig:coming-from-above}).
+  \begin{figure}[h]
+    \centering
+    \includegraphics{example-image-b}
+    \caption{Constructing the curve $c_i$ when returning from the ``up'' direction.}
+    \label{fig:coming-from-above}
+  \end{figure}
+  While this curve does equidistribute with respect to the ergodic measure, it is not necessary that its geodesic tightening will do so.
+  Denote the geodesic tightening by $g_i$, and denote the curve segment where it travels parallel to itself by $h_i$.
+  The orbit measure of $c_i$ can be expressed as the following weighted average of the orbit measures of $g_i$ and $h_i$.
+  \begin{align*}
+    \mu_{c_i} = \frac{l(g_i) \cdot \mu_{g_i} + l(h_i) \cdot \mu_{h_i}}{l(g_i) + l(h_i)}
+  \end{align*}
+  If $l(g_i)$ is not $o(l(h_i))$, then the same argument as \autoref{lem:convexity-argument} shows that some subsequence of $\mu_{g_i}$ converges to the ergodic measure, proving the result in this case.
+  If $l(g_i)$ is $o(l(h_i))$, we still have that $\mu_{g_i}$ converges up to a subsequence, since $l(g_i)$ goes to $\infty$, but it may converge to some other measure supported on the same underlying topological foliation.
+  This proves the furthermore case of theorem.
+  If $\lambda_j$ is actually uniquely ergodic, there is only one measure in the simplex of invariant probability measures, namely the uniquely ergodic one, and therefore $\mu_{g_i}$ is forced to converge to it.
+
+  Suppose now that neither of the first two scenarios occur, i.e. the leaf returns to $p_i$ from the ``up'' or ``down'' direction, but with the orientation always flipped.
+  We deal with this case like we did with the second subcase of case (ii).
+  See \autoref{fig:case3-surgery} for the construction of the two-sided curves $c_i$.
+  \begin{figure}[h]
+    \centering
+    \includegraphics{example-image-a}
+    \caption{Construction of the curves $c_i$ when the leaf always returns with orientation flipped from the ``up'' or ``down'' direction.}
+    \label{fig:case3-surgery}
+  \end{figure}
+  We have that the geodesic tightenings of the curves $c_i$ are close to the original curve by the Anosov closing lemma, and that the weighted averages of the $c_i$ converge the ergodic measure, which means by \autoref{lem:convexity-argument} we have a subsequence $\mu_{c_i}$ that converges to the ergodic measure.
+  This proves the result for case (iii), and therefore the theorem.
+\end{proof}
 
 % \paragraph{Idea of proof}
 % First of all, note that one can approximate each minimal component on the subsurface on which the minimal components live in, and combine the rational approximations.
@@ -315,6 +472,195 @@ It is a classical result of Katok \cite{zbMATH03467479}  and Veech \cite{Veech19
 
 \section{Upper bound for the limit set}
 \label{sec:upper-bound-limit-set}
+
+In this section, we prove that $\geolim(\mcg(\no_g))$ is contained in $\pmf^+(\no_g)$.
+We do so by showing that a defining an $\mcg(\no_g)$-invariant subset $\systole(\no_g)$, and showing that the intersection of its closure with $\pmf(\no_g)$ is contained in $\pmf^+(\no_g)$.
+
+\begin{definition}[One-sided systole superlevel set]
+  For any $\varepsilon > 0$, the set $\systole(\no_g)$ is the set of all points in $\teich(\no_g)$ where the length of the shortest one-sided curve is greater than or equal to $\varepsilon$.
+\end{definition}
+
+We can state the main theorem of this section.
+\begin{theorem}
+  \label{thm:systole-closure}
+  For any $\varepsilon > 0$, $\overline{\systole(\no_g)} \cap \pmf(\no_g)$ is contained in $\pmf^+(\no_g)$.
+\end{theorem}
+The key idea of the proof is proving a quantitative estimate on the Fenchel-Nielsen coordinates of points converging to points in $\pmf^-(\no_g)$.
+\begin{proposition}
+  \label{prop:pinching}
+  Let $\{m_i\}$ be a sequence of points in $\teich(\no_g)$ converging to a projective measured foliation $[\lambda]$.
+  If $p$ is a one-sided atom of $\lambda$, for any Fenchel-Nielsen coordinate chart containing $p$ as a cuff, the length coordinate of $p$ goes to $0$.
+\end{proposition}
+\begin{proof}
+  Consider the following decomposition of the measured foliation $\lambda$.
+  \begin{align*}
+    \lambda = 1 \cdot p + \lambda_{\mathrm{at}} + \lambda_{\mathrm{Leb}}
+  \end{align*}
+  Here, $\lambda_{\mathrm{at}}$ are the minimal components on periodic components other than $p$, i.e. cylinders and Möbius strips, and $\lambda_{\mathrm{Leb}}$ are non-periodic minimal components.
+  In the above expression, $p$ is the one-sided curve considered as a measured foliation (since we're picking a representative of $[\lambda]$, we can pick one such that $p$ has weight $1$)
+
+  Pick simple closed curves $p_0$, $p_1$, and $p_2$, where $p_0$ is the curve $p$, and $\{p_0, p_1, p_2\}$ bound a pair of pants.
+  Furthermore, we impose the following conditions on $p_1$ and $p_2$.
+  \begin{align*}
+    i(p_1, \lambda_{\mathrm{at}}) &= 0 \\
+    i(p_2, \lambda_{\mathrm{at}}) &= 0
+  \end{align*}
+  Note that this can always be done, by deleting the support of $\lambda_{\mathrm{at}}$, and looking at the resulting subsurfaces.
+  Note that neither $p_1$ nor $p_2$ can be the same as $p_0$, since $p_0$ is one-sided.
+  We focus our attention to this pair of pants, and consider the curves on it, labelled in \autoref{fig:pants}.
+  \begin{figure}[h]
+    \centering
+    \incfig[0.8]{pants}
+    \caption{The curves restricted to a pair of pants.}
+    \label{fig:pants}
+  \end{figure}
+
+  The curve labelled $p_3$ has intersection number at least $1$ with $\lambda$ which means its length should be going to $\infty$.
+  We can bound the length of $p_3$ above and below via the lengths of the orthogeodesic $p_4$ and the length of $p_0$.
+ \begin{equation}
+   \label{eq:up-1}
+   l(p_0) \leq l(p_3) \leq l(p_4) + l(p_0)
+ \end{equation}
+ Observe that we get the upper bound by observing that the red and cyan arcs are isotopic to $p_3$ relative to their endpoints being fixed.
+ The cyan arcs have length at most $l(p_0)$, in this setting; if one allowed a twist parameter, the length of the cyan arcs would be proportional to the twist parameters.
+ The point of this inequality is that we can estimate $l(p_4)$ using $l(p_0)$, $l(p_1)$ and $l(p_2)$ via hyperbolic trigonometry.
+ Cut the pair of pants along the seams, to get a hyperbolic right-angled hexagon, pictured in \autoref{fig:hexagon}.
+ \begin{figure}[h]
+   \centering
+   \incfig[1]{hexagon}
+   \caption{The right angled hexagon obtained by cutting the pants along the seams.}
+   \label{fig:hexagon}
+ \end{figure}
+
+ To get good estimates on $l(p_4)$, we need a universal lower bound on the fraction $f$ as we move in the Teichm\"uller space.
+ The analysis splits up into two cases, but it's not \emph{a~priori} clear that these two cases are exhaustive.
+ We will deal with the two cases, and then show that any other case can be reduced to the second case by changing $p_1$ and $p_2$.
+
+\subsection*{Case I}
+\label{case1}
+We're in this case if $p_1$ and $p_2$ don't intersect the foliation $\lambda$ at all.
+\begin{align*}
+  i(p_1, \lambda) &= 0 \\
+  i(p_2, \lambda) &= 0
+\end{align*}
+In this case, we can pass to a subsequence of $\{m_i\}$ such that the corresponding values of $f$ are always greater than $\frac{1}{2}$ or less than $\frac{1}{2}$.
+In the former case, we focus on $p_1$, and in the latter case, we focus on $p_2$.
+Without loss of generality, we'll suppose $f \geq \frac{1}{2}$.
+In that case, we cut along the orthogeodesic $p_4$, and get a hyperbolic right-angled pentagon, which is the top half of \autoref{fig:hexagon}.
+We can relate the lengths of $l(p_0)$, $l(p_1)$, and $l(p_4)$ using the following identity for hyperbolic right-angled pentagons (see \cite{thurston1979geometry} for the details).
+\begin{align}
+  \label{eq:pentagon}
+  \sinh\left( f \cdot l(p_0) \right)  \cdot \sinh\left( \frac{l(p_4)}{2} \right)  = \cosh\left( \frac{l(p_1)}{2} \right)
+\end{align}
+Now suppose that $l(p_0)$ does not go to $0$.
+Then we must have that for all $m_i$, $l(p_0) \geq 2\varepsilon$ for some $\varepsilon > 0$. By the lower bound on $f$, we have that the first term on the left hand side of the above expression is bounded below by $\varepsilon$.
+Rearranging the terms gives us the following upper bound on $l(p_4)$.
+\begin{equation}
+  \label{eq:up-2}
+  l(p_4) \leq 2 \cdot \sinh^{-1} \left( \frac{\cosh \left( \frac{l(p_1)}{2} \right)}{\varepsilon} \right)
+\end{equation}
+Using \eqref{eq:up-1} and \eqref{eq:up-2}, we get an upper bound for $l(p_3)$.
+\begin{equation}
+  \label{eq:up-3}
+  l(p_3) \leq l(p_0) +
+  2 \sinh^{-1} \left( \frac{\cosh \left( \frac{l(p_1)}{2} \right)}{\varepsilon} \right)
+\end{equation}
+
+Since $\frac{i(p_0, \lambda)}{i(p_3, \lambda)} = 0$, as $\{m_i\}$ approaches $\lambda$, the ratio of lengths of $p_0$ and $p_3$ approach $0$.
+\begin{equation}
+  \label{eq:up-4}
+  \lim_{i \to \infty} \frac{l(p_0)}{l(p_3)} = 0
+\end{equation}
+Using \eqref{eq:up-3}, we can find a lower bound for $\frac{l(p_0)}{l(p_3)}$, which goes to $0$ by \eqref{eq:up-4}.
+\begin{equation}
+  \label{eq:up-5}
+  \lim_{i \to \infty} \frac{l(p_0)}{  l(p_0) +
+  2 \sinh^{-1} \left( \frac{\cosh \left( \frac{l(p_1)}{2} \right)}{\varepsilon} \right)} = 0
+\end{equation}
+Since we assumed that the length coordinate $l(p_0)$ is bounded away from $0$, the only way the above expression can go to $0$ if $l(p_1)$ goes to $\infty$.
+This is where the hypotheses of the Case I come in.
+Since $i(p_1, \lambda)$ is $0$, the following equality must hold.
+\begin{equation}
+  \label{eq:up-6}
+  \lim_{i \to \infty} \frac{l(p_1)}{l(p_3)} = 0
+\end{equation}
+This means the lower bound for $\frac{l(p_1)}{l(p_3)}$ must go to $0$.
+\begin{equation}
+  \label{eq:up-7}
+   \lim_{i \to \infty} \frac{l(p_1)}{  l(p_0) +
+  2 \sinh^{-1} \left( \frac{\cosh \left( \frac{l(p_1)}{2} \right)}{\varepsilon} \right)
+  } = 0
+\end{equation}
+But this can't happen if $l(p_1)$ approaches $\pm \infty$.
+This contradiction means our assumption that both $l(p_0)$ and $\tau(p_0)$ were bounded away from $0$ and $\pm \infty$ must be wrong, and thus proves the result in Case I.
+
+\subsection*{Case II}
+We're in this case if the following inequality holds.
+\begin{equation}
+  \label{eq:up-8}
+  0 < i(p_1, \lambda) < 1
+\end{equation}
+The picture in this case looks similar to \autoref{fig:hexagon}.
+However, we can't necessarily pass to a subsequence where $f \geq \frac{1}{2}$ (and the trick of working with $1-f$ won't work, since we know nothing about $p_2$).
+This is one of the points where the hypothesis on $p_1$ comes in.
+Since $\frac{i(p_2, \lambda)}{i(p_1, \lambda)}$ is finite, we must have that the ratio of lengths $\frac{l(p_2)}{l(p_1)}$ approaches some finite value as well.
+The fraction $f$ is a continuous function of $\frac{l(p_2)}{l(p_1)}$, approaching $0$ only as the ratio approaches $\infty$ (this follows from the same identity as \eqref{eq:pentagon}). Since the ratio approaches a finite value, we have a positive lower bound $f_0$ for $f$.
+
+Assuming as before that $l(p_0)$ is bounded away from $0$, and $\tau(p_0)$ bounded away from $\pm \infty$, and repeating the calculations of the previous case, we get the following two inequalities.
+\begin{equation}
+  \label{eq:up-9}
+  \frac{l(p_1)}{l(p_3)} \geq \frac{l(p_1) }{l(p_0) +
+  2 \sinh^{-1} \left( \frac{\cosh\left( \frac{l(p_1)}{2} \right)}{f_0 \varepsilon} \right)
+  }
+\end{equation}
+\begin{equation}
+  \label{eq:up-10}
+  \frac{l(p_0)}{l(p_3)} \geq \frac{l(p_0)}{l(p_0) +
+  2 \sinh^{-1} \left( \frac{\cosh\left( \frac{l(p_1)}{2} \right)}{f_0 \varepsilon} \right)
+  }
+\end{equation}
+The right hand side of \eqref{eq:up-10} must approach $0$, and that forces either $l(p_1)$ or $l(p_2)$ to approach $\infty$.
+But that means the right hand term of \eqref{eq:up-9} must approach $1$, which cannot happen, by the hypothesis of case II.
+This means $l(p_0)$ goes to $0$, proving the result in case II.
+
+\subsection*{Reducing to case II} Suppose now that both $p_1$ and $p_2$ have an intersection number larger than $1$ with $\lambda$.
+We can modify one of them to have a small intersection number with $\lambda$.
+First, we assume that $\lambda_{\mathrm{Leb}}$ is supported on a single minimal component, i.e. every leaf of $\lambda_{\mathrm{Leb}}$ is dense in the support.
+We now perform a local surgery on $p_1$: starting at a point on $p_1$ not contained in the support of $\lambda_{\mathrm{Leb}}$, we follow along until we intersect $\lambda_{\mathrm{Leb}}$ for the first time.
+We denote this point by $\alpha$.
+We now go along $p_1$ in the opposite direction, until we hit the support of $\lambda_{\mathrm{Leb}}$ again, but rather than stopping, we keep going until the arc has intersection number $0 < \delta < 1$ with $\lambda_{\mathrm{Leb}}$.
+We then go back to $\alpha$, and follow along a leaf of $\lambda_{\mathrm{Leb}}$ rather than $p_1$, until we hit the arc.
+This is guaranteed to happen by the minimality of $\lambda_{\mathrm{Leb}}$.
+Once we hit the arc, we continue along the arc, and close up the curve.
+This gives a new simple closed curve which intersection number with $\lambda$ is at most $\delta$.
+This curve is our replacement for $p_1$ (see \autoref{fig:first-return-map} for a schematic of this local surgery).
+If $\lambda_{\mathrm{Leb}}$ is not minimal, we repeat this process for each minimal component. We pick $p_2$ in a manner such that $p_0$, $p_1$, and $p_2$ bound a pair of pants.
+Since $\delta < 1$, we have reduced to case II.
+This concludes the proof of the theorem.
+\begin{figure}[h]
+  \centering
+  \incfig[0.5]{first-return-map}
+  \caption{Using the first return map on $\lambda$ to modify $p_1$.}
+  \label{fig:first-return-map}
+\end{figure}
+\end{proof}
+
+This quantitative estimate gives us an easy proof of \autoref{thm:systole-closure}.
+\begin{proof}[Proof of \autoref{thm:systole-closure}]
+  Suppose that the theorem were false, and there was a foliation $[\lambda] \in \pmf^-(\no_g)$ in the closure of $\systole(\no_g)$.
+  Suppose $p$ is a one-sided atom in $\lambda$.
+  Then \autoref{prop:pinching} tells us that the hyperbolic length of $p$ goes to $0$, but the length of $p$ must be greater than $\varepsilon$ in $\systole(\no_g)$.
+  This contradicts our initial assumption, and the closure of $\systole(\no_g)$ can only intersect $\pmf(\no_g)$ in the complement of $\pmf^-(\no_g)$.
+\end{proof}
+
+\begin{corollary}
+  The geometric limit set $\geolim(\mcg(\no_g))$ is contained in $\pmf^+(\no_g)$.
+\end{corollary}
+\begin{proof}
+  Every point $p \in \teich(\no_g)$ is contained in $\systole(\no_g)$ for some small enough $\varepsilon$.
+  This means $\Lambda_{\mathrm{geo}, p}(\mcg(\no_g))$ is contained in $\pmf^+(\no_g)$ by \autoref{thm:systole-closure}.
+  Taking the union over all $p$ proves the result.
+\end{proof}
 
 \section{Domain of discontinuity}
 \label{sec:domain-discontinuity}
