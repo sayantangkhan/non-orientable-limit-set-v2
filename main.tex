@@ -84,7 +84,7 @@ McCarthy-Papadopoulos also exhibit a domain of discontinuity for the $\Gamma$ ac
 \end{theorem}
 
 It is not obvious that the action of $\Gamma$ on $Z(\dynlim(\Gamma)) \setminus \dynlim(\Gamma)$ is not properly discontinuous.
-We prove that is indeed the case when $\Gamma = \mcg(\no_g)$ in \autoref{thm:dod-is-empty}, but the general case is unknown.
+We prove that is indeed the case when $\Gamma = \mcg(\no_g)$ in Section \ref{sec:domain-discontinuity}, but the general case is unknown.
 
 \section{Lower bound for the limit set}
 \label{sec:lower-bound-limit-set}
@@ -96,6 +96,7 @@ In \autoref{thm:systole-closure}, we show that the geometric limit set is indeed
 
 In \cite{gendulphe_whats_2017}, Gendulphe made the following conjecture about $\overline{\pmf^+(\no_g, \QQ)}$.
 \begin{conjecture}[Conjecture 9.1 of \cite{gendulphe_whats_2017}]
+  \label{conj:gendulphe-1}
   For $g \geq 4$, $\pmf^+(\no_g) = \overline{\pmf^+(\no_g, \QQ)}$.
 \end{conjecture}
 We prove a slightly weaker version of the above conjecture, by describing subset of the foliations that can be approximated by multicurves in $\pmf^+(\no_g, \QQ)$.
@@ -103,7 +104,7 @@ To state the theorem, we need to define what it means for a foliation to be orie
 \begin{definition}[Orientable foliation]
   A foliation $\lambda$ is said to be orientable if there exists a small enough transverse arc $\eta$ such that any leaf exiting from one side of $\eta$ always returns from the other side.
 \end{definition}
-In the setting of orientable surfaces, the vertical foliations of translation surfaces are orientable, while there are some directions in half-translation surfaces (which are not translation surfaces) where the foliation is non-orientable.
+In the setting of orientable surfaces, the vertical foliations of translation surfaces are orientable, while there are some directions in half-translation surfaces where the foliation is non-orientable.
 There exist similar examples of orientable and non-orientable foliations on non-orientable surfaces.
 
 Having defined the notion of orientable foliations, we can state the main theorem of this section.
@@ -403,7 +404,7 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
     \label{fig:two-possibilities}
   \end{figure}
   If the flow returns infinitely often without the orientation flipped, we join the endpoint $p_i$ to $p_0$ by going left along $\eta_i$ to get a simple closed curve that is two-sided.
-  Furthermore, the geodesic tightening of the resulting curve is very close to the original curve, because the initial and final tangent vectors can be made arbitrarily close since they both face the ``up'' direction: the Anosov closing lemma then tells us that an orbit that approximately closes up can be perturbed by a small amount to exactly close up.
+  Furthermore, the geodesic tightening of the resulting curve is very close to the original curve, because the initial and final tangent vectors can be made arbitrarily close since they both face the ``up'' direction: the Anosov closing lemma then tells us that an orbit of the geodesic flow that approximately closes up can be perturbed by a small amount to exactly close up.
   This gives us a long geodesic that equidistributes with respect to the ergodic measure, and therefore an approximation by two-sided multicurves.
 
   If the flow does not return without the orientation flipped infinitely often, it must always return with the orientation flipped after some large enough $i_0$.
@@ -474,7 +475,7 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
 \label{sec:upper-bound-limit-set}
 
 In this section, we prove that $\geolim(\mcg(\no_g))$ is contained in $\pmf^+(\no_g)$.
-We do so by showing that a defining an $\mcg(\no_g)$-invariant subset $\systole(\no_g)$, and showing that the intersection of its closure with $\pmf(\no_g)$ is contained in $\pmf^+(\no_g)$.
+We do so by defining an $\mcg(\no_g)$-invariant subset $\systole(\no_g)$, and showing that the intersection of its closure with $\pmf(\no_g)$ is contained in $\pmf^+(\no_g)$.
 
 \begin{definition}[One-sided systole superlevel set]
   For any $\varepsilon > 0$, the set $\systole(\no_g)$ is the set of all points in $\teich(\no_g)$ where the length of the shortest one-sided curve is greater than or equal to $\varepsilon$.
@@ -645,7 +646,25 @@ This concludes the proof of the theorem.
 \end{figure}
 \end{proof}
 
-This quantitative estimate gives us an easy proof of \autoref{thm:systole-closure}.
+\begin{remark}[On the orientable version of \autoref{prop:pinching}]
+  The same idea also works in the orientable setting, although the analysis of the various cases gets a little more delicate.
+  The first change one needs to make is in the statement of the proposition: we no longer need to require $p$ to be a one-sided atom, and correspondingly, either the length coordinate $l(p)$ can go to $0$, or the twist coordinate $\tau(p_0)$ can go to $\pm \infty$.
+  To see how the twist coordinate enters the picture, observe that \eqref{eq:up-1}, which was the main inequality of the proof, turns into the following in the orientable version.
+  \begin{equation}
+    \label{eq:up-11}
+    l(p_4)  \leq l(p_3) \leq \tau(p_0) + l(p_4)
+  \end{equation}
+  Here, $\tau(p_0)$ is the twist parameter about $p_0$, and $p_4$ is the orthogeodesic multi-arc (there may be one or two orthogeodesics, depending on the two cases described below).
+
+  The proof splits up into two cases, depending on whether both sides of $p$ are the same pair of pants, or distinct pairs of pants.
+  This was not an issue in the non-orientable setting, since $p$ was one-sided.
+  If both sides of $p$ are the same pair of pants, then the analysis is similar to what we just did, since the curve $p_3$ stays within a single pair of pants.
+  In the other, $p_3$ goes through two pair of pants, and its length is a function of the twist parameters, as well the cuff lengths of four curves, rather than two curves, the four curves being the two remaining cuffs of each pair of pants.
+  The analysis again splits up into two cases, depending on the intersection number of the cuffs with $\lambda$, but reducing all the other cases to case II becomes tricky because we need to simultaneously reduce the intersection number of two curves, rather than one, as in the non-orientable setting.
+  This added complication obscures the main idea of the proof, which is why we chose to only prove the non-orientable version.
+\end{remark}
+
+This quantitative estimate of \autoref{prop:pinching} gives us an easy proof of \autoref{thm:systole-closure}.
 \begin{proof}[Proof of \autoref{thm:systole-closure}]
   Suppose that the theorem were false, and there was a foliation $[\lambda] \in \pmf^-(\no_g)$ in the closure of $\systole(\no_g)$.
   Suppose $p$ is a one-sided atom in $\lambda$.
@@ -664,6 +683,44 @@ This quantitative estimate gives us an easy proof of \autoref{thm:systole-closur
 
 \section{Domain of discontinuity}
 \label{sec:domain-discontinuity}
+
+In this section, we prove that the domain of discontinuity for the action of $\mcg(\no_g)$ on $\pmf(\no_g)$ is empty.
+This follows fairly easily from \autoref{conj:gendulphe-1}, but because we only have a slightly weaker version of the result, i.e. \autoref{thm:rational-approximation}, we need to work a little harder.
+However, the techniques used in the proof of \autoref{thm:rational-approximation} are robust enough to prove the result in this section.
+\begin{theorem}
+  \label{thm:dod-is-empty}
+  The domain of discontinuity for the $\mcg(\no_g)$ action on $\pmf(\no_g)$ is empty.
+\end{theorem}
+
+We prove this result by showing that for any measured foliation $\lambda$, there exists a mapping class $\varphi$ such that $\varphi$ moves $\lambda$ by an arbitrarily small amount.
+\begin{proposition}
+  \label{prop:mapping-class-estimate}
+  Let $\lambda$ be a measured foliation.
+  Then for any simple closed curve $\kappa$ and any $\varepsilon > 0$, there exists a $\varphi \in \mcg(\no_g)$ such that the following inequalities hold.
+  \begin{align*}
+    i(\lambda , \kappa) - \varepsilon
+    \leq i(\varphi(\lambda), \kappa)
+    \leq i(\lambda , \kappa) + \varepsilon
+  \end{align*}
+\end{proposition}
+To prove this proposition, we will need to estimate how Dehn twists change intersection numbers.
+\begin{lemma}
+  \label{lem:dehn-twist-estimate}
+  Let $\lambda$ be any measured foliation, $\gamma$ any two-sided simple curve, and $\kappa$ any simple curve (not necessarily two-sided).
+  Denote the Dehn twist about $\gamma$ by $T_{\gamma}$; the intersection number of $T_\gamma(\lambda)$ and $\kappa$ is bounded by the following intersection numbers.
+  \begin{align*}
+    i(\lambda, \kappa) - i(\lambda, \gamma) \cdot i(\gamma, \kappa)
+    \leq i(T_{\gamma}, \kappa)
+    \leq i(\lambda, \kappa) + i(\lambda, \gamma) \cdot i(\gamma, \kappa)
+  \end{align*}
+\end{lemma}
+\begin{proof}
+  We approximate $\lambda$ by simple curves, possibly one-sided, and use Proposition 3.4 of \cite{farb2011primer}, which is the same inequality, but with $\lambda$ replaced with a simple curve.
+\end{proof}
+
+\begin{proof}[Proof of \autoref{prop:mapping-class-estimate}]
+
+\end{proof}
 
 \section{Failure of quasi-convexity for $\systole$}
 \label{sec:fail-quasi-conv}
