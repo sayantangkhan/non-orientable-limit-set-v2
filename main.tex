@@ -67,6 +67,7 @@ One may ask if this is always the case.
 McCarthy-Papadopoulos also formulated an equivalent definition of $\dynlim(\Gamma)$, which is easier to work with in practice.
 
 \begin{theorem}[Theorem 4.1 of \cite{McCarthy1989}]
+  \label{thm:equivalence-of-limit-sets}
   $\dynlim(\Gamma)$ is the closure in $\pmf$ of the stable and unstable foliations of all the pseudo-Anosov mapping classes in $\Gamma$.
 \end{theorem}
 A corollary of this theorem is that $\Gamma$ does not act properly discontinuously on $\dynlim(\Gamma)$.
@@ -375,6 +376,72 @@ We now prove a lemma that gives us a criterion for deducing when a long orbit me
   That would that there exists some subsequence of $\mu_{p_{ij}, L_{ij}}$ that converges to $\nu$, which proves the lemma.
 \end{proof}
 
+We now consider a tricky special case we are forced to reckon with when approximating ergodic foliations with simple closed curves.
+Let $\lambda$ be a minimal foliation and $\eta$ a transverse arc.
+Let $q$ be a dianalytic quadratic differential structure on $\no_g$ such that $\lambda$ is the vertical foliation, and $\eta$ is a horizontal arc of flat length $1$.
+Let $a$ be a leaf starting at the left endpoint $p$ of $\eta$ and going up, and suppose it comes back from the top intersecting $\eta$ a point $q$ which is distance $\varepsilon \ll 1$ from the left endpoint (possibly after intersecting $\eta$ several times).
+Let $c$ be the simple closed curve obtained by concatenating $a$ and the horizontal arc joining $p$ and $q$ (see \autoref{fig:bad-situation}).
+\begin{figure}[h]
+  \centering
+  \includegraphics{example-image-a}
+  \caption{Closing up leaves that start and begin on the same side of the arc.}
+  \label{fig:bad-situation}
+\end{figure}
+The curve $c$ is clearly not close to the flat or hyperbolic geodesic representative of its homotopy class.
+One obvious way to make $c$ shorter without changing its homotopy type is to flow the arc joining $p$ and $q$ along the foliation until it encounters a singularity, at which point we stop.
+We label the new endpoints $p^{\prime}$ and $q^{\prime}$, and define a new closed curve $c^{\prime}$ by starting at $p^{\prime}$, flowing along the vertical foliation until $q^{\prime}$ and then flowing horizontally back to $p^{\prime}$.
+We consider the transverse probability measures on $\eta$ given by intersection with $c$, $c^{\prime}$, and their hyperbolic geodesic representative, which we denote $c^{\prime \prime}$.
+We denote these measures by $\mu_c$, $\mu_{c^{\prime}}$, and $\mu_{c^{\prime \prime}}$ respectively.
+The following lemma states that the $\mu_{c^{\prime}}$ and $\mu_{c^{\prime \prime}}$ are approximately equal.
+
+\begin{lemma}
+  \label{lem:flat-length-tightening}
+  As $\varepsilon$ approaches $0$, $d_{\mathrm{LP}}(\mu_{c^{\prime}}, \mu_{c^{\prime \prime}})$ approaches $0$.
+\end{lemma}
+\begin{proof}
+  Note that as $\varepsilon$ goes to $0$, the hyperbolic lengths of $c^{\prime}$ and $c^{\prime \prime}$ go to $\infty$.
+  If we show that $c^{\prime}$ and $c^{\prime \prime}$ stay within a bounded distance of each other, independent of $\varepsilon$, the measures $\mu_{c^{\prime}}$ and $\mu_{c^{\prime \prime}}$ converge to the same measures, since the intersection points in $\eta$ with $c^{\prime}$ and $c^{\prime \prime}$ will get closer and closer, by elementary hyperbolic geometry.
+
+  Observe that the closed curve $c^{\prime}$ is almost a hyperbolic geodesic: namely the segment of it that follows the foliation $\lambda$: the only possibility is that the arc joining $p^{\prime}$ and $q^{\prime}$ results in the closed curve shortening significantly.
+  However, note that the segment of $c^{\prime}$ that follows the foliation approaches the singularity from two different prongs which have a positive angle between them.
+  Joining the ends with a short geodesic gives us a segment obtained by concatenating three geodesic arcs.
+  Gromov hyperbolicity tells us that the geodesic representative of such a segment will be within a bounded distance of the segment: i.e. the geodesic representative $c^{\prime \prime}$ will be within a bounded distance of $c^{\prime}$ (see \autoref{fig:geodesic-tightening}).
+  \begin{figure}[h]
+    \centering
+    \includegraphics{example-image-b}
+    \caption{The curves $c^{\prime}$ and $c^{\prime \prime}$ are within bounded distance.}
+    \label{fig:geodesic-tightening}
+  \end{figure}
+  This proves the lemma.
+\end{proof}
+The next lemma links the ratio of the flat lengths of $c$ and $c^{\prime}$ to the measures $\mu_c$ and $\mu_{c^{\prime}}$.
+\begin{lemma}
+  \label{lem:absolute-continuity}
+  Consider a sequence of $\varepsilon$ going to $0$ such that $\displaystyle \frac{l_{\mathrm{flat}}(c^{\prime})}{l_{\mathrm{flat}}(c)} \geq \nu > 0$ and both $\mu_c$ and $\mu_{c^{\prime}}$ converge.
+  Then $\lim_{\varepsilon \to 0} \mu_{c^{\prime}}$ is absolutely continuous with respect to $\lim_{\varepsilon \to 0} \mu_c$.
+\end{lemma}
+\begin{proof}
+  Consider a sub-interval $\eta^{\prime}$ of $\eta$ such that $\lim_{\varepsilon \to 0}\mu_c(\eta^{\prime}) = 0$.
+  We need to show that the same holds for the limit of the measures $\mu_{c^{\prime}}$.
+  Let $i(c, \eta)$ and $i(c, \eta^{\prime})$ be the number of times $c$ intersects $\eta$ and $\eta^{\prime}$, and let $i(c^{\prime}, \eta)$ and $i(c^{\prime}, \eta^{\prime})$ be defined similarly.
+  Since we are working with a fixed dianalytic quadratic differential, the intersection number of a vertical arc with $\eta$ is bounded above and below by the flat length of the vertical arc times a positive constant depending only on $\eta$ (the positive constants are the maximum and minimum heights of the rectangles obtained when representing the flat structure as a zippered rectangle).
+  \begin{align}
+    \label{eq:11}
+    \alpha_{\eta} l_{\mathrm{flat}}(c) \leq &i(c, \eta) \leq \beta_{\eta} l_{\mathrm{flat}}(c) \\
+    \label{eq:12}
+    \alpha_{\eta} l_{\mathrm{flat}}(c^{\prime}) \leq &i(c^{\prime}, \eta) \leq \beta_{\eta} l_{\mathrm{flat}}(c^{\prime})
+  \end{align}
+  Using the inequality in the hypothesis, and \eqref{eq:11} and \eqref{eq:12}, we get the following chain of inequalities.
+  \begin{align*}
+    \frac{i(c^{\prime}, \eta^{\prime})}{i(c^{\prime}, \eta)}
+    &\leq \frac{i(c, \eta^{\prime})}{i(c^{\prime}, \eta)} \\
+    &\leq \frac{1}{\alpha_{\eta}} \cdot \frac{i(c, \eta^{\prime})}{l_{\mathrm{flat}}(c^{\prime})} \\
+    &\leq \frac{1}{\alpha_{\eta} \nu} \cdot \frac{i(c, \eta^{\prime})}{l_{\mathrm{flat}}(c)} \\
+    &\leq \frac{\beta_{\eta}}{\alpha_{\eta} \nu} \cdot \frac{i(c, \eta^{\prime})}{i(c, \eta)}
+  \end{align*}
+  The right hand side goes to $0$ as $\varepsilon$ goes to $0$, proving absolute continuity of the limiting measure.
+\end{proof}
+
 We now have everything we need to prove \autoref{thm:rational-approximation}.
 \todo[inline]{Make the proof clearer.}
 \begin{proof}[Proof of \autoref{thm:rational-approximation}]
@@ -434,13 +501,10 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
     \label{fig:coming-from-above}
   \end{figure}
   While this curve does equidistribute with respect to the ergodic measure, it is not necessary that its geodesic tightening will do so.
-  Denote the geodesic tightening by $g_i$, and denote the curve segment where it travels parallel to itself by $h_i$.
-  The orbit measure of $c_i$ can be expressed as the following weighted average of the orbit measures of $g_i$ and $h_i$.
-  \begin{align*}
-    \mu_{c_i} = \frac{l(g_i) \cdot \mu_{g_i} + l(h_i) \cdot \mu_{h_i}}{l(g_i) + l(h_i)}
-  \end{align*}
-  If $l(g_i)$ is not $o(l(h_i))$, then the same argument as \autoref{lem:convexity-argument} shows that some subsequence of $\mu_{g_i}$ converges to the ergodic measure, proving the result in this case.
-  If $l(g_i)$ is $o(l(h_i))$, we still have that $\mu_{g_i}$ converges up to a subsequence, since $l(g_i)$ goes to $\infty$, but it may converge to some other measure supported on the same underlying topological foliation.
+  Denote the geodesic tightening by $c_i^{\prime \prime}$, and consider an intermediate closed curve $c_i^{\prime}$ in the same homotopy class as described in \autoref{lem:flat-length-tightening} and \autoref{lem:absolute-continuity}.
+  We have by assumption that $\mu_{c_i}$ converges to an ergodic measure.
+  If the ratio of the flat lengths of $c_i$ and $c_i^{\prime}$ is bounded away from $0$, possibly up to a subsequence, then \autoref{lem:absolute-continuity} tells us that $\mu_{c_i^{\prime}}$ converges to the ergodic measure, and \autoref{lem:flat-length-tightening} tells us the transverse measure associated to the hyperbolic geodesic representative is also ergodic.
+  If $l_{\mathrm{flat}}(c_i^{\prime \prime})$ is $o(l_{\mathrm{flat}}(c_i))$, we still have that $\mu_{c_i^{\prime \prime}}$ converges up to a subsequence, since $l(c_i^{\prime \prime})$ goes to $\infty$, but it may converge to some other measure supported on the same underlying topological foliation.
   This proves the furthermore case of theorem.
   If $\lambda_j$ is actually uniquely ergodic, there is only one measure in the simplex of invariant probability measures, namely the uniquely ergodic one, and therefore $\mu_{g_i}$ is forced to converge to it.
 
@@ -696,11 +760,11 @@ We prove this result by showing that for any measured foliation $\lambda$, there
 \begin{proposition}
   \label{prop:mapping-class-estimate}
   Let $\lambda$ be a measured foliation.
-  Then for any simple closed curve $\kappa$ and any $\varepsilon > 0$, there exists a $\varphi \in \mcg(\no_g)$ such that the following inequalities hold.
+  Then for any simple closed curve $\kappa$ and any $\delta > 0$, there exists a $\varphi \in \mcg(\no_g)$ such that the following inequalities hold.
   \begin{align*}
-    i(\lambda , \kappa) - \varepsilon
+    i(\lambda , \kappa) - \delta
     \leq i(\varphi(\lambda), \kappa)
-    \leq i(\lambda , \kappa) + \varepsilon
+    \leq i(\lambda , \kappa) + \delta
   \end{align*}
 \end{proposition}
 To prove this proposition, we will need to estimate how Dehn twists change intersection numbers.
@@ -719,7 +783,45 @@ To prove this proposition, we will need to estimate how Dehn twists change inter
 \end{proof}
 
 \begin{proof}[Proof of \autoref{prop:mapping-class-estimate}]
+  Consider a projective measured lamination $[\lambda] \in pmf(\no_g)$.
+  If $[\lambda]$ contains one-sided leaves, we delete those one-sided curves and work with the resulting subsurface.
+  If the restriction of $\lambda$ to the resulting subsurface is empty, then any mapping class on the subsurface does not change $\lambda$, and the result holds.
+  If the restriction of $\lambda$ to the subsurface is non-empty, and $\lambda$ can be approximated by simple two-sided curves and \autoref{thm:equivalence-of-limit-sets} tells us that it can also be approximated by stable foliations of pseudo-Anosov maps on the subsurface.
+  For any small neighbourhood of $[\lambda]$, pick a pseudo-Anosov $\varphi$ whose stable foliation lies in that neighbourhood.
+  Then the north-south dynamics of pseudo-Anosov maps tells us that $\varphi([\lambda])$ will be in the same neighbourhood, proving the result in this case.
 
+  Suppose now that the restriction of the foliation is not approximable by simple two-sided curves.
+  Then there exists some minimal component that is not approximable by two-sided curves.
+  \autoref{lem:convex-combinations} tells us that there is some ergodic measure supported on the underlying topological foliation that is not approximable by two-sided curves either.
+  Let $p$ be a generic point for this measure, and let $\eta$ be a transverse arc whose left endpoint is $p$.
+  Pick a flat structure on this surface such that $\lambda$ is the vertical foliation, and $\eta$ is a horizontal arc of length $1$.
+  The only way the ergodic measure is not approximable by a two-sided curve is the situation described in the proof of \autoref{thm:rational-approximation} where a leaf leaving $p$ from the top returns infinitely often from the top again, with the orientation remaining unflipped.
+  Recall that in this situation, we have an arc $a$ a leaving $p$ from the top, following the foliation, terminating at a point $q$ that is $\varepsilon$ distance to the right of $p$, and it comes back from the top with the orientation unflipped.
+  We concatenate this arc with the segment along $\eta^{\prime}$ joining $p$ and $q$.
+  This is a simple two-sided curve, which we will call $c$ (this curve $c$ depends on $\varepsilon$, but we will suppress the dependence in the notation).
+  Let $c^{\prime}$ be the tightening of this curve described in the paragraph before \autoref{lem:flat-length-tightening}.
+  If we do not have that $l_{\mathrm{flat}}(c^{\prime})$ is $o(l_{\mathrm{flat}}(c))$, then \autoref{lem:absolute-continuity} tells us that the ergodic measure can be approximated by simple two-sided curves.
+  That means $\varepsilon \cdot l_{\mathrm{flat}}(c^{\prime})$ goes to $0$ as $\varepsilon$ goes to $0$.
+
+  We now relate $l_{\mathrm{flat}}(c^{\prime})$ with $i(c^{\prime}, \kappa)$ via the following inequality, where $c^{\prime}$ can be any closed curve, and $j_{\kappa}$ is a constant depending on $\kappa$ and the flat geometry of the surface.
+  \begin{align}
+    \label{eq:13}
+    i(c^{\prime}, \kappa) \leq j_{\kappa} \cdot l_{\mathrm{flat}}(c^{\prime})
+  \end{align}
+  The constant $j_{\kappa}$ can be computed by cutting the surface along $\kappa$, and computing the length of the shortest essential arc starting and ending at the boundary component $\kappa$.
+
+  We pick an $\varepsilon$ and curve $c$ such that $\varepsilon \cdot l_{\mathrm{flat}}(c^{\prime}) < \frac{\delta}{j_{\kappa}}$.
+  We Dehn twist about the curve $c$: \autoref{lem:dehn-twist-estimate} tells us that the error term is $i(\lambda, c) \cdot i(c, \kappa) = \varepsilon \cdot i(c, \kappa)$.
+  We bound the intersection number by $j_{\kappa} \cdot l_{\mathrm{flat}}(c^{\prime})$, which bounds the error term by $\delta$, proving the result in the case when $\lambda$ is not approximable by two-sided curves.
+
+  This handles all the cases, and proves the proposition.
+\end{proof}
+
+\begin{proof}[Proof of \autoref{thm:dod-is-empty}]
+  Pick any small open set $U$ in $\pmf(\no_g)$, and any arbitrary local metric such that $U$ has diameter at least $2$.
+  Pick a sequence of mapping classes $\{varphi_i\}$ that move a point by distance at most $\frac{1}{2^i}$, using \autoref{prop:mapping-class-estimate}.
+  Then for all $i$, $\varphi_i(U) \cap U$ is non-empty.
+  This proves the result.
 \end{proof}
 
 \section{Failure of quasi-convexity for $\systole$}
