@@ -8,3 +8,11 @@
 #+LaTeX_HEADER: \thispagestyle{empty}
 
 * Introduction
+* Background
+** Background on measured foliations on non-orientable surfaces
+** Background on limit sets of mapping class subgroups
+* Preliminaries and notation
+* Limit set lower bound
+* Limit set upper bound
+* Domain of discontinuity
+* Failure of quasi-convexity

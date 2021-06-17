@@ -26,8 +26,223 @@
 \section{Introduction}
 \label{sec:introduction}
 
+\section{Background}
+\label{sec:background}
 
-\section{Background on limit sets of mapping class groups}
+\subsection{Non-orientable surfaces and measured foliations}
+\label{sec:backgr-meas-foli}
+
+For the purposes of this paper, the most convenient way to think about non-orientable surfaces will be to attach \emph{crosscaps} to orientable surfaces.
+Given a surface $S$, attaching a crosscap is the operation of deleting the interior of a small embedded disc, and gluing the boundary $S^1$ via the antipodal map.
+Attaching $k$ crosscaps to a genus $g$ surface results in a genus $2g+k$ non-orientable surface $\no_{2g+k}$ (i.e. the non-orientable surface obtained by taking the connect sum of $2g+k$ copies of $\mathbb{RP}^2$).
+% In particular, any non-orientable surface can be obtained by just attaching $1$ or $2$ crosscaps to an orientable surface.
+
+Consider the set $\scc$ of simple closed curves on a non-orientable surface $\no$.
+The elements of $\scc$ can be classified into two types.
+\begin{description}
+\item[Two sided curves] Tubular neighbourhoods are cylinders.
+\item[One sided curves] Tubular neighbourhoods are Möbius bands.
+\end{description}
+The subset of two sided curves in denoted by $\scc^+$ and one sided curves by $\scc^-$.
+Since these two types are topologically distinct, they form invariant subspaces with respect to the mapping class group action.
+
+The orientable double cover of $\no_g$ is the orientable surface $\os_{g-1}$, and comes with an orientation reversing involution $\iota$.
+Since this is an orientation double cover, the subgroup of $\pi_1(\no_g)$ corresponding to this cover is characteristic, i.e. left invariant by every homeomorphism induced automorphism of the fundamental group.
+A useful consequence of this fact is that one can lift mapping classes uniquely.
+\begin{fact}
+  Any self homeomorphism of $\no_g$ lifts to a unique orientation preserving self homeomorphism of $\os_{g-1}$, and as a consequence, one has the injective homomorphism induced by the covering map $p$.
+  \begin{align*}
+    p^{\ast}: \mcg(\no_d) \hookrightarrow \mcg^+(\os_{d-1})
+  \end{align*}
+  Furthermore, this inclusion preserves the mapping class type, i.e. finite order, reducible and pseudo-Anosov maps in $\mcg(\no_g)$ stay finite order, reducible, and pseudo-Anosov in $\mcg(\os_{g-1})$.
+\end{fact}
+
+One also obtains a map from $\teich(\no_g)$ to $\teich(\os_{g-1})$ using the fact that mapping classes can be lifted canonically.
+Given a point $(p, \varphi)$ in $\teich(\no_g)$, where $p$ is a hyperbolic surface homeomorphic to $\no_g$, and $\varphi$ is an isotopy class of homeomorphism from $\no_g$ to $p$, we define the image of $(p, \varphi)$ in $\teich(\os_{g-1})$ to be $(\widetilde{p}, \widetilde{\varphi})$, where $\widetilde{p}$ is the orientation double cover of $p$, and $\widetilde{\varphi}$ is the orientation preserving lift of the homeomorphism $\varphi$.
+One can also explicitly describe the image of this map.
+To do so, we consider the extended Teichmüller space of $\os_{g-1}$, i.e. also allowing orientation reversing markings.
+This space has two connected components, one for each orientation, and there is a canonical involution, given by reversing the orientation, that exchanges the two connected components.
+We denote this conjugation map by $\overline{\cdot}$.
+There is another involution, induced by the orientation reversing deck transformation of $\os_{g-1}$, which we denote by $\iota^{\ast}$.
+This map also exchanges the two components of the extended Teichmüller space.
+The image of $\teich(\no_g)$ is precisely the set of points fixed by the composition of these two maps, i.e. $\overline{\iota^{\ast}}$.
+We skip the proof of these two facts, since they follow by relatively elementary covering space arguments, and summarize the result in the following theorem.
+
+\begin{theorem}[Embedding Teichm\"uller spaces]
+  \label{thm:embedding-teich}
+  Given a point $(p, \varphi)$ in $\teich(\no_g)$, there is a unique point $(\widetilde{p}, \widetilde{\varphi})$ in $\teich(\os_{g-1})$, where $\widetilde{p}$ is the pullback of the metric, and $\widetilde{\varphi}$ is the unique orientation preserving lift of the marking. The image of the inclusion map is the intersection of the invariant set of $\overline{\iota^\ast}$ with the connected component of the extended Teichmüller space corresponding to orientation preserving maps.
+\end{theorem}
+
+It turns out that the image of $\teich(\no_g)$ in $\teich(\os_{g-1})$ is an isometrically embedded submanifold, and the geodesic flow can be represented by the action of the diagonal subgroup of $SL(2, \mathbb{R})$.
+
+To understand the Teichm\"uller geodesic flow on $\teich(\no_g)$, we need to determine what the cotangent vectors look like: let $X$ be a point in $\teich(\no_{g})$ and let $\wt{X}$ be the corresponding point in $\teich(\os_{g-1})$.
+Then the map on the extended Teichmüller space induced by the orientation reversing deck transformation maps $\wt{X}$ to $\overline{\wt{X}}$, i.e. the conjugate Riemann surface. Following that with the canonical conjugation map brings us back to $\wt{X}$.
+Let $q$ be a cotangent vector at $\overline{\wt{X}}$, i.e. an anti-holomorphic quadratic differential on the Riemann surface $\overline{\wt{X}}$.
+Pulling back $q$ along the canonical conjugation map gives a holomorphic quadratic differential on $X$.
+In local coordinate chart on $\wt{X}$, this looks like $q(z) dz^2$ if on the corresponding chart on $\overline{\wt{X}}$ it looked like $q(\overline{z}) dz^2$.
+We want this to equal $\iota^{\ast}q$, which will also be a holomorphic quadratic differential on $\wt{X}$.
+If that happens, then $\iota^{\ast} q$ is a cotangent vector to the point $X$ in $\teich(\no_g)$.
+
+\begin{example}[A cotangent vector to a point in $\teich(\no_3)$]
+  Consider the quadratic differential $q$ on a genus two Riemann surface pictured in \autoref{fig:dqd-example}.
+  \begin{figure}[h]
+    \centering
+    \incfig[0.5]{dqd-example}
+    \caption{A quadratic differential $q$ on $\os_2$ given by the slit torus construction.}
+    \label{fig:dqd-example}
+  \end{figure}
+
+  Observe that this particular quadratic differential is the global square of an abelian differential, so it makes sense to talk about the pairing between $\sqrt{q}$ and the homology classes $\{a, a^{\prime}, b, b^{\prime}, c, c^{\prime}\}$.
+  Recall that the action of a mapping class like $\iota$ is merely relabelling homology classes: in this case $\iota$ swaps $a$ with $-a^{\prime}$, $b$ with $b^{\prime}$, and $c$ with $-c^{\prime}$.
+  That gives us the following expressions involving $\sqrt{q}$.
+  \begin{align}
+    \label{eq:back-12}
+    \langle \iota^{\ast}\sqrt{q}, a \rangle &= \langle \sqrt{q}, -a^{\prime} \rangle \\
+    \langle \iota^{\ast}\sqrt{q}, b \rangle &= \langle \sqrt{q}, b^{\prime} \rangle \\
+    \langle \iota^{\ast}\sqrt{q}, c \rangle &= \langle \sqrt{q}, -c^{\prime} \rangle
+  \end{align}
+  On the other hand, the conjugation action conjugates the complex value of each pairing.
+  \begin{align}
+    \label{eq:back-13}
+    \langle \overline{\sqrt{q}}, a \rangle &= \overline{  \langle \sqrt{q}, a \rangle } \\
+    \langle \overline{\sqrt{q}}, b \rangle &= \overline{  \langle \sqrt{q}, b \rangle } \\
+    \langle \overline{\sqrt{q}}, c \rangle &= \overline{  \langle \sqrt{q}, c \rangle }
+  \end{align}
+  For $q$ to be invariant under $\overline{\iota}$, both of the above set of equations must be satisfied, which imposes certain conditions on $q$.
+  For instance, if the complex lengths of $a$ and $a^{\prime}$ to be conjugates of each other, the complex lengths of $b$ and $b^{\prime}$ to be negative conjugates of each other, and forces the complex length of $c$ and $c'$ to be real.
+  Only the quadratic differentials satisfying these constraints will be the cotangent vectors to points in the image of $\teich(\no_3)$.
+
+  To realize the quadratic differential directly as an object on $\no_3$, we can quotient out the flat surface given by $q$ by the orientation reversing deck transformation.
+  Doing that for our example gives the non-orientable flat surface gives the picture seen in \autoref{fig:dqd-no3}.
+  \begin{figure}[h]
+    \centering
+    \incfig[0.5]{dqd-no3}
+    \caption{A quadratic differential on $\no_3$.}
+    \label{fig:dqd-no3}
+  \end{figure}
+\end{example}
+This example suggests what the right definition of a quadratic differential on a non-orientable surface ought to be: in the flat picture, rather than allowing gluing via just the maps $z \mapsto \pm z + c$, we also allow $z \mapsto \pm \overline{z} + c$.
+This leads to the definition of \emph{dianalytic quadratic differentials} (which we'll abbreviate to DQDs).
+
+\begin{definition}[Dianalytic quadratic differential (adapted from \autocite{Wright2015})]
+  A dianalytic quadratic differential is the quotient of a collection of polygons in $\mathbb{C}$, modulo
+  certain equivalences.  The quotienting satisfies the following conditions.
+  \begin{enumerate}[(1)]
+  \item The interiors of the polygons are disjoint.
+  \item Each edge is identified with exactly one other edge, and the mapping must be of one of the following
+    four forms: $z \mapsto z + c$, $z \mapsto -z + c$, $z \mapsto \overline{z} + c$, or
+    $z \mapsto -\overline{z} + c$.
+  \item Extending the edge identification map to a small enough open neighbourhood of a point on the edge
+    should not map it to an open neighbourhood of the image of the point: in other words, it should get mapped
+    to the ``other side'' of the edge.
+  \end{enumerate}
+  Two such quotiented collections of polygons are considered the same if they differ by a composition of the following
+  moves.
+  \begin{enumerate}[(1)]
+  \item A polygon may be translated, rotated by $\pi$ radians, or reflected across the real or imaginary axis.
+  \item A polygon may be cut along a straight line to form two polygons, or two polygons sharing an edge may
+    be glued together to form a single polygon.
+  \end{enumerate}
+\end{definition}
+
+Given a DQD, we can pull it back to the orientation double cover, getting an actual quadratic differential: this operation corresponds to identifying a cotangent vector to a point in $\teich(\no_g)$ to the corresponding cotangent vector in $\teich(\os_{g-1})$.
+
+To verify that $\teich(\no_g)$ is isometrically embedded, all we need to do is verify that the Teichm\"uller geodesic flow takes the quadratic differentials satisfying the symmetry condition $\iota^{\ast}(q) = \overline{q}$ to quadratic differentials that satisfy the symmetry conditions.
+
+\begin{lemma}
+  \label{lem:gt-invariance}
+  If $q$ satisfies $\iota^{\ast}(q) = \overline{q}$, then for any $t$, $\iota^{\ast}(g_tq) = \overline{g_tq}$.
+\end{lemma}
+\begin{proof}
+  Recall that if $q$ satisfies the given condition, we must have the following hold for any homology class $a$.
+  \begin{equation}
+    \label{eq:back-14}
+    \langle \sqrt{q}, \iota(a) \rangle = \overline{ \langle \sqrt{q}, a \rangle}
+  \end{equation}
+  If $q$ is not the global square of an abelian differential, we may have to pass to the holonomy double
+  cover. Observe now what $g_t$ does to $q$.
+  \begin{equation}
+    \label{eq:back-15}
+    \langle \sqrt{g_t q}, \iota(a) \rangle = e^t \mathrm{Re} \langle \sqrt{q}, \iota(a) \rangle + i e^{-t} \mathrm{Im}\langle \sqrt{q}, \iota(a) \rangle
+  \end{equation}
+  Using \eqref{eq:back-14}, we simplify \eqref{eq:back-15} to the following.
+  \begin{align}
+    \label{eq:back-16}
+    \langle \sqrt{g_t q}, \iota(a) \rangle &= e^t \mathrm{Re} \langle \sqrt{q}, a \rangle - i e^{-t} \mathrm{Im}\langle \sqrt{q}, a \rangle \\
+                                           &= \overline{\langle \sqrt{g_tq}, a \rangle}
+  \end{align}
+  This proves the lemma.
+\end{proof}
+\begin{remark}
+  The key idea that diagonal matrices commute:
+  the conjugation action is really multiplication by $
+  \begin{pmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{pmatrix}
+  $ which happens to commute with the diagonal matrices of determinant $1$, which are exactly the matrices
+  corresponding to geodesic flow. On the other hand, the conjugation matrix does not commute with the horocycle
+  flow matrices, and that shows that the horocycle flow is not well defined on the cotangent bundle
+  of $\teich(\no_g)$.
+\end{remark}
+Lemma \ref{lem:gt-invariance} shows that the Teichm\"uller geodesic flow for the cotangent bundle of $\teich(\no_g)$ is the restriction of the geodesic flow for the ambient space $\teich(\os_{g-1})$.
+
+\autoref{thm:embedding-teich} gives us an alternative perspective into the action of $\mcg(\no_g)$ on $\teich(\no_g)$.
+$\mcg(\no_g)$ can be thought of as the subgroup of $\mcg(\os_{g-1})$ that stabilizes a totally real isometrically embedded submanifold $\teich(\no_g)$.
+With this perspective, $\mcg(\no_g)$ can be thought of as the higher dimensional generalization of the subgroups obtained by stabilizing Teichmüller discs, i.e. Veech groups.
+
+We now state a few classical results about measured foliations on non-orientable surfaces that show why the theory diverges significantly from the orientable case.
+
+A measured foliation on a non-orientable surface $\no_g$ is singular foliation along with an associated transverse measure, up to equivalence by Whitehead moves.
+Any leaf of a measured foliation can either be non-compact or compact: in the former case, the closure of the non-compact leaf fills out a subsurface.
+Restricted to the subsurface given by the closure of a non-compact leaf, the foliation is minimal, i.e. the orbit of every point under the flow given by the foliation is dense.
+For a compact leaf, there are two possibilities for the topology of the subsurface containing it: if the closed leaf is the core curve or the boundary curve of an embedded M\"obius strip, then the subsurface is the maximal neighbourhood of the periodic leaf that is foliated by periodic leaves as well, and this turns out to be an embedded M\"obius strip.
+If the compact leaf is not the core curve or the boundary curve of an embedded M\"obius strip, then it is the core curve of an embedded cylinder, and the maximal neighbourhood of the periodic leaf foliated by periodic leaf is an embedded cylinder.
+The identification of leaves with associated subsurfaces lets us decompose a measured foliation into its minimal components.
+Note the slightly confusing terminology: when the minimal component is a M\"obius strip or a cylinder, then the foliation restricted to the component is not minimal, but when the minimal component has higher genus, then the foliation restricted to that component indeed is minimal.
+
+We denote the set of measured foliations on $\no_g$ by $\mf(\no_g)$, the set of foliations whose minimal components do not contain a M\"obius strip by $\mf^+(\no_g)$, and the set of foliations whose minimal components contain at least one M\"obius strip by $\mf^-(\no_g)$.
+Via the standard identification between simple closed curves and measured foliations, we can associate $\mathbb{Q}$-weighted two-sided multicurves on $\no_g$ to a subset of $\mf^+(\no_g)$, denoted by $\mf^+(\no_g, \mathbb{Q})$.
+
+Quotienting out $\mf(\no_g)$ by the $\mathbb{R_+}$-action given by scaling the transverse measure gives us the set of projective measured foliations $\pmf(\no_g)$.
+The subsets $\mf^-(\no_g)$, $\mf^+(\no_g)$, and $\mf^+(\no_g, \QQ)$ are $\mathbb{R}$-invariant, and thus descend to their projective versions $\pmf^-(\no_g)$, $\pmf^+(\no_g)$, and $\pmf^+(\no_g, \QQ)$.
+The set $\pmf(\no_g)$ is the boundary of the Teichm\"uller space of $\no_g$, and admits a continuous mapping class group action.
+It is when considering the mapping class group action that we see differences between the orientable and the non-orientable case.
+
+\begin{theorem}[Proposition 8.9 of \cite{gendulphe_whats_2017}]
+  \label{thm:full-non-minimal}
+  The action of $\mcg(\no_g)$ (for $g \geq 2$) on $\mf(\no_g)$ is not minimal.
+  In fact, the action is not even topologically transitive.
+\end{theorem}
+\begin{remark}
+  The proof of non minimality and topological non-transitivity follow from the fact that one can construct a $\mcg(\no_g)$-invariant continuous function on $\mf(\no_g)$.
+  That is because starting with a foliation in $\mf^+(\no_g)$, it is impossible to approximate an element of $\mf^-(\no_g)$ since one does not have Dehn twists about one-sided curves.
+\end{remark}
+
+One can now consider subspaces of $\mf(\no_g)$ where the $\mcg(\no_g)$ action might be nicer. There are two natural subspaces: $\mf^+(\no_g)$, and $\mf^{-}(\no_g)$.
+Danthony-Nogueira proved the following theorem about $\mf^{-}(\no_g)$ in \cite{ASENS_1990_4_23_3_469_0}.
+
+\begin{theorem}[Theorem II of \cite{ASENS_1990_4_23_3_469_0}]
+  \label{thm:DN90-2}
+  $\mf^{-}(\no_g)$ is an open dense subset of $\mf(\no_g)$ of full Thurston measure.
+\end{theorem}
+
+\autoref{thm:full-non-minimal} and \autoref{thm:DN90-2} suggest that studying the $\mcg(\no_g)$ dynamics restricted to $\mf^{-}(\no_g)$ will be hard since one will not have minimality, or ergodicity with respect to any measure with full support.
+In Section \ref{sec:lower-bound-limit-set}, we get a lower bound for the set on which $\mcg(\no_g)$ acts minimally.
+
+% Given a DQD corresponding a cotangent vector on $\teich(\no_g)$, we define the forward and backward limit points to be the projective classes of the horizontal and vertical foliation of the DQD.
+% Note that the Teichmüller geodesic may accumulate on a set larger than its horizontal and vertical foliation (see \cite{2016arXiv160807945L}, \cite{2013arXiv1312.2305L}, \cite{Lenzhen2008}, and \cite{ChaikaMasurWolf}).
+% Given two projective measured foliations that collectively fill the surface, i.e. have positive intersection number with every closed curve, one can construct a Teichm\"uller geodesic with the two foliations as forward and backward endpoints.
+% This lets us define the notion of the weak convex hull of a subset of $\pmf(\no_g)$ (we borrow this terminology from \cite{farb2002convex}).
+% \begin{definition}[Weak convex hull of set of measured foliations]
+%   Given a subset $P$ of $\pmf(\no_d)$, the weak convex hull of $P$ is the union of the images of all the Teichm\"uller geodesics whose forward and backward endpoints lie in $P$.
+% \end{definition}
+
+% We are interested in understanding what happens to the hyperbolic lengths of certain curves as we move around in the convex hull of $\pmf^+(\no_g)$. Since the description we have of cotangent vectors and convex hulls is
+% via flat geometry, rather than hyperbolic geometry, we need a way to estimate hyperbolic lengths of
+% curves from flat geometry. One way to do so is by estimating moduli of annuli.
+
+\subsection{Limit sets of mapping class groups}
 \label{sec:backgr-limit-sets}
 
 The first results on limit sets of subgroups of mapping class groups were obtained by Masur for handlebody subgroups \cite{masur_1986}, and McCarthy-Papadopoulos for general mapping class subgroups \cite{McCarthy1989}.
@@ -46,9 +261,9 @@ They defined two distinct notions of limit sets; while they did not give distinc
 \end{remark}
 
 Both of these definitions are natural generalizations of the limit sets of Fuchsian groups acting on $\HH^2$.
-In the hyperbolic setting, the two notions coincide, but for mapping class subgroups, the dynamical limit set is a proper subset of the geometric limit set.
+In the hyperbolic setting, the two notions coincide, but for mapping class subgroups, the dynamical limit set may be a proper subset of the geometric limit set.
 
-For simple enough subgroups, one can explicitly work out $\dynlim(\Gamma)$ and $\geolim(\Gamma)$: for instance, when $\Gamma$ is the stabilizer of the Teichmüller disc associated to a Veech surface, $\dynlim(\Gamma)$ is the visual boundary of the Teichmüller, which by Veech dichotomy, only consists of either uniquely ergodic directions on the Veech surface, or the cylinder directions, where the coefficients on the cylinders are their moduli in the surface.
+For simple enough subgroups, one can explicitly work out $\dynlim(\Gamma)$ and $\geolim(\Gamma)$: for instance, when $\Gamma$ is the stabilizer of the Teichmüller disc associated to a Veech surface, $\dynlim(\Gamma)$ is the visual boundary of the Teichmüller disc, which by Veech dichotomy, only consists of either uniquely ergodic directions on the Veech surface, or the cylinder directions, where the coefficients on the cylinders are their moduli in the surface.
 On the other hand, $\geolim(\Gamma)$ consists of all the points in $\dynlim(\Gamma)$, but it additionally contains all possible convex combinations of the cylinders appearing in $\dynlim(\Gamma)$ (see Section 2.1 of \cite{2007math......2034K}).
 
 The gap between $\geolim$ and $\dynlim$ suggests the following expansion operation on subsets of $\pmf$
@@ -79,13 +294,43 @@ In fact, one can construct a domain of discontinuity for the $\Gamma$ action usi
   \end{align*}
 \end{definition}
 
-McCarthy-Papadopoulos also exhibit a domain of discontinuity for the $\Gamma$ action on $\pmf$.
+% McCarthy-Papadopoulos also exhibit a domain of discontinuity for the $\Gamma$ action on $\pmf$.
 \begin{theorem}[Theorem 6.16 of \cite{McCarthy1989}]
   The action of $\Gamma$ on $\pmf \setminus Z(\dynlim(\Gamma))$ is properly discontinuous.
 \end{theorem}
 
-It is not obvious that the action of $\Gamma$ on $Z(\dynlim(\Gamma)) \setminus \dynlim(\Gamma)$ is not properly discontinuous.
+It is not obvious that the action of $\Gamma$ on $Z(\dynlim(\Gamma))$ is not properly discontinuous.
 We prove that is indeed the case when $\Gamma = \mcg(\no_g)$ in Section \ref{sec:domain-discontinuity}, but the general case is unknown.
+
+
+\subsection*{List of notation}
+Here we list the various symbols we will be using throughout the paper.
+\begin{itemize}
+\item[] $\os_g$: The compact orientable surface of genus $g$.
+\item[] $\no_{d}$: The compact non-orientable surface of demigenus $d$.
+\item[] $\iota$: The deck transformation of the orientation double cover of a non-orientable surface.
+\item[] $S$: A compact surface which may or may not be orientable.
+\item[] $\teich(S)$: The Teichm\"uller space of $S$.
+\item[] $\systole(\no_d)$: The set of points in $\teich(\no_d)$ where no one-sided curve is shorter than
+  $\varepsilon$.
+\item[] $g_t$: The Teichm\"uller geodesic flow on quadratic differentials.
+\item[] $\mcg(S)$: The mapping class group of $S$.
+\item[] $\scc(S)$: The set of all simple closed curves on $S$.
+\item[] $\mf(S)$: The space of measured foliations on $S$.
+\item[] $\pmf(S)$: The space of projective measured foliations on $S$.
+\item[] $\mf^+(\no_d)$, $\pmf^+(\no_d)$: The set of (projective) measured foliations on $\no_d$ containing
+  no one-sided leaves.
+\item[] $\mf^-(\no_d)$, $\pmf^-(\no_d)$: The set of (projective) measured foliations on $\no_d$ containing
+  some one-sided leaf.
+\item[] $\mf(S; \QQ)$, $\pmf(S; \QQ)$: The set of all (projective) weighted rational multicurves on $S$.
+\item[] $\geolim(\Lambda)$: The geometric limit set of the discrete group $\Lambda$.
+\item[] $\dynlim(\Lambda)$: The dynamical limit set of the discrete group $\Lambda$.
+\item[] $\ell_{\mathrm{ext}}(M, \gamma)$: The extremal length of $\gamma$ with respect to the complex structure on $M \in \teich(\os_g)$.
+\item[] $\ell_{\mathrm{hyp}}(M, \gamma)$: The hyperbolic length of $\gamma$ with respect to the hyperbolic structure on $M \in \teich(S)$.
+\item[] $\ell_{\mathrm{flat}}(q, \gamma)$: The flat length of $\gamma$ with respect to the flat structure given by the DQD $q$.
+\item[] $o(f)$: A function $g$ is $o(f)$ if $\frac{g}{f}$ goes to $0$ as the value of $f$ goes to $\infty$.
+\item[] $\mu_{c}$: The probability measure on a transverse arc given by the closed curve $c$.
+\end{itemize}
 
 \section{Lower bound for the limit set}
 \label{sec:lower-bound-limit-set}
@@ -120,7 +365,7 @@ Having defined the notion of orientable foliations, we can state the main theore
   Furthermore, if $\lambda_j$ is minimal, but not uniquely ergodic, there exists some other foliation $\lambda_j^{\prime}$ supported on the same topological foliation as $\lambda_j$ that can be approximated by elements of $\pmf^+(\no_g, \QQ)$.
 \end{theorem}
 
-To prove \autoref{thm:rational-approximation}, we will need to describe a method of resolving intersections of curves, and proves some lemmas.
+To prove \autoref{thm:rational-approximation}, we will first need to describe a method of resolving intersections of curves.
 Given two two-sided simple curves $\gamma_1$ and $\gamma_2$, their union will not be a simple curve if $i(\gamma_1, \gamma_2) > 0$.
 However, at each point of intersection, there exist two possible surgeries (see \autoref{fig:surgery-types}) that resolve the intersection.
 \begin{figure}[h]
@@ -827,7 +1072,158 @@ To prove this proposition, we will need to estimate how Dehn twists change inter
 \section{Failure of quasi-convexity for $\systole$}
 \label{sec:fail-quasi-conv}
 
+In the setting of Teichm\"uller geometry, convexity is usually too strong of a requirement.
+For instance, metric balls in Teichm\"uller space are not convex, but merely quasi-convex (see \autocite{lenzhen2011length}).
+\begin{definition}[Quasi-convexity]
+  A subset $S$ of $\overline{\teich(S)}$ is said to be quasi-convex if there is some uniform constant $R > 0$ such that the geodesic segment joining any pair of points in $S$ stays within distance $R$ of $S$.
+\end{definition}
 
+Our goal for this section will be to prove the following theorem.
+\begin{theorem}
+  \label{thm:qc-fail}
+  The set $\systole(\no_g)$ is not quasi-convex for any $\varepsilon > 0$.
+\end{theorem}
+The proof proceeds by constructing surfaces in the convex hull of $\pmf^+(\no_g)$ that have arbitrarily small one-sided curves.
+We use this fact, along with estimates relating Teichm\"uller distances and hyperbolic lengths to obtain failure of quasi convexity.
+
+We begin by finding short curves in the convex hull of $\pmf^+(\no_g)$, for $g \geq 4$\footnote{For $g = 3$, the convex hull is empty, since no two two-sided foliations can fill $\no_3$.}.
+\begin{proposition}
+  \label{prop:very-short-curves}
+  For all $g \geq 4$ and any $\varepsilon > 0$, there exist a point $p$ in the convex hull of $\pmf^+(\no_g)$ such that some one-sided curve has length less than $\varepsilon$ with respect to the metric on $p$.
+\end{proposition}
+
+To prove this result, we will need a lemma that relates hyperbolic and flat lengths.
+\begin{lemma}
+  \label{lem:schwarz}
+  Let $q$ be an area $1$ DQD on $\no_g$, and consider the unique hyperbolic metric with the same conformal structure.
+  Let $A$ be a primitive annulus in $q$, i.e. an annulus whose interior does not pass  through a singularity of the flat metric.
+  Let the modulus of $A$ be $m$.
+  Then the hyperbolic length of the isotopy class of the core curve of the annulus is at most $\frac{\pi}{m}$.
+\end{lemma}
+\begin{proof}[Sketch of proof]
+  Without loss of generality, we can pass to the orientable double cover.
+  This changes the hyperbolic lengths by at most a factor of two.
+  Consider the interior of the annulus as a Riemann surface, and put the unique hyperbolic metric on that surface.
+  With respect to this hyperbolic metric, the length of the core curve is $\frac{\pi}{m}$. Since the interior doesn't contain any singularities, the inclusion map is holomorphic, and holomorphic maps are distance reducing with respect to the hyperbolic metric.
+  This proves the result.
+\end{proof}
+To exhibit short curves in the convex hull of $\pmf^+(\no_g)$, we will find annuli of large modulus whose core curves are the curves we're looking for.
+Lemma \ref{lem:schwarz} will then gives us that the hyperbolic length of those curves are short.
+
+\begin{proof}[Proof of \autoref{prop:very-short-curves}]
+  We will construct DQDs on $\no_g$ such that one can find annuli of arbitrarily high modulus whose core curves are isotopic to a one-sided closed curve traversed twice.
+  By \autoref{lem:schwarz}, the core curves, and therefore the associated one-sided curves will have arbitrarily small hyperbolic lengths.
+  We will also show that the horizontal and vertical foliations of the flat surfaces we
+  construct are in $\overline{\pmf^+(\no_g, \QQ)}$.
+  That will then conclude the proof.
+
+  We construct the examples for $g=4$ and $g=5$ by hand, and then induct from there on.
+
+\subsection*{The $\mathbf{g=4}$ case}
+Consider the DQD on $\no_4$ pictured in \autoref{fig:no4-dqd}.
+Note that the edges labelled $b$, $d$, $b^{\prime}$ and $d^{\prime}$ are identified via the map $z \mapsto -\overline{z} + c$.
+If the lengths of $b$ and $b^{\prime}$, $c$ and $c^{\prime}$, and $d$ and $d^{\prime}$ are set to be equal, that will ensure that the vertical foliation is in $\pmf^+(\no_g, \QQ)$.
+The horizontal foliation is also in $\pmf^+(\no_g, \QQ)$ since it is periodic as well with the core curve being a two-sided curve.
+This shows that the corresponding point in $\teich(\no_4)$ is indeed in the convex hull of $\overline{\pmf^+(\no_4, \QQ)}$.
+Now observe the annulus bounded by the two circles in the picture.
+The core curve $\gamma$ of that annulus is isotopic to the curve obtained by traversing $b^{\prime}$ twice.
+That means if the hyperbolic length of $\gamma$ is $l$, then the hyperbolic length of $b^{\prime}$ is $\frac{l}{2}$.
+Also, by making the length of $b$ and $b^{\prime}$ smaller, and correspondingly making the inner radius of the annulus smaller, we can make the modulus are large as we like, which still stays in the convex hull of $\overline{\pmf^+(\no_4, \QQ)}$.
+This proves the result for the $g=4$ case.
+\begin{figure}[h]
+  \centering
+  \incfig[0.7]{no4-dqd}
+  \caption{A DQD on $\no_4$ with an annulus.}
+  \label{fig:no4-dqd}
+\end{figure}
+
+\subsection*{The $\mathbf{g=5}$ case}
+Consider the DQD on $\no_5$ pictured in \autoref{fig:no5-dqd}.
+We require that the edges labelled $a$, $b$, $c$, and $d$ are glued via the map $z \mapsto z + c$.
+Furthermore, we require that the lengths of $a$, $b$, $c$ and $d$ are equal, and that every vertical geodesic going through the bottom slit also goes through the top slit, which is glued to itself via the map $z \mapsto -\overline{z} + c$.
+Finally, we also require that the top and bottom edges are completely horizontal, and the left and right edges are vertical.
+
+Consider the first return map to the lower slit with respect to the vertical flow.
+Every saddle connection gets mapped to another saddle connection, with its direction reversed, since they all went through the top slit.
+The permutation of the saddle connections is the following.
+\begin{align*}
+  a &\mapsto -d \\
+  d &\mapsto -c \\
+  c &\mapsto -b \\
+  b &\mapsto -a
+\end{align*}
+Note that this is an order $4$ permutation.
+What that means is that if there were a closed vertical geodesic passing through the one-sided curve, it would pass through the one-sided curve exactly $4$ times.
+Since that's even, this would mean the closed geodesic was two-sided.
+This shows that the vertical foliation is completely periodic and contains no one-sided leaf. It's easy to see that the horizontal foliation is periodic without any one-sided leaves as well.
+That means the corresponding point in $\teich(\no_5)$ lies in the convex hull of
+$\overline{\pmf^+(\no_5, \QQ)}$.
+Observe now the annulus in the figure.
+The core curve is the double of the one-sided curve $e$.
+Furthermore, if we make both the slits short, while maintaining all the other properties we listed earlier, we can make the inner radius of the annulus small, getting an annulus with arbitrarily large modulus.
+This proves the result for $d=5$.
+\begin{figure}[h]
+  \centering
+  \incfig[1.4]{no5-dqd}
+  \caption{A DQD on $\no_5$ with an annulus.}
+  \label{fig:no5-dqd}
+\end{figure}
+
+\subsection*{Induction step}
+To prove the result for any higher even genus $g$, cut $\frac{g-4}{2}$ vertical slits on the flat surface pictured in \autoref{fig:no4-dqd}, and glue in a torus.
+This will ensure the resulting surface has the right genus, without changing the upper bound on the length of the one-sided curve that's getting short.
+Furthermore, this only adds other minimal components to the vertical flow, all of which are coming from orientable subsurfaces, and therefore in $\overline{\pmf^+(\no_g, \QQ)}$.
+The horizontal foliation also stays in $\overline{\pmf}^+(\no_g)$ since the horizontal foliation lives on an orientable subsurface.
+Performing the same construction to the example for $\no_5$ lets us achieve any odd genus, and proves the proposition.
+\end{proof}
+
+\begin{remark}
+  In the process of proving the proposition, we constructed a sequence on points in $\teich(\no_g)$ in which a one-sided curve gets progressively shorter.
+  In fact, this also shows that this sequence of points converges to the projective class of the one-sided geodesic that was getting short.
+  This is quite unexpected, because one would normally expect the closure of the convex hull of a closed set to be the set itself.
+  What we have here is that the closure of the convex hull of $\pmf^+(\no_g)$ intersected with the boundary contains points other than $\pmf^+(\no_g)$.
+\end{remark}
+
+To relate Teichm\"uller distance to hyperbolic lengths, we need Wolpert's lemma (\autocite{wolpert1979length})
+\begin{lemma}[Wolpert's Lemma]
+  Let $M$ and $M^{\prime}$ be two points in $\teich(\os_g)$, and let $\gamma$ be a simple closed curve on $\os_g$.
+  Let $R$ be the Teichm\"uller distance between $M$ and $M^{\prime}$. Then the ratio of the hyperbolic length
+  of $\gamma$ and $R$ are related by the following inequalities.
+  \begin{align*}
+    \exp(-2R) \leq \frac{\ell_{\mathrm{hyp}}(M, \gamma)}{\ell_{\mathrm{hyp}}(M^{\prime}, \gamma)} \leq \exp(2R)
+  \end{align*}
+\end{lemma}
+
+Using Proposition \ref{prop:very-short-curves} and Wolpert's lemma, we can prove Theorem
+\ref{thm:qc-fail}.
+\begin{proof}[Proof of Theorem \ref{thm:qc-fail}]
+  Suppose that $\systole(\no_g)$ was indeed quasi-convex.
+  That would mean that there exists some $R > 0$,
+  depending on $\varepsilon$ such that everything in the convex hull of $\pmf^+(\no_g)$ was within $R$
+  distance of some point in $\systole(\no_g)$.  Proposition \ref{prop:very-short-curves} lets us construct a
+  sequence $\{M_i\}$ in the convex hull such that for a fixed one-sided curve $\gamma$, the lengths
+  $\ell_{\mathrm{hyp}}(M_i, \gamma)$ go to $0$. On the other hand, using quasi-convexity, we have a sequence
+  $\{M_{i}^{\prime}\}$ in $\systole(\no_g)$ such that $d_{\mathrm{Teich}}(M_i, M_i^{\prime})$ is less than
+  $R$. Furthermore, since $M_i^{\prime} \in \systole(\no_g)$, $\ell_{\mathrm{hyp}}(M_i^{\prime}, \gamma)$ is at
+  least $\varepsilon$.
+
+  To use Wolpert's lemma, we need to consider the image of $\systole(\no_g)$ and the convex hull of
+  $\pmf^+(\no_g)$ in $\teich(\os_{g-1})$. This is an isometric embedding, so the distance between these two
+  sets will be bounded above by $R$. Passing to the double cover, we will need to work with the lift
+  $\wt{\gamma}$ of $\gamma$, which will have double the hyperbolic length.  Since the length of $\gamma$ goes
+  to $0$ in the sequence $\{M_i\}$, the length of $\wt{\gamma}$ in the image $\wt{M_i}$ of the sequence will
+  also go to $0$. Similarly, since the length of $\gamma$ is bounded below by $\varepsilon$ in
+  $\{M_{i}^{\prime}\}$, the length of $\wt{\gamma}$ will be bounded below by $2 \varepsilon$.
+
+  Using Wolpert's lemma, we have the following inequality.
+  \begin{equation}
+    \label{eq:20}
+    \frac{\ell_{\mathrm{hyp}}(M_i^{\prime})}{\ell_{\mathrm{hyp}}(M_i)} \leq \exp(2R)
+  \end{equation}
+  The numerator of the left hand side is bounded below by $\varepsilon$, while the denominator goes to $0$, but that
+  can't happen since the upper bound is finite, and independent of $i$.
+  This contradiction shows that $\systole(\no_d)$ cannot be quasi-convex.
+\end{proof}
 
 \printbibliography
 
