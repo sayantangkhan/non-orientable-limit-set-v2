@@ -327,7 +327,7 @@ Here we list the various symbols we will be using throughout the paper.
 \item[] $\dynlim(\Lambda)$: The dynamical limit set of the discrete group $\Lambda$.
 \item[] $\ell_{\mathrm{ext}}(M, \gamma)$: The extremal length of $\gamma$ with respect to the complex structure on $M \in \teich(\os_g)$.
 \item[] $\ell_{\mathrm{hyp}}(M, \gamma)$: The hyperbolic length of $\gamma$ with respect to the hyperbolic structure on $M \in \teich(S)$. We will suppress $M$ when it is clear from context.
-\item[] $\el\lflat(q, \gamma)$: The flat length of $\gamma$ with respect to the flat structure given by the DQD $q$. We will suppress $q$ when it is clear from context.
+\item[] $\ell\lflat(q, \gamma)$: The flat length of $\gamma$ with respect to the flat structure given by the DQD $q$. We will suppress $q$ when it is clear from context.
 \item[] $o(f)$: A function $g$ is $o(f)$ if $\frac{g}{f}$ goes to $0$ as the value of $f$ goes to $\infty$.
 \item[] $\mu_{c}$: The probability measure on a transverse arc given by the closed curve $c$.
 \end{itemize}
@@ -1084,13 +1084,13 @@ Our goal for this section will be to prove the following theorem.
   \label{thm:qc-fail}
   The set $\systole(\no_g)$ is not quasi-convex for any $\varepsilon > 0$.
 \end{theorem}
-The proof proceeds by constructing surfaces in the convex hull of $\pmf^+(\no_g)$ that have arbitrarily small one-sided curves.
+The proof proceeds by constructing surfaces in the weak convex hull of $\pmf^+(\no_g)$ that have arbitrarily small one-sided curves.
 We use this fact, along with estimates relating Teichm\"uller distances and hyperbolic lengths to obtain failure of quasi convexity.
 
-We begin by finding short curves in the convex hull of $\pmf^+(\no_g)$, for $g \geq 4$\footnote{For $g = 3$, the convex hull is empty, since no two two-sided foliations can fill $\no_3$.}.
+We begin by finding short curves in the weak convex hull of $\pmf^+(\no_g)$, for $g \geq 4$\footnote{For $g = 3$, the weak convex hull is empty, since no two two-sided foliations can fill $\no_3$.}.
 \begin{proposition}
   \label{prop:very-short-curves}
-  For all $g \geq 4$ and any $\varepsilon > 0$, there exist a point $p$ in the convex hull of $\pmf^+(\no_g)$ such that some one-sided curve has length less than $\varepsilon$ with respect to the metric on $p$.
+  For all $g \geq 4$ and any $\varepsilon > 0$, there exist a point $p$ in the weak convex hull of $\pmf^+(\no_g)$ such that some one-sided curve has length less than $\varepsilon$ with respect to the metric on $p$.
 \end{proposition}
 
 To prove this result, we will need a lemma that relates hyperbolic and flat lengths.
@@ -1108,7 +1108,7 @@ To prove this result, we will need a lemma that relates hyperbolic and flat leng
   With respect to this hyperbolic metric, the length of the core curve is $\frac{\pi}{m}$. Since the interior doesn't contain any singularities, the inclusion map is holomorphic, and holomorphic maps are distance reducing with respect to the hyperbolic metric.
   This proves the result.
 \end{proof}
-To exhibit short curves in the convex hull of $\pmf^+(\no_g)$, we will find annuli of large modulus whose core curves are the curves we're looking for.
+To exhibit short curves in the weak convex hull of $\pmf^+(\no_g)$, we will find annuli of large modulus whose core curves are the curves we're looking for.
 Lemma \ref{lem:schwarz} will then gives us that the hyperbolic length of those curves are short.
 
 \begin{proof}[Proof of \autoref{prop:very-short-curves}]
@@ -1125,11 +1125,11 @@ Consider the DQD on $\no_4$ pictured in \autoref{fig:no4-dqd}.
 Note that the edges labelled $b$, $d$, $b^{\prime}$ and $d^{\prime}$ are identified via the map $z \mapsto -\overline{z} + c$.
 If the lengths of $b$ and $b^{\prime}$, $c$ and $c^{\prime}$, and $d$ and $d^{\prime}$ are set to be equal, that will ensure that the vertical foliation is in $\pmf^+(\no_g, \QQ)$.
 The horizontal foliation is also in $\pmf^+(\no_g, \QQ)$ since it is periodic as well with the core curve being a two-sided curve.
-This shows that the corresponding point in $\teich(\no_4)$ is indeed in the convex hull of $\overline{\pmf^+(\no_4, \QQ)}$.
+This shows that the corresponding point in $\teich(\no_4)$ is indeed in the weak convex hull of $\overline{\pmf^+(\no_4, \QQ)}$.
 Now observe the annulus bounded by the two circles in the picture.
 The core curve $\gamma$ of that annulus is isotopic to the curve obtained by traversing $b^{\prime}$ twice.
 That means if the hyperbolic length of $\gamma$ is $l$, then the hyperbolic length of $b^{\prime}$ is $\frac{l}{2}$.
-Also, by making the length of $b$ and $b^{\prime}$ smaller, and correspondingly making the inner radius of the annulus smaller, we can make the modulus are large as we like, which still stays in the convex hull of $\overline{\pmf^+(\no_4, \QQ)}$.
+Also, by making the length of $b$ and $b^{\prime}$ smaller, and correspondingly making the inner radius of the annulus smaller, we can make the modulus are large as we like, which still stays in the weak convex hull of $\overline{\pmf^+(\no_4, \QQ)}$.
 This proves the result for the $g=4$ case.
 \begin{figure}[h]
   \centering
@@ -1157,12 +1157,12 @@ Note that this is an order $4$ permutation.
 What that means is that if there were a closed vertical geodesic passing through the one-sided curve, it would pass through the one-sided curve exactly $4$ times.
 Since that's even, this would mean the closed geodesic was two-sided.
 This shows that the vertical foliation is completely periodic and contains no one-sided leaf. It's easy to see that the horizontal foliation is periodic without any one-sided leaves as well.
-That means the corresponding point in $\teich(\no_5)$ lies in the convex hull of
+That means the corresponding point in $\teich(\no_5)$ lies in the weak convex hull of
 $\overline{\pmf^+(\no_5, \QQ)}$.
 Observe now the annulus in the figure.
 The core curve is the double of the one-sided curve $e$.
 Furthermore, if we make both the slits short, while maintaining all the other properties we listed earlier, we can make the inner radius of the annulus small, getting an annulus with arbitrarily large modulus.
-This proves the result for $d=5$.
+This proves the result for $g=5$.
 \begin{figure}[h]
   \centering
   \incfig[1.4]{no5-dqd}
@@ -1174,15 +1174,15 @@ This proves the result for $d=5$.
 To prove the result for any higher even genus $g$, cut $\frac{g-4}{2}$ vertical slits on the flat surface pictured in \autoref{fig:no4-dqd}, and glue in a torus.
 This will ensure the resulting surface has the right genus, without changing the upper bound on the length of the one-sided curve that's getting short.
 Furthermore, this only adds other minimal components to the vertical flow, all of which are coming from orientable subsurfaces, and therefore in $\overline{\pmf^+(\no_g, \QQ)}$.
-The horizontal foliation also stays in $\overline{\pmf}^+(\no_g)$ since the horizontal foliation lives on an orientable subsurface.
+The horizontal foliation also stays in $\overline{\pmf^+}(\no_g)$ since the horizontal foliation lives on an orientable subsurface.
 Performing the same construction to the example for $\no_5$ lets us achieve any odd genus, and proves the proposition.
 \end{proof}
 
 \begin{remark}
   In the process of proving the proposition, we constructed a sequence on points in $\teich(\no_g)$ in which a one-sided curve gets progressively shorter.
   In fact, this also shows that this sequence of points converges to the projective class of the one-sided geodesic that was getting short.
-  This is quite unexpected, because one would normally expect the closure of the convex hull of a closed set to be the set itself.
-  What we have here is that the closure of the convex hull of $\pmf^+(\no_g)$ intersected with the boundary contains points other than $\pmf^+(\no_g)$.
+  This is quite unexpected, because one would normally expect the closure of the weak convex hull of a closed set to be the set itself.
+  What we have here is that the closure of the weak convex hull of $\pmf^+(\no_g)$ intersected with the boundary contains points other than $\pmf^+(\no_g)$.
 \end{remark}
 
 To relate Teichm\"uller distance to hyperbolic lengths, we need Wolpert's lemma (\autocite{wolpert1979length})
@@ -1200,15 +1200,15 @@ Using Proposition \ref{prop:very-short-curves} and Wolpert's lemma, we can prove
 \begin{proof}[Proof of Theorem \ref{thm:qc-fail}]
   Suppose that $\systole(\no_g)$ was indeed quasi-convex.
   That would mean that there exists some $R > 0$,
-  depending on $\varepsilon$ such that everything in the convex hull of $\pmf^+(\no_g)$ was within $R$
+  depending on $\varepsilon$ such that everything in the weak convex hull of $\pmf^+(\no_g)$ was within $R$
   distance of some point in $\systole(\no_g)$.  Proposition \ref{prop:very-short-curves} lets us construct a
-  sequence $\{M_i\}$ in the convex hull such that for a fixed one-sided curve $\gamma$, the lengths
+  sequence $\{M_i\}$ in the weak convex hull such that for a fixed one-sided curve $\gamma$, the lengths
   $\ell_{\mathrm{hyp}}(M_i, \gamma)$ go to $0$. On the other hand, using quasi-convexity, we have a sequence
   $\{M_{i}^{\prime}\}$ in $\systole(\no_g)$ such that $d_{\mathrm{Teich}}(M_i, M_i^{\prime})$ is less than
   $R$. Furthermore, since $M_i^{\prime} \in \systole(\no_g)$, $\ell_{\mathrm{hyp}}(M_i^{\prime}, \gamma)$ is at
   least $\varepsilon$.
 
-  To use Wolpert's lemma, we need to consider the image of $\systole(\no_g)$ and the convex hull of
+  To use Wolpert's lemma, we need to consider the image of $\systole(\no_g)$ and the weak convex hull of
   $\pmf^+(\no_g)$ in $\teich(\os_{g-1})$. This is an isometric embedding, so the distance between these two
   sets will be bounded above by $R$. Passing to the double cover, we will need to work with the lift
   $\wt{\gamma}$ of $\gamma$, which will have double the hyperbolic length.  Since the length of $\gamma$ goes
@@ -1223,7 +1223,7 @@ Using Proposition \ref{prop:very-short-curves} and Wolpert's lemma, we can prove
   \end{equation}
   The numerator of the left hand side is bounded below by $\varepsilon$, while the denominator goes to $0$, but that
   can't happen since the upper bound is finite, and independent of $i$.
-  This contradiction shows that $\systole(\no_d)$ cannot be quasi-convex.
+  This contradiction shows that $\systole(\no_g)$ cannot be quasi-convex.
 \end{proof}
 
 \printbibliography
