@@ -326,8 +326,8 @@ Here we list the various symbols we will be using throughout the paper.
 \item[] $\geolim(\Lambda)$: The geometric limit set of the discrete group $\Lambda$.
 \item[] $\dynlim(\Lambda)$: The dynamical limit set of the discrete group $\Lambda$.
 \item[] $\ell_{\mathrm{ext}}(M, \gamma)$: The extremal length of $\gamma$ with respect to the complex structure on $M \in \teich(\os_g)$.
-\item[] $\ell_{\mathrm{hyp}}(M, \gamma)$: The hyperbolic length of $\gamma$ with respect to the hyperbolic structure on $M \in \teich(S)$.
-\item[] $\ell_{\mathrm{flat}}(q, \gamma)$: The flat length of $\gamma$ with respect to the flat structure given by the DQD $q$.
+\item[] $\ell_{\mathrm{hyp}}(M, \gamma)$: The hyperbolic length of $\gamma$ with respect to the hyperbolic structure on $M \in \teich(S)$. We will suppress $M$ when it is clear from context.
+\item[] $\el\lflat(q, \gamma)$: The flat length of $\gamma$ with respect to the flat structure given by the DQD $q$. We will suppress $q$ when it is clear from context.
 \item[] $o(f)$: A function $g$ is $o(f)$ if $\frac{g}{f}$ goes to $0$ as the value of $f$ goes to $\infty$.
 \item[] $\mu_{c}$: The probability measure on a transverse arc given by the closed curve $c$.
 \end{itemize}
@@ -338,14 +338,14 @@ Here we list the various symbols we will be using throughout the paper.
 A natural lower bound for $\dynlim(\no_g)$ is the closure of the set of rational two-sided multicurves $\pmf^+(\no_g, \QQ)$.
 For any $\lambda \in \pmf^+(\no_g, \QQ)$, and any psuedo-Anosov $\gamma$, conjugating $\gamma$ with large enough powers of the Dehn multi-twist given by $\lambda$ gives us a sequence of pseudo-Anosov maps whose stable foliation approaches $\lambda$, which shows that $\dynlim(\no_g)$ must contain $\lambda$.
 Note that the same argument does not work if $\lambda \in \pmf^-(\no_g, \QQ)$, since one cannot Dehn twist about one-sided curves.
-In \autoref{thm:systole-closure}, we show that the geometric limit set is indeed contained in the complement of $\pmf^-(\no_g)$.
+In Section \ref{sec:upper-bound-limit-set}, we show that the geometric limit set is indeed contained in the complement of $\pmf^-(\no_g)$.
 
 In \cite{gendulphe_whats_2017}, Gendulphe made the following conjecture about $\overline{\pmf^+(\no_g, \QQ)}$.
 \begin{conjecture}[Conjecture 9.1 of \cite{gendulphe_whats_2017}]
   \label{conj:gendulphe-1}
   For $g \geq 4$, $\pmf^+(\no_g) = \overline{\pmf^+(\no_g, \QQ)}$.
 \end{conjecture}
-We prove a slightly weaker version of the above conjecture, by describing subset of the foliations that can be approximated by multicurves in $\pmf^+(\no_g, \QQ)$.
+We prove a slightly weaker version of the above conjecture, by describing a subset of the foliations that can be approximated by multicurves in $\pmf^+(\no_g, \QQ)$.
 To state the theorem, we need to define what it means for a foliation to be orientable.
 \begin{definition}[Orientable foliation]
   A foliation $\lambda$ is said to be orientable if there exists a small enough transverse arc $\eta$ such that any leaf exiting from one side of $\eta$ always returns from the other side.
@@ -429,21 +429,21 @@ The next lemma describes the conditions for that to happen.
   \end{figure}
 \end{proof}
 To use \autoref{lem:geodesic-tightening} in our situation, we will additionally need to argue that the lengths of $\alpha^{\prime}$ and $\beta^{\prime}$ are almost the entire length of $\alpha$ and $\beta$ respectively.
-That will show that the geodesic tightening does not affect $\gamma_1 \cup \gamma_2$ too much.
+That will show that the $\kappa$ and $\gamma_1 \cup \gamma_2$ have approximately the same intersection numbers with any simple closed curve (after scaling appropriately).
 
 Given a sequence of curves $\{\gamma_j\}$ converging to a projective measured foliation in $\pmf$, we can also study their convergence in $\mf$, after scaling by an appropriate constant.
 The next lemma shows that it suffices to scale by their hyperbolic length.
 \begin{lemma}
   \label{lem:scaling-lemma}
-  If $\{\gamma_j\}$ converges to a projective measured foliation in $\pmf$, then $\displaystyle \frac{\gamma_j}{l(\gamma_j)}$ converges in $\mf$, possibly after passing to a subsequence. Here $l(\gamma_j)$ denotes the hyperbolic length of $\gamma_j$.
+  If $\{\gamma_j\}$ converges to a projective measured foliation in $\pmf$, then $\displaystyle \frac{\gamma_j}{\lhyp(\gamma_j)}$ converges in $\mf$, possibly after passing to a subsequence.
 \end{lemma}
 \begin{proof}
-  We claim that for any curve $\xi$, $i(\gamma_j, \xi) \leq c \cdot l(\gamma_j)$, where the constant $c$ only depends on the hyperbolic metric.
-  This is because the $l_j$ is bounded below by $i(\gamma_j, \xi) \cdot o_\xi$, where $o_\xi$ is the length of the shortest orthogeodesic arc beginning and ending at $\xi$.
-  As $\xi$ varies among all simple closed curves, $o_\xi$ is bounded below: this follows from hyperbolic trigonometry.
+  We claim that for any curve $\xi$, $i(\gamma_j, \xi) \leq c \cdot \lhyp(\gamma_j)$, where the constant $c$ only depends on the hyperbolic metric.
+  This is because the $\lhyp(\gamma_j)$ is bounded below by $i(\gamma_j, \xi) \cdot o_\xi$, where $o_\xi$ is the length of the shortest orthogeodesic arc beginning and ending at $\xi$.
+  As $\xi$ varies among all simple closed curves, $o_\xi$ is bounded below by an absolute constant: this follows from hyperbolic trigonometry (see \cite{thurston1979geometry}).
   That proves the claim.
 
-  In particular, we have that intersection with $\displaystyle \frac{\gamma_j}{l(\gamma_j)}$ is a bounded transverse measure.
+  In particular, we have that intersection with $\displaystyle \frac{\gamma_j}{\lhyp(\gamma_j)}$ is a bounded transverse measure.
   By compactness of bounded measures, we have convergence after passing to a subsequence.
 \end{proof}
 
@@ -457,14 +457,15 @@ The next lemma shows that it suffices to scale by their hyperbolic length.
   \todo[inline]{Make proof clearer by emphasizing on the importance of the multiplicity $m_j$.}
 \begin{proof}
   Let $\{\gamma_{1j}\}$ and $\{ \gamma_{2j}\}$ be sequences of simple $2$-sided curves converging to $\gamma_1$ and $\gamma_2$ in $\pmf$.
-  We can assume using \autoref{lem:scaling-lemma} that normalizing these curves by their hyperbolic length converges in $\mf$.
+  We can assume without loss of generality that $i(\gamma_{1i}, \gamma_{2j^{\prime}}) > 0$ for all $j$ and $j^{\prime}$ (to see this, Dehn twist one of the curves by a short curve that intersects both of them).
+  We can also assume using \autoref{lem:scaling-lemma} that normalizing these curves by their hyperbolic length converges in $\mf$.
   We pass to a subsequence of $\gamma_{2j}$ such that after passing to the subsequence,
   the following holds.
   \begin{align}
     \label{eq:1}
-    \lim_{i \to \infty} \frac{l(\gamma_{2j})}{l(\gamma_{1j})} = \infty
+    \lim_{i \to \infty} \frac{\lhyp(\gamma_{2j})}{\lhyp(\gamma_{1j})} = \infty
   \end{align}
-  We take the union of $m_j$ parallel copies of $\gamma_{1j}$ and $1$ copy of $\gamma_{2j}$, where we pick $m_j$ such the fraction $\displaystyle \frac{m_j \cdot l(\gamma_{1j})}{l(\gamma_{2j})}$ is as close to $\displaystyle \frac{c_1}{c_2}$ as possible.
+  We take the union of $m_j$ parallel copies of $\gamma_{1j}$ and $1$ copy of $\gamma_{2j}$, where we pick $m_j$ such the fraction $\displaystyle \frac{m_j \cdot \lhyp(\gamma_{1j})}{\lhyp(\gamma_{2j})}$ is as close to $\displaystyle \frac{c_1}{c_2}$ as possible.
   Equation \eqref{eq:1} will ensure that the ratio of the lengths (with multiplicities) will approach $\displaystyle \frac{c_1}{c_2}$ as $i$ goes to $\infty$.
 
   We now resolve the intersections of the $m_j$ copies of $\gamma_{1j}$ and $\gamma_{2j}$ so that the resulting multicurve has only one component.
@@ -481,18 +482,18 @@ The next lemma shows that it suffices to scale by their hyperbolic length.
   To show that $\kappa_j$ converges to $c_1 \gamma_1 + c_2 \gamma_2$ in $\pmf$, we need to show that the following limit holds for all simple closed curves $\xi$.
   \begin{align}
     \label{eq:2}
-    \lim_{i \to \infty} \frac{i(\kappa_j, \xi)}{m_j \cdot l(\gamma_{1j}) + l(\gamma_{2j})}
-    = \lim_{i \to \infty} c_1 \frac{i(\gamma_{1j}, \xi)}{l(\gamma_{1j})} + c_2 \frac{i(\gamma_{2j}, \xi)}{l(\gamma_{2j})}
+    \lim_{j \to \infty} \frac{i(\kappa_j, \xi)}{m_j \cdot \lhyp(\gamma_{1j}) + \lhyp(\gamma_{2j})}
+    = \lim_{j \to \infty} \left( c_1 \frac{i(\gamma_{1j}, \xi)}{\lhyp(\gamma_{1j})} + c_2 \frac{i(\gamma_{2j}, \xi)}{\lhyp(\gamma_{2j})} \right)
   \end{align}
   The equality replaced with an inequality in one direction is easy to see: namely, the left hand side is less than or equal to the right hand side.
   This is because resolving intersections can only reduce the intersection number with any given simple closed curve.
   Thus, we only need to prove the other inequality to prove the lemma.
   \begin{align}
     \label{eq:3}
-    \lim_{i \to \infty} \frac{i(\kappa_j, \xi)}{m_j \cdot l(\gamma_{1j}) + l(\gamma_{2j})}
-    \geq \lim_{i \to \infty} c_1 \frac{i(\gamma_{1j}, \xi)}{l(\gamma_{1j})} + c_2 \frac{i(\gamma_{2j}, \xi)}{l(\gamma_{2j})}
+    \lim_{j \to \infty} \frac{i(\kappa_j, \xi)}{m_j \cdot \lhyp(\gamma_{1j}) + \lhyp(\gamma_{2j})}
+    \geq \lim_{j \to \infty} \left( c_1 \frac{i(\gamma_{1j}, \xi)}{\lhyp(\gamma_{1j})} + c_2 \frac{i(\gamma_{2j}, \xi)}{\lhyp(\gamma_{2j})} \right)
   \end{align}
-  Let $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ denote the segments of $\gamma_{1j}$ and $\gamma_{2j}$ that fellow travel within distance $4\delta$ after intersecting, and denote their complements in $\gamma_{1j}$ and $\gamma_{2j}$ by $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$.
+  Let $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ denote the segments of lifts to $\HH^2$ of $\gamma_{1j}$ and $\gamma_{2j}$ that fellow travel within distance $4\delta$ after intersecting, and denote their complements in $\gamma_{1j}$ and $\gamma_{2j}$ by $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$.
   \autoref{lem:geodesic-tightening} tells us that the geodesic representative of $\kappa_j$ will be within bounded distance of $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$.
   For $j$ large enough, we can ensure that the angle of intersection of $\xi$ and $\gamma_{1j}$ and $\gamma_{2j}$ is larger than $\varepsilon_\xi$ for some $\varepsilon_\xi > 0$, where the angle $\varepsilon_\xi$ depends on $\xi$.
   That means we can make $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ longer by a fixed amount, depending on $\varepsilon_\xi$ (and make $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$ correspondingly shorter) such that whenever $\xi$ intersects $\gamma_{1j}^{\prime \prime}$ or $\gamma_{2j}^{\prime \prime}$, it also intersects $\kappa_j$.
@@ -509,38 +510,38 @@ The next lemma shows that it suffices to scale by their hyperbolic length.
   \end{align*}
   We claim that $\err{\xi, j}$ is $o(m_j \cdot  i(\gamma_{1j}, \xi) + i(\gamma_{2j}, \xi))$: this will prove inequality \eqref{eq:3} and thus the lemma.
 
-  To begin with, we show that the lengths of $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ are $o(l(\gamma_{1j}))$ and $o(l(\gamma_{2j}))$.
-  Suppose it was not the case, and $\displaystyle \frac{l(\gamma_{1j}^{\prime})}{\gamma_{1j}} \geq k_1$, for some positive constant $k_1$.
+  To begin with, we show that the lengths of $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ are $o(\lhyp(\gamma_{1j}))$ and $o(\lhyp(\gamma_{2j}))$.
+  Suppose it was not the case, and $\displaystyle \frac{\lhyp(\gamma_{1j}^{\prime})}{\lhyp(\gamma_{1j})} \geq k_1$, for some positive constant $k_1$.
   Then any short transverse arc that only intersected $\gamma_{1j}^{\prime}$ would get assigned a positive measure as $j$ went to $\infty$.
-  Since the lengths of $m_j \cdot \gamma_{1j}$ and $\gamma_{2j}$ approach a fixed ratio, we would have that $\displaystyle \frac{l(\gamma_{2j}^{\prime})}{\gamma_{2j}} \geq k_2$ for some other positive constant $k_2$.
+  Since the lengths of $m_j \cdot \gamma_{1j}$ and $\gamma_{2j}$ approach a fixed ratio, we would have that $\displaystyle \frac{\lhyp(\gamma_{2j}^{\prime})}{\lhyp(\gamma_{2j})} \geq k_2$ for some other positive constant $k_2$.
   Thus the same short arc would also get assigned a positive measure by $\gamma_{2j}$ as $j$ went to $\infty$.
   This means that the transverse measure given $\gamma_1$ decomposes as $\gamma_1{\prime} + \gamma_1^{\prime \prime}$, where $\gamma_1^{\prime}$ is the limit of the transverse measures given by $\gamma_{1j}^{\prime}$ and $\gamma_1^{\prime \prime}$ is the limit of the transverse measures given by the limit of $\gamma_{1j}^{\prime \prime}$.
   We get a similar decomposition of $\gamma_2$ into $\gamma_2^{\prime} + \gamma_2^{\prime \prime}$.
   Our argument shows that $\gamma_{1}^{\prime}$ and $\gamma_2^{\prime}$ are absolutely continuous with respect to each other.
-  But this violates mutual singularity of the measures $\gamma_1$ and $\gamma_2$, and therefore, the lengths of $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ must be $o(l(\gamma_{1j}))$ and $o(l(\gamma_{2j}))$ respectively.
+  But this violates mutual singularity of the measures $\gamma_1$ and $\gamma_2$, and therefore, the lengths of $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ must be $o(\lhyp(\gamma_{1j}))$ and $o(\lhyp(\gamma_{2j}))$ respectively.
   We sum up the result of this argument in the following inequalities.
   \begin{align}
     \label{eq:5}
-    \lim_{j \to \infty} \frac{l(\gamma_{1j}^{\prime})}{l(\gamma_{1j})} &= 0 \\
+    \lim_{j \to \infty} \frac{\lhyp(\gamma_{1j}^{\prime})}{\lhyp(\gamma_{1j})} &= 0 \\
     \label{eq:6}
-    \lim_{j \to \infty} \frac{l(\gamma_{2j}^{\prime})}{l(\gamma_{2j})} &= 0 \\
+    \lim_{j \to \infty} \frac{\lhyp(\gamma_{2j}^{\prime})}{\lhyp(\gamma_{2j})} &= 0 \\
   \end{align}
 
   The bound on the length of $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ also gives a bound on $i(\xi, \gamma_{1j}^{\prime})$ and $i(\xi, \gamma_{2j}^{\prime})$.
   This follows from the fact that the intersection number of any arc with a fixed curve is bounded above by a constant times the length of the arc, where the constant depends on the curve.
   \begin{align}
     \label{eq:7}
-    i(\xi, \gamma_{1j}^{\prime}) &\leq c_\xi l(\gamma_{1j}^{\prime}) \\
+    i(\xi, \gamma_{1j}^{\prime}) &\leq c_\xi \lhyp(\gamma_{1j}^{\prime}) \\
     \label{eq:8}
-    i(\xi, \gamma_{2j}^{\prime}) &\leq c_\xi l(\gamma_{2j}^{\prime}) \\
+    i(\xi, \gamma_{2j}^{\prime}) &\leq c_\xi \lhyp(\gamma_{2j}^{\prime}) \\
   \end{align}
 
   Finally, \autoref{lem:scaling-lemma} gives us an upper bound for the ratio between intersection number and length of $\gamma_{1j}$ and $\gamma_{2j}$.
   \begin{align}
     \label{eq:9}
-    \frac{l(\gamma_{1j})}{i(\xi, \gamma_{1j})} &\leq k \\
+    \frac{\lhyp(\gamma_{1j})}{i(\xi, \gamma_{1j})} &\leq k \\
     \label{eq:10}
-    \frac{l(\gamma_{2j})}{i(\xi, \gamma_{2j})} &\leq k \\
+    \frac{\lhyp(\gamma_{2j})}{i(\xi, \gamma_{2j})} &\leq k \\
   \end{align}
   Multiplying \eqref{eq:5}, \eqref{eq:7}, and \eqref{eq:9}, and \eqref{eq:6}, \eqref{eq:8}, and \eqref{eq:10} proves the claim about the error term, and therefore the lemma.
 \end{proof}
@@ -568,7 +569,7 @@ Given an orbit of a point $p$ under the $T$-action of length $L$, we can constru
 One might expect that if a point $p$ equidistributes, then a long orbit measure starting at $p$ will be ``close'' to an invariant measure.
 We formalize this notion by metrizing the Banach space of signed finite measures on $\eta$.
 \begin{definition}[Lèvy-Prokhorov metric]
-  Define $\norm{\cdot}_{\mathrm{BL}}$ to be the following norm on the space of continuous functions on $\eta$.
+  Define $\norm{\cdot}_{\mathrm{BL}}$ denote the bounded Lipschitz norm on the space of continuous functions on $\eta$.
   \begin{align*}
     \norm{f}_{\mathrm{BL}} \coloneqq \norm{f}_{\infty} + \sup_{x \neq y} \frac{\left| f(x) - f(y) \right|}{\left| x - y \right|}
   \end{align*}
@@ -615,7 +616,7 @@ We now prove a lemma that gives us a criterion for deducing when a long orbit me
   \end{align*}
   Observe that the weighted average of $\mu_{p_{ij}, L_{ij}}$ will differ from the weighted average of $\iota_{ij}$ by at most $\frac{\varepsilon}{k}$.
   Also note that all the invariant measures $\iota_{ij}$ are distance at least $\varepsilon - \frac{\varepsilon}{k}$ from $\nu$.
-  Since $\nu$ is the vertex of a finite-dimensional convex set, any weighted average of the $\iota_{ij}$ must be at least distance $\frac{\varepsilon}{k^{\prime}}$ from $\nu$, where $k^{\prime}$ is a positive number depending on the geometry of the convex set.
+  Since $\nu$ is the vertex of a finite-dimensional convex set, any weighted average of the $\iota_{ij}$ must be at least distance $\frac{\varepsilon}{k^{\prime}}$ from $\nu$, where $k^{\prime}$ is a positive number depending on the geometry of the convex set of invariant probability measures.
   By picking $k > 2k^{\prime}$ we can ensure that any weighted average of the $\mu_{p_{ij}, L_{ij}}$ must be at least distance $\frac{\varepsilon}{2k^{\prime}}$ from $\nu$.
   But this would contradict our hypothesis that the measures $\mu_i$ converge to $\nu$.
   That would that there exists some subsequence of $\mu_{p_{ij}, L_{ij}}$ that converges to $\nu$, which proves the lemma.
@@ -623,7 +624,7 @@ We now prove a lemma that gives us a criterion for deducing when a long orbit me
 
 We now consider a tricky special case we are forced to reckon with when approximating ergodic foliations with simple closed curves.
 Let $\lambda$ be a minimal foliation and $\eta$ a transverse arc.
-Let $q$ be a dianalytic quadratic differential structure on $\no_g$ such that $\lambda$ is the vertical foliation, and $\eta$ is a horizontal arc of flat length $1$.
+Let $q$ be a DQD on $\no_g$ such that $\lambda$ is the vertical foliation, and $\eta$ is a horizontal arc of flat length $1$.
 Let $a$ be a leaf starting at the left endpoint $p$ of $\eta$ and going up, and suppose it comes back from the top intersecting $\eta$ a point $q$ which is distance $\varepsilon \ll 1$ from the left endpoint (possibly after intersecting $\eta$ several times).
 Let $c$ be the simple closed curve obtained by concatenating $a$ and the horizontal arc joining $p$ and $q$ (see \autoref{fig:bad-situation}).
 \begin{figure}[h]
@@ -636,7 +637,7 @@ The curve $c$ is clearly not close to the flat or hyperbolic geodesic representa
 One obvious way to make $c$ shorter without changing its homotopy type is to flow the arc joining $p$ and $q$ along the foliation until it encounters a singularity, at which point we stop.
 We label the new endpoints $p^{\prime}$ and $q^{\prime}$, and define a new closed curve $c^{\prime}$ by starting at $p^{\prime}$, flowing along the vertical foliation until $q^{\prime}$ and then flowing horizontally back to $p^{\prime}$.
 We consider the transverse probability measures on $\eta$ given by intersection with $c$, $c^{\prime}$, and their hyperbolic geodesic representative, which we denote $c^{\prime \prime}$.
-We denote these measures by $\mu_c$, $\mu_{c^{\prime}}$, and $\mu_{c^{\prime \prime}}$ respectively.
+We denote the associated transverse probability measures on $\eta$ by $\mu_c$, $\mu_{c^{\prime}}$, and $\mu_{c^{\prime \prime}}$ respectively.
 The following lemma states that the $\mu_{c^{\prime}}$ and $\mu_{c^{\prime \prime}}$ are approximately equal.
 
 \begin{lemma}
@@ -662,26 +663,26 @@ The following lemma states that the $\mu_{c^{\prime}}$ and $\mu_{c^{\prime \prim
 The next lemma links the ratio of the flat lengths of $c$ and $c^{\prime}$ to the measures $\mu_c$ and $\mu_{c^{\prime}}$.
 \begin{lemma}
   \label{lem:absolute-continuity}
-  Consider a sequence of $\varepsilon$ going to $0$ such that $\displaystyle \frac{l_{\mathrm{flat}}(c^{\prime})}{l_{\mathrm{flat}}(c)} \geq \nu > 0$ and both $\mu_c$ and $\mu_{c^{\prime}}$ converge.
+  Consider a sequence of $\varepsilon$ going to $0$ such that $\displaystyle \frac{\lflat(c^{\prime})}{\lflat(c)} \geq \nu > 0$ and both $\mu_c$ and $\mu_{c^{\prime}}$ converge.
   Then $\lim_{\varepsilon \to 0} \mu_{c^{\prime}}$ is absolutely continuous with respect to $\lim_{\varepsilon \to 0} \mu_c$.
 \end{lemma}
 \begin{proof}
   Consider a sub-interval $\eta^{\prime}$ of $\eta$ such that $\lim_{\varepsilon \to 0}\mu_c(\eta^{\prime}) = 0$.
   We need to show that the same holds for the limit of the measures $\mu_{c^{\prime}}$.
   Let $i(c, \eta)$ and $i(c, \eta^{\prime})$ be the number of times $c$ intersects $\eta$ and $\eta^{\prime}$, and let $i(c^{\prime}, \eta)$ and $i(c^{\prime}, \eta^{\prime})$ be defined similarly.
-  Since we are working with a fixed dianalytic quadratic differential, the intersection number of a vertical arc with $\eta$ is bounded above and below by the flat length of the vertical arc times a positive constant depending only on $\eta$ (the positive constants are the maximum and minimum heights of the rectangles obtained when representing the flat structure as a zippered rectangle).
+  Since we are working with a fixed DQD, the intersection number of a vertical arc with $\eta$ is bounded above and below by the flat length of the vertical arc times a positive constant depending only on $\eta$ (the positive constants are the maximum and minimum heights of the rectangles obtained when representing the flat structure as a zippered rectangle).
   \begin{align}
     \label{eq:11}
-    \alpha_{\eta} l_{\mathrm{flat}}(c) \leq &i(c, \eta) \leq \beta_{\eta} l_{\mathrm{flat}}(c) \\
+    \alpha_{\eta} \lflat(c) \leq &i(c, \eta) \leq \beta_{\eta} \lflat(c) \\
     \label{eq:12}
-    \alpha_{\eta} l_{\mathrm{flat}}(c^{\prime}) \leq &i(c^{\prime}, \eta) \leq \beta_{\eta} l_{\mathrm{flat}}(c^{\prime})
+    \alpha_{\eta} \lflat(c^{\prime}) \leq &i(c^{\prime}, \eta) \leq \beta_{\eta} \lflat(c^{\prime})
   \end{align}
   Using the inequality in the hypothesis, and \eqref{eq:11} and \eqref{eq:12}, we get the following chain of inequalities.
   \begin{align*}
     \frac{i(c^{\prime}, \eta^{\prime})}{i(c^{\prime}, \eta)}
     &\leq \frac{i(c, \eta^{\prime})}{i(c^{\prime}, \eta)} \\
-    &\leq \frac{1}{\alpha_{\eta}} \cdot \frac{i(c, \eta^{\prime})}{l_{\mathrm{flat}}(c^{\prime})} \\
-    &\leq \frac{1}{\alpha_{\eta} \nu} \cdot \frac{i(c, \eta^{\prime})}{l_{\mathrm{flat}}(c)} \\
+    &\leq \frac{1}{\alpha_{\eta}} \cdot \frac{i(c, \eta^{\prime})}{\lflat(c^{\prime})} \\
+    &\leq \frac{1}{\alpha_{\eta} \nu} \cdot \frac{i(c, \eta^{\prime})}{\lflat(c)} \\
     &\leq \frac{\beta_{\eta}}{\alpha_{\eta} \nu} \cdot \frac{i(c, \eta^{\prime})}{i(c, \eta)}
   \end{align*}
   The right hand side goes to $0$ as $\varepsilon$ goes to $0$, proving absolute continuity of the limiting measure.
@@ -749,7 +750,7 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
   Denote the geodesic tightening by $c_i^{\prime \prime}$, and consider an intermediate closed curve $c_i^{\prime}$ in the same homotopy class as described in \autoref{lem:flat-length-tightening} and \autoref{lem:absolute-continuity}.
   We have by assumption that $\mu_{c_i}$ converges to an ergodic measure.
   If the ratio of the flat lengths of $c_i$ and $c_i^{\prime}$ is bounded away from $0$, possibly up to a subsequence, then \autoref{lem:absolute-continuity} tells us that $\mu_{c_i^{\prime}}$ converges to the ergodic measure, and \autoref{lem:flat-length-tightening} tells us the transverse measure associated to the hyperbolic geodesic representative is also ergodic.
-  If $l_{\mathrm{flat}}(c_i^{\prime \prime})$ is $o(l_{\mathrm{flat}}(c_i))$, we still have that $\mu_{c_i^{\prime \prime}}$ converges up to a subsequence, since $l(c_i^{\prime \prime})$ goes to $\infty$, but it may converge to some other measure supported on the same underlying topological foliation.
+  If $\lflat(c_i^{\prime \prime})$ is $o(\lflat(c_i))$, we still have that $\mu_{c_i^{\prime \prime}}$ converges up to a subsequence, since $l(c_i^{\prime \prime})$ goes to $\infty$, but it may converge to some other measure supported on the same underlying topological foliation.
   This proves the furthermore case of theorem.
   If $\lambda_j$ is actually uniquely ergodic, there is only one measure in the simplex of invariant probability measures, namely the uniquely ergodic one, and therefore $\mu_{g_i}$ is forced to converge to it.
 
@@ -829,11 +830,11 @@ The key idea of the proof is proving a quantitative estimate on the Fenchel-Niel
   We can bound the length of $p_3$ above and below via the lengths of the orthogeodesic $p_4$ and the length of $p_0$.
  \begin{equation}
    \label{eq:up-1}
-   l(p_0) \leq l(p_3) \leq l(p_4) + l(p_0)
+   \lhyp(p_0) \leq \lhyp(p_3) \leq \lhyp(p_4) + \lhyp(p_0)
  \end{equation}
  Observe that we get the upper bound by observing that the red and cyan arcs are isotopic to $p_3$ relative to their endpoints being fixed.
- The cyan arcs have length at most $l(p_0)$, in this setting; if one allowed a twist parameter, the length of the cyan arcs would be proportional to the twist parameters.
- The point of this inequality is that we can estimate $l(p_4)$ using $l(p_0)$, $l(p_1)$ and $l(p_2)$ via hyperbolic trigonometry.
+ The cyan arcs have length at most $\lhyp(p_0)$, in this setting; if one allowed a twist parameter, the length of the cyan arcs would be proportional to the twist parameters.
+ The point of this inequality is that we can estimate $\lhyp(p_4)$ using $\lhyp(p_0)$, $\lhyp(p_1)$ and $\lhyp(p_2)$ via hyperbolic trigonometry.
  Cut the pair of pants along the seams, to get a hyperbolic right-angled hexagon, pictured in \autoref{fig:hexagon}.
  \begin{figure}[h]
    \centering
@@ -842,7 +843,7 @@ The key idea of the proof is proving a quantitative estimate on the Fenchel-Niel
    \label{fig:hexagon}
  \end{figure}
 
- To get good estimates on $l(p_4)$, we need a universal lower bound on the fraction $f$ as we move in the Teichm\"uller space.
+ To get good estimates on $\lhyp(p_4)$, we need a universal lower bound on the fraction $f$ as we move in the Teichm\"uller space.
  The analysis splits up into two cases, but it's not \emph{a~priori} clear that these two cases are exhaustive.
  We will deal with the two cases, and then show that any other case can be reduced to the second case by changing $p_1$ and $p_2$.
 
@@ -857,52 +858,52 @@ In this case, we can pass to a subsequence of $\{m_i\}$ such that the correspond
 In the former case, we focus on $p_1$, and in the latter case, we focus on $p_2$.
 Without loss of generality, we'll suppose $f \geq \frac{1}{2}$.
 In that case, we cut along the orthogeodesic $p_4$, and get a hyperbolic right-angled pentagon, which is the top half of \autoref{fig:hexagon}.
-We can relate the lengths of $l(p_0)$, $l(p_1)$, and $l(p_4)$ using the following identity for hyperbolic right-angled pentagons (see \cite{thurston1979geometry} for the details).
+We can relate the lengths of $\lhyp(p_0)$, $\lhyp(p_1)$, and $\lhyp(p_4)$ using the following identity for hyperbolic right-angled pentagons (see \cite{thurston1979geometry} for the details).
 \begin{align}
   \label{eq:pentagon}
-  \sinh\left( f \cdot l(p_0) \right)  \cdot \sinh\left( \frac{l(p_4)}{2} \right)  = \cosh\left( \frac{l(p_1)}{2} \right)
+  \sinh\left( f \cdot \lhyp(p_0) \right)  \cdot \sinh\left( \frac{\lhyp(p_4)}{2} \right)  = \cosh\left( \frac{\lhyp(p_1)}{2} \right)
 \end{align}
-Now suppose that $l(p_0)$ does not go to $0$.
-Then we must have that for all $m_i$, $l(p_0) \geq 2\varepsilon$ for some $\varepsilon > 0$. By the lower bound on $f$, we have that the first term on the left hand side of the above expression is bounded below by $\varepsilon$.
-Rearranging the terms gives us the following upper bound on $l(p_4)$.
+Now suppose that $\lhyp(p_0)$ does not go to $0$.
+Then we must have that for all $m_i$, $\lhyp(p_0) \geq 2\varepsilon$ for some $\varepsilon > 0$. By the lower bound on $f$, we have that the first term on the left hand side of the above expression is bounded below by $\varepsilon$.
+Rearranging the terms gives us the following upper bound on $\lhyp(p_4)$.
 \begin{equation}
   \label{eq:up-2}
-  l(p_4) \leq 2 \cdot \sinh^{-1} \left( \frac{\cosh \left( \frac{l(p_1)}{2} \right)}{\varepsilon} \right)
+  \lhyp(p_4) \leq 2 \cdot \sinh^{-1} \left( \frac{\cosh \left( \frac{\lhyp(p_1)}{2} \right)}{\varepsilon} \right)
 \end{equation}
-Using \eqref{eq:up-1} and \eqref{eq:up-2}, we get an upper bound for $l(p_3)$.
+Using \eqref{eq:up-1} and \eqref{eq:up-2}, we get an upper bound for $\lhyp(p_3)$.
 \begin{equation}
   \label{eq:up-3}
-  l(p_3) \leq l(p_0) +
-  2 \sinh^{-1} \left( \frac{\cosh \left( \frac{l(p_1)}{2} \right)}{\varepsilon} \right)
+  \lhyp(p_3) \leq \lhyp(p_0) +
+  2 \sinh^{-1} \left( \frac{\cosh \left( \frac{\lhyp(p_1)}{2} \right)}{\varepsilon} \right)
 \end{equation}
 
 Since $\frac{i(p_0, \lambda)}{i(p_3, \lambda)} = 0$, as $\{m_i\}$ approaches $\lambda$, the ratio of lengths of $p_0$ and $p_3$ approach $0$.
 \begin{equation}
   \label{eq:up-4}
-  \lim_{i \to \infty} \frac{l(p_0)}{l(p_3)} = 0
+  \lim_{i \to \infty} \frac{\lhyp(p_0)}{\lhyp(p_3)} = 0
 \end{equation}
-Using \eqref{eq:up-3}, we can find a lower bound for $\frac{l(p_0)}{l(p_3)}$, which goes to $0$ by \eqref{eq:up-4}.
+Using \eqref{eq:up-3}, we can find a lower bound for $\frac{\lhyp(p_0)}{\lhyp(p_3)}$, which goes to $0$ by \eqref{eq:up-4}.
 \begin{equation}
   \label{eq:up-5}
-  \lim_{i \to \infty} \frac{l(p_0)}{  l(p_0) +
-  2 \sinh^{-1} \left( \frac{\cosh \left( \frac{l(p_1)}{2} \right)}{\varepsilon} \right)} = 0
+  \lim_{i \to \infty} \frac{\lhyp(p_0)}{  \lhyp(p_0) +
+  2 \sinh^{-1} \left( \frac{\cosh \left( \frac{\lhyp(p_1)}{2} \right)}{\varepsilon} \right)} = 0
 \end{equation}
-Since we assumed that the length coordinate $l(p_0)$ is bounded away from $0$, the only way the above expression can go to $0$ if $l(p_1)$ goes to $\infty$.
+Since we assumed that the length coordinate $\lhyp(p_0)$ is bounded away from $0$, the only way the above expression can go to $0$ if $\lhyp(p_1)$ goes to $\infty$.
 This is where the hypotheses of the Case I come in.
 Since $i(p_1, \lambda)$ is $0$, the following equality must hold.
 \begin{equation}
   \label{eq:up-6}
-  \lim_{i \to \infty} \frac{l(p_1)}{l(p_3)} = 0
+  \lim_{i \to \infty} \frac{\lhyp(p_1)}{\lhyp(p_3)} = 0
 \end{equation}
-This means the lower bound for $\frac{l(p_1)}{l(p_3)}$ must go to $0$.
+This means the lower bound for $\frac{\lhyp(p_1)}{\lhyp(p_3)}$ must go to $0$.
 \begin{equation}
   \label{eq:up-7}
-   \lim_{i \to \infty} \frac{l(p_1)}{  l(p_0) +
-  2 \sinh^{-1} \left( \frac{\cosh \left( \frac{l(p_1)}{2} \right)}{\varepsilon} \right)
+   \lim_{i \to \infty} \frac{\lhyp(p_1)}{  \lhyp(p_0) +
+  2 \sinh^{-1} \left( \frac{\cosh \left( \frac{\lhyp(p_1)}{2} \right)}{\varepsilon} \right)
   } = 0
 \end{equation}
-But this can't happen if $l(p_1)$ approaches $\pm \infty$.
-This contradiction means our assumption that both $l(p_0)$ and $\tau(p_0)$ were bounded away from $0$ and $\pm \infty$ must be wrong, and thus proves the result in Case I.
+But this can't happen if $\lhyp(p_1)$ approaches $\pm \infty$.
+This contradiction means our assumption that both $\lhyp(p_0)$ and $\tau(p_0)$ were bounded away from $0$ and $\pm \infty$ must be wrong, and thus proves the result in Case I.
 
 \subsection*{Case II}
 We're in this case if the following inequality holds.
@@ -913,25 +914,25 @@ We're in this case if the following inequality holds.
 The picture in this case looks similar to \autoref{fig:hexagon}.
 However, we can't necessarily pass to a subsequence where $f \geq \frac{1}{2}$ (and the trick of working with $1-f$ won't work, since we know nothing about $p_2$).
 This is one of the points where the hypothesis on $p_1$ comes in.
-Since $\frac{i(p_2, \lambda)}{i(p_1, \lambda)}$ is finite, we must have that the ratio of lengths $\frac{l(p_2)}{l(p_1)}$ approaches some finite value as well.
-The fraction $f$ is a continuous function of $\frac{l(p_2)}{l(p_1)}$, approaching $0$ only as the ratio approaches $\infty$ (this follows from the same identity as \eqref{eq:pentagon}). Since the ratio approaches a finite value, we have a positive lower bound $f_0$ for $f$.
+Since $\frac{i(p_2, \lambda)}{i(p_1, \lambda)}$ is finite, we must have that the ratio of lengths $\frac{\lhyp(p_2)}{\lhyp(p_1)}$ approaches some finite value as well.
+The fraction $f$ is a continuous function of $\frac{\lhyp(p_2)}{\lhyp(p_1)}$, approaching $0$ only as the ratio approaches $\infty$ (this follows from the same identity as \eqref{eq:pentagon}). Since the ratio approaches a finite value, we have a positive lower bound $f_0$ for $f$.
 
-Assuming as before that $l(p_0)$ is bounded away from $0$, and $\tau(p_0)$ bounded away from $\pm \infty$, and repeating the calculations of the previous case, we get the following two inequalities.
+Assuming as before that $\lhyp(p_0)$ is bounded away from $0$, and $\tau(p_0)$ bounded away from $\pm \infty$, and repeating the calculations of the previous case, we get the following two inequalities.
 \begin{equation}
   \label{eq:up-9}
-  \frac{l(p_1)}{l(p_3)} \geq \frac{l(p_1) }{l(p_0) +
-  2 \sinh^{-1} \left( \frac{\cosh\left( \frac{l(p_1)}{2} \right)}{f_0 \varepsilon} \right)
+  \frac{\lhyp(p_1)}{\lhyp(p_3)} \geq \frac{\lhyp(p_1) }{\lhyp(p_0) +
+  2 \sinh^{-1} \left( \frac{\cosh\left( \frac{\lhyp(p_1)}{2} \right)}{f_0 \varepsilon} \right)
   }
 \end{equation}
 \begin{equation}
   \label{eq:up-10}
-  \frac{l(p_0)}{l(p_3)} \geq \frac{l(p_0)}{l(p_0) +
-  2 \sinh^{-1} \left( \frac{\cosh\left( \frac{l(p_1)}{2} \right)}{f_0 \varepsilon} \right)
+  \frac{\lhyp(p_0)}{\lhyp(p_3)} \geq \frac{\lhyp(p_0)}{\lhyp(p_0) +
+  2 \sinh^{-1} \left( \frac{\cosh\left( \frac{\lhyp(p_1)}{2} \right)}{f_0 \varepsilon} \right)
   }
 \end{equation}
-The right hand side of \eqref{eq:up-10} must approach $0$, and that forces either $l(p_1)$ or $l(p_2)$ to approach $\infty$.
+The right hand side of \eqref{eq:up-10} must approach $0$, and that forces either $\lhyp(p_1)$ or $\lhyp(p_2)$ to approach $\infty$.
 But that means the right hand term of \eqref{eq:up-9} must approach $1$, which cannot happen, by the hypothesis of case II.
-This means $l(p_0)$ goes to $0$, proving the result in case II.
+This means $\lhyp(p_0)$ goes to $0$, proving the result in case II.
 
 \subsection*{Reducing to case II} Suppose now that both $p_1$ and $p_2$ have an intersection number larger than $1$ with $\lambda$.
 We can modify one of them to have a small intersection number with $\lambda$.
@@ -957,11 +958,11 @@ This concludes the proof of the theorem.
 
 \begin{remark}[On the orientable version of \autoref{prop:pinching}]
   The same idea also works in the orientable setting, although the analysis of the various cases gets a little more delicate.
-  The first change one needs to make is in the statement of the proposition: we no longer need to require $p$ to be a one-sided atom, and correspondingly, either the length coordinate $l(p)$ can go to $0$, or the twist coordinate $\tau(p_0)$ can go to $\pm \infty$.
+  The first change one needs to make is in the statement of the proposition: we no longer need to require $p$ to be a one-sided atom, and correspondingly, either the length coordinate $\lhyp(p)$ can go to $0$, or the twist coordinate $\tau(p_0)$ can go to $\pm \infty$.
   To see how the twist coordinate enters the picture, observe that \eqref{eq:up-1}, which was the main inequality of the proof, turns into the following in the orientable version.
   \begin{equation}
     \label{eq:up-11}
-    l(p_4)  \leq l(p_3) \leq \tau(p_0) + l(p_4)
+    \lhyp(p_4)  \leq \lhyp(p_3) \leq \tau(p_0) + \lhyp(p_4)
   \end{equation}
   Here, $\tau(p_0)$ is the twist parameter about $p_0$, and $p_4$ is the orthogeodesic multi-arc (there may be one or two orthogeodesics, depending on the two cases described below).
 
@@ -1028,7 +1029,7 @@ To prove this proposition, we will need to estimate how Dehn twists change inter
 \end{proof}
 
 \begin{proof}[Proof of \autoref{prop:mapping-class-estimate}]
-  Consider a projective measured lamination $[\lambda] \in pmf(\no_g)$.
+  Consider a projective measured lamination $[\lambda] \in \pmf(\no_g)$.
   If $[\lambda]$ contains one-sided leaves, we delete those one-sided curves and work with the resulting subsurface.
   If the restriction of $\lambda$ to the resulting subsurface is empty, then any mapping class on the subsurface does not change $\lambda$, and the result holds.
   If the restriction of $\lambda$ to the subsurface is non-empty, and $\lambda$ can be approximated by simple two-sided curves and \autoref{thm:equivalence-of-limit-sets} tells us that it can also be approximated by stable foliations of pseudo-Anosov maps on the subsurface.
@@ -1045,26 +1046,26 @@ To prove this proposition, we will need to estimate how Dehn twists change inter
   We concatenate this arc with the segment along $\eta^{\prime}$ joining $p$ and $q$.
   This is a simple two-sided curve, which we will call $c$ (this curve $c$ depends on $\varepsilon$, but we will suppress the dependence in the notation).
   Let $c^{\prime}$ be the tightening of this curve described in the paragraph before \autoref{lem:flat-length-tightening}.
-  If we do not have that $l_{\mathrm{flat}}(c^{\prime})$ is $o(l_{\mathrm{flat}}(c))$, then \autoref{lem:absolute-continuity} tells us that the ergodic measure can be approximated by simple two-sided curves.
-  That means $\varepsilon \cdot l_{\mathrm{flat}}(c^{\prime})$ goes to $0$ as $\varepsilon$ goes to $0$.
+  If we do not have that $\lflat(c^{\prime})$ is $o(\lflat(c))$, then \autoref{lem:absolute-continuity} tells us that the ergodic measure can be approximated by simple two-sided curves.
+  That means $\varepsilon \cdot \lflat(c^{\prime})$ goes to $0$ as $\varepsilon$ goes to $0$.
 
-  We now relate $l_{\mathrm{flat}}(c^{\prime})$ with $i(c^{\prime}, \kappa)$ via the following inequality, where $c^{\prime}$ can be any closed curve, and $j_{\kappa}$ is a constant depending on $\kappa$ and the flat geometry of the surface.
+  We now relate $\lflat(c^{\prime})$ with $i(c^{\prime}, \kappa)$ via the following inequality, where $c^{\prime}$ can be any closed curve, and $j_{\kappa}$ is a constant depending on $\kappa$ and the flat geometry of the surface.
   \begin{align}
     \label{eq:13}
-    i(c^{\prime}, \kappa) \leq j_{\kappa} \cdot l_{\mathrm{flat}}(c^{\prime})
+    i(c^{\prime}, \kappa) \leq j_{\kappa} \cdot \lflat(c^{\prime})
   \end{align}
   The constant $j_{\kappa}$ can be computed by cutting the surface along $\kappa$, and computing the length of the shortest essential arc starting and ending at the boundary component $\kappa$.
 
-  We pick an $\varepsilon$ and curve $c$ such that $\varepsilon \cdot l_{\mathrm{flat}}(c^{\prime}) < \frac{\delta}{j_{\kappa}}$.
+  We pick an $\varepsilon$ and curve $c$ such that $\varepsilon \cdot \lflat(c^{\prime}) < \frac{\delta}{j_{\kappa}}$.
   We Dehn twist about the curve $c$: \autoref{lem:dehn-twist-estimate} tells us that the error term is $i(\lambda, c) \cdot i(c, \kappa) = \varepsilon \cdot i(c, \kappa)$.
-  We bound the intersection number by $j_{\kappa} \cdot l_{\mathrm{flat}}(c^{\prime})$, which bounds the error term by $\delta$, proving the result in the case when $\lambda$ is not approximable by two-sided curves.
+  We bound the intersection number by $j_{\kappa} \cdot \lflat(c^{\prime})$, which bounds the error term by $\delta$, proving the result in the case when $\lambda$ is not approximable by two-sided curves.
 
   This handles all the cases, and proves the proposition.
 \end{proof}
 
 \begin{proof}[Proof of \autoref{thm:dod-is-empty}]
   Pick any small open set $U$ in $\pmf(\no_g)$, and any arbitrary local metric such that $U$ has diameter at least $2$.
-  Pick a sequence of mapping classes $\{varphi_i\}$ that move a point by distance at most $\frac{1}{2^i}$, using \autoref{prop:mapping-class-estimate}.
+  Pick a sequence of mapping classes $\{\varphi_i\}$ that move a point by distance at most $\frac{1}{2^i}$, using \autoref{prop:mapping-class-estimate}.
   Then for all $i$, $\varphi_i(U) \cap U$ is non-empty.
   This proves the result.
 \end{proof}
