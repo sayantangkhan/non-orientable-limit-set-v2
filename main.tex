@@ -17,14 +17,116 @@
 \begin{document}
 
 \begin{abstract}
-  Abstract
+  Motivated by the conjectured similarities between geometrically finite infinite covolume Fuchsian groups and the mapping class group of compact non-orientable surfaces, we show that the limit set of the mapping class group is contains the set of uniquely ergodic foliations and is contained in the set of all projective measured foliations not containing any one-sided leaves.
+  This provides strong evidence for a conjecture of Gendulphe.
+  Using the limit set we also show that a conjectured convex core for the moduli
+  space is in fact not even quasi-convex, and the action of the mapping class group on the boundary has an empty domain of discontinuity despite the complement of the limit set being an open dense subset.
 \end{abstract}
 \maketitle
 
-\tableofcontents
+% \tableofcontents
 
 \section{Introduction}
 \label{sec:introduction}
+
+
+The moduli space $\mg(\no_g)$ of compact \emph{non-orientable} hyperbolic surfaces of demigenus $d$ is conjectured to have similarities to infinite volume geometrically finite manifolds (in a manner similar to how moduli spaces of compact orientable surfaces have properties similar to finite volume hyperbolic manifolds).
+The main results suggesting the analogy between moduli spaces of non-orientable surfaces, and infinite volume manifolds are due to Norbury and Gendulphe.
+
+\begin{itemize}
+\item The $\mg(\no_g)$ has infinite Teichm\"uller volume (Theorem 17.1 of \cite{gendulphe_whats_2017}).
+  While the associated Teichm\"uller space does not have a Weil-Peterson volume form, it has an analogous volume form with respect to which the moduli space has infinite volume as well (see \cite{norbury2008lengths}).
+\item The action of the mapping class group $\mcg(\no_g)$ on the Thurston boundary is not minimal (Proposition 8.9 in \cite{gendulphe_whats_2017}).
+\item The Teichm\"uller geodesic flow is not topologically transitive, and thus not ergodic with respect to any Borel measure with full support (Proposition 17.5 of \cite{gendulphe_whats_2017}).
+\end{itemize}
+
+We attempt to gain a better understanding of this conjectured analogy by computing the limit set in $\pmf(\no_g)$ of $\mcg(\no_g)$.
+We show that the limit set contains a large class of projective measured foliations that do not have a one-sided leaf.
+
+\begingroup
+\def\thetheorem{\ref{thm:rational-approximation}}
+\begin{theorem}
+  For $g \geq 3$, a foliation $\lambda \in \pmf^+(\no_g)$ is in the limit set of $\mcg(\no_g)$ if all the minimal components $\lambda_j$ of $\lambda$ satisfy one of the following criteria.
+  \begin{enumerate}[(i)]
+  \item $\lambda_j$ is periodic.
+  \item $\lambda_j$ is orientable, i.e. all leaves exiting one side of a transverse arc always come back from the other side.
+  \item $\lambda_j$ is uniquely ergodic.
+  \end{enumerate}
+  Furthermore, if $\lambda_j$ is minimal, but not uniquely ergodic, there exists some other foliation $\lambda_j^{\prime}$ supported on the same topological foliation as $\lambda_j$ which is in the limit set.
+\end{theorem}
+\addtocounter{theorem}{-1}
+\endgroup
+
+We also show that the limit set is contained in the complement of the open dense set of foliations that contain a one-sided leaf.
+\begingroup
+\def\thetheorem{\ref{cor:geolimset}}
+\begin{theorem}
+  The limit set is contained in the complement of the set of foliations that contain a one-sided leaf.
+\end{theorem}
+\addtocounter{theorem}{-1}
+\endgroup
+These two results together give an almost complete proof of Conjecture 9.1 in \cite{gendulphe_whats_2017}.
+
+We outline the key ideas used in the proof of the above two theorems.
+The key idea in the proof of \autoref{thm:rational-approximation} is picking a short transverse arc to the foliation, and studying the return map to the arc.
+By shrinking the arc on successive returns, one can close up the path to a \emph{simple} closed curve, and then use ergodicity to claim that the simple closed curve indeed approximates the foliation.
+The key step in the proof of Theorem \ref{cor:geolimset} is obtaining precise estimates on the Fenchel-Nielsen coordinates of points diverging to the boundary of the Teichm\"uller space, and showing the length coordinates of one-sided curves go to $0$.
+
+Gendulphe also conjectured that an analogy might be made with geometrically finite hyperbolic manifolds.
+They constructed a finite volume $\mcg(\no_g)$ equivariant retraction of the Teichm\"uller space to $\systole$, the set of points in the Teichm\"uller space that have no one-sided curves shorter than $\varepsilon$.
+They then asked whether $\systole$ was a quasi-convex subset of $\teich(\no_g)$: if it were, its image in the moduli space would be a finite volume convex core, just like convex cores of geometrically finite manifolds.
+We show that $\systole$ is actually not quasi-convex.
+\begingroup
+\def\thetheorem{\ref{thm:qc-fail}}
+\begin{theorem}
+  The set $\systole$ is not quasi-convex for any $\varepsilon > 0$.
+\end{theorem}
+\addtocounter{theorem}{-1}
+\endgroup
+The negative result suggests that in order to make the analogy work in a robust manner, we may need to relax some of the requirements we require from the convex hull of the limit set. In particular, we may need to discard some of the limit points, the ones analogous to parabolic limit points, and focus on the limit points that are analogous to radial limit points in the hyperbolic setting, since the limit points involved in proof of \autoref{thm:qc-fail} are stabilized by Dehn multi-twists, which are analogous to parabolic elements of Fuchsian groups.
+
+We also prove another result that indicates that the analogy with infinite volume geometrically finite manifolds might not be as direct as we would like.
+In the case of infinite volume geometrically finite manifolds, the domain of discontinuity in the boundary is a large open set contained in the complement of the limit set.
+In the setting of $\teich(\no_g)$, even though the limit set is contained in the complement of a large open set, we show that the domain of discontinuity is empty.
+\begingroup
+\def\thetheorem{\ref{thm:dod-is-empty}}
+\begin{theorem}
+  The domain of discontinuity for the $\mcg(\no_g)$ action on $\pmf(\no_g)$ is empty.
+\end{theorem}
+\addtocounter{theorem}{-1}
+\endgroup
+
+Apart from the conjectured analogy being inherently interesting, these questions also show up when counting simple closed geodesics of length less than $L$ on any hyperbolic surface. Mirzakhani, in \autocite{mirzakhani2008growth}, obtained precise asymptotics for this counting function in the orientable case by essentially proving equidistribution (with respect to Thurston measure) of $\mcg(\os_{g})$-orbits in $\pmf(\os_g)$.
+To do the same for the non-orientable case, we need an ergodic measure supported on sets
+minimal with respect to the $\mcg$ action, e.g. $\overline{\pmf^+(\no_d)}$.
+One way to construct such a measure would be to replicate the construction of Patterson-Sullivan measures for geometrically finite manifolds, which brings us back
+to the analogy between $\mg(\no_d)$ and infinite volume geometrically finite manifolds.
+
+\subsection*{Context}
+
+The author is aware of two other subfields of Teichm\"uller theory that naturally lead to the study of the Teichm\"uller space of non-orientable surfaces.
+
+The first concerns isometrically embedded submanifolds of the Teichm\"uller space of orientable surfaces.
+The simplest of such manifolds is just a Teichm\"uller geodesic, and these are fairly well
+understood objects.
+The simplest isometrically embedded complex submanifolds are \emph{Teichm\"uller
+  discs}, which are isometric to $\mathbb{H}^2$.
+On these isometrically embedded subsets, the analogy with hyperbolic space is perfect, since these are isometric to $\mathbb{H}^2$, and as a consequence, the dynamics on the quotient can be understood using tools from hyperbolic geometry.
+The stabilizers of these can vary in size, from being as large a lattices, to as small as infinitely generated free groups, and conjecturally, as small as a span of a single pseudo-Anosov element.
+The higher dimensional complex submanifolds exhibit more rigidity (see \cite{wright2020}), and it is expected that the limit set of their stabilizer is a sphere of real dimension $2d-1$ (where $d$ is the complex dimension of the submanifolds), i.e. as big as it can get. Examples of higher dimensional totally real isometrically embedded submanifolds come from Teichm\"uller spaces of non-orientable surfaces.
+The limit set of the stabilizers of these manifolds is smaller in comparison to the complex variants.
+
+The second way Teichm\"uller spaces of non-orientable surfaces crop up is through \emph{interval exchange transformations with flips}.
+The dynamics of interval exchange transformations are closely related to the dynamics of horizontal/vertical flow on an associated quadratic differential, which is related to the geodesic flow on the Teichm\"uller surface via Masur's criterion (a version of which holds in the non-orientable setting as well).
+IETs with flips do not have very good recurrence properties: in fact, almost all of them (with respect to the Lebesgue measure) have a periodic point (see \cite{nogueira_1989}) and the set of minimal IETs with flips have a lower Hausdorff dimension (see \cite{skripchenko2018hausdorff}).
+To understand the IETs which are uniquely ergodic, one is naturally led to determine which ``quadratic differentials'' on non-orientable surfaces are recurrent.
+A necessary but not sufficient condition for recurrence of a Teichm\"uller geodesic is that its forward and backward limit points lie in the limit set.
+From this perspective, Theorems \ref{thm:rational-approximation} and \ref{cor:geolimset} can
+be seen as a statement about the closure of the recurrent set.
+Constructing a measure supported on the closure of the recurrent set can be then used to answer questions about uniquely ergodic IETs with flips.
+
+\subsection*{Acknowledgments}
+{\color{red} To insert.}
 
 \section{Background}
 \label{sec:background}
@@ -309,7 +411,6 @@ Here we list the various symbols we will be using throughout the paper.
 \item[] $\os_g$: The compact orientable surface of genus $g$.
 \item[] $\no_{d}$: The compact non-orientable surface of demigenus $d$.
 \item[] $\iota$: The deck transformation of the orientation double cover of a non-orientable surface.
-\item[] $S$: A compact surface which may or may not be orientable.
 \item[] $\teich(S)$: The Teichm\"uller space of $S$.
 \item[] $\systole(\no_d)$: The set of points in $\teich(\no_d)$ where no one-sided curve is shorter than
   $\varepsilon$.
@@ -325,9 +426,8 @@ Here we list the various symbols we will be using throughout the paper.
 \item[] $\mf(S; \QQ)$, $\pmf(S; \QQ)$: The set of all (projective) weighted rational multicurves on $S$.
 \item[] $\geolim(\Lambda)$: The geometric limit set of the discrete group $\Lambda$.
 \item[] $\dynlim(\Lambda)$: The dynamical limit set of the discrete group $\Lambda$.
-\item[] $\ell_{\mathrm{ext}}(M, \gamma)$: The extremal length of $\gamma$ with respect to the complex structure on $M \in \teich(\os_g)$.
-\item[] $\ell_{\mathrm{hyp}}(M, \gamma)$: The hyperbolic length of $\gamma$ with respect to the hyperbolic structure on $M \in \teich(S)$. We will suppress $M$ when it is clear from context.
-\item[] $\ell\lflat(q, \gamma)$: The flat length of $\gamma$ with respect to the flat structure given by the DQD $q$. We will suppress $q$ when it is clear from context.
+\item[] $\lhyp(M, \gamma)$: The hyperbolic length of $\gamma$ with respect to the hyperbolic structure on $M \in \teich(S)$. We will suppress $M$ when it is clear from context.
+\item[] $\lflat(q, \gamma)$: The flat length of $\gamma$ with respect to the flat structure given by the DQD $q$. We will suppress $q$ when it is clear from context.
 \item[] $o(f)$: A function $g$ is $o(f)$ if $\frac{g}{f}$ goes to $0$ as the value of $f$ goes to $\infty$.
 \item[] $\mu_{c}$: The probability measure on a transverse arc given by the closed curve $c$.
 \end{itemize}
@@ -456,7 +556,7 @@ The next lemma shows that it suffices to scale by their hyperbolic length.
 
   \todo[inline]{Make proof clearer by emphasizing on the importance of the multiplicity $m_j$.}
 \begin{proof}
-  Let $\{\gamma_{1j}\}$ and $\{ \gamma_{2j}\}$ be sequences of simple $2$-sided curves converging to $\gamma_1$ and $\gamma_2$ in $\pmf$.
+  Let $\{\gamma_{1j}\}$ and $\{ \gamma_{2j}\}$ be sequences of simple two-sided curves converging to $\gamma_1$ and $\gamma_2$ in $\pmf$.
   We can assume without loss of generality that $i(\gamma_{1i}, \gamma_{2j^{\prime}}) > 0$ for all $j$ and $j^{\prime}$ (to see this, Dehn twist one of the curves by a short curve that intersects both of them).
   We can also assume using \autoref{lem:scaling-lemma} that normalizing these curves by their hyperbolic length converges in $\mf$.
   We pass to a subsequence of $\gamma_{2j}$ such that after passing to the subsequence,
@@ -739,7 +839,7 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
 
   In case that the leaf approaches $p_i$ from the ``down'' direction without the orientation flipped infinitely often, the same closing argument as case (ii) works.
   Suppose now that the leaf approaches $p_i$ from the ``up'' direction, but without the orientation flipping, infinitely often.
-  We then construct simple $2$-sided curves by concatenating the flow with the arc joining $p_i$ to $p_0$ (see \autoref{fig:coming-from-above}).
+  We then construct simple two-sided curves by concatenating the flow with the arc joining $p_i$ to $p_0$ (see \autoref{fig:coming-from-above}).
   \begin{figure}[h]
     \centering
     \includegraphics{example-image-b}
@@ -983,6 +1083,7 @@ This quantitative estimate of \autoref{prop:pinching} gives us an easy proof of 
 \end{proof}
 
 \begin{corollary}
+  \label{cor:geolimset}
   The geometric limit set $\geolim(\mcg(\no_g))$ is contained in $\pmf^+(\no_g)$.
 \end{corollary}
 \begin{proof}
