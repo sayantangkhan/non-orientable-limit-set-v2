@@ -17,7 +17,7 @@
 \begin{document}
 
 \begin{abstract}
-  Motivated by the conjectured similarities between geometrically finite infinite covolume Fuchsian groups and the mapping class group of compact non-orientable surfaces, we show that the limit set of the mapping class group is contains the set of uniquely ergodic foliations and is contained in the set of all projective measured foliations not containing any one-sided leaves.
+  Motivated by the conjectured similarities between geometrically finite infinite covolume Fuchsian groups and the mapping class group of compact non-orientable surfaces, we show that the limit set of the mapping class group contains the set of uniquely ergodic foliations and is contained in the set of all projective measured foliations not containing any one-sided leaves.
   This provides strong evidence for a conjecture of Gendulphe.
   Using the limit set we also show that a conjectured convex core for the moduli
   space is in fact not even quasi-convex, and the action of the mapping class group on the boundary has an empty domain of discontinuity despite the complement of the limit set being an open dense subset.
@@ -30,8 +30,8 @@
 \label{sec:introduction}
 
 
-The moduli space $\mg(\no_g)$ of compact \emph{non-orientable} hyperbolic surfaces of demigenus $d$ is conjectured to have similarities to infinite volume geometrically finite manifolds (in a manner similar to how moduli spaces of compact orientable surfaces have properties similar to finite volume hyperbolic manifolds).
-The main results suggesting the analogy between moduli spaces of non-orientable surfaces, and infinite volume manifolds are due to Norbury and Gendulphe.
+The moduli space $\mg(\no_g)$ of compact \emph{non-orientable} hyperbolic surfaces of genus $g$ is conjectured to have similarities to infinite volume geometrically finite manifolds (in a manner similar to how moduli spaces of compact orientable surfaces have properties similar to finite volume hyperbolic manifolds).
+The main results suggesting the analogy between moduli spaces of non-orientable surfaces and infinite volume manifolds are due to Norbury and Gendulphe.
 
 \begin{itemize}
 \item The $\mg(\no_g)$ has infinite Teichm\"uller volume (Theorem 17.1 of \cite{gendulphe_whats_2017}).
@@ -83,7 +83,8 @@ We show that $\systole$ is actually not quasi-convex.
 \end{theorem}
 \addtocounter{theorem}{-1}
 \endgroup
-The negative result suggests that in order to make the analogy work in a robust manner, we may need to relax some of the requirements we require from the convex hull of the limit set. In particular, we may need to discard some of the limit points, the ones analogous to parabolic limit points, and focus on the limit points that are analogous to radial limit points in the hyperbolic setting, since the limit points involved in proof of \autoref{thm:qc-fail} are stabilized by Dehn multi-twists, which are analogous to parabolic elements of Fuchsian groups.
+The negative result suggests that in order to make the analogy work in a robust manner, we may need to relax some of the requirements we require from the convex hull of the limit set. In particular, we may need to discard some of the limit points, the ones analogous to parabolic limit points, and focus on the limit points that are analogous to radial limit points in the hyperbolic setting.
+We venture this guess since the limit points involved in proof of \autoref{thm:qc-fail} are stabilized by Dehn multi-twists, which are analogous to parabolic elements of Fuchsian groups.
 
 We also prove another result that indicates that the analogy with infinite volume geometrically finite manifolds might not be as direct as we would like.
 In the case of infinite volume geometrically finite manifolds, the domain of discontinuity in the boundary is a large open set contained in the complement of the limit set.
@@ -95,6 +96,7 @@ In the setting of $\teich(\no_g)$, even though the limit set is contained in the
 \end{theorem}
 \addtocounter{theorem}{-1}
 \endgroup
+This result is in stark contrast with the result for convex-cocompact subgroups of mapping class groups of orientable, where it is known that the action on the complement of the limit set is properly discontinuous (see \cite{farb2002convex}).
 
 Apart from the conjectured analogy being inherently interesting, these questions also show up when counting simple closed geodesics of length less than $L$ on any hyperbolic surface. Mirzakhani, in \autocite{mirzakhani2008growth}, obtained precise asymptotics for this counting function in the orientable case by essentially proving equidistribution (with respect to Thurston measure) of $\mcg(\os_{g})$-orbits in $\pmf(\os_g)$.
 To do the same for the non-orientable case, we need an ergodic measure supported on sets
@@ -473,13 +475,13 @@ Having defined the notion of orientable foliations, we can state the main theore
 
 To prove \autoref{thm:rational-approximation}, we will first need to describe a method of resolving intersections of curves.
 Given two two-sided simple curves $\gamma_1$ and $\gamma_2$, their union will not be a simple curve if $i(\gamma_1, \gamma_2) > 0$.
-However, at each point of intersection, there exist two possible surgeries (see \autoref{fig:surgery-types}) that resolve the intersection.
-\begin{figure}[h]
-  \centering
-  \includegraphics{example-image-a}
-  \caption{Two ways an intersection can be resolved.}
-  \label{fig:surgery-types}
-\end{figure}
+However, at each point of intersection, there exist two possible surgeries that resolve the intersection.
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics{example-image-a}
+%   \caption{Two ways an intersection can be resolved.}
+%   \label{fig:surgery-types}
+% \end{figure}
 Resolving all the intersections by choosing surgeries at each of the points results in a simple multicurve (i.e. it may have more than one component).
 It is not necessarily the case that the resulting multicurve has two-sided components either.
 However, if it is the case that the resulting multicurve is a curve, then it will be a two-sided curve: that is because both $\gamma_1$ and $\gamma_2$ pass through an even number of crosscaps, and if the resolution of $\gamma_1 \cup \gamma_2$ has only one component, it must also pass through an even number of crosscaps.
@@ -498,7 +500,7 @@ We prove that there always exists a choice of surgery that results in a simple c
   At each intersection point, we resolve the singularity such that the strands corresponding to directions flowing into the singularity are glued together, and the strands corresponding to directions flowing out of the singularity are glued together (see \autoref{fig:good-surgery}).
   \begin{figure}[h]
     \centering
-    \includegraphics{example-image-b}
+    \incfig[0.8]{good-surgery}
     \caption{Surgery that results in a connected curve.}
     \label{fig:good-surgery}
   \end{figure}
@@ -529,7 +531,7 @@ The next lemma describes the conditions for that to happen.
   See \autoref{fig:segment-together} for a picture of the setup.
   \begin{figure}[h]
     \centering
-    \includegraphics{example-image-a}
+    \incfig[0.8]{segment-together}
     \caption{Resolved segments that get shorter under geodesic tightening.}
     \label{fig:segment-together}
   \end{figure}
@@ -560,7 +562,7 @@ The next lemma shows that it suffices to scale by their hyperbolic length.
   Then any convex combination $c_1 \gamma_1 + c_2\gamma_2$ is also approximable by simple two-sided curves.
 \end{lemma}
 
-  \todo[inline]{Make proof clearer by emphasizing on the importance of the multiplicity $m_j$.}
+  % \todo[inline]{Make proof clearer by emphasizing on the importance of the multiplicity $m_j$.}
 \begin{proof}
   Let $\{\gamma_{1j}\}$ and $\{ \gamma_{2j}\}$ be sequences of simple two-sided curves converging to $\gamma_1$ and $\gamma_2$ in $\pmf$.
   We can assume without loss of generality that $i(\gamma_{1i}, \gamma_{2j^{\prime}}) > 0$ for all $j$ and $j^{\prime}$ (to see this, Dehn twist one of the curves by a short curve that intersects both of them).
@@ -579,7 +581,7 @@ The next lemma shows that it suffices to scale by their hyperbolic length.
   If $m_j > 1$, we resolve the intersections the same way as in the case of $m_j = 1$, but also glue together the strands of $\gamma_{1j}$ as shown in \autoref{fig:parallel-surgery-modification}.
   \begin{figure}[h]
     \centering
-    \includegraphics{example-image-b}
+    \incfig[1]{parallel-surgery-modification}
     \caption{Modifying the resolution when $m_j > 1$.}
     \label{fig:parallel-surgery-modification}
   \end{figure}
@@ -732,13 +734,13 @@ We now consider a tricky special case we are forced to reckon with when approxim
 Let $\lambda$ be a minimal foliation and $\eta$ a transverse arc.
 Let $q$ be a DQD on $\no_g$ such that $\lambda$ is the vertical foliation, and $\eta$ is a horizontal arc of flat length $1$.
 Let $a$ be a leaf starting at the left endpoint $p$ of $\eta$ and going up, and suppose it comes back from the top intersecting $\eta$ a point $q$ which is distance $\varepsilon \ll 1$ from the left endpoint (possibly after intersecting $\eta$ several times).
-Let $c$ be the simple closed curve obtained by concatenating $a$ and the horizontal arc joining $p$ and $q$ (see \autoref{fig:bad-situation}).
-\begin{figure}[h]
-  \centering
-  \includegraphics{example-image-a}
-  \caption{Closing up leaves that start and begin on the same side of the arc.}
-  \label{fig:bad-situation}
-\end{figure}
+Let $c$ be the simple closed curve obtained by concatenating $a$ and the horizontal arc joining $p$ and $q$.
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics{example-image-a}
+%   \caption{Closing up leaves that start and begin on the same side of the arc.}
+%   \label{fig:bad-situation}
+% \end{figure}
 The curve $c$ is clearly not close to the flat or hyperbolic geodesic representative of its homotopy class.
 One obvious way to make $c$ shorter without changing its homotopy type is to flow the arc joining $p$ and $q$ along the foliation until it encounters a singularity, at which point we stop.
 We label the new endpoints $p^{\prime}$ and $q^{\prime}$, and define a new closed curve $c^{\prime}$ by starting at $p^{\prime}$, flowing along the vertical foliation until $q^{\prime}$ and then flowing horizontally back to $p^{\prime}$.
@@ -760,8 +762,8 @@ The following lemma states that the $\mu_{c^{\prime}}$ and $\mu_{c^{\prime \prim
   Gromov hyperbolicity tells us that the geodesic representative of such a segment will be within a bounded distance of the segment: i.e. the geodesic representative $c^{\prime \prime}$ will be within a bounded distance of $c^{\prime}$ (see \autoref{fig:geodesic-tightening}).
   \begin{figure}[h]
     \centering
-    \includegraphics{example-image-b}
-    \caption{The curves $c^{\prime}$ and $c^{\prime \prime}$ are within bounded distance.}
+    \incfig[1]{geodesic-tightening}
+    \caption{The curves $c^{\prime}$ and $c^{\prime \prime}$ are within bounded distance because all the prongs of the singularity have a positive angle between them.}
     \label{fig:geodesic-tightening}
   \end{figure}
   This proves the lemma.
@@ -795,7 +797,7 @@ The next lemma links the ratio of the flat lengths of $c$ and $c^{\prime}$ to th
 \end{proof}
 
 We now have everything we need to prove \autoref{thm:rational-approximation}.
-\todo[inline]{Make the proof clearer.}
+% \todo[inline]{Make the proof clearer.}
 \begin{proof}[Proof of \autoref{thm:rational-approximation}]
   If a minimal component $\lambda_j$ is periodic, then the proof is straightforward.
   Since $\lambda$ contains no one-sided component, the core curve of $\lambda_j$ must be two-sided, possibly with an irrational coefficient.
@@ -818,8 +820,8 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
   If we pick $\eta_0$ to be small enough, we can pick a local orientation, and keep track of how a positively oriented frame returns to each $p_i$, i.e. with or without the orientation flipped (see \autoref{fig:two-possibilities}).
   \begin{figure}[h]
     \centering
-    \includegraphics{example-image-a}
-    \caption{Two possibilities for first return to $\eta_i$.}
+    \incfig[0.5]{two-possibilities}
+    \caption{Two possibilities for first return to $\eta_i$: on the left, the arc returns without the local orientation flipping, and on the right, the arc returns with the local orientation flipped.}
     \label{fig:two-possibilities}
   \end{figure}
   If the flow returns infinitely often without the orientation flipped, we join the endpoint $p_i$ to $p_0$ by going left along $\eta_i$ to get a simple closed curve that is two-sided.
@@ -830,8 +832,8 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
   In that case, consider the simple two-sided curves $c_i$ obtained by concatenating $a_i$ with the arc on $\eta_{i-1}$ joining $p_{i-1}$ and $p_i$ (see \autoref{fig:comes-with-flip}).
   \begin{figure}[h]
     \centering
-    \includegraphics{example-image-b}
-    \caption{Defining the curves $c_i$.}
+    \incfig[0.8]{comes-with-flip}
+    \caption{The curve $c_i$ is colored blue. Since the leaf from $p_0$ returns with the local orientation flipped to both $p_{i-1}$ and $p_{i}$, the curve $c_i$ is two-sided.}
     \label{fig:comes-with-flip}
   \end{figure}
   We have that as $i$ goes to $\infty$, the length of $c_i$ must go to $\infty$ as well, otherwise a subsequence would converge to a closed vertical curve starting at $p_0$, which cannot happen since the leaf through $p_0$ equidistributes.
@@ -845,13 +847,13 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
 
   In case that the leaf approaches $p_i$ from the ``down'' direction without the orientation flipped infinitely often, the same closing argument as case (ii) works.
   Suppose now that the leaf approaches $p_i$ from the ``up'' direction, but without the orientation flipping, infinitely often.
-  We then construct simple two-sided curves by concatenating the flow with the arc joining $p_i$ to $p_0$ (see \autoref{fig:coming-from-above}).
-  \begin{figure}[h]
-    \centering
-    \includegraphics{example-image-b}
-    \caption{Constructing the curve $c_i$ when returning from the ``up'' direction.}
-    \label{fig:coming-from-above}
-  \end{figure}
+  We then construct simple two-sided curves by concatenating the flow with the arc joining $p_i$ to $p_0$.
+  % \begin{figure}[h]
+  %   \centering
+  %   \includegraphics{example-image-b}
+  %   \caption{Constructing the curve $c_i$ when returning from the ``up'' direction.}
+  %   \label{fig:coming-from-above}
+  % \end{figure}
   While this curve does equidistribute with respect to the ergodic measure, it is not necessary that its geodesic tightening will do so.
   Denote the geodesic tightening by $c_i^{\prime \prime}$, and consider an intermediate closed curve $c_i^{\prime}$ in the same homotopy class as described in \autoref{lem:flat-length-tightening} and \autoref{lem:absolute-continuity}.
   We have by assumption that $\mu_{c_i}$ converges to an ergodic measure.
@@ -865,8 +867,8 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
   See \autoref{fig:case3-surgery} for the construction of the two-sided curves $c_i$.
   \begin{figure}[h]
     \centering
-    \includegraphics{example-image-a}
-    \caption{Construction of the curves $c_i$ when the leaf always returns with orientation flipped from the ``up'' or ``down'' direction.}
+    \incfig[0.8]{case-3-surgery}
+    \caption{Construction of the blue curve $c_i$ when the leaf always returns with orientation flipped from the ``up'' or ``down'' direction.}
     \label{fig:case3-surgery}
   \end{figure}
   We have that the geodesic tightenings of the curves $c_i$ are close to the original curve by the Anosov closing lemma, and that the weighted averages of the $c_i$ converge the ergodic measure, which means by \autoref{lem:convexity-argument} we have a subsequence $\mu_{c_i}$ that converges to the ergodic measure.
