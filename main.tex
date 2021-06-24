@@ -20,7 +20,7 @@
   Motivated by the conjectured similarities between geometrically finite infinite covolume Fuchsian groups and the mapping class group of compact non-orientable surfaces, we show that the limit set of the mapping class group contains the set of uniquely ergodic foliations and is contained in the set of all projective measured foliations not containing any one-sided leaves.
   This provides strong evidence for a conjecture of Gendulphe.
   Using the limit set we also show that a conjectured convex core for the moduli
-  space is in fact not even quasi-convex, and the action of the mapping class group on the boundary has an empty domain of discontinuity despite the complement of the limit set being an open dense subset.
+  space is in fact not even quasi-convex, and the action of the mapping class group on the boundary has an empty wandering set despite the complement of the limit set being an open dense subset.
 \end{abstract}
 \maketitle
 
@@ -74,7 +74,10 @@ The key step in the proof of Theorem \ref{cor:geolimset} is obtaining precise es
 
 Gendulphe also conjectured that an analogy might be made with geometrically finite hyperbolic manifolds.
 They constructed a finite volume $\mcg(\no_g)$ equivariant retraction of the Teichm\"uller space to $\systole$, the set of points in the Teichm\"uller space that have no one-sided curves shorter than $\varepsilon$.
-They then asked whether $\systole$ was a quasi-convex subset of $\teich(\no_g)$: if it were, its image in the moduli space would be a finite volume convex core, just like convex cores of geometrically finite manifolds.
+They also asked the following question about $\systole$.
+\begin{unquestion}[Question 19.1 of \cite{gendulphe_whats_2017}]
+  Is $\systole$ quasi-convex with respect to the Teichmüller metric?
+\end{unquestion}
 We show that $\systole$ is actually not quasi-convex in the strong sense, answering Question 19.1 of \cite{gendulphe_whats_2017}.
 \begingroup
 \def\thetheorem{\ref{thm:qc-fail}}
@@ -87,12 +90,12 @@ The negative result suggests that in order to make the analogy work in a robust 
 We venture this guess since the limit points involved in proof of \autoref{thm:qc-fail} are stabilized by Dehn multi-twists, which are analogous to parabolic elements of Fuchsian groups.
 
 We also prove another result that indicates that the analogy with infinite volume geometrically finite manifolds might not be as direct as we would like.
-In the case of infinite volume geometrically finite manifolds, the domain of discontinuity in the boundary is a large open set contained in the complement of the limit set.
-In the setting of $\teich(\no_g)$, even though the limit set is contained in the complement of a large open set, we show that the domain of discontinuity is empty.
+In the case of infinite volume geometrically finite manifolds, the wandering set in the boundary is a large open set contained in the complement of the limit set.
+In the setting of $\teich(\no_g)$, even though the limit set is contained in the complement of a large open set, we show that the wandering set is empty.
 \begingroup
 \def\thetheorem{\ref{thm:dod-is-empty}}
 \begin{theorem}
-  The domain of discontinuity for the $\mcg(\no_g)$ action on $\pmf(\no_g)$ is empty.
+  The wandering set for the $\mcg(\no_g)$ action on $\pmf(\no_g)$ is empty.
 \end{theorem}
 \addtocounter{theorem}{-1}
 \endgroup
@@ -379,12 +382,12 @@ One may ask if this is always the case.
 
 McCarthy-Papadopoulos also formulated an equivalent definition of $\dynlim(\Gamma)$, which is easier to work with in practice.
 
-\begin{theorem}[Theorem 4.1 of \cite{McCarthy1989}]
+\begin{untheorem}[Theorem 4.1 of \cite{McCarthy1989}]
   \label{thm:equivalence-of-limit-sets}
   $\dynlim(\Gamma)$ is the closure in $\pmf$ of the stable and unstable foliations of all the pseudo-Anosov mapping classes in $\Gamma$.
-\end{theorem}
+\end{untheorem}
 A corollary of this theorem is that $\Gamma$ does not act properly discontinuously on $\dynlim(\Gamma)$.
-In fact, one can construct a domain of discontinuity for the $\Gamma$ action using $\dynlim(\Gamma)$.
+In fact, one can construct a wandering set for the $\Gamma$ action using $\dynlim(\Gamma)$.
 \begin{definition}[Zero intersection set]
   Given a subset $\Lambda$ of $\pmf$, its zero intersection set $Z(\Lambda)$ is the following subset of $\pmf$
   \begin{align*}
@@ -392,10 +395,10 @@ In fact, one can construct a domain of discontinuity for the $\Gamma$ action usi
   \end{align*}
 \end{definition}
 
-% McCarthy-Papadopoulos also exhibit a domain of discontinuity for the $\Gamma$ action on $\pmf$.
-\begin{theorem}[Theorem 6.16 of \cite{McCarthy1989}]
+% McCarthy-Papadopoulos also exhibit a wandering set for the $\Gamma$ action on $\pmf$.
+\begin{untheorem}[Theorem 6.16 of \cite{McCarthy1989}]
   The action of $\Gamma$ on $\pmf \setminus Z(\dynlim(\Gamma))$ is properly discontinuous.
-\end{theorem}
+\end{untheorem}
 
 It is not obvious that the action of $\Gamma$ on $Z(\dynlim(\Gamma))$ is not properly discontinuous.
 We prove that is indeed the case when $\Gamma = \mcg(\no_g)$ in Section \ref{sec:domain-discontinuity}, but the general case is unknown.
@@ -1088,15 +1091,15 @@ This quantitative estimate of \autoref{prop:pinching} gives us an easy proof of 
   Taking the union over all $p$ proves the result.
 \end{proof}
 
-\section{Domain of discontinuity}
+\section{Wandering set}
 \label{sec:domain-discontinuity}
 
-In this section, we prove that the domain of discontinuity for the action of $\mcg(\no_g)$ on $\pmf(\no_g)$ is empty.
+In this section, we prove that the wandering set for the action of $\mcg(\no_g)$ on $\pmf(\no_g)$ is empty.
 This follows fairly easily from \autoref{conj:gendulphe-1}, but because we only have a slightly weaker version of the result, i.e. \autoref{thm:rational-approximation}, we need to work a little harder.
 However, the techniques used in the proof of \autoref{thm:rational-approximation} are robust enough to prove the result in this section.
 \begin{theorem}
   \label{thm:dod-is-empty}
-  The domain of discontinuity for the $\mcg(\no_g)$ action on $\pmf(\no_g)$ is empty.
+  The wandering set for the $\mcg(\no_g)$ action on $\pmf(\no_g)$ is empty.
 \end{theorem}
 
 We prove this result by showing that for any measured foliation $\lambda$, there exists a mapping class $\varphi$ such that $\varphi$ moves $\lambda$ by an arbitrarily small amount.
@@ -1179,12 +1182,11 @@ For instance, metric balls in Teichm\"uller space are not convex, but merely qua
 Our goal for this section will be to prove the following theorem.
 \begin{theorem}
   \label{thm:qc-fail}
-  The set $\systole(\no_g)$ is not quasi-convex for any $\varepsilon > 0$.
+  For all $\varepsilon > 0$, and all $D > 0$, there exists a Teichm\"uller geodesic whose endpoints lie in $\overline{\systole} \cap \pmf$ such that some point in interior of the geodesic is more than distance $D$ from $\systole$.
 \end{theorem}
-The proof proceeds by constructing surfaces in the weak convex hull of $\pmf^+(\no_g)$ that have arbitrarily small one-sided curves.
-We use this fact, along with estimates relating Teichm\"uller distances and hyperbolic lengths to obtain failure of quasi convexity.
 
 We begin by finding short curves in the weak convex hull of $\pmf^+(\no_g)$, for $g \geq 4$\footnote{For $g = 3$, the weak convex hull is empty, since no two two-sided foliations can fill $\no_3$.}.
+Once we have arbitrarily short one-sided curves in the interior of the geodesics, estimates relating Teichmüller distance and ratios of hyperbolic lengths of curves will give us the result.
 \begin{proposition}
   \label{prop:very-short-curves}
   For all $g \geq 4$ and any $\varepsilon > 0$, there exist a point $p$ in the weak convex hull of $\pmf^+(\no_g)$ such that some one-sided curve has length less than $\varepsilon$ with respect to the metric on $p$.
