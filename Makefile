@@ -1,4 +1,4 @@
-filename = sample-output.pdf
+filename = non-orientable-limit-set.pdf
 
 build-pdf:
 	latexmk main.tex
