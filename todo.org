@@ -16,11 +16,8 @@ exponent.
 Describe the limit set.
 
 * Get rid of complex submanifold stuff
-
 * Rephrase and make more precise Theorem 6.2
 Look into limits of Strebel differentials.
-
 * Figures
 Changes all color references to color and dotted references.
-* Misc.
-Set up Github to compile and publish.
+* Change domain of discontinuity to wandering set
