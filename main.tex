@@ -27,8 +27,7 @@
 % \tableofcontents
 
 \section{Introduction}
-\label{sec:introduction}
-
+\label{sec:introduction-v2}
 
 The moduli space $\mg(\no_g)$ of compact \emph{non-orientable} hyperbolic surfaces of genus $g$ is conjectured to have similarities to infinite volume geometrically finite manifolds (in a manner similar to how moduli spaces of compact orientable surfaces have properties similar to finite volume hyperbolic manifolds).
 The main results suggesting the analogy between moduli spaces of non-orientable surfaces and infinite volume manifolds are due to Norbury and Gendulphe.
@@ -40,9 +39,46 @@ The main results suggesting the analogy between moduli spaces of non-orientable 
 \item The Teichm\"uller geodesic flow is not topologically transitive, and thus not ergodic with respect to any Borel measure with full support (Proposition 17.5 of \cite{gendulphe_whats_2017}).
 \end{itemize}
 
-We attempt to gain a better understanding of this conjectured analogy by computing the limit set in $\pmf(\no_g)$ of $\mcg(\no_g)$.
-We show that the limit set contains a large class of projective measured foliations that do not have a one-sided leaf.
+We extend this analogy further, by showing that the limit set of $\mcg(\no_g)$ is contained in the complement of a full measure dense open set.
+\begingroup
+\def\thetheorem{\ref{cor:geolimset}}
+\begin{theorem}
+  The limit set is contained in the complement of $\pmf^-(\no_g)$.
+\end{theorem}
+\addtocounter{theorem}{-1}
+\endgroup
+Here $\pmf^-(\no_g)$ is the set of all projective measured foliations that have one-sided compact leaf.
+The fact that such foliations form a full measure dense open subset is classical, due to Danthony-Nogueira (see \cite{ASENS_1990_4_23_3_469_0}).
+This is analogous to limit sets of infinite volume geometrically finite groups, where the complement of the limit set is a full measure open set as well.
 
+But the analogy is only an imperfect one: Gendulphe (in \cite{gendulphe_whats_2017}) constructed a finite volume
+constructed a finite volume $\mcg(\no_g)$ equivariant retraction of the Teichm\"uller space to $\systole$, the set of points in the Teichm\"uller space that have no one-sided curves shorter than $\varepsilon$.
+They also asked the following question about $\systole$.
+\begin{unquestion}[Question 19.1 of \cite{gendulphe_whats_2017}]
+  Is $\systole$ quasi-convex with respect to the Teichmüller metric?
+\end{unquestion}
+We show that $\systole$ is actually not quasi-convex in the strongest possible sense, answering Question 19.1 of \cite{gendulphe_whats_2017}.
+\begingroup
+\def\thetheorem{\ref{thm:qc-fail}}
+\begin{theorem}
+  For all $\varepsilon > 0$, and all $D > 0$, there exists a Teichm\"uller geodesic whose endpoints lie in $\overline{\systole} \cap \pmf$ such that some point in interior of the geodesic is more than distance $D$ from $\systole$.
+\end{theorem}
+\addtocounter{theorem}{-1}
+\endgroup
+We exhibit the failure of the analogy in yet another way, by showing that $\mcg(\no_g)$ does not act properly discontinuously on the complement of the limit set.
+\begingroup
+\def\thetheorem{\ref{thm:dod-is-empty}}
+\begin{theorem}
+  The wandering set for the $\mcg(\no_g)$ action on $\pmf(\no_g)$ is empty.
+\end{theorem}
+\addtocounter{theorem}{-1}
+\endgroup
+Contrast this with the action of geometrically finite groups on the complement of the limit set, where the action is properly discontinuous.
+This result is also in stark contrast with the result for convex-cocompact subgroups of mapping class groups of orientable surfaces, where it is known that the action on the complement of the limit set is properly discontinuous (see \cite{farb2002convex}).
+
+The key idea involved in the proof of \autoref{thm:dod-is-empty} and \autoref{thm:qc-fail} is determining which projective measured foliations are in the limit set.
+Conjecture 9.1 of \cite{gendulphe_whats_2017} states that the limit set should exactly be the complement of $\pmf^-(\no_g)$, the set of projective measured foliations that do not contain any one-sided leaves (denoted $\pmf^+(\no_g)$).
+We prove something almost as strong.
 \begingroup
 \def\thetheorem{\ref{thm:rational-approximation}}
 \begin{theorem}
@@ -57,71 +93,29 @@ We show that the limit set contains a large class of projective measured foliati
 \addtocounter{theorem}{-1}
 \endgroup
 
-We also show that the limit set is contained in the complement of the open dense set of foliations that contain a one-sided leaf.
-\begingroup
-\def\thetheorem{\ref{cor:geolimset}}
-\begin{theorem}
-  The limit set is contained in the complement of the set of foliations that contain a one-sided leaf.
-\end{theorem}
-\addtocounter{theorem}{-1}
-\endgroup
-These two results together give an almost complete proof of Conjecture 9.1 in \cite{gendulphe_whats_2017}.
-
-We outline the key ideas used in the proof of the above two theorems.
-The key idea in the proof of \autoref{thm:rational-approximation} is picking a short transverse arc to the foliation, and studying the return map to the arc.
-By shrinking the arc on successive returns, one can close up the path to a \emph{simple} closed curve, and then use ergodicity to claim that the simple closed curve indeed approximates the foliation.
-The key step in the proof of Theorem \ref{cor:geolimset} is obtaining precise estimates on the Fenchel-Nielsen coordinates of points diverging to the boundary of the Teichm\"uller space, and showing the length coordinates of one-sided curves go to $0$.
-
-Gendulphe also conjectured that an analogy might be made with geometrically finite hyperbolic manifolds.
-They constructed a finite volume $\mcg(\no_g)$ equivariant retraction of the Teichm\"uller space to $\systole$, the set of points in the Teichm\"uller space that have no one-sided curves shorter than $\varepsilon$.
-They also asked the following question about $\systole$.
-\begin{unquestion}[Question 19.1 of \cite{gendulphe_whats_2017}]
-  Is $\systole$ quasi-convex with respect to the Teichmüller metric?
-\end{unquestion}
-We show that $\systole$ is actually not quasi-convex in the strong sense, answering Question 19.1 of \cite{gendulphe_whats_2017}.
-\begingroup
-\def\thetheorem{\ref{thm:qc-fail}}
-\begin{theorem}
-  For all $\varepsilon > 0$, and all $D > 0$, there exists a Teichm\"uller geodesic whose endpoints lie in $\overline{\systole} \cap \pmf$ such that some point in interior of the geodesic is more than distance $D$ from $\systole$.
-\end{theorem}
-\addtocounter{theorem}{-1}
-\endgroup
-The negative result suggests that in order to make the analogy work in a robust manner, we may need to relax some of the requirements we require from the convex hull of the limit set. In particular, we may need to discard some of the limit points, the ones analogous to parabolic limit points, and focus on the limit points that are analogous to radial limit points in the hyperbolic setting.
-We venture this guess since the limit points involved in proof of \autoref{thm:qc-fail} are stabilized by Dehn multi-twists, which are analogous to parabolic elements of Fuchsian groups.
-
-We also prove another result that indicates that the analogy with infinite volume geometrically finite manifolds might not be as direct as we would like.
-In the case of infinite volume geometrically finite manifolds, the wandering set in the boundary is a large open set contained in the complement of the limit set.
-In the setting of $\teich(\no_g)$, even though the limit set is contained in the complement of a large open set, we show that the wandering set is empty.
-\begingroup
-\def\thetheorem{\ref{thm:dod-is-empty}}
-\begin{theorem}
-  The wandering set for the $\mcg(\no_g)$ action on $\pmf(\no_g)$ is empty.
-\end{theorem}
-\addtocounter{theorem}{-1}
-\endgroup
-This result is in stark contrast with the result for convex-cocompact subgroups of mapping class groups of orientable, where it is known that the action on the complement of the limit set is properly discontinuous (see \cite{farb2002convex}).
-
 Apart from the conjectured analogy being inherently interesting, these questions also show up when counting simple closed geodesics of length less than $L$ on any hyperbolic surface. Mirzakhani, in \autocite{mirzakhani2008growth}, obtained precise asymptotics for this counting function in the orientable case by essentially proving equidistribution (with respect to Thurston measure) of $\mcg(\os_{g})$-orbits in $\pmf(\os_g)$.
 To do the same for the non-orientable case, we need an ergodic measure supported on sets
 minimal with respect to the $\mcg$ action, e.g. $\overline{\pmf^+(\no_d)}$.
 One way to construct such a measure would be to replicate the construction of Patterson-Sullivan measures for geometrically finite manifolds, which brings us back
 to the analogy between $\mg(\no_d)$ and infinite volume geometrically finite manifolds.
 
-\subsection*{Context}
+% \subsection*{Context}
 
-The author is aware of two other subfields of Teichm\"uller theory that naturally lead to the study of the Teichm\"uller space of non-orientable surfaces.
+% The author is aware of two other subfields of Teichm\"uller theory that naturally lead to the study of the Teichm\"uller space of non-orientable surfaces.
 
-The first concerns isometrically embedded submanifolds of the Teichm\"uller space of orientable surfaces.
-The simplest of such manifolds is just a Teichm\"uller geodesic, and these are fairly well
-understood objects.
-The simplest isometrically embedded complex submanifolds are \emph{Teichm\"uller
-  discs}, which are isometric to $\mathbb{H}^2$.
-On these isometrically embedded subsets, the analogy with hyperbolic space is perfect, since these are isometric to $\mathbb{H}^2$, and as a consequence, the dynamics on the quotient can be understood using tools from hyperbolic geometry.
-The stabilizers of these can vary in size, from being as large a lattices, to as small as infinitely generated free groups, and conjecturally, as small as a span of a single pseudo-Anosov element.
-The higher dimensional complex submanifolds exhibit more rigidity (see \cite{wright2020}), and it is expected that the limit set of their stabilizer is a sphere of real dimension $2d-1$ (where $d$ is the complex dimension of the submanifolds), i.e. as big as it can get. Examples of higher dimensional totally real isometrically embedded submanifolds come from Teichm\"uller spaces of non-orientable surfaces.
-The limit set of the stabilizers of these manifolds is smaller in comparison to the complex variants.
+% The first concerns isometrically embedded submanifolds of the Teichm\"uller space of orientable surfaces.
+% The simplest of such manifolds is just a Teichm\"uller geodesic, and these are fairly well
+% understood objects.
+% The simplest isometrically embedded complex submanifolds are \emph{Teichm\"uller
+%   discs}, which are isometric to $\mathbb{H}^2$.
+% On these isometrically embedded subsets, the analogy with hyperbolic space is perfect, since these are isometric to $\mathbb{H}^2$, and as a consequence, the dynamics on the quotient can be understood using tools from hyperbolic geometry.
+% The stabilizers of these can vary in size, from being as large a lattices, to as small as infinitely generated free groups, and conjecturally, as small as a span of a single pseudo-Anosov element.
+% The higher dimensional complex submanifolds exhibit more rigidity (see \cite{wright2020}), and it is expected that the limit set of their stabilizer is a sphere of real dimension $2d-1$ (where $d$ is the complex dimension of the submanifolds), i.e. as big as it can get. Examples of higher dimensional totally real isometrically embedded submanifolds come from Teichm\"uller spaces of non-orientable surfaces.
+% The limit set of the stabilizers of these manifolds is smaller in comparison to the complex variants.
 
-The second way Teichm\"uller spaces of non-orientable surfaces crop up is through \emph{interval exchange transformations with flips}.
+\subsection*{Interval exchange transformations with flips}
+
+Teichm\"uller spaces of non-orientable surfaces also show up in the context of \emph{interval exchange transformations with flips}.
 The dynamics of interval exchange transformations are closely related to the dynamics of horizontal/vertical flow on an associated quadratic differential, which is related to the geodesic flow on the Teichm\"uller surface via Masur's criterion (a version of which holds in the non-orientable setting as well).
 IETs with flips do not have very good recurrence properties: in fact, almost all of them (with respect to the Lebesgue measure) have a periodic point (see \cite{nogueira_1989}) and the set of minimal IETs with flips have a lower Hausdorff dimension (see \cite{skripchenko2018hausdorff}).
 To understand the IETs which are uniquely ergodic, one is naturally led to determine which ``quadratic differentials'' on non-orientable surfaces are recurrent.
@@ -367,10 +361,10 @@ In the hyperbolic setting, the two notions coincide, but for mapping class subgr
 For simple enough subgroups, one can explicitly work out $\dynlim(\Gamma)$ and $\geolim(\Gamma)$: for instance, when $\Gamma$ is the stabilizer of the Teichmüller disc associated to a Veech surface, $\dynlim(\Gamma)$ is the visual boundary of the Teichmüller disc, which by Veech dichotomy, only consists of either uniquely ergodic directions on the Veech surface, or the cylinder directions, where the coefficients on the cylinders are their moduli in the surface.
 On the other hand, $\geolim(\Gamma)$ consists of all the points in $\dynlim(\Gamma)$, but it additionally contains all possible convex combinations of the cylinders appearing in $\dynlim(\Gamma)$ (see Section 2.1 of \cite{2007math......2034K}).
 
-The gap between $\geolim$ and $\dynlim$ suggests the following expansion operation on subsets of $\pmf$
-\begin{definition}[Expansion]
-  Given a projective measured foliation $\lambda$, we define its expansion $\expansion(\lambda)$ to be the image in $\pmf$ of set of all non-zero measures invariant measures on the topological foliation associated to $\lambda$.
-  Given a subset $\Lambda$, we define its expansion $\expansion(\Lambda)$ to be the union of expansions of the projective measured laminations contained in $\Lambda$.
+The gap between $\geolim$ and $\dynlim$ suggests the following saturation operation on subsets of $\pmf$
+\begin{definition}[Saturation]
+  Given a projective measured foliation $\lambda$, we define its saturation $\expansion(\lambda)$ to be the image in $\pmf$ of set of all non-zero measures invariant measures on the topological foliation associated to $\lambda$.
+  Given a subset $\Lambda$, we define its saturation $\expansion(\Lambda)$ to be the union of saturations of the projective measured laminations contained in $\Lambda$.
 \end{definition}
 Observe that for a uniquely ergodic foliation $\lambda$, $\expansion(\lambda) = \{\lambda\}$, for a minimal but not uniquely ergodic $\lambda$, $\expansion(\lambda)$ is the convex hull of all the ergodic measures supported on the topological lamination associated to $\lambda$, and for a foliation with all periodic leaves, $\expansion(\lambda)$ consists of all foliations that can be obtained by assigning various weights to the core curves of the cylinders.
 
@@ -405,17 +399,17 @@ We prove that is indeed the case when $\Gamma = \mcg(\no_g)$ in Section \ref{sec
 
 
 \subsection*{List of notation}
-Here we list the various symbols we will be using throughout the paper.
+Here we describe some of the more commonly used symbols in the paper.
 \begin{itemize}
 \item[] $\os_g$: The compact orientable surface of genus $g$.
-\item[] $\no_{d}$: The compact non-orientable surface of demigenus $d$.
+\item[] $\no_{g}$: The compact non-orientable surface of genus $g$.
 \item[] $\iota$: The deck transformation of the orientation double cover of a non-orientable surface.
 \item[] $\teich(S)$: The Teichm\"uller space of $S$.
 \item[] $\systole(\no_d)$: The set of points in $\teich(\no_d)$ where no one-sided curve is shorter than
   $\varepsilon$.
-\item[] $g_t$: The Teichm\"uller geodesic flow on quadratic differentials.
+% \item[] $g_t$: The Teichm\"uller geodesic flow on quadratic differentials.
 \item[] $\mcg(S)$: The mapping class group of $S$.
-\item[] $\scc(S)$: The set of all simple closed curves on $S$.
+% \item[] $\scc(S)$: The set of all simple closed curves on $S$.
 \item[] $\mf(S)$: The space of measured foliations on $S$.
 \item[] $\pmf(S)$: The space of projective measured foliations on $S$.
 \item[] $\mf^+(\no_d)$, $\pmf^+(\no_d)$: The set of (projective) measured foliations on $\no_d$ containing
