@@ -3,6 +3,11 @@
 #+TITLE: Things to do
 #+AUTHOR: Sayantan Khan
 
+* TODO Answer Q 19.1 precisely.
+* Lemma 3.5: Don't name constants and omit proof
+* Make convex combinations lemma more precise by working in MF only
+* Other corrections in pdf Alex sent
+
 * TODO Alternative introduction structure
 ** Analogy to geometrically finite
 *** Good parts
