@@ -3,7 +3,9 @@
 #+TITLE: Things to do
 #+AUTHOR: Sayantan Khan
 
-* TODO Alternative introduction structure
+* TODO Figures
+Changes all color references to color and dotted references.
+* DONE Alternative introduction structure
 ** Analogy to geometrically finite
 *** Good parts
 Small limit set, i.e. the upper bound only
@@ -15,9 +17,7 @@ We care about the limit set because the Hausdorff dimension is conjecturally the
 exponent.
 Describe the limit set.
 
-** TODO Get rid of complex submanifold stuff
-* TODO Figures
-Changes all color references to color and dotted references.
+** DONE Get rid of complex submanifold stuff
 * DONE Change domain of discontinuity to wandering set
 * DONE Rephrase and make more precise Theorem 6.2
 Look into limits of Strebel differentials.  The better statement might be trickier because we
