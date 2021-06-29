@@ -30,13 +30,14 @@
 \label{sec:introduction-v2}
 
 The moduli space $\mg(\no_g)$ of compact \emph{non-orientable} hyperbolic surfaces of genus $g$ is conjectured to have similarities to infinite volume geometrically finite manifolds (in a manner similar to how moduli spaces of compact orientable surfaces have properties similar to finite volume hyperbolic manifolds).
-The main results suggesting the analogy between moduli spaces of non-orientable surfaces and infinite volume manifolds are due to Norbury and Gendulphe.
+The main results suggesting the analogy between moduli spaces of non-orientable surfaces and infinite volume geometrically finite manifolds are due to Norbury and Gendulphe.
 
 \begin{itemize}
 \item The $\mg(\no_g)$ has infinite Teichm\"uller volume (Theorem 17.1 of \cite{gendulphe_whats_2017}).
   While the associated Teichm\"uller space does not have a Weil-Peterson volume form, it has an analogous volume form with respect to which the moduli space has infinite volume as well (see \cite{norbury2008lengths}).
 \item The action of the mapping class group $\mcg(\no_g)$ on the Thurston boundary is not minimal (Proposition 8.9 in \cite{gendulphe_whats_2017}).
 \item The Teichm\"uller geodesic flow is not topologically transitive, and thus not ergodic with respect to any Borel measure with full support (Proposition 17.5 of \cite{gendulphe_whats_2017}).
+\item There exists an $\mcg(\no_g)$-equivariant finite volume deformation retract of $\teich(\no_g)$.
 \end{itemize}
 
 We extend this analogy further, by showing that the limit set of $\mcg(\no_g)$ is contained in the complement of a full measure dense open set.
@@ -51,13 +52,12 @@ Here $\pmf^-(\no_g)$ is the set of all projective measured foliations that have 
 The fact that such foliations form a full measure dense open subset is classical, due to Danthony-Nogueira (see \cite{ASENS_1990_4_23_3_469_0}).
 This is analogous to limit sets of infinite volume geometrically finite groups, where the complement of the limit set is a full measure open set as well.
 
-But the analogy is only an imperfect one: Gendulphe (in \cite{gendulphe_whats_2017}) constructed a finite volume
-constructed a finite volume $\mcg(\no_g)$ equivariant retraction of the Teichm\"uller space to $\systole$, the set of points in the Teichm\"uller space that have no one-sided curves shorter than $\varepsilon$.
+In \cite{gendulphe_whats_2017}, Gendulphe constructed a retract of $\teich(\no_g)$ to $\systole$, the set of points in the Teichm\"uller space that have no one-sided curves shorter than $\varepsilon$, and showed that it has finite volume.
 They also asked the following question about $\systole$.
 \begin{unquestion}[Question 19.1 of \cite{gendulphe_whats_2017}]
   Is $\systole$ quasi-convex with respect to the Teichmüller metric?
 \end{unquestion}
-We show that $\systole$ is actually not quasi-convex in the strongest possible sense, answering Question 19.1 of \cite{gendulphe_whats_2017}.
+We show that $\systole$ is actually not quasi-convex in the following sense, answering Question 19.1 of \cite{gendulphe_whats_2017}.
 \begingroup
 \def\thetheorem{\ref{thm:qc-fail}}
 \begin{theorem}
@@ -93,25 +93,17 @@ We prove something almost as strong.
 \addtocounter{theorem}{-1}
 \endgroup
 
-Apart from the conjectured analogy being inherently interesting, these questions also show up when counting simple closed geodesics of length less than $L$ on any hyperbolic surface. Mirzakhani, in \autocite{mirzakhani2008growth}, obtained precise asymptotics for this counting function in the orientable case by essentially proving equidistribution (with respect to Thurston measure) of $\mcg(\os_{g})$-orbits in $\pmf(\os_g)$.
+We now exhibit two contexts in which one might be forced to consider the limit set of $\mcg(\no_g)$.
+
+\subsection*{Counting simple closed curves}
+
+In the orientable setting, the number of simple closed geodesics of length less than $L$ grows like a polynomial of degree $6g-6$, which is precisely the dimension of the limit set of the mapping class group: in this case, that happens to be all of $\pmf$.
+In the non-orientable setting, Gendulphe showed that the growth rate of the simple closed geodesics of length less than $L$ is smaller than $L^{\dim(\pmf(\no_g))}$, and one might conjecture that the growth rate is $L^h$, where $h$ is the Hausdorff dimension of the limit set.
+Mirzakhani, in \autocite{mirzakhani2008growth}, obtained precise asymptotics for the counting function in the orientable case by essentially proving equidistribution (with respect to Thurston measure) of $\mcg(\os_{g})$-orbits in $\pmf(\os_g)$.
 To do the same for the non-orientable case, we need an ergodic measure supported on sets
 minimal with respect to the $\mcg$ action, e.g. $\overline{\pmf^+(\no_d)}$.
 One way to construct such a measure would be to replicate the construction of Patterson-Sullivan measures for geometrically finite manifolds, which brings us back
 to the analogy between $\mg(\no_d)$ and infinite volume geometrically finite manifolds.
-
-% \subsection*{Context}
-
-% The author is aware of two other subfields of Teichm\"uller theory that naturally lead to the study of the Teichm\"uller space of non-orientable surfaces.
-
-% The first concerns isometrically embedded submanifolds of the Teichm\"uller space of orientable surfaces.
-% The simplest of such manifolds is just a Teichm\"uller geodesic, and these are fairly well
-% understood objects.
-% The simplest isometrically embedded complex submanifolds are \emph{Teichm\"uller
-%   discs}, which are isometric to $\mathbb{H}^2$.
-% On these isometrically embedded subsets, the analogy with hyperbolic space is perfect, since these are isometric to $\mathbb{H}^2$, and as a consequence, the dynamics on the quotient can be understood using tools from hyperbolic geometry.
-% The stabilizers of these can vary in size, from being as large a lattices, to as small as infinitely generated free groups, and conjecturally, as small as a span of a single pseudo-Anosov element.
-% The higher dimensional complex submanifolds exhibit more rigidity (see \cite{wright2020}), and it is expected that the limit set of their stabilizer is a sphere of real dimension $2d-1$ (where $d$ is the complex dimension of the submanifolds), i.e. as big as it can get. Examples of higher dimensional totally real isometrically embedded submanifolds come from Teichm\"uller spaces of non-orientable surfaces.
-% The limit set of the stabilizers of these manifolds is smaller in comparison to the complex variants.
 
 \subsection*{Interval exchange transformations with flips}
 
@@ -152,6 +144,7 @@ The elements of $\scc$ can be classified into two types.
 \end{description}
 The subset of two sided curves in denoted by $\scc^+$ and one sided curves by $\scc^-$.
 Since these two types are topologically distinct, they form invariant subspaces with respect to the mapping class group action.
+If we think of our non-orientable surface as an orientable subsurface with crosscaps attached, a two-sided curve is one that intersects an even number of crosscaps, and a one-sided curve is one that intersects an odd number of crosscaps.
 
 The orientable double cover of $\no_g$ is the orientable surface $\os_{g-1}$, and comes with an orientation reversing involution $\iota$.
 Since this is an orientation double cover, the subgroup of $\pi_1(\no_g)$ corresponding to this cover is characteristic, i.e. left invariant by every homeomorphism induced automorphism of the fundamental group.
@@ -470,96 +463,87 @@ However, at each point of intersection, there exist two possible surgeries that 
 Resolving all the intersections by choosing surgeries at each of the points results in a simple multicurve (i.e. it may have more than one component).
 It is not necessarily the case that the resulting multicurve has two-sided components either.
 However, if it is the case that the resulting multicurve is a curve, then it will be a two-sided curve: that is because both $\gamma_1$ and $\gamma_2$ pass through an even number of crosscaps, and if the resolution of $\gamma_1 \cup \gamma_2$ has only one component, it must also pass through an even number of crosscaps.
-We prove that there always exists a choice of surgery that results in a simple curve.
+We prove that there always exists a choice of surgery that results in a simple curve (we skip the proof of this fact since it is fairly straightforward).
 \begin{lemma}
   \label{lem:valid-surgery}
   Let $\gamma_1$ and $\gamma_2$ be two-sided curves on $\no_g$ with $i(\gamma_1, \gamma_2) > 0$.
   For each intersection point of $\gamma_1$ and $\gamma_2$, there exists a choice of surgery to resolve the intersection such that the multicurve obtained by resolving all of the singularities contains only one component.
 \end{lemma}
-\begin{proof}
-  We begin by turning the union of $\gamma_1$ and $\gamma_2$ into a non-simple curve.
-  Pick any intersection point, and resolve the singularity (the choice of resolution does not matter).
-  It is easily verified that the resulting object can be parameterized as a map from $S^1$ into the surface.
-  If $i(\gamma_1, \gamma_2) = 1$, we are done, since we have a simple curve.
-  If $i(\gamma_1, \gamma_2) > 1$, we have a non-simple curve.
-  At each intersection point, we resolve the singularity such that the strands corresponding to directions flowing into the singularity are glued together, and the strands corresponding to directions flowing out of the singularity are glued together (see \autoref{fig:good-surgery}).
-  \begin{figure}[h]
-    \centering
-    \incfig[0.8]{good-surgery}
-    \caption{Surgery that results in a connected curve.}
-    \label{fig:good-surgery}
-  \end{figure}
-Again, it is easy to see that this surgery results in a connected curve, and after resolving all singularities in this manner, we have a simple curve.
-\end{proof}
+% \begin{proof}
+%   We begin by turning the union of $\gamma_1$ and $\gamma_2$ into a non-simple curve.
+%   Pick any intersection point, and resolve the singularity (the choice of resolution does not matter).
+%   It is easily verified that the resulting object can be parameterized as a map from $S^1$ into the surface.
+%   If $i(\gamma_1, \gamma_2) = 1$, we are done, since we have a simple curve.
+%   If $i(\gamma_1, \gamma_2) > 1$, we have a non-simple curve.
+%   At each intersection point, we resolve the singularity such that the strands corresponding to directions flowing into the singularity are glued together, and the strands corresponding to directions flowing out of the singularity are glued together (see \autoref{fig:good-surgery}).
+%   \begin{figure}[h]
+%     \centering
+%     \incfig[0.8]{good-surgery}
+%     \caption{Surgery that results in a connected curve.}
+%     \label{fig:good-surgery}
+%   \end{figure}
+% Again, it is easy to see that this surgery results in a connected curve, and after resolving all singularities in this manner, we have a simple curve.
+% \end{proof}
 
-We will call the resulting simple curve $\kappa$.
-For all that follows, we will pick an arbitrary hyperbolic metric on our surface.
+Call the resulting simple curve $\kappa$: for all that follows, we will pick an arbitrary hyperbolic metric on our surface.
 We want the geodesic representative of $\kappa$ to have approximately the same intersection numbers with all curves as the $\gamma_1 \cup \gamma_2$ did.
 For that to happen, it is important the geodesic tightening of $\kappa$ fellow travels with both $\gamma_1$ and $\gamma_2$ for a large fraction of their lengths.
 The next lemma describes the conditions for that to happen.
 \begin{lemma}
   \label{lem:geodesic-tightening}
   Let $\alpha$, $\beta$ and $\gamma$ be three sides of a geodesic triangle in $\HH^2$.
-  Let $c_\alpha$ and $c_{\beta}$ be points on $\alpha$ and $\beta$ equidistant from the intersection of $\alpha$ and $\beta$ such that $d(\alpha, \beta) = 4 \delta$, where $\delta$ is the Gromov hyperbolicity constant of $\HH^2$.
-  Then the broken geodesic formed by going from the intersection of $\alpha$ and $\gamma$ to $c_{\alpha}$ to $c_{\beta}$ to the intersection of $\gamma$ and $\beta$ is in a $2\delta$-neighbourhood of $\gamma$ and $\gamma$ is in a $4\delta$-neighbourhood of this broken geodesic.
+  Let $c_\alpha$ and $c_{\beta}$ be points on $\alpha$ and $\beta$ equidistant from the intersection of $\alpha$ and $\beta$ such that $d(c_\alpha, c_\beta) = 4 \delta$, where $\delta$ is the Gromov hyperbolicity constant of $\HH^2$.
+  Then the broken geodesic formed by going from the intersection of $\alpha$ and $\gamma$ to $c_{\alpha}$ to $c_{\beta}$ to the intersection of $\gamma$ and $\beta$ and $\gamma$ are within constant distance of each other, where the constant is absolute.
 \end{lemma}
-\begin{proof}
-  Denote the segment between the intersection point of $\alpha$ and $\gamma$ and $c_{\alpha}$ by $\alpha^{\prime}$, and analogous segment on $\beta$ by $\beta^{\prime}$.
-  Denote the geodesic segment between $c_{\alpha}$ and $c_{\beta}$ by $\kappa$.
-  The segments $\gamma$, $\alpha^{\prime}$, $\kappa$ and $\beta^{\prime}$ form a geodesic quadrilateral.
-  By Gromov hyperbolicity, we have that $\gamma$ is in a $2\delta$-neighbourhood of the broken geodesic.
-  Since the distance between $\alpha^{\prime}$ and $\beta^{\prime}$ is more than $4 \delta$, the there must be some point in $\kappa$ that is within $2 \delta$ distance of $\gamma$.
-  To see that the opposite inclusion also holds, note that $\beta^{\prime}$ is in a $2\delta$-neighbourhood of $\gamma$, $\alpha^{\prime}$ and $\kappa$.
-  But $\alpha^{\prime}$ is more than $4 \delta$ distance away from $\beta^{\prime}$, and thus $\beta^{\prime}$ must be in a $2\delta$ neighbourhood of $\gamma$ and $\kappa$.
-  But since $\kappa$ itself is within $2\delta$ distance of $\gamma$, the $4\delta$-neighbourhood of $\gamma$ contains $\beta^{\prime}$.
-  The same argument also shows containment of $\alpha^{\prime}$ and $\kappa$, proving the lemma.
-  See \autoref{fig:segment-together} for a picture of the setup.
-  \begin{figure}[h]
-    \centering
-    \incfig[0.8]{segment-together}
-    \caption{Resolved segments that get shorter under geodesic tightening.}
-    \label{fig:segment-together}
-  \end{figure}
-\end{proof}
+The proof of this fact is also elementary hyperbolic geometry, and we will skip the proof.
+
+% \begin{proof}
+%   Denote the segment between the intersection point of $\alpha$ and $\gamma$ and $c_{\alpha}$ by $\alpha^{\prime}$, and analogous segment on $\beta$ by $\beta^{\prime}$.
+%   Denote the geodesic segment between $c_{\alpha}$ and $c_{\beta}$ by $\kappa$.
+%   The segments $\gamma$, $\alpha^{\prime}$, $\kappa$ and $\beta^{\prime}$ form a geodesic quadrilateral.
+%   By Gromov hyperbolicity, we have that $\gamma$ is in a $2\delta$-neighbourhood of the broken geodesic.
+%   Since the distance between $\alpha^{\prime}$ and $\beta^{\prime}$ is more than $4 \delta$, the there must be some point in $\kappa$ that is within $2 \delta$ distance of $\gamma$.
+%   To see that the opposite inclusion also holds, note that $\beta^{\prime}$ is in a $2\delta$-neighbourhood of $\gamma$, $\alpha^{\prime}$ and $\kappa$.
+%   But $\alpha^{\prime}$ is more than $4 \delta$ distance away from $\beta^{\prime}$, and thus $\beta^{\prime}$ must be in a $2\delta$ neighbourhood of $\gamma$ and $\kappa$.
+%   But since $\kappa$ itself is within $2\delta$ distance of $\gamma$, the $4\delta$-neighbourhood of $\gamma$ contains $\beta^{\prime}$.
+%   The same argument also shows containment of $\alpha^{\prime}$ and $\kappa$, proving the lemma.
+%   See \autoref{fig:segment-together} for a picture of the setup.
+%   \begin{figure}[h]
+%     \centering
+%     \incfig[0.8]{segment-together}
+%     \caption{Resolved segments that get shorter under geodesic tightening.}
+%     \label{fig:segment-together}
+%   \end{figure}
+% \end{proof}
 To use \autoref{lem:geodesic-tightening} in our situation, we will additionally need to argue that the lengths of $\alpha^{\prime}$ and $\beta^{\prime}$ are almost the entire length of $\alpha$ and $\beta$ respectively.
 That will show that the $\kappa$ and $\gamma_1 \cup \gamma_2$ have approximately the same intersection numbers with any simple closed curve (after scaling appropriately).
 
-Given a sequence of curves $\{\gamma_j\}$ converging to a projective measured foliation in $\pmf$, we can also study their convergence in $\mf$, after scaling by an appropriate constant.
-The next lemma shows that it suffices to scale by their hyperbolic length.
-\begin{lemma}
-  \label{lem:scaling-lemma}
-  If $\{\gamma_j\}$ converges to a projective measured foliation in $\pmf$, then $\displaystyle \frac{\gamma_j}{\lhyp(\gamma_j)}$ converges in $\mf$, possibly after passing to a subsequence.
-\end{lemma}
-\begin{proof}
-  We claim that for any curve $\xi$, $i(\gamma_j, \xi) \leq c \cdot \lhyp(\gamma_j)$, where the constant $c$ only depends on the hyperbolic metric.
-  This is because the $\lhyp(\gamma_j)$ is bounded below by $i(\gamma_j, \xi) \cdot o_\xi$, where $o_\xi$ is the length of the shortest orthogeodesic arc beginning and ending at $\xi$.
-  As $\xi$ varies among all simple closed curves, $o_\xi$ is bounded below by an absolute constant: this follows from hyperbolic trigonometry (see \cite{thurston1979geometry}).
-  That proves the claim.
-
-  In particular, we have that intersection with $\displaystyle \frac{\gamma_j}{\lhyp(\gamma_j)}$ is a bounded transverse measure.
-  By compactness of bounded measures, we have convergence after passing to a subsequence.
-\end{proof}
-
 \begin{lemma}
   \label{lem:convex-combinations}
-  Let $\gamma_1$ and $\gamma_2$ be two measured foliations supported on the same topological foliation such that the transverse measures induced by $\gamma_1$ and $\gamma_2$ are mutually singular.
-  Furthermore, suppose both $\gamma_1$ and $\gamma_2$ are approximable by simple two-sided curves.
-  Then any convex combination $c_1 \gamma_1 + c_2\gamma_2$ is also approximable by simple two-sided curves.
+  Let $\gamma_1$ and $\gamma_2$ be two measured foliations satisfying the following conditions.
+  \begin{itemize}
+  \item The intersection of $\gamma_1$ and $\gamma_2$ with the Liouville current is $1$.
+  \item $\gamma_1$ and $\gamma_2$ are supported on the same topological foliation.
+  \item $\gamma_1$ and $\gamma_2$ are mutually singular.
+  \item $\gamma_1$ and $\gamma_2$ are approximable by simple two-sided multicurves.
+  \end{itemize}
+  Then for any $c \in (0, \infty)$, the measured foliation $c \gamma_1 + \gamma_2$ is also approximable by simple two-sided multicurves.
 \end{lemma}
 
   % \todo[inline]{Make proof clearer by emphasizing on the importance of the multiplicity $m_j$.}
 \begin{proof}
   Let $\{\gamma_{1j}\}$ and $\{ \gamma_{2j}\}$ be sequences of simple two-sided curves converging to $\gamma_1$ and $\gamma_2$ in $\pmf$.
-  We can assume without loss of generality that $i(\gamma_{1i}, \gamma_{2j^{\prime}}) > 0$ for all $j$ and $j^{\prime}$ (to see this, Dehn twist one of the curves by a short curve that intersects both of them).
-  We can also assume using \autoref{lem:scaling-lemma} that normalizing these curves by their hyperbolic length converges in $\mf$.
+  Since the intersection number of $\gamma_1$ and $\gamma_2$ with the Liouville current is $1$, we have that $\frac{\gamma_{1j}}{\lhyp(\gamma_{1j})}$ approaches $\gamma_1$ in $\mf$, and $\frac{\gamma_{2j}}{\lhyp(\gamma_{2j})}$ approaches $\gamma_2$ in $\mf$.
+  We can assume without loss of generality that $i(\gamma_{1i}, \gamma_{2j^{\prime}}) > 0$ for all $j$ and $j^{\prime}$, for if the intersection number is $0$ for infinitely many $j$, the union of the two curves with the appropriate weights will approximate the combination $c \gamma_1 + \gamma_2$.
+  % We can also assume using \autoref{lem:scaling-lemma} that normalizing these curves by their hyperbolic length converges in $\mf$.
   We pass to a subsequence of $\gamma_{2j}$ such that after passing to the subsequence,
   the following holds.
   \begin{align}
     \label{eq:1}
     \lim_{i \to \infty} \frac{\lhyp(\gamma_{2j})}{\lhyp(\gamma_{1j})} = \infty
   \end{align}
-  We take the union of $m_j$ parallel copies of $\gamma_{1j}$ and $1$ copy of $\gamma_{2j}$, where we pick $m_j$ such the fraction $\displaystyle \frac{m_j \cdot \lhyp(\gamma_{1j})}{\lhyp(\gamma_{2j})}$ is as close to $\displaystyle \frac{c_1}{c_2}$ as possible.
-  Equation \eqref{eq:1} will ensure that the ratio of the lengths (with multiplicities) will approach $\displaystyle \frac{c_1}{c_2}$ as $i$ goes to $\infty$.
+  We take the union of $m_j$ parallel copies of $\gamma_{1j}$ and $1$ copy of $\gamma_{2j}$, where we pick $m_j$ such the fraction $\displaystyle \frac{m_j \cdot \lhyp(\gamma_{1j})}{\lhyp(\gamma_{2j})}$ is as close to $c$ as possible.
+  Equation \eqref{eq:1} will ensure that the ratio of the lengths (with multiplicities) will approach $c$ as $i$ goes to $\infty$.
 
   We now resolve the intersections of the $m_j$ copies of $\gamma_{1j}$ and $\gamma_{2j}$ so that the resulting multicurve has only one component.
   If $m_j = 1$, \autoref{lem:valid-surgery} tells us that there is such a resolution of intersections.
@@ -572,11 +556,11 @@ The next lemma shows that it suffices to scale by their hyperbolic length.
   \end{figure}
 
   Denote the resolved curve by $\kappa_j$.
-  To show that $\kappa_j$ converges to $c_1 \gamma_1 + c_2 \gamma_2$ in $\pmf$, we need to show that the following limit holds for all simple closed curves $\xi$.
+  To show that $\kappa_j$ converges to $c \gamma_1 + \gamma_2$ in $\pmf$, we need to show that the following limit holds for all simple closed curves $\xi$.
   \begin{align}
     \label{eq:2}
     \lim_{j \to \infty} \frac{i(\kappa_j, \xi)}{m_j \cdot \lhyp(\gamma_{1j}) + \lhyp(\gamma_{2j})}
-    = \lim_{j \to \infty} \left( c_1 \frac{i(\gamma_{1j}, \xi)}{\lhyp(\gamma_{1j})} + c_2 \frac{i(\gamma_{2j}, \xi)}{\lhyp(\gamma_{2j})} \right)
+    = \lim_{j \to \infty} \left( c \frac{i(\gamma_{1j}, \xi)}{\lhyp(\gamma_{1j})} +  \frac{i(\gamma_{2j}, \xi)}{\lhyp(\gamma_{2j})} \right)
   \end{align}
   The equality replaced with an inequality in one direction is easy to see: namely, the left hand side is less than or equal to the right hand side.
   This is because resolving intersections can only reduce the intersection number with any given simple closed curve.
@@ -584,7 +568,7 @@ The next lemma shows that it suffices to scale by their hyperbolic length.
   \begin{align}
     \label{eq:3}
     \lim_{j \to \infty} \frac{i(\kappa_j, \xi)}{m_j \cdot \lhyp(\gamma_{1j}) + \lhyp(\gamma_{2j})}
-    \geq \lim_{j \to \infty} \left( c_1 \frac{i(\gamma_{1j}, \xi)}{\lhyp(\gamma_{1j})} + c_2 \frac{i(\gamma_{2j}, \xi)}{\lhyp(\gamma_{2j})} \right)
+    \geq \lim_{j \to \infty} \left( c \frac{i(\gamma_{1j}, \xi)}{\lhyp(\gamma_{1j})} +  \frac{i(\gamma_{2j}, \xi)}{\lhyp(\gamma_{2j})} \right)
   \end{align}
   Let $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ denote the segments of lifts to $\HH^2$ of $\gamma_{1j}$ and $\gamma_{2j}$ that fellow travel within distance $4\delta$ after intersecting, and denote their complements in $\gamma_{1j}$ and $\gamma_{2j}$ by $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$.
   \autoref{lem:geodesic-tightening} tells us that the geodesic representative of $\kappa_j$ will be within bounded distance of $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$.
@@ -629,7 +613,7 @@ The next lemma shows that it suffices to scale by their hyperbolic length.
     i(\xi, \gamma_{2j}^{\prime}) &\leq c_\xi \lhyp(\gamma_{2j}^{\prime}) \\
   \end{align}
 
-  Finally, \autoref{lem:scaling-lemma} gives us an upper bound for the ratio between intersection number and length of $\gamma_{1j}$ and $\gamma_{2j}$.
+  Using the fact that $\gamma_1$ and $\gamma_2$ have intersection number $1$ with Liouville current, we get the following inequality for a large enough $j$ for some $k$.
   \begin{align}
     \label{eq:9}
     \frac{\lhyp(\gamma_{1j})}{i(\xi, \gamma_{1j})} &\leq k \\
