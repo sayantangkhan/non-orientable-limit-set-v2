@@ -20,7 +20,7 @@
   We provide evidence both for and against a conjectural analogy between geometrically finite infinite covolume Fuchsian groups and the mapping class group of compact non-orientable surfaces.
   In the positive direction, we show the complement of the limit set is open and dense. 
   Moreover, we show that the limit set of the mapping class group contains the set of uniquely ergodic foliations and is contained in the set of all projective measured foliations not containing any one-sided leaves, establishing large parts of a conjecture of Gendulphe.
-  In the negative direction, we show that the action of the mapping class group on the boundary has an empty wandering set, and a conjectured convex core is not even quasi-convex, answering a question of Gendulphe.
+  In the negative direction, we show that the action of the mapping class group on the boundary has an empty wandering set, and the closure of a conjectured convex core is not quasi-convex, in contrast with the geometrically finite setting.
   %
   %we show that a conjectured convex core for the moduli space is in fact not eve n quasi-convex, answering a question of [], and the action of the mapping class group on the boundary has an empty wandering set.
 %
@@ -64,7 +64,7 @@ They also asked the following question about $\systole$.
 \begin{unquestion}[Question 19.1 of \cite{gendulphe_whats_2017}]
   Is $\systole$ quasi-convex with respect to the Teichmüller metric?
 \end{unquestion}
-We show that $\systole$ is actually not quasi-convex in the following sense, answering Question 19.1 of \cite{gendulphe_whats_2017}.
+We show that the closure $\overline{\systole}$ is not quasi-convex in the following sense, answering a weaker version of the above question.
 \begingroup
 \def\thetheorem{\ref{thm:qc-fail}}
 \begin{theorem}
@@ -72,7 +72,10 @@ We show that $\systole$ is actually not quasi-convex in the following sense, ans
 \end{theorem}
 \addtocounter{theorem}{-1}
 \endgroup
-We exhibit the failure of the analogy in yet another way, by showing that $\mcg(\no_g)$ does not act properly discontinuously on the complement of the limit set.
+Observe that in simply connected hyperbolic spaces, a subset is convex if and only if its closure in the visual compactification is convex (this is a consequence of the hyperbolicity).
+Since the Teichm\"uller space is not Gromov hyperbolic, we cannot draw the same conclusion about the quasi-convexity of $\systole$.
+
+We exhibit another failure of the analogy, by showing that $\mcg(\no_g)$ does not act properly discontinuously on the complement of the limit set.
 \begingroup
 \def\thetheorem{\ref{thm:dod-is-empty}}
 \begin{theorem}
@@ -100,7 +103,7 @@ We prove a result that is slightly weaker than the conjecture.
 \addtocounter{theorem}{-1}
 \endgroup
 
-We now exhibit two contexts in which one might be forced to consider the limit set of $\mcg(\no_g)$.
+We now exhibit two contexts in which one is naturally led to consider the limit set of $\mcg(\no_g)$.
 
 \subsection*{Counting simple closed curves}
 
@@ -1155,13 +1158,13 @@ To prove this proposition, we will need to estimate how Dehn twists change inter
   This proves the result.
 \end{proof}
 
-\section{Failure of quasi-convexity for $\systole$}
+\section{Failure of quasi-convexity for $\overline{\systole}$}
 \label{sec:fail-quasi-conv}
 
 In the setting of Teichm\"uller geometry, convexity is usually too strong of a requirement.
 For instance, metric balls in Teichm\"uller space are not convex, but merely quasi-convex (see \autocite{lenzhen2011length}).
 \begin{definition}[Quasi-convexity]
-  A subset $S$ of $\overline{\teich(S)}$ is said to be quasi-convex if there is some uniform constant $R > 0$ such that the geodesic segment joining any pair of points in $S$ stays within distance $R$ of $S$.
+  A subset $S$ of $\overline{\teich(S)}$ is said to be quasi-convex if there is some uniform constant $D > 0$ such that the geodesic segment joining any pair of points in $S$ stays within distance $D$ of $S$.
 \end{definition}
 
 Our goal for this section will be to prove the following theorem.
@@ -1169,6 +1172,7 @@ Our goal for this section will be to prove the following theorem.
   \label{thm:qc-fail}
   For all $\varepsilon > 0$, and all $D > 0$, there exists a Teichm\"uller geodesic whose endpoints lie in $\overline{\systole} \cap \pmf$ such that some point in interior of the geodesic is more than distance $D$ from $\systole$.
 \end{theorem}
+It follows from this theorem and our definition of quasi-convexity that $\overline{\systole}$ is not quasi-convex.
 
 We begin by finding short curves in the weak convex hull of $\pmf^+(\no_g)$, for $g \geq 4$\footnote{For $g = 3$, the weak convex hull is empty, since no two two-sided foliations can fill $\no_3$.}.
 Once we have arbitrarily short one-sided curves in the interior of the geodesics, estimates relating Teichmüller distance and ratios of hyperbolic lengths of curves will give us the result.
