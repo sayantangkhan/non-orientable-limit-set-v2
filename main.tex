@@ -1171,7 +1171,7 @@ Our goal for this section will be to prove the following theorem.
   For all $\varepsilon > 0$, and all $D > 0$, there exists a Teichm\"uller geodesic segment whose endpoints lie in ${\systole}$ such that some point in the interior of the geodesic is more than distance $D$ from $\systole$.
 \end{theorem}
 
-We begin by finding Teichmüller geodesic segments whose endpoints lie in $\systole$ such that at some point in the interior, some one-sided curve gets very short.
+We begin by finding Teichmüller geodesic segments whose endpoints lie in $\systole$ such that at a point in the interior, some one-sided curve gets very short.
 Once we have arbitrarily short one-sided curves in the interior of the geodesic segments, estimates relating Teichmüller distance and ratios of hyperbolic lengths of curves will give us the result.
 \begin{proposition}
   \label{prop:very-short-curves}
@@ -1238,25 +1238,27 @@ We now construct explicitly the DQDs satisfying conditions (a) and (b) in genus 
 Consider the area $1$ DQD on $\no_4$ depicted in \autoref{fig:genus-4-example}.
 \begin{figure}[h]
   \centering
-  \includegraphics{example-image-a}
+  \incfig[0.5]{genus-4-example}
   \caption{A DQD on $\no_4$.}
   \label{fig:genus-4-example}
 \end{figure}
 We impose the following constraint on the depicted DQD: the edges $\{c, c^{\prime}, d, d^{\prime}\}$ are all oriented at an angle of $\pm \frac{\pi}{4}$, and have the same length.
 
-Observe that by making the length of $c$ (and correspondingly $c^{\prime}$, $d$, and $d^{\prime}$) go to $0$, while keeping the area $1$ lets us embed an annulus of high modulus around any curve in $\{c, c^{\prime}, d, d^{\prime}\}$.
+Observe that by making the length of $c$ (and correspondingly $c^{\prime}$, $d$, and $d^{\prime}$) go to $0$, while keeping the area $1$ lets us embed an annulus of high modulus (pictured in yellow in \autoref{fig:genus-4-example}) around any curve in $\{c, c^{\prime}, d, d^{\prime}\}$.
 This shows that the DQD we constructed satisfies condition (a).
 
 Checking condition (b) is easy, but tedious.
-For convenience, we have labelled the core curves of the vertical cylinders: the reader can check that they are all two-sided, and deleting them results in orientable subsurfaces.
+For convenience, we have labelled the core curves of the vertical cylinders in red, blue, and green: the reader can check that they are all two-sided, and deleting them results in orientable subsurfaces.
 In fact, deleting the core curves results in $2$ pairs of pants.
 
 \subsection*{The $g=9$ case}
 Consider the area $1$ DQD on $\no_9$ depicted in \autoref{fig:genus-9-example}.
+To keep the picture from getting cluttered, we describe the edge gluing maps in words: the edges labelled $c$ are glued via the map $z \mapsto -\overline{z} + k$, the edges labelled $b$ and $e$ are glued via $z \mapsto -z + k$, where $k$ is some constant.
+All the other gluings are translation gluings.
 \begin{figure}[h]
   \centering
-  \includegraphics{example-image-b}
-  \caption{A DQD on $\no_9$.}
+  \incfig[0.5]{genus-9-example}
+  \caption{A DQD on $\no_9$. To display the gluing maps on the small slits, we have a zoomed in picture in the ellipses.}
   \label{fig:genus-9-example}
 \end{figure}
 We impose the following constraints on the DQD.
@@ -1264,10 +1266,10 @@ We impose the following constraints on the DQD.
 \item The edges labelled $c$ are oriented at an angle of $\pm \frac{\pi}{4}$, and the lengths of $\{x_h, y_h, x_v, y_v\}$ are $\frac{\lflat(c)}{4\sqrt{2}}$.
 \item The left edge of $x_v$ is aligned with the left edge of $c$, the left edge of $y_v$ is aligned with the midpoint of $c$, the top edge of $x_h$ is aligned with the top edge of $c$, and the top edge of $y_h$ is aligned with the midpoint of $c$.
 \end{enumerate}
-By making $c$ smaller, while keeping the area equal to $1$, one can embed an annulus of high modulus in the DQD, as seen in \autoref{fig:genus-9-example}.
+By making $c$ smaller, while keeping the area equal to $1$, one can embed an annulus of high modulus in the DQD, pictured in yellow in \autoref{fig:genus-9-example}.
 This shows that our construction satisfies condition (a).
 
-To see that deleting the core curves of the horizontal cylinders results in orientable subsurfaces, note that deleting the labelled subset of the core curves results in $2$ pairs of pants, and a genus $3$ orientable surface with one boundary component.
+To see that deleting the core curves of the horizontal cylinders results in orientable subsurfaces, note that deleting the core curves passing through $c$ results in $2$ pairs of pants, and a genus $3$ orientable surface with one boundary component.
 This is again easy, but tedious to verify, so we leave the verification to the reader.
 This shows that the example satisfies condition (b).
 
