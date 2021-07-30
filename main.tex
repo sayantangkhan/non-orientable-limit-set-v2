@@ -142,6 +142,8 @@ Sections \ref{sec:lower-bound-limit-set}, \ref{sec:upper-bound-limit-set}, and \
 For the purposes of this paper, the most convenient way to think about non-orientable surfaces will be to attach \emph{crosscaps} to orientable surfaces.
 Given a surface $S$, attaching a crosscap is the operation of deleting the interior of a small embedded disc, and gluing the boundary $S^1$ via the antipodal map.
 Attaching $k$ crosscaps to a genus $g$ surface results in a genus $2g+k$ non-orientable surface $\no_{2g+k}$ (i.e. the non-orientable surface obtained by taking the connect sum of $2g+k$ copies of $\mathbb{RP}^2$).
+Associated to each cross cap is a one-sided curve, which is the image of the boundary under the quotient map.
+We say that a curve intersects the crosscap if it intersects the associated one-sided curve.
 % In particular, any non-orientable surface can be obtained by just attaching $1$ or $2$ crosscaps to an orientable surface.
 
 Consider the set $\scc$ of simple closed curves on a non-orientable surface $\no$.
@@ -442,7 +444,8 @@ In \cite{gendulphe_whats_2017}, Gendulphe made the following conjecture about $\
 We prove a slightly weaker version of the above conjecture, by describing a subset of the foliations that can be approximated by multicurves in $\pmf^+(\no_g, \QQ)$.
 To state the theorem, we need to define what it means for a foliation to be orientable.
 \begin{definition}[Orientable foliation]
-  A foliation $\lambda$ is said to be orientable if there exists a small enough transverse arc $\eta$ such that any leaf exiting from one side of $\eta$ always returns from the other side.
+  A local orientation on a foliation is the choice of a constant tangent direction on the leaves in a small open set.
+  If the local orientation can be extended to an entire minimal foliation, the foliation is said to be orientable.
 \end{definition}
 In the setting of orientable surfaces, the vertical foliations of translation surfaces are orientable, while there are some directions in half-translation surfaces where the foliation is non-orientable.
 There exist similar examples of orientable and non-orientable foliations on non-orientable surfaces.
@@ -470,12 +473,12 @@ However, at each point of intersection, there exist two possible surgeries that 
 % \end{figure}
 Resolving all the intersections by choosing surgeries at each of the points results in a simple multicurve (i.e. it may have more than one component).
 It is not necessarily the case that the resulting multicurve has two-sided components either.
-However, if it is the case that the resulting multicurve is a curve, then it will be a two-sided curve: that is because both $\gamma_1$ and $\gamma_2$ pass through an even number of crosscaps, and if the resolution of $\gamma_1 \cup \gamma_2$ has only one component, it must also pass through an even number of crosscaps.
+However, if it is the case that the resulting multicurve is a curve, then it will be a two-sided curve: that is because both $\gamma_1$ and $\gamma_2$ pass through an even number of crosscaps, and if the resolution of $\gamma_1 \cup \gamma_2$ has only one component, it must also pass through an even number of crosscaps (see Section \ref{sec:background} to recall what it means for a curve to pass through a crosscap).
 We prove that there always exists a choice of surgery that results in a simple curve (we skip the proof of this fact since it is fairly straightforward).
 \begin{lemma}
   \label{lem:valid-surgery}
   Let $\gamma_1$ and $\gamma_2$ be two-sided curves on $\no_g$ with $i(\gamma_1, \gamma_2) > 0$.
-  For each intersection point of $\gamma_1$ and $\gamma_2$, there exists a choice of surgery to resolve the intersection such that the multicurve obtained by resolving all of the singularities contains only one component.
+  There exists a resolution of all the intersections of $\gamma_1$ and $\gamma_2$ such that the resulting simple multicurve contains only one component.
 \end{lemma}
 % \begin{proof}
 %   We begin by turning the union of $\gamma_1$ and $\gamma_2$ into a non-simple curve.
