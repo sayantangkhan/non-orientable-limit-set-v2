@@ -498,7 +498,25 @@ We prove that there always exists a choice of surgery that results in a simple c
 
 Call the resulting simple curve $\kappa$: for all that follows, we will pick an arbitrary hyperbolic metric on our surface.
 We want the geodesic representative of $\kappa$ to have approximately the same intersection numbers with all curves as the $\gamma_1 \cup \gamma_2$ did.
-For that to happen, it is important the geodesic tightening of $\kappa$ fellow travels with both $\gamma_1$ and $\gamma_2$ for a large fraction of their lengths.
+For that to happen, it is important that the geodesic tightening of $\kappa$ stays within a bounded distance of long sub-arcs of $\gamma_1$ and $\gamma_2$.
+We formally state this as a lemma, and sketch a proof, since the proof is relatively elementary, but tedious to write down.
+\begin{lemma}
+  \label{lem:perturbation-lemma}
+  Let $\{\gamma_i\}$ be a sequence of geodesic arcs on a compact hyperbolic surface $S$ such that $\dfrac{\gamma_i}{\lhyp(\gamma_i)}$ converges to a minimal measured foliation $\lambda \in \mf(S)$.
+  Let $\{\gamma_i^{\prime}\}$ be another sequence of geodesic arcs such that for all $i$, $\gamma_i$ and $\gamma_i^{\prime}$ are within a bounded distance of each other, i.e. the distance is bounded independent of $i$.
+  Then the new sequence $\dfrac{\gamma_i^{\prime}}{\lhyp(\gamma_i^{\prime})}$ also converges to $\lambda$.
+\end{lemma}
+\begin{proof}[Sketch of proof]
+  Let $\delta$ be any simple closed curve, and let $\widehat{\delta}$ be the pre-image of $\delta$ in the universal cover $\mathbb{H}^2$.
+  Let $\widehat{\gamma_i}$ and $\widehat{\gamma_i^{\prime}}$ be single lifts of $\gamma_i$ and $\gamma_i^{\prime}$ to $\mathbb{H}^2$.
+  The intersection number of $\delta$ and $\dfrac{\gamma_i}{\lhyp(\gamma_i)}$ is given by the number of times $\widehat{\gamma_i}$ intersects $\widehat{\delta}$ divided by the length of $\widehat{\gamma_i}$, and $i\left(\delta, \dfrac{\gamma_i^{\prime}}{\lhyp(\gamma_i^{\prime})}\right)$ can be computed similarly.
+  
+  Since the arc $\widehat{\gamma_i^{\prime}}$ can be obtained from $\widehat{\gamma_i}$ by moving the endpoints by a constant amount, we know that the points in the arc far enough from the endpoints only move by a very small amount (this follows from hyperbolic trigonometric formulae).
+  That means if a point in $\widehat{\gamma_i}$ far from the endpoints intersects $\widehat{\delta}$, a nearby point in $\widehat{\gamma_i^{\prime}}$ will also intersect $\widehat{\delta}$.
+  Therefore the difference between the intersection number with $\gamma_i$ and $\gamma_i^{\prime}$ comes from the intersections happening close to the endpoints.
+  Since we are dividing by the length of the arcs, the difference in the intersection numbers goes to $0$, proving the result.
+\end{proof}
+
 The next lemma describes the conditions for that to happen.
 \begin{lemma}
   \label{lem:geodesic-tightening}
