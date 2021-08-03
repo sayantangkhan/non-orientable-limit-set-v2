@@ -442,7 +442,7 @@ In \cite{gendulphe_whats_2017}, Gendulphe made the following conjecture about $\
   For $g \geq 4$, $\pmf^+(\no_g) = \overline{\pmf^+(\no_g, \QQ)}$.
 \end{conjecture}
 We prove a slightly weaker version of the above conjecture, by describing a subset of the foliations that can be approximated by multicurves in $\pmf^+(\no_g, \QQ)$.
-To state the theorem, we need to define what it means for a foliation to be orientable.
+To state the theorem, we need to define what it means for a minimal foliation to be orientable.
 \begin{definition}[Orientable foliation]
   A local orientation on a foliation is the choice of a constant tangent direction on the leaves in a small open set.
   If the local orientation can be extended to an entire minimal foliation, the foliation is said to be orientable.
@@ -510,54 +510,56 @@ We formally state this as a lemma, and sketch a proof, since the proof is relati
   Let $\delta$ be any simple closed curve, and let $\widehat{\delta}$ be the pre-image of $\delta$ in the universal cover $\mathbb{H}^2$.
   Let $\widehat{\gamma_i}$ and $\widehat{\gamma_i^{\prime}}$ be single lifts of $\gamma_i$ and $\gamma_i^{\prime}$ to $\mathbb{H}^2$.
   The intersection number of $\delta$ and $\dfrac{\gamma_i}{\lhyp(\gamma_i)}$ is given by the number of times $\widehat{\gamma_i}$ intersects $\widehat{\delta}$ divided by the length of $\widehat{\gamma_i}$, and $i\left(\delta, \dfrac{\gamma_i^{\prime}}{\lhyp(\gamma_i^{\prime})}\right)$ can be computed similarly.
-  
+
   Since the arc $\widehat{\gamma_i^{\prime}}$ can be obtained from $\widehat{\gamma_i}$ by moving the endpoints by a constant amount, we know that the points in the arc far enough from the endpoints only move by a very small amount (this follows from hyperbolic trigonometric formulae).
   That means if a point in $\widehat{\gamma_i}$ far from the endpoints intersects $\widehat{\delta}$, a nearby point in $\widehat{\gamma_i^{\prime}}$ will also intersect $\widehat{\delta}$.
   Therefore the difference between the intersection number with $\gamma_i$ and $\gamma_i^{\prime}$ comes from the intersections happening close to the endpoints.
   Since we are dividing by the length of the arcs, the difference in the intersection numbers goes to $0$, proving the result.
 \end{proof}
 
-The next lemma describes the conditions for that to happen.
-\begin{lemma}
-  \label{lem:geodesic-tightening}
-  Let $\alpha$, $\beta$ and $\gamma$ be three sides of a geodesic triangle in $\HH^2$.
-  Let $c_\alpha$ and $c_{\beta}$ be points on $\alpha$ and $\beta$ equidistant from the intersection of $\alpha$ and $\beta$ such that $d(c_\alpha, c_\beta) = 4 \delta$, where $\delta$ is the Gromov hyperbolicity constant of $\HH^2$.
-  Then the broken geodesic formed by going from the intersection of $\alpha$ and $\gamma$ to $c_{\alpha}$ to $c_{\beta}$ to the intersection of $\gamma$ and $\beta$ and $\gamma$ are within constant distance of each other, where the constant is absolute.
-\end{lemma}
-The proof of this fact is also elementary hyperbolic geometry, and we will skip the proof.
+% The next lemma describes the conditions for that to happen.
+% \begin{lemma}
+%   \label{lem:geodesic-tightening}
+%   Let $\alpha$, $\beta$ and $\gamma$ be three sides of a geodesic triangle in $\HH^2$.
+%   Let $c_\alpha$ and $c_{\beta}$ be points on $\alpha$ and $\beta$ equidistant from the intersection of $\alpha$ and $\beta$ such that $d(c_\alpha, c_\beta) = 4 \delta$, where $\delta$ is the Gromov hyperbolicity constant of $\HH^2$.
+%   Then the broken geodesic formed by going from the intersection of $\alpha$ and $\gamma$ to $c_{\alpha}$ to $c_{\beta}$ to the intersection of $\gamma$ and $\beta$ and $\gamma$ are within constant distance of each other, where the constant is absolute.
+% \end{lemma}
+% The proof of this fact is also elementary hyperbolic geometry, and we will skip the proof.
 
-% \begin{proof}
-%   Denote the segment between the intersection point of $\alpha$ and $\gamma$ and $c_{\alpha}$ by $\alpha^{\prime}$, and analogous segment on $\beta$ by $\beta^{\prime}$.
-%   Denote the geodesic segment between $c_{\alpha}$ and $c_{\beta}$ by $\kappa$.
-%   The segments $\gamma$, $\alpha^{\prime}$, $\kappa$ and $\beta^{\prime}$ form a geodesic quadrilateral.
-%   By Gromov hyperbolicity, we have that $\gamma$ is in a $2\delta$-neighbourhood of the broken geodesic.
-%   Since the distance between $\alpha^{\prime}$ and $\beta^{\prime}$ is more than $4 \delta$, the there must be some point in $\kappa$ that is within $2 \delta$ distance of $\gamma$.
-%   To see that the opposite inclusion also holds, note that $\beta^{\prime}$ is in a $2\delta$-neighbourhood of $\gamma$, $\alpha^{\prime}$ and $\kappa$.
-%   But $\alpha^{\prime}$ is more than $4 \delta$ distance away from $\beta^{\prime}$, and thus $\beta^{\prime}$ must be in a $2\delta$ neighbourhood of $\gamma$ and $\kappa$.
-%   But since $\kappa$ itself is within $2\delta$ distance of $\gamma$, the $4\delta$-neighbourhood of $\gamma$ contains $\beta^{\prime}$.
-%   The same argument also shows containment of $\alpha^{\prime}$ and $\kappa$, proving the lemma.
-%   See \autoref{fig:segment-together} for a picture of the setup.
-%   \begin{figure}[h]
-%     \centering
-%     \incfig[0.8]{segment-together}
-%     \caption{Resolved segments that get shorter under geodesic tightening.}
-%     \label{fig:segment-together}
-%   \end{figure}
-% \end{proof}
-To use \autoref{lem:geodesic-tightening} in our situation, we will additionally need to argue that the lengths of $\alpha^{\prime}$ and $\beta^{\prime}$ are almost the entire length of $\alpha$ and $\beta$ respectively.
-That will show that the $\kappa$ and $\gamma_1 \cup \gamma_2$ have approximately the same intersection numbers with any simple closed curve (after scaling appropriately).
+% % \begin{proof}
+% %   Denote the segment between the intersection point of $\alpha$ and $\gamma$ and $c_{\alpha}$ by $\alpha^{\prime}$, and analogous segment on $\beta$ by $\beta^{\prime}$.
+% %   Denote the geodesic segment between $c_{\alpha}$ and $c_{\beta}$ by $\kappa$.
+% %   The segments $\gamma$, $\alpha^{\prime}$, $\kappa$ and $\beta^{\prime}$ form a geodesic quadrilateral.
+% %   By Gromov hyperbolicity, we have that $\gamma$ is in a $2\delta$-neighbourhood of the broken geodesic.
+% %   Since the distance between $\alpha^{\prime}$ and $\beta^{\prime}$ is more than $4 \delta$, the there must be some point in $\kappa$ that is within $2 \delta$ distance of $\gamma$.
+% %   To see that the opposite inclusion also holds, note that $\beta^{\prime}$ is in a $2\delta$-neighbourhood of $\gamma$, $\alpha^{\prime}$ and $\kappa$.
+% %   But $\alpha^{\prime}$ is more than $4 \delta$ distance away from $\beta^{\prime}$, and thus $\beta^{\prime}$ must be in a $2\delta$ neighbourhood of $\gamma$ and $\kappa$.
+% %   But since $\kappa$ itself is within $2\delta$ distance of $\gamma$, the $4\delta$-neighbourhood of $\gamma$ contains $\beta^{\prime}$.
+% %   The same argument also shows containment of $\alpha^{\prime}$ and $\kappa$, proving the lemma.
+% %   See \autoref{fig:segment-together} for a picture of the setup.
+% %   \begin{figure}[h]
+% %     \centering
+% %     \incfig[0.8]{segment-together}
+% %     \caption{Resolved segments that get shorter under geodesic tightening.}
+% %     \label{fig:segment-together}
+% %   \end{figure}
+% % \end{proof}
+% To use \autoref{lem:geodesic-tightening} in our situation, we will additionally need to argue that the lengths of $\alpha^{\prime}$ and $\beta^{\prime}$ are almost the entire length of $\alpha$ and $\beta$ respectively.
+% That will show that the $\kappa$ and $\gamma_1 \cup \gamma_2$ have approximately the same intersection numbers with any simple closed curve (after scaling appropriately).
 
-\begin{lemma}
+We now state and prove a very general proposition that lets us approximate any convex combination of two foliations supported on the same underlying topological foliation, subject to some technical conditions.
+\begin{proposition}
   \label{lem:convex-combinations}
   Let $\gamma_1$ and $\gamma_2$ be two measured foliations satisfying the following conditions.
   \begin{itemize}
   \item The intersection of $\gamma_1$ and $\gamma_2$ with the Liouville current is $1$.
   \item The intersection number $i(\gamma_1, \gamma_2)$ is equal to $0$.
   \item $\gamma_1$ and $\gamma_2$ are mutually singular.
-  \item $\gamma_1$ and $\gamma_2$ are approximable by simple two-sided multicurves.
+  \item There exist a sequence of multicurves converging to $\gamma_1$ and $\gamma_2$ in $\mf$.
+  % \item $\gamma_1$ and $\gamma_2$ are approximable by simple two-sided multicurves.
   \end{itemize}
-  Then for any $c \in (0, \infty)$, the measured foliation $c \gamma_1 + \gamma_2$ is also approximable by simple two-sided multicurves.
-\end{lemma}
+  Then for any $c \in (0, \infty)$, there exists a sequence of multicurves converging to $c \gamma_1 + \gamma_2$ in $\mf$.
+\end{proposition}
 
   % \todo[inline]{Make proof clearer by emphasizing on the importance of the multiplicity $m_j$.}
 \begin{proof}
@@ -584,8 +586,9 @@ That will show that the $\kappa$ and $\gamma_1 \cup \gamma_2$ have approximately
     \label{fig:parallel-surgery-modification}
   \end{figure}
 
-  Denote the resolved curve by $\kappa_j$.
-  To show that $\kappa_j$ converges to $c \gamma_1 + \gamma_2$ in $\pmf$, we need to show that the following limit holds for all simple closed curves $\xi$.
+  Denote the resolved curve by $\kappa_j$ (note that this is not a geodesic, but rather it follows the geodesics $\gamma_{1j}$ and $\gamma_{2j}$ performing a sharp turn every time $\gamma_{1j}$ and $\gamma_{2j}$ intersect).
+  We claim that $\kappa_j$ divided by $m_j \cdot \lhyp(\gamma_{1j})+ \lhyp(\gamma_{2j})$ converges to $c \gamma_1 + \gamma_2$ in $\mf$.
+  To prove the claim, we need to show that the following limit holds for all simple closed curves $\xi$.
   \begin{align}
     \label{eq:2}
     \lim_{j \to \infty} \frac{i(\kappa_j, \xi)}{m_j \cdot \lhyp(\gamma_{1j}) + \lhyp(\gamma_{2j})}
@@ -599,11 +602,31 @@ That will show that the $\kappa$ and $\gamma_1 \cup \gamma_2$ have approximately
     \lim_{j \to \infty} \frac{i(\kappa_j, \xi)}{m_j \cdot \lhyp(\gamma_{1j}) + \lhyp(\gamma_{2j})}
     \geq \lim_{j \to \infty} \left( c \frac{i(\gamma_{1j}, \xi)}{\lhyp(\gamma_{1j})} +  \frac{i(\gamma_{2j}, \xi)}{\lhyp(\gamma_{2j})} \right)
   \end{align}
-  Let $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ denote the segments of lifts to $\HH^2$ of $\gamma_{1j}$ and $\gamma_{2j}$ that fellow travel within distance $4\delta$ after intersecting, and denote their complements in $\gamma_{1j}$ and $\gamma_{2j}$ by $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$.
-  \autoref{lem:geodesic-tightening} tells us that the geodesic representative of $\kappa_j$ will be within bounded distance of $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$.
-  For $j$ large enough, we can ensure that the angle of intersection of $\xi$ and $\gamma_{1j}$ and $\gamma_{2j}$ is larger than $\varepsilon_\xi$ for some $\varepsilon_\xi > 0$, where the angle $\varepsilon_\xi$ depends on $\xi$.
-  That means we can make $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ longer by a fixed amount, depending on $\varepsilon_\xi$ (and make $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$ correspondingly shorter) such that whenever $\xi$ intersects $\gamma_{1j}^{\prime \prime}$ or $\gamma_{2j}^{\prime \prime}$, it also intersects $\kappa_j$.
-  This fact gives us a lower bound on the intersection number with $\kappa_j$.
+
+  Let $\widehat{\kappa_j}$ be a lift of $\kappa_j$ to the universal cover $\mathbb{H}^2$.
+  It follows the lifts of $\gamma_{1j}$ and $\gamma_{2j}$, turning sharply whenever it switches from following a lift of $\gamma_{1j}$ to following a lift of $\gamma_{2j}$ or vice versa.
+  Let $\widehat{\kappa_j}^{\prime}$ denote the segments in $\widehat{\kappa_j}$ in the neighbourhood of the turning points where the arc before the turn is within $4 \delta$ distance (where $\delta$ is the Gromov hyperbolicity constant of $\mathbb{H}^2$) of the arc after the turn (see \autoref{fig:turn-label} for an example).
+  \begin{figure}[h]
+    \centering
+    \includegraphics{example-image-a}
+    \caption{The segment $\widehat{\kappa_j}^{\prime}$ in $\widehat{\kappa_j}$.}
+    \label{fig:turn-label}
+  \end{figure}
+  Denote the complement of $\widehat{\kappa_j}^{\prime}$ in $\widehat{\kappa_j}$ by $\widehat{\kappa_j}^{\prime \prime}$.
+  We construct a new curve using $\widehat{\kappa_j}^{\prime \prime}$, connecting two successive disconnected pieces by a geodesic arc joining the endpoints (see \autoref{fig:turn-label}).
+  We call this new arc in $\mathbb{H}^2$ $\widehat{\lambda_j}$, and its image in the surface $\lambda_j$.
+  We claim that $\widehat{\lambda_j}$ is within $4 \delta$ distance of the geodesic tightening of $\widehat{\kappa_j}$.
+  This follows from a standard thin triangles argument, so we will elide the details (see \autoref{fig:tightening-arcs}).
+  \begin{figure}[h]
+    \centering
+    \includegraphics{example-image-b}
+    \caption{Resolved segments that get shorter under geodesic tightening.}
+    \label{fig:tightening-arcs}
+  \end{figure}
+  As $j$ goes to $\infty$, the intersection number of $\xi$ with the geodesic tightening of $\kappa_j$ and with $\lambda_j$ will approach the same value, by \autoref{lem:perturbation-lemma}.
+  Consider now the projection of $\widehat{\kappa_j}^{\prime \prime}$ to the surface: we denote the segments of $\gamma_{1j}$ which follow the projection of $\widehat{\kappa_j}^{\prime \prime}$ by $\gamma_{1j}^{\prime \prime}$ and the corresponding segments of $\gamma_{2j}$ by $\gamma_{2j}^{\prime \prime}$.
+  We also denote the complements of $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$ in $\gamma_{1j}$ and $\gamma_{2j}$ by $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$.
+  The argument from the previous paragraph gives us a lower bound on the intersection number of $\xi$ with $\kappa_j$.
   \begin{align}
     \label{eq:4}
     i(\kappa_j, \xi) \geq m_j \cdot i(\gamma_{1j}^{\prime \prime}, \xi) + i(\gamma_{2j}^{\prime \prime}, \xi)
@@ -621,7 +644,7 @@ That will show that the $\kappa$ and $\gamma_1 \cup \gamma_2$ have approximately
   Then any short transverse arc that only intersected $\gamma_{1j}^{\prime}$ would get assigned a positive measure as $j$ went to $\infty$.
   Since the lengths of $m_j \cdot \gamma_{1j}$ and $\gamma_{2j}$ approach a fixed ratio, we would have that $\displaystyle \frac{\lhyp(\gamma_{2j}^{\prime})}{\lhyp(\gamma_{2j})} \geq k_2$ for some other positive constant $k_2$.
   Thus the same short arc would also get assigned a positive measure by $\gamma_{2j}$ as $j$ went to $\infty$.
-  This means that the transverse measure given $\gamma_1$ decomposes as $\gamma_1{\prime} + \gamma_1^{\prime \prime}$, where $\gamma_1^{\prime}$ is the limit of the transverse measures given by $\gamma_{1j}^{\prime}$ and $\gamma_1^{\prime \prime}$ is the limit of the transverse measures given by the limit of $\gamma_{1j}^{\prime \prime}$.
+  This means that the transverse measure on $\xi$ given by $\gamma_1$ decomposes as $\gamma_1{\prime} + \gamma_1^{\prime \prime}$, where $\gamma_1^{\prime}$ is the limit of the transverse measures given by $\gamma_{1j}^{\prime}$ and $\gamma_1^{\prime \prime}$ is the limit of the transverse measures given by the limit of $\gamma_{1j}^{\prime \prime}$.
   We get a similar decomposition of $\gamma_2$ into $\gamma_2^{\prime} + \gamma_2^{\prime \prime}$.
   Our argument shows that $\gamma_{1}^{\prime}$ and $\gamma_2^{\prime}$ are absolutely continuous with respect to each other.
   But this violates mutual singularity of the measures $\gamma_1$ and $\gamma_2$, and therefore, the lengths of $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ must be $o(\lhyp(\gamma_{1j}))$ and $o(\lhyp(\gamma_{2j}))$ respectively.
