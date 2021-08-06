@@ -499,7 +499,7 @@ We prove that there always exists a choice of surgery that results in a simple c
 Call the resulting simple curve $\kappa$: for all that follows, we will pick an arbitrary hyperbolic metric on our surface.
 We want the geodesic representative of $\kappa$ to have approximately the same intersection numbers with all curves as the $\gamma_1 \cup \gamma_2$ did.
 For that to happen, it is important that the geodesic tightening of $\kappa$ stays within a bounded distance of long sub-arcs of $\gamma_1$ and $\gamma_2$.
-We formally state this as a lemma, and sketch a proof, since the proof is relatively elementary, but tedious to write down.
+We formally state this as a lemma, and sketch a proof.
 \begin{lemma}
   \label{lem:perturbation-lemma}
   Let $\{\gamma_i\}$ be a sequence of geodesic arcs on a compact hyperbolic surface $S$ such that $\dfrac{\gamma_i}{\lhyp(\gamma_i)}$ converges to a minimal measured foliation $\lambda \in \mf(S)$.
@@ -511,10 +511,9 @@ We formally state this as a lemma, and sketch a proof, since the proof is relati
   Let $\widehat{\gamma_i}$ and $\widehat{\gamma_i^{\prime}}$ be single lifts of $\gamma_i$ and $\gamma_i^{\prime}$ to $\mathbb{H}^2$.
   The intersection number of $\delta$ and $\dfrac{\gamma_i}{\lhyp(\gamma_i)}$ is given by the number of times $\widehat{\gamma_i}$ intersects $\widehat{\delta}$ divided by the length of $\widehat{\gamma_i}$, and $i\left(\delta, \dfrac{\gamma_i^{\prime}}{\lhyp(\gamma_i^{\prime})}\right)$ can be computed similarly.
 
-  Since the arc $\widehat{\gamma_i^{\prime}}$ can be obtained from $\widehat{\gamma_i}$ by moving the endpoints by a constant amount, we know that the points in the arc far enough from the endpoints only move by a very small amount (this follows from hyperbolic trigonometric formulae).
-  That means if a point in $\widehat{\gamma_i}$ far from the endpoints intersects $\widehat{\delta}$, a nearby point in $\widehat{\gamma_i^{\prime}}$ will also intersect $\widehat{\delta}$.
-  Therefore the difference between the intersection number with $\gamma_i$ and $\gamma_i^{\prime}$ comes from the intersections happening close to the endpoints.
-  Since we are dividing by the length of the arcs, the difference in the intersection numbers goes to $0$, proving the result.
+  We denote the constant speed parameterization of $\widehat{\gamma_i}$ and $\widehat{\gamma_{i}^{\prime}}$ by the same symbols as well: recall that a these are constant speed maps from $[0,1]$ to $\mathbb{H}^2$.
+  Pick any small $\varepsilon \in (0, 1)$, and consider the parameterized geodesic arcs restricted to $(\varepsilon, 1- \varepsilon)$. For large enough $i$, if $\widehat{\gamma_i(x)}$ is also in $\widehat{\delta}$, then for some other point $x_i^{\prime}$ in the neighbourhood of $x$, $\widehat{\gamma_i^{\prime}(x^{\prime})}$ is also in $\widehat{\delta}$ and vice versa (checking this fact requires some elementary hyperbolic geometry which we skip).
+  Since the lengths of $\widehat{\gamma_i}$ and $\widehat{\gamma_i^{\prime}}$ go to $\infty$, and we can pick $\varepsilon$ to be arbitrarily small, we have convergence to the same foliation in $\mf(S)$.
 \end{proof}
 
 % The next lemma describes the conditions for that to happen.
@@ -550,21 +549,21 @@ We formally state this as a lemma, and sketch a proof, since the proof is relati
 We now state and prove a very general proposition that lets us approximate any convex combination of two foliations supported on the same underlying topological foliation, subject to some technical conditions.
 \begin{proposition}
   \label{lem:convex-combinations}
-  Let $\gamma_1$ and $\gamma_2$ be two measured foliations satisfying the following conditions.
+  Let $\gamma_1$ and $\gamma_2$ be two measured foliations on a compact surface $S$ satisfying the following conditions.
   \begin{itemize}
   \item The intersection of $\gamma_1$ and $\gamma_2$ with the Liouville current is $1$.
   \item The intersection number $i(\gamma_1, \gamma_2)$ is equal to $0$.
   \item $\gamma_1$ and $\gamma_2$ are mutually singular.
-  \item There exist a sequence of multicurves converging to $\gamma_1$ and $\gamma_2$ in $\mf$.
+  \item There exist a sequence of curves converging to $\gamma_1$ and $\gamma_2$ in $\pmf(S)$.
   % \item $\gamma_1$ and $\gamma_2$ are approximable by simple two-sided multicurves.
   \end{itemize}
-  Then for any $c \in (0, \infty)$, there exists a sequence of multicurves converging to $c \gamma_1 + \gamma_2$ in $\mf$.
+  Then for any $c \in (0, \infty)$, there exists a sequence of curves converging to $c \gamma_1 + \gamma_2$ in $\mf(S)$.
 \end{proposition}
 
   % \todo[inline]{Make proof clearer by emphasizing on the importance of the multiplicity $m_j$.}
 \begin{proof}
-  Let $\{\gamma_{1j}\}$ and $\{ \gamma_{2j}\}$ be sequences of simple two-sided curves converging to $\gamma_1$ and $\gamma_2$ in $\pmf$.
-  Since the intersection number of $\gamma_1$ and $\gamma_2$ with the Liouville current is $1$, we have that $\frac{\gamma_{1j}}{\lhyp(\gamma_{1j})}$ approaches $\gamma_1$ in $\mf$, and $\frac{\gamma_{2j}}{\lhyp(\gamma_{2j})}$ approaches $\gamma_2$ in $\mf$.
+  Let $\{\gamma_{1j}\}$ and $\{ \gamma_{2j}\}$ be sequences of simple two-sided curves converging to $\gamma_1$ and $\gamma_2$ in $\pmf(S)$.
+  Since the intersection number of $\gamma_1$ and $\gamma_2$ with the Liouville current is $1$, we have that $\frac{\gamma_{1j}}{\lhyp(\gamma_{1j})}$ approaches $\gamma_1$ in $\mf(S)$, and $\frac{\gamma_{2j}}{\lhyp(\gamma_{2j})}$ approaches $\gamma_2$ in $\mf(S)$.
   We can assume without loss of generality that $i(\gamma_{1i}, \gamma_{2j^{\prime}}) > 0$ for all $j$ and $j^{\prime}$, for if the intersection number is $0$ for infinitely many $j$, the union of the two curves with the appropriate weights will approximate the combination $c \gamma_1 + \gamma_2$.
   % We can also assume using \autoref{lem:scaling-lemma} that normalizing these curves by their hyperbolic length converges in $\mf$.
   We pass to a subsequence of $\gamma_{2j}$ such that after passing to the subsequence,
@@ -587,7 +586,7 @@ We now state and prove a very general proposition that lets us approximate any c
   \end{figure}
 
   Denote the resolved curve by $\kappa_j$ (note that this is not a geodesic, but rather it follows the geodesics $\gamma_{1j}$ and $\gamma_{2j}$ performing a sharp turn every time $\gamma_{1j}$ and $\gamma_{2j}$ intersect).
-  We claim that $\kappa_j$ divided by $m_j \cdot \lhyp(\gamma_{1j})+ \lhyp(\gamma_{2j})$ converges to $c \gamma_1 + \gamma_2$ in $\mf$.
+  We claim that $\kappa_j$ divided by $m_j \cdot \lhyp(\gamma_{1j})+ \lhyp(\gamma_{2j})$ converges to $c \gamma_1 + \gamma_2$ in $\mf(S)$.
   To prove the claim, we need to show that the following limit holds for all simple closed curves $\xi$.
   \begin{align}
     \label{eq:2}
@@ -603,30 +602,32 @@ We now state and prove a very general proposition that lets us approximate any c
     \geq \lim_{j \to \infty} \left( c \frac{i(\gamma_{1j}, \xi)}{\lhyp(\gamma_{1j})} +  \frac{i(\gamma_{2j}, \xi)}{\lhyp(\gamma_{2j})} \right)
   \end{align}
 
-  Let $\widehat{\kappa_j}$ be a lift of $\kappa_j$ to the universal cover $\mathbb{H}^2$.
-  It follows the lifts of $\gamma_{1j}$ and $\gamma_{2j}$, turning sharply whenever it switches from following a lift of $\gamma_{1j}$ to following a lift of $\gamma_{2j}$ or vice versa.
-  Let $\widehat{\kappa_j}^{\prime}$ denote the segments in $\widehat{\kappa_j}$ in the neighbourhood of the turning points where the arc before the turn is within $4 \delta$ distance (where $\delta$ is the Gromov hyperbolicity constant of $\mathbb{H}^2$) of the arc after the turn (see \autoref{fig:turn-label} for an example).
+  Let $\widehat{\kappa}_j$ be a lift of $\kappa_j$ to the universal cover $\mathbb{H}^2$.
+  It follows the lifts $\widehat{\gamma}_{1j}$ and $\widehat{\gamma}_{2j}$ of $\gamma_{1j}$ and $\gamma_{2j}$, turning sharply whenever it switches from following a lift of $\gamma_{1j}$ to following a lift of $\gamma_{2j}$ or vice versa.
+  Let $\widehat{\kappa}_j^{\prime}$ denote the segments in $\widehat{\kappa}_j$ in the neighbourhood of the turning points where the arc before the turn is within $4 \delta$ distance (where $\delta$ is the Gromov hyperbolicity constant of $\mathbb{H}^2$) of the arc after the turn (see \autoref{fig:turn-label} for an example).
   \begin{figure}[h]
     \centering
-    \includegraphics{example-image-a}
-    \caption{The segment $\widehat{\kappa_j}^{\prime}$ in $\widehat{\kappa_j}$.}
+    \incfig[0.5]{turn-label}
+    % \includegraphics{example-image-a}
+    \caption{The segments $\widehat{\kappa}^{\prime}_j$ and $\widehat{\kappa}_j^{\prime \prime}$ in $\widehat{\kappa}_j$.}
     \label{fig:turn-label}
   \end{figure}
-  Denote the complement of $\widehat{\kappa_j}^{\prime}$ in $\widehat{\kappa_j}$ by $\widehat{\kappa_j}^{\prime \prime}$.
-  We construct a new curve using $\widehat{\kappa_j}^{\prime \prime}$, connecting two successive disconnected pieces by a geodesic arc joining the endpoints (see \autoref{fig:turn-label}).
-  We call this new arc in $\mathbb{H}^2$ $\widehat{\lambda_j}$, and its image in the surface $\lambda_j$.
-  We claim that $\widehat{\lambda_j}$ is within $4 \delta$ distance of the geodesic tightening of $\widehat{\kappa_j}$.
+  Denote the complement of $\widehat{\kappa}_j^{\prime}$ in $\widehat{\kappa}_j$ by $\widehat{\kappa}_j^{\prime \prime}$.
+  We construct a new curve using $\widehat{\kappa}_j^{\prime \prime}$, connecting two successive disconnected pieces by a geodesic arc joining the endpoints (see \autoref{fig:turn-label}).
+  We call this new arc in $\mathbb{H}^2$ $\widehat{\lambda}_j$, and its image in the surface $\lambda_j$.
+  We claim that $\widehat{\lambda}_j$ is within $4 \delta$ distance of the geodesic tightening of $\widehat{\kappa}_j$.
   This follows from a standard thin triangles argument, so we will elide the details (see \autoref{fig:tightening-arcs}).
   \begin{figure}[h]
     \centering
-    \includegraphics{example-image-b}
-    \caption{Resolved segments that get shorter under geodesic tightening.}
+    \incfig[0.5]{tightening-arcs}
+    % \includegraphics{example-image-b}
+    \caption{The geodesic tightening stays within a bounded distance of $\widehat{\lambda}_j$.}
     \label{fig:tightening-arcs}
   \end{figure}
   As $j$ goes to $\infty$, the intersection number of $\xi$ with the geodesic tightening of $\kappa_j$ and with $\lambda_j$ will approach the same value, by \autoref{lem:perturbation-lemma}.
-  Consider now the projection of $\widehat{\kappa_j}^{\prime \prime}$ to the surface: we denote the segments of $\gamma_{1j}$ which follow the projection of $\widehat{\kappa_j}^{\prime \prime}$ by $\gamma_{1j}^{\prime \prime}$ and the corresponding segments of $\gamma_{2j}$ by $\gamma_{2j}^{\prime \prime}$.
+  Consider now the projection of $\widehat{\kappa}_j^{\prime \prime}$ to the surface $S$: we denote the segments of $\gamma_{1j}$ which follow the projection of $\widehat{\kappa}_j^{\prime \prime}$ by $\gamma_{1j}^{\prime \prime}$ and the corresponding segments of $\gamma_{2j}$ by $\gamma_{2j}^{\prime \prime}$.
   We also denote the complements of $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$ in $\gamma_{1j}$ and $\gamma_{2j}$ by $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$.
-  The argument from the previous paragraph gives us a lower bound on the intersection number of $\xi$ with $\kappa_j$.
+  Since the geodesic tightening of $\widehat{\kappa}_j$ is within a bounded distance of $\widehat{\lambda}_j$, for large enough $j$, the intersection number with $\xi$ will be the same, and we will get the following inequality between intersection numbers on the surface $S$.
   \begin{align}
     \label{eq:4}
     i(\kappa_j, \xi) \geq m_j \cdot i(\gamma_{1j}^{\prime \prime}, \xi) + i(\gamma_{2j}^{\prime \prime}, \xi)
