@@ -20,7 +20,7 @@
   We provide evidence both for and against a conjectural analogy between geometrically finite infinite covolume Fuchsian groups and the mapping class group of compact non-orientable surfaces.
   In the positive direction, we show the complement of the limit set is open and dense.
   Moreover, we show that the limit set of the mapping class group contains the set of uniquely ergodic foliations and is contained in the set of all projective measured foliations not containing any one-sided leaves, establishing large parts of a conjecture of Gendulphe.
-  In the negative direction, we show that the action of the mapping class group on the boundary has an empty wandering set, and the conjectured convex core is not even quasi-convex, in contrast with the geometrically finite setting.
+  In the negative direction, we show that a conjectured convex core is not even quasi-convex, in contrast with the geometrically finite setting.
   %
   %we show that a conjectured convex core for the moduli space is in fact not eve n quasi-convex, answering a question of [], and the action of the mapping class group on the boundary has an empty wandering set.
 %
@@ -73,27 +73,16 @@ We show that ${\systole}$ is not quasi-convex, answering the above question.
 \addtocounter{theorem}{-1}
 \endgroup
 
-We exhibit another failure of the analogy, by showing that $\mcg(\no_g)$ does not act properly discontinuously on the complement of the limit set.
-\begingroup
-\def\thetheorem{\ref{thm:dod-is-empty}}
-\begin{theorem}
-  The wandering set for the $\mcg(\no_g)$ action on $\pmf(\no_g)$ is empty.
-\end{theorem}
-\addtocounter{theorem}{-1}
-\endgroup
-Contrast this with the action of geometrically finite groups on the complement of the limit set, where the action is properly discontinuous.
-% This result is also in stark contrast with the result for convex-cocompact subgroups of mapping class groups of orientable surfaces, where it is known that the action on the complement of the limit set is properly discontinuous (see \cite{farb2002convex}).
-
-The key idea involved in the proof of \autoref{thm:dod-is-empty} and \autoref{thm:qc-fail} is determining which projective measured foliations are in the limit set.
+The key idea involved in the proof of \autoref{thm:qc-fail} is determining which projective measured foliations are in the limit set.
 Conjecture 9.1 of \cite{gendulphe_whats_2017} states that the limit set should exactly be the complement of $\pmf^-(\no_g)$, the set of projective measured foliations that do not contain any one-sided leaves (denoted $\pmf^+(\no_g)$).
 We prove a result that is slightly weaker than the conjecture.
 \begingroup
 \def\thetheorem{\ref{thm:rational-approximation}}
 \begin{theorem}
-  For $g \geq 3$, a foliation $\lambda \in \pmf^+(\no_g)$ is in the limit set of $\mcg(\no_g)$ if all the minimal components $\lambda_j$ of $\lambda$ satisfy one of the following criteria.
+  A foliation $\lambda \in \pmf^+(\no_g)$ is in the limit set of $\mcg(\no_g)$ if all the minimal components $\lambda_j$ of $\lambda$ satisfy one of the following criteria.
   \begin{enumerate}[(i)]
   \item $\lambda_j$ is periodic.
-  \item $\lambda_j$ is orientable, i.e. all leaves exiting one side of a transverse arc always come back from the other side.
+  \item $\lambda_j$ is ergodic and orientable, i.e. all leaves exiting one side of a transverse arc always come back from the other side.
   \item $\lambda_j$ is uniquely ergodic.
   \end{enumerate}
   Furthermore, if $\lambda_j$ is minimal, but not uniquely ergodic, there exists some other foliation $\lambda_j^{\prime}$ supported on the same topological foliation as $\lambda_j$ which is in the limit set.
@@ -127,8 +116,8 @@ Constructing a measure supported on the closure of the recurrent set can be then
 \subsection*{Organization of the paper}
 Section \ref{sec:backgr-meas-foli} contains the background on non-orientable surfaces and measured foliations, and section \ref{sec:backgr-limit-sets} contains the background on limit sets of mapping class subgroups.
 These sections can be skipped and later referred to if some notation or definition is unclear.
-Section \ref{sec:lower-bound-limit-set} contains the proof of \autoref{thm:rational-approximation}, section \ref{sec:upper-bound-limit-set} contains the proof of Theorem \ref{cor:geolimset}, section \ref{sec:domain-discontinuity} contains the proof of \autoref{thm:dod-is-empty}, and section \ref{sec:fail-quasi-conv} contains the proof of \autoref{thm:qc-fail}.
-Sections \ref{sec:lower-bound-limit-set}, \ref{sec:upper-bound-limit-set}, and \ref{sec:fail-quasi-conv} are independent of each other, and can be read in any order, but section \ref{sec:domain-discontinuity} relies on the notation and results from section \ref{sec:lower-bound-limit-set}.
+Section \ref{sec:lower-bound-limit-set} contains the proof of \autoref{thm:rational-approximation}, section \ref{sec:upper-bound-limit-set} contains the proof of Theorem \ref{cor:geolimset}, and section \ref{sec:fail-quasi-conv} contains the proof of \autoref{thm:qc-fail}.
+Sections \ref{sec:lower-bound-limit-set}, \ref{sec:upper-bound-limit-set}, and \ref{sec:fail-quasi-conv} are independent of each other, and can be read in any order.
 
 % \subsection*{Acknowledgments}
 % {\color{red} To insert.}
@@ -376,29 +365,31 @@ One may ask if this is always the case.
 \begin{question}
   Is $\geolim(\Gamma) = \expansion(\dynlim(\Gamma))$ for all $\Gamma$?
 \end{question}
+We know from \autoref{thm:rational-approximation} that the answer to the above question is yes for $\Gamma = \mcg(\no_g)$ (for $g \geq 3$).
 
-McCarthy-Papadopoulos also formulated an equivalent definition of $\dynlim(\Gamma)$, which is easier to work with in practice.
+% McCarthy-Papadopoulos also formulated an equivalent definition of $\dynlim(\Gamma)$, which is easier to work with in practice.
 
-\begin{untheorem}[Theorem 4.1 of \cite{McCarthy1989}]
-  \label{thm:equivalence-of-limit-sets}
-  $\dynlim(\Gamma)$ is the closure in $\pmf$ of the stable and unstable foliations of all the pseudo-Anosov mapping classes in $\Gamma$.
-\end{untheorem}
-A corollary of this theorem is that $\Gamma$ does not act properly discontinuously on $\dynlim(\Gamma)$.
-In fact, one can construct a wandering set for the $\Gamma$ action using $\dynlim(\Gamma)$.
-\begin{definition}[Zero intersection set]
-  Given a subset $\Lambda$ of $\pmf$, its zero intersection set $Z(\Lambda)$ is the following subset of $\pmf$
-  \begin{align*}
-    Z(\Lambda) \coloneqq \left\{ \lambda^{\prime} \mid i(\lambda, \lambda^{\prime}) = 0 \text{ for some $\lambda \in \Lambda$} \right\}
-  \end{align*}
-\end{definition}
+% \begin{untheorem}[Theorem 4.1 of \cite{McCarthy1989}]
+%   \label{thm:equivalence-of-limit-sets}
+%   $\dynlim(\Gamma)$ is the closure in $\pmf$ of the stable and unstable foliations of all the pseudo-Anosov mapping classes in $\Gamma$.
+% \end{untheorem}
+
+% A corollary of this theorem is that $\Gamma$ does not act properly discontinuously on $\dynlim(\Gamma)$.
+% In fact, one can construct a wandering set for the $\Gamma$ action using $\dynlim(\Gamma)$.
+% \begin{definition}[Zero intersection set]
+%   Given a subset $\Lambda$ of $\pmf$, its zero intersection set $Z(\Lambda)$ is the following subset of $\pmf$
+%   \begin{align*}
+%     Z(\Lambda) \coloneqq \left\{ \lambda^{\prime} \mid i(\lambda, \lambda^{\prime}) = 0 \text{ for some $\lambda \in \Lambda$} \right\}
+%   \end{align*}
+% \end{definition}
 
 % McCarthy-Papadopoulos also exhibit a wandering set for the $\Gamma$ action on $\pmf$.
-\begin{untheorem}[Theorem 6.16 of \cite{McCarthy1989}]
-  The action of $\Gamma$ on $\pmf \setminus Z(\dynlim(\Gamma))$ is properly discontinuous.
-\end{untheorem}
+% \begin{untheorem}[Theorem 6.16 of \cite{McCarthy1989}]
+%   The action of $\Gamma$ on $\pmf \setminus Z(\dynlim(\Gamma))$ is properly discontinuous.
+% \end{untheorem}
 
-It is not obvious that the action of $\Gamma$ on $Z(\dynlim(\Gamma))$ is not properly discontinuous.
-We prove that is indeed the case when $\Gamma = \mcg(\no_g)$ in Section \ref{sec:domain-discontinuity}, but the general case is unknown.
+% It is not obvious that the action of $\Gamma$ on $Z(\dynlim(\Gamma))$ is not properly discontinuous.
+% We prove that is indeed the case when $\Gamma = \mcg(\no_g)$ in Section \ref{sec:domain-discontinuity}, but the general case is unknown.
 
 
 \subsection*{List of notation}
@@ -424,7 +415,6 @@ Here we describe some of the more commonly used symbols in the paper.
 \item[] $\dynlim(\Lambda)$: The dynamical limit set of the discrete group $\Lambda$.
 \item[] $\lhyp(M, \gamma)$: The hyperbolic length of $\gamma$ with respect to the hyperbolic structure on $M \in \teich(S)$. We will suppress $M$ when it is clear from context.
 \item[] $\lflat(q, \gamma)$: The flat length of $\gamma$ with respect to the flat structure given by the DQD $q$. We will suppress $q$ when it is clear from context.
-\item[] $o(f)$: A function $g$ is $o(f)$ if $\frac{g}{f}$ goes to $0$ as the value of $f$ goes to $\infty$.
 \item[] $\mu_{c}$: The probability measure on a transverse arc given by the closed curve $c$.
 \end{itemize}
 
@@ -444,7 +434,7 @@ In \cite{gendulphe_whats_2017}, Gendulphe made the following conjecture about $\
 We prove a slightly weaker version of the above conjecture, by describing a subset of the foliations that can be approximated by multicurves in $\pmf^+(\no_g, \QQ)$.
 To state the theorem, we need to define what it means for a minimal foliation to be orientable.
 \begin{definition}[Orientable foliation]
-  A local orientation on a foliation is the choice of a constant tangent direction on the leaves in a small open set.
+  A local orientation on a foliation is the choice of a locally constant tangent direction on the leaves in a small open set.
   If the local orientation can be extended to an entire minimal foliation, the foliation is said to be orientable.
 \end{definition}
 In the setting of orientable surfaces, the vertical foliations of translation surfaces are orientable, while there are some directions in half-translation surfaces where the foliation is non-orientable.
@@ -453,230 +443,16 @@ There exist similar examples of orientable and non-orientable foliations on non-
 Having defined the notion of orientable foliations, we can state the main theorem of this section.
 \begin{theorem}
   \label{thm:rational-approximation}
-  For $g \geq 3$, a foliation $\lambda \in \pmf^+(\no_g)$ can be approximated by foliations in $\pmf^+(\no_g, \QQ)$ if all the minimal components $\lambda_j$ of $\lambda$ satisfy one of the following criteria.
+  A foliation $\lambda \in \pmf^+(\no_g)$ can be approximated by foliations in $\pmf^+(\no_g, \QQ)$ if all the minimal components $\lambda_j$ of $\lambda$ satisfy one of the following criteria.
   \begin{enumerate}[(i)]
   \item $\lambda_j$ is periodic.
-  \item $\lambda_j$ is orientable.
+  \item $\lambda_j$ is ergodic and orientable.
   \item $\lambda_j$ is uniquely ergodic.
   \end{enumerate}
   Furthermore, if $\lambda_j$ is minimal, but not uniquely ergodic, there exists some other foliation $\lambda_j^{\prime}$ supported on the same topological foliation as $\lambda_j$ that can be approximated by elements of $\pmf^+(\no_g, \QQ)$.
 \end{theorem}
 
-To prove \autoref{thm:rational-approximation}, we will first need to describe a method of resolving intersections of curves.
-Given two two-sided simple curves $\gamma_1$ and $\gamma_2$, their union will not be a simple curve if $i(\gamma_1, \gamma_2) > 0$.
-However, at each point of intersection, there exist two possible surgeries that resolve the intersection.
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics{example-image-a}
-%   \caption{Two ways an intersection can be resolved.}
-%   \label{fig:surgery-types}
-% \end{figure}
-Resolving all the intersections by choosing surgeries at each of the points results in a simple multicurve (i.e. it may have more than one component).
-It is not necessarily the case that the resulting multicurve has two-sided components either.
-However, if it is the case that the resulting multicurve is a curve, then it will be a two-sided curve: that is because both $\gamma_1$ and $\gamma_2$ pass through an even number of crosscaps, and if the resolution of $\gamma_1 \cup \gamma_2$ has only one component, it must also pass through an even number of crosscaps (see Section \ref{sec:background} to recall what it means for a curve to pass through a crosscap).
-We prove that there always exists a choice of surgery that results in a simple curve (we skip the proof of this fact since it is fairly straightforward).
-\begin{lemma}
-  \label{lem:valid-surgery}
-  Let $\gamma_1$ and $\gamma_2$ be two-sided curves on $\no_g$ with $i(\gamma_1, \gamma_2) > 0$.
-  There exists a resolution of all the intersections of $\gamma_1$ and $\gamma_2$ such that the resulting simple multicurve contains only one component.
-\end{lemma}
-% \begin{proof}
-%   We begin by turning the union of $\gamma_1$ and $\gamma_2$ into a non-simple curve.
-%   Pick any intersection point, and resolve the singularity (the choice of resolution does not matter).
-%   It is easily verified that the resulting object can be parameterized as a map from $S^1$ into the surface.
-%   If $i(\gamma_1, \gamma_2) = 1$, we are done, since we have a simple curve.
-%   If $i(\gamma_1, \gamma_2) > 1$, we have a non-simple curve.
-%   At each intersection point, we resolve the singularity such that the strands corresponding to directions flowing into the singularity are glued together, and the strands corresponding to directions flowing out of the singularity are glued together (see \autoref{fig:good-surgery}).
-%   \begin{figure}[h]
-%     \centering
-%     \incfig[0.8]{good-surgery}
-%     \caption{Surgery that results in a connected curve.}
-%     \label{fig:good-surgery}
-%   \end{figure}
-% Again, it is easy to see that this surgery results in a connected curve, and after resolving all singularities in this manner, we have a simple curve.
-% \end{proof}
-
-Call the resulting simple curve $\kappa$: for all that follows, we will pick an arbitrary hyperbolic metric on our surface.
-We want the geodesic representative of $\kappa$ to have approximately the same intersection numbers with all curves as the $\gamma_1 \cup \gamma_2$ did.
-For that to happen, it is important that the geodesic tightening of $\kappa$ stays within a bounded distance of long sub-arcs of $\gamma_1$ and $\gamma_2$.
-We formally state this as a lemma, and sketch a proof.
-\begin{lemma}
-  \label{lem:perturbation-lemma}
-  Let $\{\gamma_i\}$ be a sequence of geodesic arcs on a compact hyperbolic surface $S$ such that $\dfrac{\gamma_i}{\lhyp(\gamma_i)}$ converges to a minimal measured foliation $\lambda \in \mf(S)$.
-  Let $\{\gamma_i^{\prime}\}$ be another sequence of geodesic arcs such that for all $i$, $\gamma_i$ and $\gamma_i^{\prime}$ are within a bounded distance of each other, i.e. the distance is bounded independent of $i$.
-  Then the new sequence $\dfrac{\gamma_i^{\prime}}{\lhyp(\gamma_i^{\prime})}$ also converges to $\lambda$.
-\end{lemma}
-\begin{proof}[Sketch of proof]
-  Let $\delta$ be any simple closed curve, and let $\widehat{\delta}$ be the pre-image of $\delta$ in the universal cover $\mathbb{H}^2$.
-  Let $\widehat{\gamma_i}$ and $\widehat{\gamma_i^{\prime}}$ be single lifts of $\gamma_i$ and $\gamma_i^{\prime}$ to $\mathbb{H}^2$.
-  The intersection number of $\delta$ and $\dfrac{\gamma_i}{\lhyp(\gamma_i)}$ is given by the number of times $\widehat{\gamma_i}$ intersects $\widehat{\delta}$ divided by the length of $\widehat{\gamma_i}$, and $i\left(\delta, \dfrac{\gamma_i^{\prime}}{\lhyp(\gamma_i^{\prime})}\right)$ can be computed similarly.
-
-  We denote the constant speed parameterization of $\widehat{\gamma_i}$ and $\widehat{\gamma_{i}^{\prime}}$ by the same symbols as well: recall that a these are constant speed maps from $[0,1]$ to $\mathbb{H}^2$.
-  Pick any small $\varepsilon \in (0, 1)$, and consider the parameterized geodesic arcs restricted to $(\varepsilon, 1- \varepsilon)$. For large enough $i$, if $\widehat{\gamma_i(x)}$ is also in $\widehat{\delta}$, then for some other point $x_i^{\prime}$ in the neighbourhood of $x$, $\widehat{\gamma_i^{\prime}(x^{\prime})}$ is also in $\widehat{\delta}$ and vice versa (checking this fact requires some elementary hyperbolic geometry which we skip).
-  Since the lengths of $\widehat{\gamma_i}$ and $\widehat{\gamma_i^{\prime}}$ go to $\infty$, and we can pick $\varepsilon$ to be arbitrarily small, we have convergence to the same foliation in $\mf(S)$.
-\end{proof}
-
-% The next lemma describes the conditions for that to happen.
-% \begin{lemma}
-%   \label{lem:geodesic-tightening}
-%   Let $\alpha$, $\beta$ and $\gamma$ be three sides of a geodesic triangle in $\HH^2$.
-%   Let $c_\alpha$ and $c_{\beta}$ be points on $\alpha$ and $\beta$ equidistant from the intersection of $\alpha$ and $\beta$ such that $d(c_\alpha, c_\beta) = 4 \delta$, where $\delta$ is the Gromov hyperbolicity constant of $\HH^2$.
-%   Then the broken geodesic formed by going from the intersection of $\alpha$ and $\gamma$ to $c_{\alpha}$ to $c_{\beta}$ to the intersection of $\gamma$ and $\beta$ and $\gamma$ are within constant distance of each other, where the constant is absolute.
-% \end{lemma}
-% The proof of this fact is also elementary hyperbolic geometry, and we will skip the proof.
-
-% % \begin{proof}
-% %   Denote the segment between the intersection point of $\alpha$ and $\gamma$ and $c_{\alpha}$ by $\alpha^{\prime}$, and analogous segment on $\beta$ by $\beta^{\prime}$.
-% %   Denote the geodesic segment between $c_{\alpha}$ and $c_{\beta}$ by $\kappa$.
-% %   The segments $\gamma$, $\alpha^{\prime}$, $\kappa$ and $\beta^{\prime}$ form a geodesic quadrilateral.
-% %   By Gromov hyperbolicity, we have that $\gamma$ is in a $2\delta$-neighbourhood of the broken geodesic.
-% %   Since the distance between $\alpha^{\prime}$ and $\beta^{\prime}$ is more than $4 \delta$, the there must be some point in $\kappa$ that is within $2 \delta$ distance of $\gamma$.
-% %   To see that the opposite inclusion also holds, note that $\beta^{\prime}$ is in a $2\delta$-neighbourhood of $\gamma$, $\alpha^{\prime}$ and $\kappa$.
-% %   But $\alpha^{\prime}$ is more than $4 \delta$ distance away from $\beta^{\prime}$, and thus $\beta^{\prime}$ must be in a $2\delta$ neighbourhood of $\gamma$ and $\kappa$.
-% %   But since $\kappa$ itself is within $2\delta$ distance of $\gamma$, the $4\delta$-neighbourhood of $\gamma$ contains $\beta^{\prime}$.
-% %   The same argument also shows containment of $\alpha^{\prime}$ and $\kappa$, proving the lemma.
-% %   See \autoref{fig:segment-together} for a picture of the setup.
-% %   \begin{figure}[h]
-% %     \centering
-% %     \incfig[0.8]{segment-together}
-% %     \caption{Resolved segments that get shorter under geodesic tightening.}
-% %     \label{fig:segment-together}
-% %   \end{figure}
-% % \end{proof}
-% To use \autoref{lem:geodesic-tightening} in our situation, we will additionally need to argue that the lengths of $\alpha^{\prime}$ and $\beta^{\prime}$ are almost the entire length of $\alpha$ and $\beta$ respectively.
-% That will show that the $\kappa$ and $\gamma_1 \cup \gamma_2$ have approximately the same intersection numbers with any simple closed curve (after scaling appropriately).
-
-We now state and prove a very general proposition that lets us approximate any convex combination of two foliations supported on the same underlying topological foliation, subject to some technical conditions.
-\begin{proposition}
-  \label{lem:convex-combinations}
-  Let $\gamma_1$ and $\gamma_2$ be two measured foliations on a compact surface $S$ satisfying the following conditions.
-  \begin{itemize}
-  \item The intersection of $\gamma_1$ and $\gamma_2$ with the Liouville current is $1$.
-  \item The intersection number $i(\gamma_1, \gamma_2)$ is equal to $0$.
-  \item $\gamma_1$ and $\gamma_2$ are mutually singular.
-  \item There exist a sequence of curves converging to $\gamma_1$ and $\gamma_2$ in $\pmf(S)$.
-  % \item $\gamma_1$ and $\gamma_2$ are approximable by simple two-sided multicurves.
-  \end{itemize}
-  Then for any $c \in (0, \infty)$, there exists a sequence of curves converging to $c \gamma_1 + \gamma_2$ in $\mf(S)$.
-\end{proposition}
-
-  % \todo[inline]{Make proof clearer by emphasizing on the importance of the multiplicity $m_j$.}
-\begin{proof}
-  Let $\{\gamma_{1j}\}$ and $\{ \gamma_{2j}\}$ be sequences of simple two-sided curves converging to $\gamma_1$ and $\gamma_2$ in $\pmf(S)$.
-  Since the intersection number of $\gamma_1$ and $\gamma_2$ with the Liouville current is $1$, we have that $\frac{\gamma_{1j}}{\lhyp(\gamma_{1j})}$ approaches $\gamma_1$ in $\mf(S)$, and $\frac{\gamma_{2j}}{\lhyp(\gamma_{2j})}$ approaches $\gamma_2$ in $\mf(S)$.
-  We can assume without loss of generality that $i(\gamma_{1i}, \gamma_{2j^{\prime}}) > 0$ for all $j$ and $j^{\prime}$, for if the intersection number is $0$ for infinitely many $j$, the union of the two curves with the appropriate weights will approximate the combination $c \gamma_1 + \gamma_2$.
-  % We can also assume using \autoref{lem:scaling-lemma} that normalizing these curves by their hyperbolic length converges in $\mf$.
-  We pass to a subsequence of $\gamma_{2j}$ such that after passing to the subsequence,
-  the following holds.
-  \begin{align}
-    \label{eq:1}
-    \lim_{i \to \infty} \frac{\lhyp(\gamma_{2j})}{\lhyp(\gamma_{1j})} = \infty
-  \end{align}
-  We take the union of $m_j$ parallel copies of $\gamma_{1j}$ and $1$ copy of $\gamma_{2j}$, where we pick $m_j$ such the fraction $\displaystyle \frac{m_j \cdot \lhyp(\gamma_{1j})}{\lhyp(\gamma_{2j})}$ is as close to $c$ as possible.
-  Equation \eqref{eq:1} will ensure that the ratio of the lengths (with multiplicities) will approach $c$ as $i$ goes to $\infty$.
-
-  We now resolve the intersections of the $m_j$ copies of $\gamma_{1j}$ and $\gamma_{2j}$ so that the resulting multicurve has only one component.
-  If $m_j = 1$, \autoref{lem:valid-surgery} tells us that there is such a resolution of intersections.
-  If $m_j > 1$, we resolve the intersections the same way as in the case of $m_j = 1$, but also glue together the strands of $\gamma_{1j}$ as shown in \autoref{fig:parallel-surgery-modification}.
-  \begin{figure}[h]
-    \centering
-    \incfig[1]{parallel-surgery-modification}
-    \caption{Modifying the resolution when $m_j > 1$.}
-    \label{fig:parallel-surgery-modification}
-  \end{figure}
-
-  Denote the resolved curve by $\kappa_j$ (note that this is not a geodesic, but rather it follows the geodesics $\gamma_{1j}$ and $\gamma_{2j}$ performing a sharp turn every time $\gamma_{1j}$ and $\gamma_{2j}$ intersect).
-  We claim that $\kappa_j$ divided by $m_j \cdot \lhyp(\gamma_{1j})+ \lhyp(\gamma_{2j})$ converges to $c \gamma_1 + \gamma_2$ in $\mf(S)$.
-  To prove the claim, we need to show that the following limit holds for all simple closed curves $\xi$.
-  \begin{align}
-    \label{eq:2}
-    \lim_{j \to \infty} \frac{i(\kappa_j, \xi)}{m_j \cdot \lhyp(\gamma_{1j}) + \lhyp(\gamma_{2j})}
-    = \lim_{j \to \infty} \left( c \frac{i(\gamma_{1j}, \xi)}{\lhyp(\gamma_{1j})} +  \frac{i(\gamma_{2j}, \xi)}{\lhyp(\gamma_{2j})} \right)
-  \end{align}
-  The equality replaced with an inequality in one direction is easy to see: namely, the left hand side is less than or equal to the right hand side.
-  This is because resolving intersections can only reduce the intersection number with any given simple closed curve.
-  Thus, we only need to prove the other inequality to prove the lemma.
-  \begin{align}
-    \label{eq:3}
-    \lim_{j \to \infty} \frac{i(\kappa_j, \xi)}{m_j \cdot \lhyp(\gamma_{1j}) + \lhyp(\gamma_{2j})}
-    \geq \lim_{j \to \infty} \left( c \frac{i(\gamma_{1j}, \xi)}{\lhyp(\gamma_{1j})} +  \frac{i(\gamma_{2j}, \xi)}{\lhyp(\gamma_{2j})} \right)
-  \end{align}
-
-  Let $\widehat{\kappa}_j$ be a lift of $\kappa_j$ to the universal cover $\mathbb{H}^2$.
-  It follows the lifts $\widehat{\gamma}_{1j}$ and $\widehat{\gamma}_{2j}$ of $\gamma_{1j}$ and $\gamma_{2j}$, turning sharply whenever it switches from following a lift of $\gamma_{1j}$ to following a lift of $\gamma_{2j}$ or vice versa.
-  Let $\widehat{\kappa}_j^{\prime}$ denote the segments in $\widehat{\kappa}_j$ in the neighbourhood of the turning points where the arc before the turn is within $4 \delta$ distance (where $\delta$ is the Gromov hyperbolicity constant of $\mathbb{H}^2$) of the arc after the turn (see \autoref{fig:turn-label} for an example).
-  \begin{figure}[h]
-    \centering
-    \incfig[0.5]{turn-label}
-    % \includegraphics{example-image-a}
-    \caption{The segments $\widehat{\kappa}^{\prime}_j$ and $\widehat{\kappa}_j^{\prime \prime}$ in $\widehat{\kappa}_j$.}
-    \label{fig:turn-label}
-  \end{figure}
-  Denote the complement of $\widehat{\kappa}_j^{\prime}$ in $\widehat{\kappa}_j$ by $\widehat{\kappa}_j^{\prime \prime}$.
-  We construct a new curve using $\widehat{\kappa}_j^{\prime \prime}$, connecting two successive disconnected pieces by a geodesic arc joining the endpoints (see \autoref{fig:turn-label}).
-  We call this new arc in $\mathbb{H}^2$ $\widehat{\lambda}_j$, and its image in the surface $\lambda_j$.
-  We claim that $\widehat{\lambda}_j$ is within $4 \delta$ distance of the geodesic tightening of $\widehat{\kappa}_j$.
-  This follows from a standard thin triangles argument, so we will elide the details (see \autoref{fig:tightening-arcs}).
-  \begin{figure}[h]
-    \centering
-    \incfig[0.5]{tightening-arcs}
-    % \includegraphics{example-image-b}
-    \caption{The geodesic tightening stays within a bounded distance of $\widehat{\lambda}_j$.}
-    \label{fig:tightening-arcs}
-  \end{figure}
-  As $j$ goes to $\infty$, the intersection number of $\xi$ with the geodesic tightening of $\kappa_j$ and with $\lambda_j$ will approach the same value, by \autoref{lem:perturbation-lemma}.
-  Consider now the projection of $\widehat{\kappa}_j^{\prime \prime}$ to the surface $S$: we denote the segments of $\gamma_{1j}$ which follow the projection of $\widehat{\kappa}_j^{\prime \prime}$ by $\gamma_{1j}^{\prime \prime}$ and the corresponding segments of $\gamma_{2j}$ by $\gamma_{2j}^{\prime \prime}$.
-  We also denote the complements of $\gamma_{1j}^{\prime \prime}$ and $\gamma_{2j}^{\prime \prime}$ in $\gamma_{1j}$ and $\gamma_{2j}$ by $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$.
-  Since the geodesic tightening of $\widehat{\kappa}_j$ is within a bounded distance of $\widehat{\lambda}_j$, for large enough $j$, the intersection number with $\xi$ will be the same, and we will get the following inequality between intersection numbers on the surface $S$.
-  \begin{align}
-    \label{eq:4}
-    i(\kappa_j, \xi) \geq m_j \cdot i(\gamma_{1j}^{\prime \prime}, \xi) + i(\gamma_{2j}^{\prime \prime}, \xi)
-  \end{align}
-  We express the right hand side as the intersection number with $\gamma_{1j}$ and $\gamma_{2j}$ minus an error term $\err{\xi, j}$.
-  \begin{align*}
-    i(\kappa_j, \xi) &\geq \left( m_j \cdot  i(\gamma_{1j}, \xi) + i(\gamma_{2j}, \xi)  \right)
-    - \left( m_j \cdot  i(\gamma_{1j}^{\prime}, \xi) + i(\gamma_{2j}^{\prime}, \xi)  \right) \\
-    &= \left( m_j \cdot  i(\gamma_{1j}, \xi) + i(\gamma_{2j}, \xi)  \right) - \err{\xi, j}
-  \end{align*}
-  We claim that $\err{\xi, j}$ is $o(m_j \cdot  i(\gamma_{1j}, \xi) + i(\gamma_{2j}, \xi))$: this will prove inequality \eqref{eq:3} and thus the lemma.
-
-  To begin with, we show that the lengths of $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ are $o(\lhyp(\gamma_{1j}))$ and $o(\lhyp(\gamma_{2j}))$.
-  Suppose it was not the case, and $\displaystyle \frac{\lhyp(\gamma_{1j}^{\prime})}{\lhyp(\gamma_{1j})} \geq k_1$, for some positive constant $k_1$.
-  Then any short transverse arc that only intersected $\gamma_{1j}^{\prime}$ would get assigned a positive measure as $j$ went to $\infty$.
-  Since the lengths of $m_j \cdot \gamma_{1j}$ and $\gamma_{2j}$ approach a fixed ratio, we would have that $\displaystyle \frac{\lhyp(\gamma_{2j}^{\prime})}{\lhyp(\gamma_{2j})} \geq k_2$ for some other positive constant $k_2$.
-  Thus the same short arc would also get assigned a positive measure by $\gamma_{2j}$ as $j$ went to $\infty$.
-  This means that the transverse measure on $\xi$ given by $\gamma_1$ decomposes as $\gamma_1{\prime} + \gamma_1^{\prime \prime}$, where $\gamma_1^{\prime}$ is the limit of the transverse measures given by $\gamma_{1j}^{\prime}$ and $\gamma_1^{\prime \prime}$ is the limit of the transverse measures given by the limit of $\gamma_{1j}^{\prime \prime}$.
-  We get a similar decomposition of $\gamma_2$ into $\gamma_2^{\prime} + \gamma_2^{\prime \prime}$.
-  Our argument shows that $\gamma_{1}^{\prime}$ and $\gamma_2^{\prime}$ are absolutely continuous with respect to each other.
-  But this violates mutual singularity of the measures $\gamma_1$ and $\gamma_2$, and therefore, the lengths of $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ must be $o(\lhyp(\gamma_{1j}))$ and $o(\lhyp(\gamma_{2j}))$ respectively.
-  We sum up the result of this argument in the following inequalities.
-  \begin{align}
-    \label{eq:5}
-    \lim_{j \to \infty} \frac{\lhyp(\gamma_{1j}^{\prime})}{\lhyp(\gamma_{1j})} &= 0 \\
-    \label{eq:6}
-    \lim_{j \to \infty} \frac{\lhyp(\gamma_{2j}^{\prime})}{\lhyp(\gamma_{2j})} &= 0 \\
-  \end{align}
-
-  The bound on the length of $\gamma_{1j}^{\prime}$ and $\gamma_{2j}^{\prime}$ also gives a bound on $i(\xi, \gamma_{1j}^{\prime})$ and $i(\xi, \gamma_{2j}^{\prime})$.
-  This follows from the fact that the intersection number of any arc with a fixed curve is bounded above by a constant times the length of the arc, where the constant depends on the curve.
-  \begin{align}
-    \label{eq:7}
-    i(\xi, \gamma_{1j}^{\prime}) &\leq c_\xi \lhyp(\gamma_{1j}^{\prime}) \\
-    \label{eq:8}
-    i(\xi, \gamma_{2j}^{\prime}) &\leq c_\xi \lhyp(\gamma_{2j}^{\prime}) \\
-  \end{align}
-
-  Using the fact that $\gamma_1$ and $\gamma_2$ have intersection number $1$ with Liouville current, we get the following inequality for a large enough $j$, and for some finite $k$.
-  \begin{align}
-    \label{eq:9}
-    \frac{\lhyp(\gamma_{1j})}{i(\xi, \gamma_{1j})} &\leq k \\
-    \label{eq:10}
-    \frac{\lhyp(\gamma_{2j})}{i(\xi, \gamma_{2j})} &\leq k \\
-  \end{align}
-  Multiplying \eqref{eq:5}, \eqref{eq:7}, and \eqref{eq:9}, and \eqref{eq:6}, \eqref{eq:8}, and \eqref{eq:10} proves the claim about the error term, and therefore the lemma.
-\end{proof}
-
-To state our next lemma, we need to define the \emph{orbit measure} associated to simple curve, and define what it means for an orbit measure to be \emph{almost invariant}.
+Before we prove this result, we need to define the \emph{orbit measure} associated to simple curve, and define what it means for an orbit measure to be \emph{almost invariant}.
 Consider an arc $\eta$ transverse to a measured foliation $\lambda$.
 We assign one of the sides of $\eta$ to be the ``up'' direction, and the other side to be the ``down'' direction.
 This lets us define the first return map to $T$.
@@ -722,9 +498,9 @@ The following lemma shows that a long orbit measure is close to an invariant mea
   For any $\varepsilon > 0$, there exists an $L$ large enough such that any orbit measure longer than $L$ is within distance $\varepsilon$ of an invariant measure.
 \end{lemma}
 \begin{proof}
-  Let $M_L$ denote the set of all orbit measures of length greater than or equal to $L$.
+  Let $M_L$ denote the set of all measures $\mu$ such that $d_{\mathrm{LP}}(\mu, T\mu) \leq \frac{2}{L}$.
   The set $M_L$ is compact, because it is a closed subset of a compact set, and we have that $\bigcap_{L=1}^{\infty} M_L$ is the set of invariant measures.
-  By compactness, we have that for some large enough $L$, $M_L$ must be in a $\varepsilon$-neighbourhood of the set of invariant measures.
+  By compactness, we have that for some large enough $L$, $M_L$ must be in a $\varepsilon$-neighbourhood of the set of invariant measures, and every orbit measure of length greater than $L$ must be in this $M_L$.
 \end{proof}
 We now prove a lemma that gives us a criterion for deducing when a long orbit measure is close to an ergodic measure.
 \begin{lemma}
@@ -752,71 +528,71 @@ We now prove a lemma that gives us a criterion for deducing when a long orbit me
   That would that there exists some subsequence of $\mu_{p_{ij}, L_{ij}}$ that converges to $\nu$, which proves the lemma.
 \end{proof}
 
-We now consider a tricky special case we are forced to reckon with when approximating ergodic foliations with simple closed curves.
-Let $\lambda$ be a minimal foliation and $\eta$ a transverse arc.
-Let $q$ be a DQD on $\no_g$ such that $\lambda$ is the vertical foliation, and $\eta$ is a horizontal arc of flat length $1$.
-Let $a$ be a leaf starting at the left endpoint $p$ of $\eta$ and going up, and suppose it comes back from the top intersecting $\eta$ a point $q$ which is distance $\varepsilon \ll 1$ from the left endpoint (possibly after intersecting $\eta$ several times).
-Let $c$ be the simple closed curve obtained by concatenating $a$ and the horizontal arc joining $p$ and $q$.
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics{example-image-a}
-%   \caption{Closing up leaves that start and begin on the same side of the arc.}
-%   \label{fig:bad-situation}
-% \end{figure}
-The curve $c$ is clearly not close to the flat or hyperbolic geodesic representative of its homotopy class.
-One obvious way to make $c$ shorter without changing its homotopy type is to flow the arc joining $p$ and $q$ along the foliation until it encounters a singularity, at which point we stop.
-We label the new endpoints $p^{\prime}$ and $q^{\prime}$, and define a new closed curve $c^{\prime}$ by starting at $p^{\prime}$, flowing along the vertical foliation until $q^{\prime}$ and then flowing horizontally back to $p^{\prime}$.
-We consider the transverse probability measures on $\eta$ given by intersection with $c$, $c^{\prime}$, and their hyperbolic geodesic representative, which we denote $c^{\prime \prime}$.
-We denote the associated transverse probability measures on $\eta$ by $\mu_c$, $\mu_{c^{\prime}}$, and $\mu_{c^{\prime \prime}}$ respectively.
-The following lemma states that the $\mu_{c^{\prime}}$ and $\mu_{c^{\prime \prime}}$ are approximately equal.
+% We now consider a tricky special case we are forced to reckon with when approximating ergodic foliations with simple closed curves.
+% Let $\lambda$ be a minimal foliation and $\eta$ a transverse arc.
+% Let $q$ be a DQD on $\no_g$ such that $\lambda$ is the vertical foliation, and $\eta$ is a horizontal arc of flat length $1$.
+% Let $a$ be a leaf starting at the left endpoint $p$ of $\eta$ and going up, and suppose it comes back from the top intersecting $\eta$ a point $q$ which is distance $\varepsilon \ll 1$ from the left endpoint (possibly after intersecting $\eta$ several times).
+% Let $c$ be the simple closed curve obtained by concatenating $a$ and the horizontal arc joining $p$ and $q$.
+% % \begin{figure}[h]
+% %   \centering
+% %   \includegraphics{example-image-a}
+% %   \caption{Closing up leaves that start and begin on the same side of the arc.}
+% %   \label{fig:bad-situation}
+% % \end{figure}
+% The curve $c$ is clearly not close to the flat or hyperbolic geodesic representative of its homotopy class.
+% One obvious way to make $c$ shorter without changing its homotopy type is to flow the arc joining $p$ and $q$ along the foliation until it encounters a singularity, at which point we stop.
+% We label the new endpoints $p^{\prime}$ and $q^{\prime}$, and define a new closed curve $c^{\prime}$ by starting at $p^{\prime}$, flowing along the vertical foliation until $q^{\prime}$ and then flowing horizontally back to $p^{\prime}$.
+% We consider the transverse probability measures on $\eta$ given by intersection with $c$, $c^{\prime}$, and their hyperbolic geodesic representative, which we denote $c^{\prime \prime}$.
+% We denote the associated transverse probability measures on $\eta$ by $\mu_c$, $\mu_{c^{\prime}}$, and $\mu_{c^{\prime \prime}}$ respectively.
+% The following lemma states that the $\mu_{c^{\prime}}$ and $\mu_{c^{\prime \prime}}$ are approximately equal.
 
-\begin{lemma}
-  \label{lem:flat-length-tightening}
-  As $\varepsilon$ approaches $0$, $d_{\mathrm{LP}}(\mu_{c^{\prime}}, \mu_{c^{\prime \prime}})$ approaches $0$.
-\end{lemma}
-\begin{proof}
-  Note that as $\varepsilon$ goes to $0$, the hyperbolic lengths of $c^{\prime}$ and $c^{\prime \prime}$ go to $\infty$.
-  If we show that $c^{\prime}$ and $c^{\prime \prime}$ stay within a bounded distance of each other, independent of $\varepsilon$, the measures $\mu_{c^{\prime}}$ and $\mu_{c^{\prime \prime}}$ converge to the same measures, since the intersection points in $\eta$ with $c^{\prime}$ and $c^{\prime \prime}$ will get closer and closer, by elementary hyperbolic geometry.
+% \begin{lemma}
+%   \label{lem:flat-length-tightening}
+%   As $\varepsilon$ approaches $0$, $d_{\mathrm{LP}}(\mu_{c^{\prime}}, \mu_{c^{\prime \prime}})$ approaches $0$.
+% \end{lemma}
+% \begin{proof}
+%   Note that as $\varepsilon$ goes to $0$, the hyperbolic lengths of $c^{\prime}$ and $c^{\prime \prime}$ go to $\infty$.
+%   If we show that $c^{\prime}$ and $c^{\prime \prime}$ stay within a bounded distance of each other, independent of $\varepsilon$, the measures $\mu_{c^{\prime}}$ and $\mu_{c^{\prime \prime}}$ converge to the same measures, since the intersection points in $\eta$ with $c^{\prime}$ and $c^{\prime \prime}$ will get closer and closer, by elementary hyperbolic geometry.
 
-  Observe that the closed curve $c^{\prime}$ is almost a hyperbolic geodesic: namely the segment of it that follows the foliation $\lambda$: the only possibility is that the arc joining $p^{\prime}$ and $q^{\prime}$ results in the closed curve shortening significantly.
-  However, note that the segment of $c^{\prime}$ that follows the foliation approaches the singularity from two different prongs which have a positive angle between them.
-  Joining the ends with a short geodesic gives us a segment obtained by concatenating three geodesic arcs.
-  Gromov hyperbolicity tells us that the geodesic representative of such a segment will be within a bounded distance of the segment: i.e. the geodesic representative $c^{\prime \prime}$ will be within a bounded distance of $c^{\prime}$ (see \autoref{fig:geodesic-tightening}).
-  \begin{figure}[h]
-    \centering
-    \incfig[1]{geodesic-tightening}
-    \caption{The curves $c^{\prime}$ and $c^{\prime \prime}$ are within bounded distance because all the prongs of the singularity have a positive angle between them.}
-    \label{fig:geodesic-tightening}
-  \end{figure}
-  This proves the lemma.
-\end{proof}
-The next lemma links the ratio of the flat lengths of $c$ and $c^{\prime}$ to the measures $\mu_c$ and $\mu_{c^{\prime}}$.
-\begin{lemma}
-  \label{lem:absolute-continuity}
-  Consider a sequence of $\varepsilon$ going to $0$ such that $\displaystyle \frac{\lflat(c^{\prime})}{\lflat(c)} \geq \nu > 0$ and both $\mu_c$ and $\mu_{c^{\prime}}$ converge.
-  Then $\lim_{\varepsilon \to 0} \mu_{c^{\prime}}$ is absolutely continuous with respect to $\lim_{\varepsilon \to 0} \mu_c$.
-\end{lemma}
-\begin{proof}
-  Consider a sub-interval $\eta^{\prime}$ of $\eta$ such that $\lim_{\varepsilon \to 0}\mu_c(\eta^{\prime}) = 0$.
-  We need to show that the same holds for the limit of the measures $\mu_{c^{\prime}}$.
-  Let $i(c, \eta)$ and $i(c, \eta^{\prime})$ be the number of times $c$ intersects $\eta$ and $\eta^{\prime}$, and let $i(c^{\prime}, \eta)$ and $i(c^{\prime}, \eta^{\prime})$ be defined similarly.
-  Since we are working with a fixed DQD, the intersection number of a vertical arc with $\eta$ is bounded above and below by the flat length of the vertical arc times a positive constant depending only on $\eta$ (the positive constants are the maximum and minimum heights of the rectangles obtained when representing the flat structure as a zippered rectangle).
-  \begin{align}
-    \label{eq:11}
-    \alpha_{\eta} \lflat(c) \leq &i(c, \eta) \leq \beta_{\eta} \lflat(c) \\
-    \label{eq:12}
-    \alpha_{\eta} \lflat(c^{\prime}) \leq &i(c^{\prime}, \eta) \leq \beta_{\eta} \lflat(c^{\prime})
-  \end{align}
-  Using the inequality in the hypothesis, and \eqref{eq:11} and \eqref{eq:12}, we get the following chain of inequalities.
-  \begin{align*}
-    \frac{i(c^{\prime}, \eta^{\prime})}{i(c^{\prime}, \eta)}
-    &\leq \frac{i(c, \eta^{\prime})}{i(c^{\prime}, \eta)} \\
-    &\leq \frac{1}{\alpha_{\eta}} \cdot \frac{i(c, \eta^{\prime})}{\lflat(c^{\prime})} \\
-    &\leq \frac{1}{\alpha_{\eta} \nu} \cdot \frac{i(c, \eta^{\prime})}{\lflat(c)} \\
-    &\leq \frac{\beta_{\eta}}{\alpha_{\eta} \nu} \cdot \frac{i(c, \eta^{\prime})}{i(c, \eta)}
-  \end{align*}
-  The right hand side goes to $0$ as $\varepsilon$ goes to $0$, proving absolute continuity of the limiting measure.
-\end{proof}
+%   Observe that the closed curve $c^{\prime}$ is almost a hyperbolic geodesic: namely the segment of it that follows the foliation $\lambda$: the only possibility is that the arc joining $p^{\prime}$ and $q^{\prime}$ results in the closed curve shortening significantly.
+%   However, note that the segment of $c^{\prime}$ that follows the foliation approaches the singularity from two different prongs which have a positive angle between them.
+%   Joining the ends with a short geodesic gives us a segment obtained by concatenating three geodesic arcs.
+%   Gromov hyperbolicity tells us that the geodesic representative of such a segment will be within a bounded distance of the segment: i.e. the geodesic representative $c^{\prime \prime}$ will be within a bounded distance of $c^{\prime}$ (see \autoref{fig:geodesic-tightening}).
+%   \begin{figure}[h]
+%     \centering
+%     \incfig[1]{geodesic-tightening}
+%     \caption{The curves $c^{\prime}$ and $c^{\prime \prime}$ are within bounded distance because all the prongs of the singularity have a positive angle between them.}
+%     \label{fig:geodesic-tightening}
+%   \end{figure}
+%   This proves the lemma.
+% \end{proof}
+% The next lemma links the ratio of the flat lengths of $c$ and $c^{\prime}$ to the measures $\mu_c$ and $\mu_{c^{\prime}}$.
+% \begin{lemma}
+%   \label{lem:absolute-continuity}
+%   Consider a sequence of $\varepsilon$ going to $0$ such that $\displaystyle \frac{\lflat(c^{\prime})}{\lflat(c)} \geq \nu > 0$ and both $\mu_c$ and $\mu_{c^{\prime}}$ converge.
+%   Then $\lim_{\varepsilon \to 0} \mu_{c^{\prime}}$ is absolutely continuous with respect to $\lim_{\varepsilon \to 0} \mu_c$.
+% \end{lemma}
+% \begin{proof}
+%   Consider a sub-interval $\eta^{\prime}$ of $\eta$ such that $\lim_{\varepsilon \to 0}\mu_c(\eta^{\prime}) = 0$.
+%   We need to show that the same holds for the limit of the measures $\mu_{c^{\prime}}$.
+%   Let $i(c, \eta)$ and $i(c, \eta^{\prime})$ be the number of times $c$ intersects $\eta$ and $\eta^{\prime}$, and let $i(c^{\prime}, \eta)$ and $i(c^{\prime}, \eta^{\prime})$ be defined similarly.
+%   Since we are working with a fixed DQD, the intersection number of a vertical arc with $\eta$ is bounded above and below by the flat length of the vertical arc times a positive constant depending only on $\eta$ (the positive constants are the maximum and minimum heights of the rectangles obtained when representing the flat structure as a zippered rectangle).
+%   \begin{align}
+%     \label{eq:11}
+%     \alpha_{\eta} \lflat(c) \leq &i(c, \eta) \leq \beta_{\eta} \lflat(c) \\
+%     \label{eq:12}
+%     \alpha_{\eta} \lflat(c^{\prime}) \leq &i(c^{\prime}, \eta) \leq \beta_{\eta} \lflat(c^{\prime})
+%   \end{align}
+%   Using the inequality in the hypothesis, and \eqref{eq:11} and \eqref{eq:12}, we get the following chain of inequalities.
+%   \begin{align*}
+%     \frac{i(c^{\prime}, \eta^{\prime})}{i(c^{\prime}, \eta)}
+%     &\leq \frac{i(c, \eta^{\prime})}{i(c^{\prime}, \eta)} \\
+%     &\leq \frac{1}{\alpha_{\eta}} \cdot \frac{i(c, \eta^{\prime})}{\lflat(c^{\prime})} \\
+%     &\leq \frac{1}{\alpha_{\eta} \nu} \cdot \frac{i(c, \eta^{\prime})}{\lflat(c)} \\
+%     &\leq \frac{\beta_{\eta}}{\alpha_{\eta} \nu} \cdot \frac{i(c, \eta^{\prime})}{i(c, \eta)}
+%   \end{align*}
+%   The right hand side goes to $0$ as $\varepsilon$ goes to $0$, proving absolute continuity of the limiting measure.
+% \end{proof}
 
 We now have everything we need to prove \autoref{thm:rational-approximation}.
 % \todo[inline]{Make the proof clearer.}
@@ -825,10 +601,7 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
   Since $\lambda$ contains no one-sided component, the core curve of $\lambda_j$ must be two-sided, possibly with an irrational coefficient.
   Approximating the core curve with rational coefficients proves the result in case (i).
 
-  In case (ii), we have that $\lambda_j$ is not periodic, but a minimal orientable foliation.
-  If we know that all the ergodic measures supported on the underlying topological foliation can be approximated by simple two-sided curves, we can approximate any convex combination of those measures, using \autoref{lem:convex-combinations}, since all the ergodic measures are mutually singular.
-  It will therefore suffice to deal with the case that $\lambda_j$ is ergodic.
-
+  In case (ii), we have that $\lambda_j$ is not periodic, but an ergodic orientable foliation.
   Pick an arc $\eta_0$ transverse to $\lambda_j$ such that the leaf passing through the left endpoint $p_0$ of $\eta_0$ equidistributes with respect to the ergodic transverse measure of $\lambda_j$.
   We can find such a leaf because almost every leaf equidistributes with respect to the ergodic measure.
   We now inductively define a sequence of points $\{p_i\}$, sequence of sub-intervals $\eta_i$, and a sequence of segments $\{a_i\}$ of the leaf passing through $p_0$.
@@ -848,7 +621,7 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
   \end{figure}
   If the flow returns infinitely often without the orientation flipped, we join the endpoint $p_i$ to $p_0$ by going left along $\eta_i$ to get a simple closed curve that is two-sided.
   Furthermore, the geodesic tightening of the resulting curve is very close to the original curve, because the initial and final tangent vectors can be made arbitrarily close since they both face the ``up'' direction: the Anosov closing lemma then tells us that an orbit of the geodesic flow that approximately closes up can be perturbed by a small amount to exactly close up.
-  This gives us a long geodesic that equidistributes with respect to the ergodic measure, and therefore an approximation by two-sided multicurves.
+  This gives us a long geodesic that equidistributes with respect to the ergodic measure, and therefore an approximation by two-sided curves.
 
   If the flow does not return without the orientation flipped infinitely often, it must always return with the orientation flipped after some large enough $i_0$.
   In that case, consider the simple two-sided curves $c_i$ obtained by concatenating $a_i$ with the arc on $\eta_{i-1}$ joining $p_{i-1}$ and $p_i$ (see \autoref{fig:comes-with-flip}).
@@ -877,10 +650,9 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
   %   \label{fig:coming-from-above}
   % \end{figure}
   While this curve does equidistribute with respect to the ergodic measure, it is not necessary that its geodesic tightening will do so.
-  Denote the geodesic tightening by $c_i^{\prime \prime}$, and consider an intermediate closed curve $c_i^{\prime}$ in the same homotopy class as described in \autoref{lem:flat-length-tightening} and \autoref{lem:absolute-continuity}.
-  We have by assumption that $\mu_{c_i}$ converges to an ergodic measure.
-  If the ratio of the flat lengths of $c_i$ and $c_i^{\prime}$ is bounded away from $0$, possibly up to a subsequence, then \autoref{lem:absolute-continuity} tells us that $\mu_{c_i^{\prime}}$ converges to the ergodic measure, and \autoref{lem:flat-length-tightening} tells us the transverse measure associated to the hyperbolic geodesic representative is also ergodic.
-  If $\lflat(c_i^{\prime \prime})$ is $o(\lflat(c_i))$, we still have that $\mu_{c_i^{\prime \prime}}$ converges up to a subsequence, since $l(c_i^{\prime \prime})$ goes to $\infty$, but it may converge to some other measure supported on the same underlying topological foliation.
+  Denote the geodesic tightening by $c_i^{\prime}$: we have that its intersection number with $\lambda_j$ is equal to the Euclidean distance between $p_0$ and $p_i$ which goes to $0$ as $i$ goes to $\infty$.
+  By the compactness of the space of transverse probability measures, we must have that $\mu_{c_i^{\prime}}$ converges to some projective measured foliation $\gamma$ which has $0$ intersection number with $\lambda_j$, but is still supported on a subset of the support of $\lambda_j$.
+  This means $\gamma$ must be another projective measured foliation in the topological conjugacy class of $\lambda_j$, i.e. is supported on the same underlying foliation.
   This proves the furthermore case of theorem.
   If $\lambda_j$ is actually uniquely ergodic, there is only one measure in the simplex of invariant probability measures, namely the uniquely ergodic one, and therefore $\mu_{g_i}$ is forced to converge to it.
 
@@ -1120,85 +892,6 @@ This quantitative estimate of \autoref{prop:pinching} gives us an easy proof of 
   Every point $p \in \teich(\no_g)$ is contained in $\systole(\no_g)$ for some small enough $\varepsilon$.
   This means $\Lambda_{\mathrm{geo}, p}(\mcg(\no_g))$ is contained in $\pmf^+(\no_g)$ by \autoref{thm:systole-closure}.
   Taking the union over all $p$ proves the result.
-\end{proof}
-
-\section{Wandering set}
-\label{sec:domain-discontinuity}
-
-In this section, we prove that the wandering set for the action of $\mcg(\no_g)$ on $\pmf(\no_g)$ is empty.
-This follows fairly easily from \autoref{conj:gendulphe-1}, but because we only have a slightly weaker version of the result, i.e. \autoref{thm:rational-approximation}, we need to work a little harder.
-However, the techniques used in the proof of \autoref{thm:rational-approximation} are robust enough to prove the result in this section.
-\begin{theorem}
-  \label{thm:dod-is-empty}
-  The wandering set for the $\mcg(\no_g)$ action on $\pmf(\no_g)$ is empty.
-\end{theorem}
-
-We prove this result by showing that for any measured foliation $\lambda$, there exists a mapping class $\varphi$ such that $\varphi$ moves $\lambda$ by an arbitrarily small amount.
-\begin{proposition}
-  \label{prop:mapping-class-estimate}
-  Let $\lambda$ be a measured foliation.
-  Then for any simple closed curve $\kappa$ and any $\delta > 0$, there exists a $\varphi \in \mcg(\no_g)$ such that the following inequalities hold.
-  \begin{align*}
-    i(\lambda , \kappa) - \delta
-    \leq i(\varphi(\lambda), \kappa)
-    \leq i(\lambda , \kappa) + \delta
-  \end{align*}
-\end{proposition}
-To prove this proposition, we will need to estimate how Dehn twists change intersection numbers.
-\begin{lemma}
-  \label{lem:dehn-twist-estimate}
-  Let $\lambda$ be any measured foliation, $\gamma$ any two-sided simple curve, and $\kappa$ any simple curve (not necessarily two-sided).
-  Denote the Dehn twist about $\gamma$ by $T_{\gamma}$; the intersection number of $T_\gamma(\lambda)$ and $\kappa$ is bounded by the following intersection numbers.
-  \begin{align*}
-    i(\lambda, \kappa) - i(\lambda, \gamma) \cdot i(\gamma, \kappa)
-    \leq i(T_{\gamma}, \kappa)
-    \leq i(\lambda, \kappa) + i(\lambda, \gamma) \cdot i(\gamma, \kappa)
-  \end{align*}
-\end{lemma}
-\begin{proof}
-  We approximate $\lambda$ by simple curves, possibly one-sided, and use Proposition 3.4 of \cite{farb2011primer}, which is the same inequality, but with $\lambda$ replaced with a simple curve.
-\end{proof}
-
-\begin{proof}[Proof of \autoref{prop:mapping-class-estimate}]
-  Consider a projective measured lamination $[\lambda] \in \pmf(\no_g)$.
-  If $[\lambda]$ contains one-sided leaves, we delete those one-sided curves and work with the resulting subsurface.
-  If the restriction of $\lambda$ to the resulting subsurface is empty, then any mapping class on the subsurface does not change $\lambda$, and the result holds.
-  If the restriction of $\lambda$ to the subsurface is non-empty, and $\lambda$ can be approximated by simple two-sided curves and \autoref{thm:equivalence-of-limit-sets} tells us that it can also be approximated by stable foliations of pseudo-Anosov maps on the subsurface.
-  For any small neighbourhood of $[\lambda]$, pick a pseudo-Anosov $\varphi$ whose stable foliation lies in that neighbourhood.
-  Then the north-south dynamics of pseudo-Anosov maps tells us that $\varphi([\lambda])$ will be in the same neighbourhood, proving the result in this case.
-
-  Suppose now that the restriction of the foliation is not approximable by simple two-sided curves.
-  Then there exists some minimal component that is not approximable by two-sided curves.
-  \autoref{lem:convex-combinations} tells us that there is some ergodic measure supported on the underlying topological foliation that is not approximable by two-sided curves either.
-  Let $p$ be a generic point for this measure, and let $\eta$ be a transverse arc whose left endpoint is $p$.
-  Pick a flat structure on this surface such that $\lambda$ is the vertical foliation, and $\eta$ is a horizontal arc of length $1$.
-  The only way the ergodic measure is not approximable by a two-sided curve is the situation described in the proof of \autoref{thm:rational-approximation} where a leaf leaving $p$ from the top returns infinitely often from the top again, with the orientation remaining unflipped.
-  Recall that in this situation, we have an arc $a$ a leaving $p$ from the top, following the foliation, terminating at a point $q$ that is $\varepsilon$ distance to the right of $p$, and it comes back from the top with the orientation unflipped.
-  We concatenate this arc with the segment along $\eta^{\prime}$ joining $p$ and $q$.
-  This is a simple two-sided curve, which we will call $c$ (this curve $c$ depends on $\varepsilon$, but we will suppress the dependence in the notation).
-  Let $c^{\prime}$ be the tightening of this curve described in the paragraph before \autoref{lem:flat-length-tightening}.
-  If we do not have that $\lflat(c^{\prime})$ is $o(\lflat(c))$, then \autoref{lem:absolute-continuity} tells us that the ergodic measure can be approximated by simple two-sided curves.
-  That means $\varepsilon \cdot \lflat(c^{\prime})$ goes to $0$ as $\varepsilon$ goes to $0$.
-
-  We now relate $\lflat(c^{\prime})$ with $i(c^{\prime}, \kappa)$ via the following inequality, where $c^{\prime}$ can be any closed curve, and $j_{\kappa}$ is a constant depending on $\kappa$ and the flat geometry of the surface.
-  \begin{align}
-    \label{eq:13}
-    i(c^{\prime}, \kappa) \leq j_{\kappa} \cdot \lflat(c^{\prime})
-  \end{align}
-  The constant $j_{\kappa}$ can be computed by cutting the surface along $\kappa$, and computing the length of the shortest essential arc starting and ending at the boundary component $\kappa$.
-
-  We pick an $\varepsilon$ and curve $c$ such that $\varepsilon \cdot \lflat(c^{\prime}) < \frac{\delta}{j_{\kappa}}$.
-  We Dehn twist about the curve $c$: \autoref{lem:dehn-twist-estimate} tells us that the error term is $i(\lambda, c) \cdot i(c, \kappa) = \varepsilon \cdot i(c, \kappa)$.
-  We bound the intersection number by $j_{\kappa} \cdot \lflat(c^{\prime})$, which bounds the error term by $\delta$, proving the result in the case when $\lambda$ is not approximable by two-sided curves.
-
-  This handles all the cases, and proves the proposition.
-\end{proof}
-
-\begin{proof}[Proof of \autoref{thm:dod-is-empty}]
-  Pick any small open set $U$ in $\pmf(\no_g)$, and any arbitrary local metric such that $U$ has diameter at least $2$.
-  Pick a sequence of mapping classes $\{\varphi_i\}$ that move a point by distance at most $\frac{1}{2^i}$, using \autoref{prop:mapping-class-estimate}.
-  Then for all $i$, $\varphi_i(U) \cap U$ is non-empty.
-  This proves the result.
 \end{proof}
 
 \section{Failure of quasi-convexity for ${\systole}$}
