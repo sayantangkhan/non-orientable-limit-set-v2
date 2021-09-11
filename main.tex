@@ -336,9 +336,8 @@ They defined two distinct notions of limit sets; while they did not give distinc
 \end{definition}
 
 \begin{remark}
-  The specific family of subgroups considered by McCarthy-Papadopoulos were subgroups containing at least two non-commuting pseudo-Anosov mapping classes.
-  In this case, the dynamical limit set is unique and also the same equal to the closure of the uniquely ergodic foliations that are the stable and unstable foliations of the pseudo-Anosov elements of the subgroup.
-  Unless otherwise specified, we will only talk about mapping class subgroups which contain at least two non-commuting pseudo-Anosovs.
+  The specific family of subgroups considered by McCarthy-Papadopoulos were subgroups containing at least two non-commuting pseudo-Anosov mapping classes, in which case the dynamical limit set is unique.
+  The mapping class groups $\mcg(\no_{g})$ considered as a subgroup of $\mcg(\os_{g-1})$ certainly satisfies this property, letting us talk about \emph{the} dynamical limit set.
 \end{remark}
 
 Both of these definitions are natural generalizations of the limit sets of Fuchsian groups acting on $\HH^2$.
@@ -367,23 +366,6 @@ McCarthy-Papadopoulos also formulated an equivalent definition of $\dynlim(\Gamm
   \label{thm:equivalence-of-limit-sets}
   $\dynlim(\Gamma)$ is the closure in $\pmf$ of the stable and unstable foliations of all the pseudo-Anosov mapping classes in $\Gamma$.
 \end{untheorem}
-
-A corollary of this theorem is that $\Gamma$ does not act properly discontinuously on $\dynlim(\Gamma)$.
-In fact, one can construct a wandering set for the $\Gamma$ action using $\dynlim(\Gamma)$.
-\begin{definition}[Zero intersection set]
-  Given a subset $\Lambda$ of $\pmf$, its zero intersection set $Z(\Lambda)$ is the following subset of $\pmf$
-  \begin{align*}
-    Z(\Lambda) \coloneqq \left\{ \lambda^{\prime} \mid i(\lambda, \lambda^{\prime}) = 0 \text{ for some $\lambda \in \Lambda$} \right\}
-  \end{align*}
-\end{definition}
-
-McCarthy-Papadopoulos also exhibit a wandering set for the $\Gamma$ action on $\pmf$.
-\begin{untheorem}[Theorem 6.16 of \cite{McCarthy1989}]
-  The action of $\Gamma$ on $\pmf \setminus Z(\dynlim(\Gamma))$ is properly discontinuous.
-\end{untheorem}
-
-It is not obvious that the action of $\Gamma$ on $Z(\dynlim(\Gamma))$ is not properly discontinuous.
-We prove that is indeed the case when $\Gamma = \mcg(\no_g)$ in Section \ref{sec:domain-discontinuity}, but the general case is unknown.
 
 \subsection*{List of notation}
 Here we describe some of the more commonly used symbols in the paper.
@@ -594,20 +576,6 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
   We have that the geodesic tightenings of the curves $c_i$ are close to the original curve by the Anosov closing lemma, and that the weighted averages of the $c_i$ converge the ergodic measure, which means by \autoref{lem:convexity-argument} we have a subsequence $\mu_{c_i}$ that converges to the ergodic measure.
   This proves the result for case (iii), and therefore the theorem.
 \end{proof}
-
-% \paragraph{Idea of proof}
-% First of all, note that one can approximate each minimal component on the subsurface on which the minimal components live in, and combine the rational approximations.
-% This works because the rational approximations are also on difference subsurfaces, and thus have zero intersection number with each other.
-% Case (i) is easy to deal with: since $\lambda_j \in \pmf^+(\no_g)$, the core curve is two-sided.
-% Approximating that two-sided curve with the same two-sided curve, but with rational weights does the job.
-% Cases (ii) and (iii) require more work.
-% In case (ii), we first approximate the ergodic measures supported on the topological foliation $\lambda_j$.
-% We do so by following a long orbit that equidistributes with respect to the ergodic measure, and closing the orbit up so that the resulting curve is simple and two-sided.
-% To close up the orbit so that it still equidistributes with the same ergodic measure, we need to ensure that the foliation is orientable.
-% Once we have rational approximations for all the ergodic measures supported on the topological foliation $\lambda_j$, we can obtain rational approximations for any convex combinations by taking large enough Dehn twists about each of the rational approximants.
-% That proves the result for case (ii).
-% For case (iii), we do the same thing as in case (ii), i.e. close up a long orbit so that it is simple and two-sided.
-% Unique ergodicity ensures that the resulting curve equidistributes with respect to the uniquely ergodic measure.
 
 \section{Upper bound for the limit set}
 \label{sec:upper-bound-limit-set}

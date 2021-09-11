@@ -280,3 +280,4 @@ TSWLatexianTemp*
 /arxiv-submission.tar.gz
 web/
 /ltximg/
+/image_cleanup.py
