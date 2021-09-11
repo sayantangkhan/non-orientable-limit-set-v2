@@ -3,7 +3,6 @@
 #+TITLE: Things to do
 #+AUTHOR: Sayantan Khan
 
-* TODO Figure out where the $g \geq 3$ is used.
 * Rephrase and make more precise Theorem 6.2
 Look into limits of Strebel differentials.
 The better statement might be trickier because we would need to lower bound the hyperbolic length of all one-sided curves.
@@ -12,6 +11,10 @@ UPDATE: Alex suggested a modification.
 [[file:org-mode-images/modification.jpg][Modified construction]]
 * TODO Figures
 Changes all color references to color and dotted references.
+* DONE Clean up Section 4
+Especially remove the $\tau$ bit, and think about whether reduction to case 2 is really
+necessary.
+* DONE Figure out where the $g \geq 3$ is used.
 * DONE Change topological foliation to zero intersection number
 * DONE Other corrections in pdf Alex sent
 * DONE Make convex combinations lemma more precise by working in MF only

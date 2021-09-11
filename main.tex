@@ -21,13 +21,6 @@
   In the positive direction, we show the complement of the limit set is open and dense.
   Moreover, we show that the limit set of the mapping class group contains the set of uniquely ergodic foliations and is contained in the set of all projective measured foliations not containing any one-sided leaves, establishing large parts of a conjecture of Gendulphe.
   In the negative direction, we show that a conjectured convex core is not even quasi-convex, in contrast with the geometrically finite setting.
-  %
-  %we show that a conjectured convex core for the moduli space is in fact not eve n quasi-convex, answering a question of [], and the action of the mapping class group on the boundary has an empty wandering set.
-%
- % Motivated by the conjectured similarities between geometrically finite infinite covolume Fuchsian groups and the mapping class group of compact non-orientable surfaces, we show that the limit set of the mapping class group contains the set of uniquely ergodic foliations and is contained in the set of all projective measured foliations not containing any one-sided leaves.
-  %This provides strong evidence for a conjecture of Gendulphe.
-  %Using the limit set we also show that a conjectured convex core for the moduli
-  %space is in fact not even quasi-convex, and the action of the mapping class group on the boundary has an empty wandering set despite the complement of the limit set being an open dense subset.
 \end{abstract}
 \maketitle
 
@@ -186,7 +179,7 @@ If that happens, then $\iota^{\ast} q$ is a cotangent vector to the point $X$ in
   Consider the quadratic differential $q$ on a genus two Riemann surface pictured in \autoref{fig:dqd-example}.
   \begin{figure}[h]
     \centering
-    \incfig[0.5]{dqd-example}
+    \incfig[0.45]{dqd-example}
     \caption{A quadratic differential $q$ on $\os_2$ given by the slit torus construction.}
     \label{fig:dqd-example}
   \end{figure}
@@ -215,7 +208,7 @@ If that happens, then $\iota^{\ast} q$ is a cotangent vector to the point $X$ in
   Doing that for our example gives the non-orientable flat surface gives the picture seen in \autoref{fig:dqd-no3}.
   \begin{figure}[h]
     \centering
-    \incfig[0.5]{dqd-no3}
+    \incfig[0.45]{dqd-no3}
     \caption{A quadratic differential on $\no_3$.}
     \label{fig:dqd-no3}
   \end{figure}
@@ -333,7 +326,7 @@ In Section \ref{sec:lower-bound-limit-set}, we get a lower bound for the set on 
 \label{sec:backgr-limit-sets}
 
 The first results on limit sets of subgroups of mapping class groups were obtained by Masur for handlebody subgroups \cite{masur_1986}, and McCarthy-Papadopoulos for general mapping class subgroups \cite{McCarthy1989}.
-They defined two distinct notions of limit sets; while they did not give distinct names to the two different definitions, we will do so, for the sake of clarity.
+They defined two distinct notions of limit sets; while they did not give distinct names to the two different definitions, we will do so for the sake of clarity.
 \begin{definition}[Dynamical limit set]
   Given a subgroup $\Gamma$ of the mapping class group, the dynamical limit set $\dynlim(\Gamma)$ is the minimal closed invariant subset of $\pmf$ under the action of $\Gamma$.
 \end{definition}
@@ -343,7 +336,8 @@ They defined two distinct notions of limit sets; while they did not give distinc
 \end{definition}
 
 \begin{remark}
-  The specific family of subgroups considered by McCarthy-Papadopoulos were subgroups containing at least two non-commuting pseudo-Anosov mapping classes, in which case, the dynamical limit set is unique.
+  The specific family of subgroups considered by McCarthy-Papadopoulos were subgroups containing at least two non-commuting pseudo-Anosov mapping classes.
+  In this case, the dynamical limit set is unique and also the same equal to the closure of the uniquely ergodic foliations that are the stable and unstable foliations of the pseudo-Anosov elements of the subgroup.
   Unless otherwise specified, we will only talk about mapping class subgroups which contain at least two non-commuting pseudo-Anosovs.
 \end{remark}
 
@@ -367,30 +361,29 @@ One may ask if this is always the case.
 \end{question}
 We know from \autoref{thm:rational-approximation} that the answer to the above question is yes for $\Gamma = \mcg(\no_g)$ (for $g \geq 3$).
 
-% McCarthy-Papadopoulos also formulated an equivalent definition of $\dynlim(\Gamma)$, which is easier to work with in practice.
+McCarthy-Papadopoulos also formulated an equivalent definition of $\dynlim(\Gamma)$, which is easier to work with in practice.
 
-% \begin{untheorem}[Theorem 4.1 of \cite{McCarthy1989}]
-%   \label{thm:equivalence-of-limit-sets}
-%   $\dynlim(\Gamma)$ is the closure in $\pmf$ of the stable and unstable foliations of all the pseudo-Anosov mapping classes in $\Gamma$.
-% \end{untheorem}
+\begin{untheorem}[Theorem 4.1 of \cite{McCarthy1989}]
+  \label{thm:equivalence-of-limit-sets}
+  $\dynlim(\Gamma)$ is the closure in $\pmf$ of the stable and unstable foliations of all the pseudo-Anosov mapping classes in $\Gamma$.
+\end{untheorem}
 
-% A corollary of this theorem is that $\Gamma$ does not act properly discontinuously on $\dynlim(\Gamma)$.
-% In fact, one can construct a wandering set for the $\Gamma$ action using $\dynlim(\Gamma)$.
-% \begin{definition}[Zero intersection set]
-%   Given a subset $\Lambda$ of $\pmf$, its zero intersection set $Z(\Lambda)$ is the following subset of $\pmf$
-%   \begin{align*}
-%     Z(\Lambda) \coloneqq \left\{ \lambda^{\prime} \mid i(\lambda, \lambda^{\prime}) = 0 \text{ for some $\lambda \in \Lambda$} \right\}
-%   \end{align*}
-% \end{definition}
+A corollary of this theorem is that $\Gamma$ does not act properly discontinuously on $\dynlim(\Gamma)$.
+In fact, one can construct a wandering set for the $\Gamma$ action using $\dynlim(\Gamma)$.
+\begin{definition}[Zero intersection set]
+  Given a subset $\Lambda$ of $\pmf$, its zero intersection set $Z(\Lambda)$ is the following subset of $\pmf$
+  \begin{align*}
+    Z(\Lambda) \coloneqq \left\{ \lambda^{\prime} \mid i(\lambda, \lambda^{\prime}) = 0 \text{ for some $\lambda \in \Lambda$} \right\}
+  \end{align*}
+\end{definition}
 
-% McCarthy-Papadopoulos also exhibit a wandering set for the $\Gamma$ action on $\pmf$.
-% \begin{untheorem}[Theorem 6.16 of \cite{McCarthy1989}]
-%   The action of $\Gamma$ on $\pmf \setminus Z(\dynlim(\Gamma))$ is properly discontinuous.
-% \end{untheorem}
+McCarthy-Papadopoulos also exhibit a wandering set for the $\Gamma$ action on $\pmf$.
+\begin{untheorem}[Theorem 6.16 of \cite{McCarthy1989}]
+  The action of $\Gamma$ on $\pmf \setminus Z(\dynlim(\Gamma))$ is properly discontinuous.
+\end{untheorem}
 
-% It is not obvious that the action of $\Gamma$ on $Z(\dynlim(\Gamma))$ is not properly discontinuous.
-% We prove that is indeed the case when $\Gamma = \mcg(\no_g)$ in Section \ref{sec:domain-discontinuity}, but the general case is unknown.
-
+It is not obvious that the action of $\Gamma$ on $Z(\dynlim(\Gamma))$ is not properly discontinuous.
+We prove that is indeed the case when $\Gamma = \mcg(\no_g)$ in Section \ref{sec:domain-discontinuity}, but the general case is unknown.
 
 \subsection*{List of notation}
 Here we describe some of the more commonly used symbols in the paper.
@@ -464,7 +457,7 @@ This lets us define the first return map to $T$.
 Since $\lambda$ is a measured foliation, it defines a measure on $\eta$: we can scale it so that it is a probability measure.
 It follows from the definition of transverse measures that the measure is $T$-invariant.
 It is a classical result of Katok \cite{zbMATH03467479}  and Veech \cite{Veech1978} that the set of $T$-invariant probability measures is a finite dimensional simplex contained in the Banach space of bounded signed measures on $\eta$.
-Given an orbit of a point $p$ under the $T$-action of length $L$, we can construct a probability measure on $\eta$, called the orbit measure of $p$.
+Given an orbit of a point $p$ under the $T$-action of length $L$, we construct a probability measure on $\eta$, called the orbit measure of $p$.
 \begin{definition}[Orbit measure]
   The orbit measure of length $L$ associated to the point $p$ is the following probability measure on $\eta$.
   \begin{align*}
@@ -528,74 +521,7 @@ We now prove a lemma that gives us a criterion for deducing when a long orbit me
   That would that there exists some subsequence of $\mu_{p_{ij}, L_{ij}}$ that converges to $\nu$, which proves the lemma.
 \end{proof}
 
-% We now consider a tricky special case we are forced to reckon with when approximating ergodic foliations with simple closed curves.
-% Let $\lambda$ be a minimal foliation and $\eta$ a transverse arc.
-% Let $q$ be a DQD on $\no_g$ such that $\lambda$ is the vertical foliation, and $\eta$ is a horizontal arc of flat length $1$.
-% Let $a$ be a leaf starting at the left endpoint $p$ of $\eta$ and going up, and suppose it comes back from the top intersecting $\eta$ a point $q$ which is distance $\varepsilon \ll 1$ from the left endpoint (possibly after intersecting $\eta$ several times).
-% Let $c$ be the simple closed curve obtained by concatenating $a$ and the horizontal arc joining $p$ and $q$.
-% % \begin{figure}[h]
-% %   \centering
-% %   \includegraphics{example-image-a}
-% %   \caption{Closing up leaves that start and begin on the same side of the arc.}
-% %   \label{fig:bad-situation}
-% % \end{figure}
-% The curve $c$ is clearly not close to the flat or hyperbolic geodesic representative of its homotopy class.
-% One obvious way to make $c$ shorter without changing its homotopy type is to flow the arc joining $p$ and $q$ along the foliation until it encounters a singularity, at which point we stop.
-% We label the new endpoints $p^{\prime}$ and $q^{\prime}$, and define a new closed curve $c^{\prime}$ by starting at $p^{\prime}$, flowing along the vertical foliation until $q^{\prime}$ and then flowing horizontally back to $p^{\prime}$.
-% We consider the transverse probability measures on $\eta$ given by intersection with $c$, $c^{\prime}$, and their hyperbolic geodesic representative, which we denote $c^{\prime \prime}$.
-% We denote the associated transverse probability measures on $\eta$ by $\mu_c$, $\mu_{c^{\prime}}$, and $\mu_{c^{\prime \prime}}$ respectively.
-% The following lemma states that the $\mu_{c^{\prime}}$ and $\mu_{c^{\prime \prime}}$ are approximately equal.
-
-% \begin{lemma}
-%   \label{lem:flat-length-tightening}
-%   As $\varepsilon$ approaches $0$, $d_{\mathrm{LP}}(\mu_{c^{\prime}}, \mu_{c^{\prime \prime}})$ approaches $0$.
-% \end{lemma}
-% \begin{proof}
-%   Note that as $\varepsilon$ goes to $0$, the hyperbolic lengths of $c^{\prime}$ and $c^{\prime \prime}$ go to $\infty$.
-%   If we show that $c^{\prime}$ and $c^{\prime \prime}$ stay within a bounded distance of each other, independent of $\varepsilon$, the measures $\mu_{c^{\prime}}$ and $\mu_{c^{\prime \prime}}$ converge to the same measures, since the intersection points in $\eta$ with $c^{\prime}$ and $c^{\prime \prime}$ will get closer and closer, by elementary hyperbolic geometry.
-
-%   Observe that the closed curve $c^{\prime}$ is almost a hyperbolic geodesic: namely the segment of it that follows the foliation $\lambda$: the only possibility is that the arc joining $p^{\prime}$ and $q^{\prime}$ results in the closed curve shortening significantly.
-%   However, note that the segment of $c^{\prime}$ that follows the foliation approaches the singularity from two different prongs which have a positive angle between them.
-%   Joining the ends with a short geodesic gives us a segment obtained by concatenating three geodesic arcs.
-%   Gromov hyperbolicity tells us that the geodesic representative of such a segment will be within a bounded distance of the segment: i.e. the geodesic representative $c^{\prime \prime}$ will be within a bounded distance of $c^{\prime}$ (see \autoref{fig:geodesic-tightening}).
-%   \begin{figure}[h]
-%     \centering
-%     \incfig[1]{geodesic-tightening}
-%     \caption{The curves $c^{\prime}$ and $c^{\prime \prime}$ are within bounded distance because all the prongs of the singularity have a positive angle between them.}
-%     \label{fig:geodesic-tightening}
-%   \end{figure}
-%   This proves the lemma.
-% \end{proof}
-% The next lemma links the ratio of the flat lengths of $c$ and $c^{\prime}$ to the measures $\mu_c$ and $\mu_{c^{\prime}}$.
-% \begin{lemma}
-%   \label{lem:absolute-continuity}
-%   Consider a sequence of $\varepsilon$ going to $0$ such that $\displaystyle \frac{\lflat(c^{\prime})}{\lflat(c)} \geq \nu > 0$ and both $\mu_c$ and $\mu_{c^{\prime}}$ converge.
-%   Then $\lim_{\varepsilon \to 0} \mu_{c^{\prime}}$ is absolutely continuous with respect to $\lim_{\varepsilon \to 0} \mu_c$.
-% \end{lemma}
-% \begin{proof}
-%   Consider a sub-interval $\eta^{\prime}$ of $\eta$ such that $\lim_{\varepsilon \to 0}\mu_c(\eta^{\prime}) = 0$.
-%   We need to show that the same holds for the limit of the measures $\mu_{c^{\prime}}$.
-%   Let $i(c, \eta)$ and $i(c, \eta^{\prime})$ be the number of times $c$ intersects $\eta$ and $\eta^{\prime}$, and let $i(c^{\prime}, \eta)$ and $i(c^{\prime}, \eta^{\prime})$ be defined similarly.
-%   Since we are working with a fixed DQD, the intersection number of a vertical arc with $\eta$ is bounded above and below by the flat length of the vertical arc times a positive constant depending only on $\eta$ (the positive constants are the maximum and minimum heights of the rectangles obtained when representing the flat structure as a zippered rectangle).
-%   \begin{align}
-%     \label{eq:11}
-%     \alpha_{\eta} \lflat(c) \leq &i(c, \eta) \leq \beta_{\eta} \lflat(c) \\
-%     \label{eq:12}
-%     \alpha_{\eta} \lflat(c^{\prime}) \leq &i(c^{\prime}, \eta) \leq \beta_{\eta} \lflat(c^{\prime})
-%   \end{align}
-%   Using the inequality in the hypothesis, and \eqref{eq:11} and \eqref{eq:12}, we get the following chain of inequalities.
-%   \begin{align*}
-%     \frac{i(c^{\prime}, \eta^{\prime})}{i(c^{\prime}, \eta)}
-%     &\leq \frac{i(c, \eta^{\prime})}{i(c^{\prime}, \eta)} \\
-%     &\leq \frac{1}{\alpha_{\eta}} \cdot \frac{i(c, \eta^{\prime})}{\lflat(c^{\prime})} \\
-%     &\leq \frac{1}{\alpha_{\eta} \nu} \cdot \frac{i(c, \eta^{\prime})}{\lflat(c)} \\
-%     &\leq \frac{\beta_{\eta}}{\alpha_{\eta} \nu} \cdot \frac{i(c, \eta^{\prime})}{i(c, \eta)}
-%   \end{align*}
-%   The right hand side goes to $0$ as $\varepsilon$ goes to $0$, proving absolute continuity of the limiting measure.
-% \end{proof}
-
 We now have everything we need to prove \autoref{thm:rational-approximation}.
-% \todo[inline]{Make the proof clearer.}
 \begin{proof}[Proof of \autoref{thm:rational-approximation}]
   If a minimal component $\lambda_j$ is periodic, then the proof is straightforward.
   Since $\lambda$ contains no one-sided component, the core curve of $\lambda_j$ must be two-sided, possibly with an irrational coefficient.
@@ -615,7 +541,7 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
   If we pick $\eta_0$ to be small enough, we can pick a local orientation, and keep track of how a positively oriented frame returns to each $p_i$, i.e. with or without the orientation flipped (see \autoref{fig:two-possibilities}).
   \begin{figure}[h]
     \centering
-    \incfig[0.5]{two-possibilities}
+    \incfig[0.45]{two-possibilities}
     \caption{Two possibilities for first return to $\eta_i$: on the left, the arc returns without the local orientation flipping, and on the right, the arc returns with the local orientation flipped.}
     \label{fig:two-possibilities}
   \end{figure}
@@ -627,7 +553,7 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
   In that case, consider the simple two-sided curves $c_i$ obtained by concatenating $a_i$ with the arc on $\eta_{i-1}$ joining $p_{i-1}$ and $p_i$ (see \autoref{fig:comes-with-flip}).
   \begin{figure}[h]
     \centering
-    \incfig[0.8]{comes-with-flip}
+    \incfig[0.75]{comes-with-flip}
     \caption{The curve $c_i$ is colored blue. Since the leaf from $p_0$ returns with the local orientation flipped to both $p_{i-1}$ and $p_{i}$, the curve $c_i$ is two-sided.}
     \label{fig:comes-with-flip}
   \end{figure}
@@ -650,7 +576,7 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
   %   \label{fig:coming-from-above}
   % \end{figure}
   While this curve does equidistribute with respect to the ergodic measure, it is not necessary that its geodesic tightening will do so.
-  Denote the geodesic tightening by $c_i^{\prime}$: we have that its intersection number with $\lambda_j$ is equal to the Euclidean distance between $p_0$ and $p_i$ which goes to $0$ as $i$ goes to $\infty$.
+  Denote the geodesic tightening by $c_i^{\prime}$: we have that its intersection number with $\lambda_j$ goes to $0$ as $i$ goes to $\infty$.
   By the compactness of the space of transverse probability measures, we must have that $\mu_{c_i^{\prime}}$ converges to some projective measured foliation $\gamma$ which has $0$ intersection number with $\lambda_j$, but is still supported on a subset of the support of $\lambda_j$.
   This means $\gamma$ must be another projective measured foliation in the topological conjugacy class of $\lambda_j$, i.e. is supported on the same underlying foliation.
   This proves the furthermore case of theorem.
@@ -661,7 +587,7 @@ We now have everything we need to prove \autoref{thm:rational-approximation}.
   See \autoref{fig:case3-surgery} for the construction of the two-sided curves $c_i$.
   \begin{figure}[h]
     \centering
-    \incfig[0.8]{case-3-surgery}
+    \incfig[0.75]{case-3-surgery}
     \caption{Construction of the blue curve $c_i$ when the leaf always returns with orientation flipped from the ``up'' or ``down'' direction.}
     \label{fig:case3-surgery}
   \end{figure}
@@ -719,11 +645,11 @@ The key idea of the proof is proving a quantitative estimate on the Fenchel-Niel
     i(p_2, \lambda_{\mathrm{at}}) &= 0
   \end{align*}
   Note that this can always be done, by deleting the support of $\lambda_{\mathrm{at}}$, and looking at the resulting subsurfaces.
-  Note that neither $p_1$ nor $p_2$ can be the same as $p_0$, since $p_0$ is one-sided.
+  Neither $p_1$ nor $p_2$ can be the same as $p_0$, since $p_0$ is one-sided.
   We focus our attention to this pair of pants, and consider the curves on it, labelled in \autoref{fig:pants}.
   \begin{figure}[h]
     \centering
-    \incfig[0.8]{pants}
+    \incfig[0.75]{pants}
     \caption{The curves restricted to a pair of pants.}
     \label{fig:pants}
   \end{figure}
@@ -735,7 +661,7 @@ The key idea of the proof is proving a quantitative estimate on the Fenchel-Niel
    \lhyp(p_0) \leq \lhyp(p_3) \leq \lhyp(p_4) + \lhyp(p_0)
  \end{equation}
  Observe that we get the upper bound by observing that the red and cyan arcs are isotopic to $p_3$ relative to their endpoints being fixed.
- The cyan arcs have length at most $\lhyp(p_0)$, in this setting; if one allowed a twist parameter, the length of the cyan arcs would be proportional to the twist parameters.
+ The cyan arcs have length at most $\lhyp(p_0)$ in this setting; if one allowed a twist parameter, the length of the cyan arcs would be proportional to the twist parameters.
  The point of this inequality is that we can estimate $\lhyp(p_4)$ using $\lhyp(p_0)$, $\lhyp(p_1)$ and $\lhyp(p_2)$ via hyperbolic trigonometry.
  Cut the pair of pants along the seams, to get a hyperbolic right-angled hexagon, pictured in \autoref{fig:hexagon}.
  \begin{figure}[h]
@@ -746,7 +672,7 @@ The key idea of the proof is proving a quantitative estimate on the Fenchel-Niel
  \end{figure}
 
  To get good estimates on $\lhyp(p_4)$, we need a universal lower bound on the fraction $f$ as we move in the Teichm\"uller space.
- The analysis splits up into two cases, but it's not \emph{a~priori} clear that these two cases are exhaustive.
+ The analysis splits up into two cases, but it's not {a priori} clear that these two cases are exhaustive.
  We will deal with the two cases, and then show that any other case can be reduced to the second case by changing $p_1$ and $p_2$.
 
 \subsection*{Case I}
@@ -805,7 +731,7 @@ This means the lower bound for $\frac{\lhyp(p_1)}{\lhyp(p_3)}$ must go to $0$.
   } = 0
 \end{equation}
 But this can't happen if $\lhyp(p_1)$ approaches $\pm \infty$.
-This contradiction means our assumption that both $\lhyp(p_0)$ and $\tau(p_0)$ were bounded away from $0$ and $\pm \infty$ must be wrong, and thus proves the result in Case I.
+This contradiction means our assumption that $\lhyp(p_0)$ was bounded away from $0$ must be wrong, and thus proves the result in Case I.
 
 \subsection*{Case II}
 We're in this case if the following inequality holds.
@@ -832,7 +758,7 @@ Assuming as before that $\lhyp(p_0)$ is bounded away from $0$, and $\tau(p_0)$ b
   2 \sinh^{-1} \left( \frac{\cosh\left( \frac{\lhyp(p_1)}{2} \right)}{f_0 \varepsilon} \right)
   }
 \end{equation}
-The right hand side of \eqref{eq:up-10} must approach $0$, and that forces either $\lhyp(p_1)$ or $\lhyp(p_2)$ to approach $\infty$.
+The right hand side of \eqref{eq:up-10} must approach $0$, and that forces either $\lhyp(p_1)$ or $\lhyp(p_0)$ to approach $\infty$.
 But that means the right hand term of \eqref{eq:up-9} must approach $1$, which cannot happen, by the hypothesis of case II.
 This means $\lhyp(p_0)$ goes to $0$, proving the result in case II.
 
@@ -850,12 +776,6 @@ This curve is our replacement for $p_1$ for a schematic of this local surgery).
 If $\lambda_{\mathrm{Leb}}$ is not minimal, we repeat this process for each minimal component. We pick $p_2$ in a manner such that $p_0$, $p_1$, and $p_2$ bound a pair of pants.
 Since $\delta < 1$, we have reduced to case II.
 This concludes the proof of the theorem.
-% \begin{figure}[h]
-%   \centering
-%   \incfig[0.5]{first-return-map}
-%   \caption{Using the first return map on $\lambda$ to modify $p_1$.}
-%   \label{fig:first-return-map}
-% \end{figure}
 \end{proof}
 
 \begin{remark}[On the orientable version of \autoref{prop:pinching}]
@@ -876,7 +796,7 @@ This concludes the proof of the theorem.
   This added complication obscures the main idea of the proof, which is why we chose to only prove the non-orientable version.
 \end{remark}
 
-This quantitative estimate of \autoref{prop:pinching} gives us an easy proof of \autoref{thm:systole-closure}.
+This quantitative estimate of \autoref{prop:pinching} gives us a proof for \autoref{thm:systole-closure}.
 \begin{proof}[Proof of \autoref{thm:systole-closure}]
   Suppose that the theorem were false, and there was a foliation $[\lambda] \in \pmf^-(\no_g)$ in the closure of $\systole(\no_g)$.
   Suppose $p$ is a one-sided atom in $\lambda$.
@@ -916,7 +836,7 @@ Once we have arbitrarily short one-sided curves in the interior of the geodesic 
   For all $g \geq 8$ and any $\delta > 0$, there exists a Teichmüller geodesic segment $l$ whose endpoints lie in $\systole$, and a point $p$ in $l$ such that some one-sided curve has length less than $\delta$ with respect to the hyperbolic metric on $p$.
 \end{proposition}
 
-To prove this result, we will need two lemmas relate hyperbolic and flat lengths.
+To prove this result, we will need two lemmas relating hyperbolic and flat lengths.
 \begin{lemma}
   \label{lem: relating-flat-hyperbolic}
   Let $q$ be any area $1$ DQD on $\no_g$, and let $\gamma$ be a simple closed curve of $q$.
@@ -949,7 +869,7 @@ To find a geodesic segment whose endpoints lie in $\systole$, we will construct 
 We will then show that some one sided curve on $q$ is very short using \autoref{lem:schwarz}, which will prove \autoref{prop:very-short-curves}.
 
 \begin{proof}[Proof of \autoref{prop:very-short-curves}]
-  We will prove the result by constructing explicit examples in genus $4$ and $9$, and then connect sum orientable surfaces of genus $j$ to get examples in genus $4+2j$ and $9+2j$.
+  We will prove the result by constructing explicit examples in genus $4$ and $9$, and then connect summing orientable surfaces of genus $j$ to get examples in genus $4+2j$ and $9+2j$.
 
   We first list the two properties we require from the DQD $q$ we want to construct, and show that having those properties proves the result.
   \begin{enumerate}[(a)]
@@ -976,7 +896,7 @@ We now construct explicitly the DQDs satisfying conditions (a) and (b) in genus 
 Consider the area $1$ DQD on $\no_4$ depicted in \autoref{fig:genus-4-example}.
 \begin{figure}[h]
   \centering
-  \incfig[0.5]{genus-4-example}
+  \incfig[0.45]{genus-4-example}
   \caption{A DQD on $\no_4$.}
   \label{fig:genus-4-example}
 \end{figure}
@@ -995,7 +915,7 @@ To keep the picture from getting cluttered, we describe the edge gluing maps in 
 All the other gluings are translation gluings.
 \begin{figure}[h]
   \centering
-  \incfig[0.5]{genus-9-example}
+  \incfig[0.45]{genus-9-example}
   \caption{A DQD on $\no_9$. To display the gluing maps on the small slits, we have a zoomed in picture in the ellipses.}
   \label{fig:genus-9-example}
 \end{figure}
