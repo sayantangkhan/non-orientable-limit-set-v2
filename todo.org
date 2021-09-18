@@ -3,6 +3,8 @@
 #+TITLE: Things to do
 #+AUTHOR: Sayantan Khan
 
+* DONE Clarify $k$ and $k'$ in Lemma 3.9
+* DONE Clarify continuity of $T$
 * Rephrase and make more precise Theorem 6.2
 Look into limits of Strebel differentials.
 The better statement might be trickier because we would need to lower bound the hyperbolic length of all one-sided curves.

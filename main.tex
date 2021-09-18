@@ -33,11 +33,11 @@ The moduli space $\mg(\no_g)$ of compact \emph{non-orientable} hyperbolic surfac
 The main results suggesting the analogy between moduli spaces of non-orientable surfaces and infinite volume geometrically finite manifolds are due to Norbury and Gendulphe.
 
 \begin{itemize}
-\item The $\mg(\no_g)$ has infinite Teichm\"uller volume (Theorem 17.1 of \cite{gendulphe_whats_2017}).
+\item The $\mg(\no_g)$ has infinite Teichm\"uller volume \cite[Theorem 17.1]{gendulphe_whats_2017}.
   While the associated Teichm\"uller space does not have a Weil-Peterson volume form, it has an analogous volume form with respect to which the moduli space has infinite volume as well (see \cite{norbury2008lengths}).
 \item The action of the mapping class group $\mcg(\no_g)$ on the Thurston boundary is not minimal (Proposition 8.9 in \cite{gendulphe_whats_2017}).
-\item The Teichm\"uller geodesic flow is not topologically transitive, and thus not ergodic with respect to any Borel measure with full support (Proposition 17.5 of \cite{gendulphe_whats_2017}).
-\item There exists an $\mcg(\no_g)$-equivariant finite volume deformation retract of $\teich(\no_g)$.
+\item The Teichm\"uller geodesic flow is not topologically transitive, and thus not ergodic with respect to any Borel measure with full support \cite[Proposition 17.5]{gendulphe_whats_2017}.
+\item There exists an $\mcg(\no_g)$-equivariant finite covolume deformation retract of $\teich(\no_g)$.
 \end{itemize}
 
 We extend this analogy further, by showing that the limit set of $\mcg(\no_g)$ is contained in the complement of a full measure dense open set.
@@ -52,7 +52,7 @@ Here $\pmf^-(\no_g)$ is the set of all projective measured foliations that have 
 The fact that such foliations form a full measure dense open subset is classical, due to Danthony-Nogueira (see \cite{ASENS_1990_4_23_3_469_0}).
 This is analogous to limit sets of infinite volume geometrically finite groups, where the complement of the limit set is a full measure open set as well.
 
-In \cite{gendulphe_whats_2017}, Gendulphe constructed a retract of $\teich(\no_g)$ to $\systole$, the set of points in the Teichm\"uller space that have no one-sided curves shorter than $\varepsilon$, and showed that it has finite volume.
+In \cite{gendulphe_whats_2017}, Gendulphe constructed a retract of $\teich(\no_g)$ to $\systole$, the set of points in the Teichm\"uller space that have no one-sided curves shorter than $\varepsilon$, and showed that it has finite covolume.
 They also asked the following question about $\systole$.
 \begin{unquestion}[Question 19.1 of \cite{gendulphe_whats_2017}]
   Is $\systole$ quasi-convex with respect to the Teichmüller metric?
@@ -90,7 +90,7 @@ We now exhibit two contexts in which one is naturally led to consider the limit 
 In the orientable setting, the number of simple closed geodesics of length less than $L$ grows like a polynomial of degree $6g-6$, which is precisely the dimension of the limit set of the mapping class group: in this case, that happens to be all of $\pmf$.
 In the non-orientable setting, Gendulphe showed that the growth rate of the simple closed geodesics of length less than $L$ is smaller than $L^{\dim(\pmf(\no_g))}$, and one might conjecture that the growth rate is $L^h$, where $h$ is the Hausdorff dimension of the limit set.
 Mirzakhani, in \autocite{mirzakhani2008growth}, obtained precise asymptotics for the counting function in the orientable case by essentially proving equidistribution (with respect to Thurston measure) of $\mcg(\os_{g})$-orbits in $\pmf(\os_g)$.
-To do the same for the non-orientable case, we need an ergodic measure supported on sets
+The same problem for non-orientable surfaces is posed in \cite[Problem 9.2]{wright2020tour}: to make the above techniques work in this setting, we need an ergodic measure supported on sets
 minimal with respect to the $\mcg$ action, e.g. $\overline{\pmf^+(\no_d)}$.
 One way to construct such a measure would be to replicate the construction of Patterson-Sullivan measures for geometrically finite manifolds, which brings us back
 to the analogy between $\mg(\no_d)$ and infinite volume geometrically finite manifolds.
@@ -470,12 +470,13 @@ We state the following easy fact about orbit measures without proof.
 The following lemma shows that a long orbit measure is close to an invariant measure.
 \begin{lemma}
   \label{lem:long-orbit-is-almost-invariant}
-  For any $\varepsilon > 0$, there exists an $L$ large enough such that any orbit measure longer than $L$ is within distance $\varepsilon$ of an invariant measure.
+  Let $\left\{ n_j \right\}$ be a sequence of positive integers and let $\{\mu_{ij}\}$ be orbit measures such that $1 \leq i \leq n_j$ and $d(\mu_{ij}, T{\mu}_{ij}) \leq l_j$, where $\lim_{j \to \infty} l_j = 0$.
+  For any $\varepsilon > 0$, there exists an $J$ large enough such that for all $j > J$, $\mu_{ij}$ is within distance $\varepsilon$ of an invariant measure.
 \end{lemma}
 \begin{proof}
-  Let $M_L$ denote the set of all measures $\mu$ such that $d_{\mathrm{LP}}(\mu, T\mu) \leq \frac{2}{L}$.
-  The set $M_L$ is compact, because it is a closed subset of a compact set, and we have that $\bigcap_{L=1}^{\infty} M_L$ is the set of invariant measures.
-  By compactness, we have that for some large enough $L$, $M_L$ must be in a $\varepsilon$-neighbourhood of the set of invariant measures, and every orbit measure of length greater than $L$ must be in this $M_L$.
+  Let $A_k$ be the closure of all the $\mu_{ij}$ such that $j \geq k$.
+  The set $A_k$ is compact, because it is a closed subset of a compact set, and we have that $\bigcap_{k=1}^{\infty} A_k$ is contained in the set of invariant measures.
+  By compactness, we have that for some large enough $J$, $A_J$ must be in a $\varepsilon$-neighbourhood of the set of invariant measures, and therefore every $\mu_{ij}$ for $j > J$ must distance at most $\varepsilon$ away from an invariant measure.
 \end{proof}
 We now prove a lemma that gives us a criterion for deducing when a long orbit measure is close to an ergodic measure.
 \begin{lemma}
@@ -497,7 +498,7 @@ We now prove a lemma that gives us a criterion for deducing when a long orbit me
   \end{align*}
   Observe that the weighted average of $\mu_{p_{ij}, L_{ij}}$ will differ from the weighted average of $\iota_{ij}$ by at most $\frac{\varepsilon}{k}$.
   Also note that all the invariant measures $\iota_{ij}$ are distance at least $\varepsilon - \frac{\varepsilon}{k}$ from $\nu$.
-  Since $\nu$ is the vertex of a finite-dimensional convex set, any weighted average of the $\iota_{ij}$ must be at least distance $\frac{\varepsilon}{k^{\prime}}$ from $\nu$, where $k^{\prime}$ is a positive number depending on the geometry of the convex set of invariant probability measures.
+  Since $\nu$ is the vertex of a finite-dimensional convex set, any weighted average of the $\iota_{ij}$ must be at least distance $\frac{\varepsilon - \frac{\varepsilon}{k}}{k^{\prime}}$ from $\nu$, where the multiplicative factor $k^{\prime}$ only depends on the geometry of the convex set of invariant probability measures, and not $\varepsilon$ or $k$.
   By picking $k > 2k^{\prime}$ we can ensure that any weighted average of the $\mu_{p_{ij}, L_{ij}}$ must be at least distance $\frac{\varepsilon}{2k^{\prime}}$ from $\nu$.
   But this would contradict our hypothesis that the measures $\mu_i$ converge to $\nu$.
   That would that there exists some subsequence of $\mu_{p_{ij}, L_{ij}}$ that converges to $\nu$, which proves the lemma.
