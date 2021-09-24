@@ -478,6 +478,21 @@ The following lemma shows that a long orbit measure is close to an invariant mea
   The set $A_k$ is compact, because it is a closed subset of a compact set, and we have that $\bigcap_{k=1}^{\infty} A_k$ is contained in the set of invariant measures.
   By compactness, we have that for some large enough $J$, $A_J$ must be in a $\varepsilon$-neighbourhood of the set of invariant measures, and therefore every $\mu_{ij}$ for $j > J$ must distance at most $\varepsilon$ away from an invariant measure.
 \end{proof}
+We now sketch a proof of the following lemma about simplices in finite dimensional normed spaces.
+\begin{lemma}
+  \label{lem:finite-normed}
+  Let $V$ be a finite dimensional normed vector space, and $S$ be a simplex in $V$.
+  Let $\{p_1, \ldots, p_n\}$ be points in $S$ such that they are all at least distance $\varepsilon$ from a vertex $v$.
+  Then there exists a positive constant $k$ such that any convex combination of $\{p_i\}$ is distance at least $\dfrac{\varepsilon}{k}$ from $v$.
+\end{lemma}
+\begin{proof}[Sketch of proof]
+  We shift the simplex so that the vertex $v$ is at the origin.
+  It will also suffice to let $\{p_1, \ldots, p_n\}$ be the vectors joining $0$ to the other vertices scaled to have norm $\varepsilon$.
+  The convex combinations of $\{p_1, \ldots, p_n\}$ will form a compact set not containing $0$.
+  Since the norm is a continuous function, the norm will achieve a minimum $\varepsilon^{\prime}$ on that compact set, and the minimum will not be $0$.
+  Then $k = \dfrac{\varepsilon^{\prime}}{\varepsilon}$ is the required value of $k$.
+\end{proof}
+
 We now prove a lemma that gives us a criterion for deducing when a long orbit measure is close to an ergodic measure.
 \begin{lemma}
   \label{lem:convexity-argument}
@@ -498,7 +513,7 @@ We now prove a lemma that gives us a criterion for deducing when a long orbit me
   \end{align*}
   Observe that the weighted average of $\mu_{p_{ij}, L_{ij}}$ will differ from the weighted average of $\iota_{ij}$ by at most $\frac{\varepsilon}{k}$.
   Also note that all the invariant measures $\iota_{ij}$ are distance at least $\varepsilon - \frac{\varepsilon}{k}$ from $\nu$.
-  Since $\nu$ is the vertex of a finite-dimensional convex set, any weighted average of the $\iota_{ij}$ must be at least distance $\frac{\varepsilon - \frac{\varepsilon}{k}}{k^{\prime}}$ from $\nu$, where the multiplicative factor $k^{\prime}$ only depends on the geometry of the convex set of invariant probability measures, and not $\varepsilon$ or $k$.
+  Since $\nu$ is the vertex of a finite-dimensional convex set, we know from \autoref{lem:finite-normed} that any weighted average of the $\iota_{ij}$ must be at least distance $\frac{\varepsilon - \frac{\varepsilon}{k}}{k^{\prime}}$ from $\nu$, where the multiplicative factor $k^{\prime}$ only depends on the geometry of the convex set of invariant probability measures, and not $\varepsilon$ or $k$.
   By picking $k > 2k^{\prime}$ we can ensure that any weighted average of the $\mu_{p_{ij}, L_{ij}}$ must be at least distance $\frac{\varepsilon}{2k^{\prime}}$ from $\nu$.
   But this would contradict our hypothesis that the measures $\mu_i$ converge to $\nu$.
   That would that there exists some subsequence of $\mu_{p_{ij}, L_{ij}}$ that converges to $\nu$, which proves the lemma.
