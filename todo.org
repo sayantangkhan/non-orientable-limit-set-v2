@@ -3,35 +3,49 @@
 #+TITLE: Things to do
 #+AUTHOR: Sayantan Khan
 
-* DONE Clarify $k$ and $k'$ in Lemma 3.9
-* DONE Clarify continuity of $T$
-* Rephrase and make more precise Theorem 6.2
+* Referee comments
+** TODO Fix citations for Autumn Kent
+** TODO Include corresponding results about $\mathrm{MCG}(S_g)$ in chapter 2 as comparison
+** TODO Clarify EGPS result
+Also, is it possible to improve my method to conclude their result?
+** TODO Clarify Section 4
+See review pdf for more details.
+** TODO Clarify Section 3
+** TODO More intuitive explanation for the hyperbolic geometry argument
+** TODO Why no counterexamples for lower genera
+** TODO Clarify link to counting problem
+** TODO Find a bridge between the two different results in the paper
+
+* Before submitting to arXiv
+** DONE Clarify $k$ and $k'$ in Lemma 3.9
+** DONE Clarify continuity of $T$
+** DONE Rephrase and make more precise Theorem 6.2
 Look into limits of Strebel differentials.
 The better statement might be trickier because we would need to lower bound the hyperbolic length of all one-sided curves.
 UPDATE: Doesn't work. Replaced statement with weaker version.
 UPDATE: Alex suggested a modification.
 [[file:org-mode-images/modification.jpg][Modified construction]]
-* TODO Figures
+** DONE Figures
 Changes all color references to color and dotted references.
-* DONE Clean up Section 4
+** DONE Clean up Section 4
 Especially remove the $\tau$ bit, and think about whether reduction to case 2 is really
 necessary.
-* DONE Figure out where the $g \geq 3$ is used.
-* DONE Change topological foliation to zero intersection number
-* DONE Other corrections in pdf Alex sent
-* DONE Make convex combinations lemma more precise by working in MF only
-* DONE Lemma 3.5: Don't name constants and omit proof
-* DONE Alternative introduction structure
-** Analogy to geometrically finite
-*** Good parts
+** DONE Figure out where the $g \geq 3$ is used.
+** DONE Change topological foliation to zero intersection number
+** DONE Other corrections in pdf Alex sent
+** DONE Make convex combinations lemma more precise by working in MF only
+** DONE Lemma 3.5: Don't name constants and omit proof
+** DONE Alternative introduction structure
+*** Analogy to geometrically finite
+**** Good parts
 Small limit set, i.e. the upper bound only
-*** Bad bit
+**** Bad bit
 - Not quasi-convex
 - Wandering set is empty
-** Description of limit set
+**** Description of limit set
 We care about the limit set because the Hausdorff dimension is conjecturally the growth
 exponent.
 Describe the limit set.
 
-** DONE Get rid of complex submanifold stuff
-* DONE Change domain of discontinuity to wandering set
+*** DONE Get rid of complex submanifold stuff
+** DONE Change domain of discontinuity to wandering set
