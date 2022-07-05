@@ -308,11 +308,18 @@ It is when considering the mapping class group action that we see differences be
 
 \begin{theorem}[Proposition 8.9 of \cite{gendulphe_whats_2017}]
   \label{thm:full-non-minimal}
-  The action of $\mcg(\no_g)$ (for $g \geq 2$) on $\mf(\no_g)$ is not minimal.
+  The action of $\mcg(\no_g)$ (for $g \geq 2$) on $\pmf(\no_g)$ is not minimal.
   In fact, the action is not even topologically transitive.
 \end{theorem}
+
+Compare this to the case of $\mcg(\os_g)$.
+\begin{theorem}[Theorem 6.19 of \cite{fathi2012thurston}]
+  \label{thm:orientable-orbit-closure}
+  The action of $\mcg(\no_g)$ on $\pmf(\os_g)$ is minimal.
+\end{theorem}
+
 \begin{remark}
-  The proof of non minimality and topological non-transitivity follow from the fact that one can construct a $\mcg(\no_g)$-invariant continuous function on $\mf(\no_g)$.
+  The proof of non minimality and topological non-transitivity in the non-orientable case follow from the fact that one can construct a $\mcg(\no_g)$-invariant continuous function on $\mf(\no_g)$.
   That is because starting with a foliation in $\mf^+(\no_g)$, it is impossible to approximate an element of $\mf^-(\no_g)$ since one does not have Dehn twists about one-sided curves.
 \end{remark}
 
@@ -323,6 +330,12 @@ Danthony-Nogueira proved the following theorem about $\mf^{-}(\no_g)$ in \cite{A
   \label{thm:DN90-2}
   $\mf^{-}(\no_g)$ is an open dense subset of $\mf(\no_g)$ of full Thurston measure.
 \end{theorem}
+
+\autoref{thm:DN90-2} means that the $\mcg(\no_g)$-orbit closure in $\pmf(\no_g)$ of any point in $\teich(\no_g)$ is contained in $\pmf^+(\no_g)$.
+In the case of $\mcg(\os_g)$, $\pmf^+(\os_g) = \pmf(\os_g)$, and the orbit closure is actually all of $\pmf(\os_g)$.
+\begin{corollary}[Corollary of \autoref{thm:orientable-orbit-closure}]
+  For any $x \in \teich(\os_g)$, $\overline{\mcg(\os_g) \cdot x} \cap \pmf(\os_g) = \pmf(\os_g)$.
+\end{corollary}
 
 \autoref{thm:full-non-minimal} and \autoref{thm:DN90-2} suggest that studying the $\mcg(\no_g)$ dynamics restricted to $\mf^{-}(\no_g)$ will be hard since one will not have minimality, or ergodicity with respect to any measure with full support.
 In Section \ref{sec:lower-bound-limit-set}, we get a lower bound for the set on which $\mcg(\no_g)$ acts minimally.

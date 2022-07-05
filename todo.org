@@ -4,8 +4,6 @@
 #+AUTHOR: Sayantan Khan
 
 * Referee comments
-** TODO Fix citations for Autumn Kent
-** TODO Include corresponding results about $\mathrm{MCG}(S_g)$ in chapter 2 as comparison
 ** TODO Clarify EGPS result
 Also, is it possible to improve my method to conclude their result?
 ** TODO Clarify Section 4
@@ -15,7 +13,8 @@ See review pdf for more details.
 ** TODO Why no counterexamples for lower genera
 ** TODO Clarify link to counting problem
 ** TODO Find a bridge between the two different results in the paper
-
+** DONE Include corresponding results about $\mathrm{MCG}(S_g)$ in chapter 2 as comparison
+** DONE Fix citations for Autumn Kent
 * Before submitting to arXiv
 ** DONE Clarify $k$ and $k'$ in Lemma 3.9
 ** DONE Clarify continuity of $T$
