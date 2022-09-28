@@ -4,10 +4,10 @@
 #+AUTHOR: Sayantan Khan
 
 * Referee comments
+** TODO Clarify Section 4
+Add figure to the proof of the claim.
 ** TODO Clarify EGPS result
 Also, is it possible to improve my method to conclude their result?
-** TODO Clarify Section 4
-See review pdf for more details.
 ** TODO Clarify Section 3
 ** TODO More intuitive explanation for the hyperbolic geometry argument
 ** TODO Why no counterexamples for lower genera

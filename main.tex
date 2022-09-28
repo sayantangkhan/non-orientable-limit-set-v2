@@ -656,13 +656,36 @@ The key idea of the proof is proving a quantitative estimate on the Fenchel-Niel
     \label{fig:pants}
   \end{figure}
 
-  The curve labelled $p_3$ has intersection number at least $1$ with $\lambda$ which means its length should be going to $\infty$.
+  We define the curve $p_3$ to be a geodesic that does not intersect $p_1$ and $p_2$, and has intersection number $2$ with $p_0$.
+  We also define $p_4$ to be the orthogeodesic arc from $p_0$ to itself.
+  Since $p_3$ has intersection number $2$ with $\lambda$, its length should be going to $\infty$.
+
+  Also, we use the fact that $p_0$ is a one-sided curve to make the following claim.
+  \begin{claim}
+    \label{claim:intersects-atmost-once}
+    The arc $p_4$ and the curve $p_3$ intersect at most once.
+  \end{claim}
+  \begin{proof}
+    We pass to the universal cover, and pick lifts $\wt{p_0}$ and $\wt{p_4}$ of $p_0$ and $p_4$ respectively.
+    Consider now an orientation reversing deck transformation $\tau$ that is in $\pi_1(\no_g)$: this deck transformation is a composition of a hyperbolic isometry whose axis is $\wt{p_0}$, followed by a reflection across $\wt{p_0}$.
+
+    Suppose now that $p_4$ and $p_3$ intersect $n$ times, where $n \geq 2$.
+    Without loss of generality, we can find a lift $\wt{p_3}$ such that it intersects $\wt{p_4}, \tau(\wt{p_4}), \ldots \tau^{n-1}(\wt{p_4})$.
+    But this means that $\tau(\wt{p_3})$ intersects $\wt{p_3}$, which contradicts the fact that $p_3$ is a simple closed curve in $\no_g$ (see \autoref{fig:intersects-atmost-once}), and thus proves the claim.
+    \begin{figure}[h]
+      \centering
+      \incfig[0.75]{intersects-atmost-once}
+      \caption{Intersecting $p_4$ more than once leads to self-intersection.}
+      \label{fig:intersects-atmost-once}
+    \end{figure}
+  \end{proof}
+
   We can bound the length of $p_3$ above and below via the lengths of the orthogeodesic $p_4$ and the length of $p_0$.
  \begin{equation}
    \label{eq:up-1}
    \lhyp(p_0) \leq \lhyp(p_3) \leq \lhyp(p_4) + \lhyp(p_0)
  \end{equation}
- Observe that we get the upper bound by observing that the red and cyan arcs are isotopic to $p_3$ relative to their endpoints being fixed.
+ Observe that the upper bound follows from \autoref{claim:intersects-atmost-once} and the fact that the red and cyan arcs are isotopic to $p_3$ relative to their endpoints being fixed.
  The cyan arcs have length at most $\lhyp(p_0)$ in this setting; if one allowed a twist parameter, the length of the cyan arcs would be proportional to the twist parameters.
  The point of this inequality is that we can estimate $\lhyp(p_4)$ using $\lhyp(p_0)$, $\lhyp(p_1)$ and $\lhyp(p_2)$ via hyperbolic trigonometry.
  Cut the pair of pants along the seams, to get a hyperbolic right-angled hexagon, pictured in \autoref{fig:hexagon}.
