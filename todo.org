@@ -5,7 +5,9 @@
 
 * Referee comments
 ** TODO Clarify Section 4
-Add figure to the proof of the claim.
+*** DONE Add claims showing the $p_3$ is well defined
+*** TODO Add pictures for proof of the claim
+*** TODO Clarify the whole argument so that it's clearer
 ** TODO Clarify EGPS result
 Also, is it possible to improve my method to conclude their result?
 ** TODO Clarify Section 3
