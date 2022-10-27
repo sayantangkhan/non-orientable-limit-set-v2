@@ -20,16 +20,57 @@
 
 \textbf{Referee comment:} It would be helpful if the author can include corresponding results about $\mcg(\os_g)$ in the 2\textsuperscript{nd} chapter as comparison.
 
-\textbf{Edits:} Added Theorem 2.6 and Corollary 2.8 to illustrate what happens in the case of orientable surfaces.
+\textbf{Edits/Response:} Added Theorem 2.6 and Corollary 2.8 to illustrate what happens in the case of orientable surfaces.
 
 \section{Different notions of limit set}
 \label{sec:diff-noti-limit}
+
+\textbf{Referee comment:} You have two different notions of limit set, could you state more precisely what did Erlandsson, Gendulphe, Pasquinelli, and Suoto prove? According what you wrote, they prove $\Gamma_{\text{dyn}} = \Gamma_{\text{geom}} = \pmf^+(\no_g)$, right? Is it possible to improve your method to conclude the same?
+
+\textbf{Edits/Response:}
 
 \section{Definition of $p_3$ in Section 4}
 \label{sec:defin-p_3-sect}
 
 \textbf{Referee comment:} What is the definition of $p_3$ in Chapter 4? Page 16, last paragraph, which means its length should be going to $\infty$, why? Your formula is a bit weird, the left side is $p_4$?
 
-\textbf{Edits:} The curve $p_3$ is now defined after the proof of Claim 4.4. The claim itself shows that $p_3$ is well-defined.
+\textbf{Edits/Response:} The curve $p_3$ is now defined after the proof of Claim 4.4. The claim itself shows that $p_3$ is well-defined.
+The claims 4.4 and 4.5 are required to prove inequality (11), which has been changed to be just an upper bound for $\ell(p_3)$, which is all we need. And $\ell(p_3)$ goes to $\infty$ because it intersects $p_0$, which is a component of the limiting foliation.
+
+\section{Weird notation in chapter 3}
+\label{sec:weird-notat-chapt}
+
+\textbf{Referee comment:} The whole chapter 3 has weird notation with $\lhyp(p_i)$. It would make more sense to use $\ell_i$ to represent the hyperbolic length w.r.t the metric $m_i$.
+Also please reorganize your computation to make it more logical. The final contradiction is also weird, what do you mean by this can't happen if $\lhyp(p_i)$ approaches $\infty$? I thought it should be zero by your assumption. Your equation (18) should be interpreted algebraically in a better way.
+
+\textbf{Remark:} I think the referee meant weird notation in chapter 4, since $\lhyp$ shows up in that chapter.
+
+\textbf{Edits/Response:} All the instances of $\lhyp(p_k)$ have been changed to $\ell_i(p_k)$, which denotes the length of the curve $p_k$ (where $k \in \left\{ 0, 1, 2, 3, 4 \right\}$) with respect to the metric $m_i$.
+Also, two additional inequalities have been added that clarify the estimates in the section. The estimate involves first showing that $\ell_i(p_1)$ goes to $\infty$, and the using that fact to show that $\frac{\ell_i(p_1)}{\ell_i(p_3)}$ cannot go to $0$, violating the assumptions made in case I.
+Equation (17) was added to make equation (19) (which was previously (18)) easier to understand.
+
+\section{Margulis lemma type result}
+\label{sec:margulis-lemma-type}
+
+\textbf{Referee comment:} I understand that you use hyperbolic geometry estimates to argue, but if you can, please have a more intuitive explanation. Is it similar to Margulis lemma type result?
+
+\textbf{Edits/Response:}
+
+\section{Lower genera construction}
+\label{sec:lower-genera-constr}
+
+\textbf{Referee comment:} Why do you not have construction for lower genera?
+
+\section{Counting problem for $\no_g$}
+\label{sec:counting-problem}
+
+\textbf{Referee comment:} Could you state more precisely how does your result (or related result about limit set) help with the counting problem for $\no_g$?
+
+\section{Link between Theorem 5.2 and limit set}
+\label{sec:link-between-theorem}
+
+\textbf{Referee comment:} In the introduction, you said on page 2, that the key idea involved in Theorem 5.2 is to determine the limit set; where do you use this in the proof? If not, can you find a different bridge between these two results.
+
+
 
 \end{document}

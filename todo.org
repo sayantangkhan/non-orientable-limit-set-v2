@@ -5,12 +5,11 @@
 
 * Referee comments
 ** TODO Clarify Section 4
-*** DONE Add claims showing the $p_3$ is well defined
 *** TODO Add pictures for proof of the claim
-*** TODO Clarify the whole argument so that it's clearer
+*** DONE Add claims showing the $p_3$ is well defined
+*** DONE Clarify the whole argument so that it's clearer
 ** TODO Clarify EGPS result
 Also, is it possible to improve my method to conclude their result?
-** TODO Clarify Section 3
 ** TODO More intuitive explanation for the hyperbolic geometry argument
 ** TODO Why no counterexamples for lower genera
 ** TODO Clarify link to counting problem

@@ -54,10 +54,10 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{hexagon.pdf}}%
-    \put(0.42584046,0.32337803){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\frac{l(p_4)}{2}$\end{tabular}}}}%
-    \put(0.08124051,0.4990387){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\frac{l(p_1)}{2}$\end{tabular}}}}%
-    \put(0.12344631,0.06853324){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\frac{l(p_2)}{2}$\end{tabular}}}}%
-    \put(0.87404692,0.39677773){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f \cdot l(p_0)$\end{tabular}}}}%
-    \put(0.86088542,0.23219518){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(1-f) \cdot l(p_0)$\end{tabular}}}}%
+    \put(0.42584046,0.32337803){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\frac{\ell(p_4)}{2}$\end{tabular}}}}%
+    \put(0.08124051,0.4990387){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\frac{\ell(p_1)}{2}$\end{tabular}}}}%
+    \put(0.12344631,0.06853324){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\frac{\ell(p_2)}{2}$\end{tabular}}}}%
+    \put(0.87404692,0.39677773){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f \cdot \ell(p_0)$\end{tabular}}}}%
+    \put(0.86088542,0.23219518){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(1-f) \cdot \ell(p_0)$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
