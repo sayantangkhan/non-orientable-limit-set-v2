@@ -8,13 +8,14 @@
 *** TODO Add pictures for proof of the claim
 *** DONE Add claims showing the $p_3$ is well defined
 *** DONE Clarify the whole argument so that it's clearer
-** TODO Clarify EGPS result
+** DONE Clarify EGPS result
 Perhaps add reference to Ethan's result about interval maps.
-** TODO More intuitive explanation for the hyperbolic geometry argument
-** TODO Why no counterexamples for lower genera
-** TODO Clarify link to counting problem
-** TODO Find a bridge between the two different results in the paper
+Can't seem to find the actual paper.
+** DONE Clarify link to counting problem
+** DONE Why no counterexamples for lower genera
+** DONE Find a bridge between the two different results in the paper
 The bridge was that the weaker result followed from the limit set result.
+** DONE More intuitive explanation for the hyperbolic geometry argument
 ** DONE Include corresponding results about $\mathrm{MCG}(S_g)$ in chapter 2 as comparison
 ** DONE Fix citations for Autumn Kent
 * Before submitting to arXiv

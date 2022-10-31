@@ -66,7 +66,8 @@ We show that ${\systole}$ is not quasi-convex, answering the above question.
 \addtocounter{theorem}{-1}
 \endgroup
 
-The key idea involved in the proof of \autoref{thm:qc-fail} is determining which projective measured foliations are in the limit set.
+Since $\systole$ is an $\mcg(\no_g)$-invariant subset of $\teich(\no_g)$, the intersection of its closure with the boundary must also be $\mcg(\no_g)$-invariant, and therefore contain the limit set of $\mcg(\no_g)$.
+This suggests that if we want long geodesic segments that start and end in $\systole$, we must look for Teichmüller geodesics that have their expanding and contracting foliations in the limit set.
 Conjecture 9.1 of \cite{gendulphe_whats_2017} states that the limit set should exactly be the complement of $\pmf^-(\no_g)$, the set of projective measured foliations that do not contain any one-sided leaves (denoted $\pmf^+(\no_g)$).
 We prove a result that is slightly weaker than the conjecture.
 \begingroup
@@ -83,7 +84,9 @@ We prove a result that is slightly weaker than the conjecture.
 \addtocounter{theorem}{-1}
 \endgroup
 
-We now exhibit two contexts in which one is naturally led to consider the limit set of $\mcg(\no_g)$.
+With this description of the limit set, we prove \autoref{thm:qc-fail} by constructing a family of Teichmüller geodesics whose expanding and contracting foliations are of the kind described by \autoref{thm:rational-approximation}, and showing that some point in the interior of the geodesic segment is arbitrarily far from $\systole$.
+
+We now exhibit two additional contexts in which one is naturally led to consider the limit set of $\mcg(\no_g)$.
 
 \subsection*{Counting simple closed curves}
 
@@ -94,6 +97,7 @@ The same problem for non-orientable surfaces is posed in \cite[Problem 9.2]{wrig
 minimal with respect to the $\mcg$ action, e.g. $\overline{\pmf^+(\no_d)}$.
 One way to construct such a measure would be to replicate the construction of Patterson-Sullivan measures for geometrically finite manifolds, which brings us back
 to the analogy between $\mg(\no_d)$ and infinite volume geometrically finite manifolds.
+In the case of $\no_{1,3}$ (i.e. the real projective plane with $3$ punctures), Gamburd, Magee, and Ronan have proved a counting result for simple closed curves by constructing a conformal measure of non-integer Hausdorff dimension on the limit set (\cite[Theorem 10]{10.4007/annals.2019.190.3.2}), and then using that conformal measure to count simple closed curves (\cite[Theorem 2]{10.1093/imrn/rny112}).
 
 \subsection*{Interval exchange transformations with flips}
 
@@ -112,9 +116,9 @@ The techniques they use are significantly different, relying on careful analysis
 Using this result, they show minimal invariant subset of $\pmf(\no_g)$, and the limit set of $\mcg(\no_g)$ are both equal to $\pmf^+(\no_g)$.
 
 Their methods are stronger than the ones in this paper, because we study the dynamics of foliations by studying the dynamics of the first return map on a transverse interval.
-While this reduction makes the analysis significantly simpler, and works for most foliations, it does not work for all foliations.
+While this reduction makes the analysis significantly simpler, and works for most foliations (like uniquely ergodic foliations), it does not work for all foliations.
 In particular, for certain foliations, the dynamics of the first return map do not fully capture the dynamics of the foliation.
-The authors of the other paper get around this limitation by directly analyzing the train tracks associate to the foliation, which fully captures their dynamics.
+The authors of the other paper get around this limitation by directly analyzing the train tracks associated to the foliation, which fully captures their dynamics.
 
 While this paper was being written, neither the author, nor the authors of \cite{erlandsson2021mapping} were aware of each others' work.
 
@@ -641,13 +645,23 @@ The key idea of the proof is proving a quantitative estimate on the Fenchel-Niel
   Let $\{m_i\}$ be a sequence of points in $\teich(\no_g)$ converging to a projective measured foliation $[\lambda]$.
   If $p$ is a one-sided atom of $\lambda$, for any Fenchel-Nielsen coordinate chart containing $p$ as a cuff, the length coordinate of $p$ goes to $0$.
 \end{proposition}
-\begin{proof}
+
+\textit{Outline of proof.} The proof of \autoref{prop:pinching} proceeds in two steps:
+\begin{enumerate}[(i)]
+\item We first show that there is a curve $p_3$ intersecting $p$ such that $p_3$ is left invariant by Dehn twisting along the two-sided curve that deformation retracts onto $2p$ (when $p$ is thought of as an element in $\pi_1(\no_g)$).
+  We do so in  \autoref{claim:one-sided-rigidity} and \autoref{claim:intersects-atmost-once}.
+  This gives an upper bound for the length of $p_3$ in terms of the length of $p$, and an orthogeodesic going through $p$.
+\item We use the upper bound obtained in the previous step to show that if the length of $p_3$ goes to $\infty$, the length of $p$ must go to $0$.
+  This result can be thought of as a converse to the collar lemma, using the additional hypotheses we manage to obtain from the previous step.
+\end{enumerate}
+
+\begin{proof}[Proof of \autoref{prop:pinching}]
   Consider the following decomposition of the measured foliation $\lambda$.
   \begin{align*}
     \lambda = 1 \cdot p + \lambda_{\mathrm{at}} + \lambda_{\mathrm{Leb}}
   \end{align*}
   Here, $\lambda_{\mathrm{at}}$ are the minimal components on periodic components other than $p$, i.e. cylinders and Möbius strips, and $\lambda_{\mathrm{Leb}}$ are non-periodic minimal components.
-  In the above expression, $p$ is the one-sided curve considered as a measured foliation (since we're picking a representative of $[\lambda]$, we can pick one such that $p$ has weight $1$)
+  In the above expression, $p$ is the one-sided curve considered as a measured foliation (since we're picking a representative of $[\lambda]$, we can pick one such that $p$ has weight $1$).
 
   Pick simple closed curves $p_0$, $p_1$, and $p_2$, where $p_0$ is the curve $p$, and $\{p_0, p_1, p_2\}$ bound a pair of pants.
   Furthermore, we impose the following conditions on $p_1$ and $p_2$.
@@ -913,14 +927,20 @@ For instance, metric balls in Teichm\"uller space are not convex, but merely qua
 Our goal for this section will be to prove the following theorem.
 \begin{theorem}
   \label{thm:qc-fail}
-  For all $\varepsilon > 0$, and all $D > 0$, there exists a Teichm\"uller geodesic segment whose endpoints lie in ${\systole}$ such that some point in the interior of the geodesic is more than distance $D$ from $\systole$.
+  For $g \geq 8$, any $\varepsilon > 0$, and all $D > 0$, there exists a Teichm\"uller geodesic segment whose endpoints lie in ${\systole}(\no_g)$ such that some point in the interior of the geodesic is more than distance $D$ from $\systole$.
 \end{theorem}
+
+\begin{remark}
+  Our methods actually prove the result for all non-orientable hyperbolic surfaces except genus $5$ and $7$.
+  This is not because genus $5$ and $7$ are special, but it is rather an artifact of our construction.
+  We construct two families of counterexamples, one for genera $4+2j$, and one for genera $9+2j$: it turns out there isn't enough ``room'' on a genus $5$ surface to replicate our genus $9$ construction, but it's quite likely an alternate construction will work.
+\end{remark}
 
 We begin by finding Teichmüller geodesic segments whose endpoints lie in $\systole$ such that at a point in the interior, some one-sided curve gets very short.
 Once we have arbitrarily short one-sided curves in the interior of the geodesic segments, estimates relating Teichmüller distance and ratios of hyperbolic lengths of curves will give us the result.
 \begin{proposition}
   \label{prop:very-short-curves}
-  For all $g \geq 8$ and any $\delta > 0$, there exists a Teichmüller geodesic segment $l$ whose endpoints lie in $\systole$, and a point $p$ in $l$ such that some one-sided curve has length less than $\delta$ with respect to the hyperbolic metric on $p$.
+  For all $g \geq 8$ and any $\delta > 0$, there exists a Teichmüller geodesic segment $l$ whose endpoints lie in $\systole(\no_g)$, and a point $p$ in $l$ such that some one-sided curve has length less than $\delta$ with respect to the hyperbolic metric on $p$.
 \end{proposition}
 
 To prove this result, we will need two lemmas relating hyperbolic and flat lengths.
