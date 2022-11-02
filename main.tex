@@ -115,10 +115,10 @@ A few days after the first version of this paper was posted on arXiv, the author
 The techniques they use are significantly different, relying on careful analysis of train track charts carrying various measured laminations.
 Using this result, they show minimal invariant subset of $\pmf(\no_g)$, and the limit set of $\mcg(\no_g)$ are both equal to $\pmf^+(\no_g)$.
 
-Their methods are stronger than the ones in this paper, because we study the dynamics of foliations by studying the dynamics of the first return map on a transverse interval.
+Their methods are stronger than the ones in this paper, because while they analyze the train track charts carrying the measured foliations, we study the dynamics of foliations by studying the dynamics of the first return map on a transverse interval.
 While this reduction makes the analysis significantly simpler, and works for most foliations (like uniquely ergodic foliations), it does not work for all foliations.
 In particular, for certain foliations, the dynamics of the first return map do not fully capture the dynamics of the foliation.
-The authors of the other paper get around this limitation by directly analyzing the train tracks associated to the foliation, which fully captures their dynamics.
+% The authors of the other paper get around this limitation by directly analyzing the train tracks associated to the foliation, which fully captures their dynamics.
 
 While this paper was being written, neither the author, nor the authors of \cite{erlandsson2021mapping} were aware of each others' work.
 
@@ -327,7 +327,7 @@ It is when considering the mapping class group action that we see differences be
 Compare this to the case of $\mcg(\os_g)$.
 \begin{theorem}[Theorem 6.19 of \cite{fathi2012thurston}]
   \label{thm:orientable-orbit-closure}
-  The action of $\mcg(\no_g)$ on $\pmf(\os_g)$ is minimal.
+  The action of $\mcg(\os_g)$ on $\pmf(\os_g)$ is minimal.
 \end{theorem}
 
 \begin{remark}
@@ -692,18 +692,21 @@ The key idea of the proof is proving a quantitative estimate on the Fenchel-Niel
     This means that there is a some Dehn twist $D$ along the boundary component $\widetilde{p_0}$ such that $D\widetilde{q_1}$ is homotopic to $\widetilde{q_2}$ relative to its endpoints. Let $\widetilde{q_2}$ now denote $D\widetilde{q_1}$.
 
     We claim that after quotienting $\widetilde{p_0}$ by the antipodal map, $\widetilde{q_1}$ and $\widetilde{q_2}$ map to homotopic curves.
+    The homotopy is obtained by moving the point of intersection of $\wt{q_2}$ and $p_0$ twice around the curve $p_0$.
 
-    \autoref{fig:q1q2} shows the two arcs on $\mathcal{P}$ and \autoref{fig:q1toq2} shows the homotopy on the quotient that takes $\widetilde{q_2}$ to $\widetilde{q_1}$.
+    \autoref{fig:q1q2} shows the two arcs on $\mathcal{P}$ and \autoref{fig:q1toq2} shows the homotopy on the quotient that takes $\widetilde{q_2}$ to $\widetilde{q_1}$ (the movement of the blue arc is indicated by the blue arrows in \autoref{fig:q1toq2}).
     \begin{figure}[h]
       \centering
-      \includegraphics{example-image-a}
+      % \includegraphics{example-image-a}
+      \incfig[0.6]{q1q2}
       \caption{The arcs $\widetilde{q_1}$ and $\widetilde{q_2}$.}
       \label{fig:q1q2}
     \end{figure}
 
     \begin{figure}[h]
       \centering
-      \includegraphics{example-image-b}
+      % \includegraphics{example-image-b}
+      \incfig[0.5]{q1toq2}
       \caption{Homotopy taking $q_2$ to $q_1$.}
       \label{fig:q1toq2}
     \end{figure}

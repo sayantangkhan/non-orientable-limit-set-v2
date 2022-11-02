@@ -4,8 +4,17 @@
 #+AUTHOR: Sayantan Khan
 
 * Referee comments
-** TODO Clarify Section 4
-*** TODO Add pictures for proof of the claim
+** DONE Proofread [8/8]
+- [X] Change 1
+- [X] Change 2
+- [X] Change 3
+- [X] Change 4
+- [X] Change 5
+- [X] Change 6
+- [X] Change 7
+- [X] Change 8
+** DONE Clarify Section 4
+*** DONE Add pictures for proof of the claim
 *** DONE Add claims showing the $p_3$ is well defined
 *** DONE Clarify the whole argument so that it's clearer
 ** DONE Clarify EGPS result
