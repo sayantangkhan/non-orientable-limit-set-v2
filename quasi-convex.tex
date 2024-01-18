@@ -1,0 +1,156 @@
+\section{Failure of quasi-convexity for ${\systole}$}
+\label{sec:fail-quasi-conv}
+
+In the setting of Teichm\"uller geometry, convexity is usually too strong of a requirement.
+For instance, metric balls in Teichm\"uller space are not convex, but merely quasi-convex (see \autocite{lenzhen2011length}).
+\begin{definition}[Quasi-convexity]
+  A subset $S$ of ${\teich(S)}$ is said to be quasi-convex if there is some uniform constant $D > 0$ such that the geodesic segment joining any pair of points in $S$ stays within distance $D$ of $S$.
+\end{definition}
+
+Our goal for this section will be to prove the following theorem.
+\begin{theorem}
+  \label{thm:qc-fail}
+  For $g \geq 8$, any $\varepsilon > 0$, and all $D > 0$, there exists a Teichm\"uller geodesic segment whose endpoints lie in ${\systole}(\no_g)$ such that some point in the interior of the geodesic is more than distance $D$ from $\systole$.
+\end{theorem}
+
+\begin{remark}
+  Our methods actually prove the result for all non-orientable hyperbolic surfaces except genus $5$ and $7$.
+  This is not because genus $5$ and $7$ are special, but it is rather an artifact of our construction.
+  We construct two families of counterexamples, one for genera $4+2j$, and one for genera $9+2j$: it turns out there isn't enough ``room'' on a genus $5$ surface to replicate our genus $9$ construction, but it's quite likely an alternate construction will work.
+\end{remark}
+
+We begin by finding Teichmüller geodesic segments whose endpoints lie in $\systole$ such that at a point in the interior, some one-sided curve gets very short.
+Once we have arbitrarily short one-sided curves in the interior of the geodesic segments, estimates relating Teichmüller distance and ratios of hyperbolic lengths of curves will give us the result.
+\begin{proposition}
+  \label{prop:very-short-curves}
+  For all $g \geq 8$ and any $\delta > 0$, there exists a Teichmüller geodesic segment $l$ whose endpoints lie in $\systole(\no_g)$, and a point $p$ in $l$ such that some one-sided curve has length less than $\delta$ with respect to the hyperbolic metric on $p$.
+\end{proposition}
+
+To prove this result, we will need two lemmas relating hyperbolic and flat lengths.
+\begin{lemma}
+  \label{lem: relating-flat-hyperbolic}
+  Let $q$ be any area $1$ DQD on $\no_g$, and let $\gamma$ be a simple closed curve of $q$.
+  Suppose that $\lhyp(\gamma) \leq \delta$ (with respect to the unique hyperbolic metric coming from the flat structure $q$).
+  Then $\lflat(\gamma) \leq k \sqrt{\delta}$, where $k$ is some absolute constant.
+\end{lemma}
+\begin{proof}[Sketch of proof]
+  If $\lhyp(\gamma) \leq \delta$, then there exists an annulus around $\gamma$ of modulus proportional to $\frac{1}{\delta}$.
+  By the results in \cite{Minsky1992HarmonicML}, this annulus can be homotoped to be a primitive annulus, i.e. an annulus that does not pass through a singularity of the flat metric.
+  Such annuli are either expanding, i.e. concentric circles in the flat metric, or flat, and in either case, we have an upper bound on the flat length of the core curve in terms of the modulus.
+  This proves the result.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:schwarz}
+  Let $q$ be an area $1$ DQD on $\no_g$, and consider the unique hyperbolic metric with the same conformal structure.
+  Let $A$ be a primitive annulus in $q$, i.e. an annulus whose interior does not pass  through a singularity of the flat metric.
+  Let the modulus of $A$ be $m$.
+  Then the hyperbolic length of the isotopy class of the core curve of the annulus is at most $\frac{\pi}{m}$.
+\end{lemma}
+\begin{proof}[Sketch of proof]
+  Without loss of generality, we can pass to the orientable double cover.
+  This changes the hyperbolic lengths by at most a factor of two.
+  Consider the interior of the annulus as a Riemann surface, and put the unique hyperbolic metric on that surface.
+  With respect to this hyperbolic metric, the length of the core curve is $\frac{\pi}{m}$. Since the interior doesn't contain any singularities, the inclusion map is holomorphic, and holomorphic maps are distance reducing with respect to the hyperbolic metric.
+  This proves the result.
+\end{proof}
+
+To find a geodesic segment whose endpoints lie in $\systole$, we will construct a DQD $q$, and use \autoref{lem: relating-flat-hyperbolic} to find large enough $t$ such that both $g_t(q)$ and $g_{-t}(q)$ are in $\systole$.
+We will then show that some one sided curve on $q$ is very short using \autoref{lem:schwarz}, which will prove \autoref{prop:very-short-curves}.
+
+\begin{proof}[Proof of \autoref{prop:very-short-curves}]
+  We will prove the result by constructing explicit examples in genus $4$ and $9$, and then connect summing orientable surfaces of genus $j$ to get examples in genus $4+2j$ and $9+2j$.
+
+  We first list the two properties we require from the DQD $q$ we want to construct, and show that having those properties proves the result.
+  \begin{enumerate}[(a)]
+  \item There exists an embedded annulus in $q$ with a very large modulus whose core curve is the square of a one-sided curve in $\pi_1(\no_g)$.
+  \item The vertical and horizontal foliations decompose as a union of cylinders, i.e. the vertical and horizontal flow is periodic, and no closed orbit is a one-sided curve. Furthermore, deleting the core curves of the cylinders in the horizontal or vertical direction result in a disjoint union of \emph{orientable} subsurfaces.
+  \end{enumerate}
+
+We now show why having these two properties proves the result.
+Suppose we have a DQD $q$ satisfying (a) and (b).
+\autoref{lem:schwarz} tells us that satisfying (a) means that the one-sided curve whose square is the core curve of the annulus will be very short.
+To find a large enough $t$ such that $g_t(q)$ has no one-sided curves shorter than $\varepsilon$, pick a $t$ enough such that each vertical cylinder in $g_t(q)$ is at least $2k \sqrt{\varepsilon}$ wide.
+Consider now any closed curve who flat length is less than $k \sqrt{\varepsilon}$.
+It must either be homotopic to one of the core curves of the vertical cylinders, or can be homotoped to be completely contained in one of the subsurfaces obtained by deleting all the core curves.
+That is because it was neither of these cases, it would cross at least one of these cylinders, and since the cylinders are at least $2k \sqrt{\varepsilon}$ wide, the flat length of the curve would exceed $k \sqrt{\varepsilon}$.
+If the curve is the core curve of a cylinder, or completely contained in one of the subsurfaces, it must be two-sided, by condition (b).
+
+This proves that all one-sided curves have flat length exceeding $k\sqrt{\varepsilon}$, and therefore hyperbolic length exceeding $\varepsilon$.
+The same argument also works for $g_{-t}(q)$, proving the result.
+
+We now construct explicitly the DQDs satisfying conditions (a) and (b) in genus $4$, $9$, and above.
+
+\subsection*{The $g=4$ case}
+
+Consider the area $1$ DQD on $\no_4$ depicted in \autoref{fig:genus-4-example}.
+\begin{figure}[h]
+  \centering
+  \incfig[0.45]{genus-4-example}
+  \caption{A DQD on $\no_4$.}
+  \label{fig:genus-4-example}
+\end{figure}
+We impose the following constraint on the depicted DQD: the edges $\{c, c^{\prime}, d, d^{\prime}\}$ are all oriented at an angle of $\pm \frac{\pi}{4}$, and have the same length.
+
+Observe that by making the length of $c$ (and correspondingly $c^{\prime}$, $d$, and $d^{\prime}$) go to $0$, while keeping the area $1$ lets us embed an annulus of high modulus (pictured as dotted semi circle in \autoref{fig:genus-4-example}) around any curve in $\{c, c^{\prime}, d, d^{\prime}\}$.
+This shows that the DQD we constructed satisfies condition (a).
+
+Checking condition (b) is easy, but tedious.
+For convenience, we have labelled the core curves of the vertical cylinders in red, blue, and green: the reader can check that they are all two-sided, and deleting them results in orientable subsurfaces.
+In fact, deleting the core curves results in $2$ pairs of pants.
+
+\subsection*{The $g=9$ case}
+Consider the area $1$ DQD on $\no_9$ depicted in \autoref{fig:genus-9-example}.
+To keep the picture from getting cluttered, we describe the edge gluing maps in words: the edges labelled $c$ are glued via the map $z \mapsto -\overline{z} + k$, the edges labelled $b$ and $e$ are glued via $z \mapsto -z + k$, where $k$ is some constant.
+All the other gluings are translation gluings.
+\begin{figure}[h]
+  \centering
+  \incfig[0.45]{genus-9-example}
+  \caption{A DQD on $\no_9$. To display the gluing maps on the small slits, we have a zoomed in picture in the ellipses.}
+  \label{fig:genus-9-example}
+\end{figure}
+We impose the following constraints on the DQD.
+\begin{enumerate}[(i)]
+\item The edges labelled $c$ are oriented at an angle of $\pm \frac{\pi}{4}$, and the lengths of $\{x_h, y_h, x_v, y_v\}$ are $\frac{\lflat(c)}{4\sqrt{2}}$.
+\item The left edge of $x_v$ is aligned with the left edge of $c$, the left edge of $y_v$ is aligned with the midpoint of $c$, the top edge of $x_h$ is aligned with the top edge of $c$, and the top edge of $y_h$ is aligned with the midpoint of $c$.
+\end{enumerate}
+By making $c$ smaller, while keeping the area equal to $1$, one can embed an annulus of high modulus in the DQD, pictured in dotted olive green in \autoref{fig:genus-9-example}.
+This shows that our construction satisfies condition (a).
+
+To see that deleting the core curves of the horizontal cylinders results in orientable subsurfaces, note that deleting the core curves passing through $c$ results in $2$ pairs of pants, and a genus $3$ orientable surface with one boundary component.
+This is again easy, but tedious to verify, so we leave the verification to the reader.
+This shows that the example satisfies condition (b).
+
+\subsection*{The induction step}
+To get higher genus DQDs satisfying conditions (a) and (b), we start with the $g=4$ and $g=9$ examples and connect-sum an orientable surface using the slit construction.
+To ensure that the new surfaces still satisfy conditions (a) and (b), we need to ensure that the slit we construct if far away from the annulus of condition (a), as well as all the vertical and horizontal leaves passing through $\{c, c^{\prime}, d, d^{\prime}\}$ in the $g=4$ example, and the vertical and horizontal leaves passing through $c$ in the $g=9$ example.
+This will ensure that the resulting higher genus surface still satisfies conditions (a) and (b).
+\end{proof}
+
+To relate Teichm\"uller distance to hyperbolic lengths, we need Wolpert's lemma (\autocite{wolpert1979length})
+\begin{lemma}[Wolpert's Lemma]
+  Let $M$ and $M^{\prime}$ be two points in $\teich(\os_g)$, and let $\gamma$ be a simple closed curve on $\os_g$.
+  Let $R$ be the Teichm\"uller distance between $M$ and $M^{\prime}$. Then the ratio of the hyperbolic length
+  of $\gamma$ and $R$ are related by the following inequalities.
+  \begin{align*}
+    \exp(-2R) \leq \frac{\ell_{\mathrm{hyp}}(M, \gamma)}{\ell_{\mathrm{hyp}}(M^{\prime}, \gamma)} \leq \exp(2R)
+  \end{align*}
+\end{lemma}
+
+Using Proposition \ref{prop:very-short-curves} and Wolpert's lemma, we can prove Theorem
+\ref{thm:qc-fail}.
+\begin{proof}[Proof of Theorem \ref{thm:qc-fail}]
+  Suppose that $\systole(\no_g)$ was indeed quasi-convex.
+  That would mean that there exists some $R > 0$, depending on $\varepsilon$ such that every point in the interior of any geodesic segment with endpoints in $\systole$ was within $R$
+  distance of some point in $\systole(\no_g)$.
+  Proposition \ref{prop:very-short-curves} lets us construct a sequence of Teichmüller geodesic segments such that for on some interior point, the length of a given one-sided curve $\gamma$ goes to $0$.
+  If those points were within distance $R$ of $\systole$, there would be some point in $\systole$ where the length of $\gamma$ was at most $\exp(2R)$ times the length of $\gamma$ in the geodesic, by Wolpert's lemma.
+  But since the length of $\gamma$ in the geodesic goes to $0$, the length in the corresponding closest point in $\systole$ must also go to $0$.
+  This violates the definition of $\systole$, giving us a contradiction, and proving the result.
+\end{proof}
+
+
+
+%%% Local Variables:
+%%% TeX-master: "main"
+%%% End:

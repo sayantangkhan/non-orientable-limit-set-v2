@@ -1,0 +1,109 @@
+\section{Introduction}
+\label{sec:introduction-v2}
+
+The moduli space $\mg(\no_g)$ of compact \emph{non-orientable} hyperbolic surfaces of genus $g$ is conjectured to have similarities to infinite volume geometrically finite manifolds (in a manner similar to how moduli spaces of compact orientable surfaces have properties similar to finite volume hyperbolic manifolds).
+The main results suggesting the analogy between moduli spaces of non-orientable surfaces and infinite volume geometrically finite manifolds are due to Norbury and Gendulphe.
+
+\begin{itemize}
+\item The $\mg(\no_g)$ has infinite Teichm\"uller volume \cite[Theorem 17.1]{gendulphe_whats_2017}.
+  While the associated Teichm\"uller space does not have a Weil-Peterson volume form, it has an analogous volume form with respect to which the moduli space has infinite volume as well (see \cite{norbury2008lengths}).
+\item The action of the mapping class group $\mcg(\no_g)$ on the Thurston boundary is not minimal (Proposition 8.9 in \cite{gendulphe_whats_2017}).
+\item The Teichm\"uller geodesic flow is not topologically transitive, and thus not ergodic with respect to any Borel measure with full support \cite[Proposition 17.5]{gendulphe_whats_2017}.
+\item There exists an $\mcg(\no_g)$-equivariant finite covolume deformation retract of $\teich(\no_g)$.
+\end{itemize}
+
+We extend this analogy further, by showing that the limit set of $\mcg(\no_g)$ is contained in the complement of a full measure dense open set.
+\begingroup
+\def\thetheorem{\ref{cor:geolimset}}
+\begin{theorem}
+  The limit set of $\mcg(\no_g)$ is contained in the complement of $\pmf^-(\no_g)$.
+\end{theorem}
+\addtocounter{theorem}{-1}
+\endgroup
+Here $\pmf^-(\no_g)$ is the set of all projective measured foliations that have one-sided compact leaf.
+The fact that such foliations form a full measure dense open subset is classical, due to Danthony-Nogueira (see \cite{ASENS_1990_4_23_3_469_0}).
+This is analogous to limit sets of infinite volume geometrically finite groups, where the complement of the limit set is a full measure open set as well.
+
+In \cite{gendulphe_whats_2017}, Gendulphe constructed a retract of $\teich(\no_g)$ to $\systole$, the set of points in the Teichm\"uller space that have no one-sided curves shorter than $\varepsilon$, and showed that it has finite covolume.
+They also asked the following question about $\systole$.
+\begin{unquestion}[Question 19.1 of \cite{gendulphe_whats_2017}]
+  Is $\systole$ quasi-convex with respect to the Teichmüller metric?
+\end{unquestion}
+We show that ${\systole}$ is not quasi-convex, answering the above question.
+\begingroup
+\def\thetheorem{\ref{thm:qc-fail}}
+\begin{theorem}
+  For all $\varepsilon > 0$, and all $D > 0$, there exists a Teichm\"uller geodesic segment whose endpoints lie in ${\systole}$ such that some point in the interior of the geodesic is more than distance $D$ from $\systole$.
+\end{theorem}
+\addtocounter{theorem}{-1}
+\endgroup
+
+Since $\systole$ is an $\mcg(\no_g)$-invariant subset of $\teich(\no_g)$, the intersection of its closure with the boundary must also be $\mcg(\no_g)$-invariant, and therefore contain the limit set of $\mcg(\no_g)$.
+This suggests that if we want long geodesic segments that start and end in $\systole$, we must look for Teichmüller geodesics that have their expanding and contracting foliations in the limit set.
+Conjecture 9.1 of \cite{gendulphe_whats_2017} states that the limit set should exactly be the complement of $\pmf^-(\no_g)$, the set of projective measured foliations that do not contain any one-sided leaves (denoted $\pmf^+(\no_g)$).
+We prove a result that is slightly weaker than the conjecture.
+\begingroup
+\def\thetheorem{\ref{thm:rational-approximation}}
+\begin{theorem}
+  A foliation $\lambda \in \pmf^+(\no_g)$ is in the limit set of $\mcg(\no_g)$ if all the minimal components $\lambda_j$ of $\lambda$ satisfy one of the following criteria.
+  \begin{enumerate}[(i)]
+  \item $\lambda_j$ is periodic.
+  \item $\lambda_j$ is ergodic and orientable, i.e. all leaves exiting one side of a transverse arc always come back from the other side.
+  \item $\lambda_j$ is uniquely ergodic.
+  \end{enumerate}
+  Furthermore, if $\lambda_j$ is minimal, but not uniquely ergodic, there exists some other foliation $\lambda_j^{\prime}$ supported on the same topological foliation as $\lambda_j$ which is in the limit set.
+\end{theorem}
+\addtocounter{theorem}{-1}
+\endgroup
+
+With this description of the limit set, we prove \autoref{thm:qc-fail} by constructing a family of Teichmüller geodesics whose expanding and contracting foliations are of the kind described by \autoref{thm:rational-approximation}, and showing that some point in the interior of the geodesic segment is arbitrarily far from $\systole$.
+
+We now exhibit two additional contexts in which one is naturally led to consider the limit set of $\mcg(\no_g)$.
+
+\subsection*{Counting simple closed curves}
+
+In the orientable setting, the number of simple closed geodesics of length less than $L$ grows like a polynomial of degree $6g-6$, which is precisely the dimension of the limit set of the mapping class group: in this case, that happens to be all of $\pmf$.
+In the non-orientable setting, Gendulphe showed that the growth rate of the simple closed geodesics of length less than $L$ is smaller than $L^{\dim(\pmf(\no_g))}$, and one might conjecture that the growth rate is $L^h$, where $h$ is the Hausdorff dimension of the limit set.
+Mirzakhani, in \autocite{mirzakhani2008growth}, obtained precise asymptotics for the counting function in the orientable case by essentially proving equidistribution (with respect to Thurston measure) of $\mcg(\os_{g})$-orbits in $\pmf(\os_g)$.
+The same problem for non-orientable surfaces is posed in \cite[Problem 9.2]{wright2020tour}: to make the above techniques work in this setting, we need an ergodic measure supported on sets
+minimal with respect to the $\mcg$ action, e.g. $\overline{\pmf^+(\no_d)}$.
+One way to construct such a measure would be to replicate the construction of Patterson-Sullivan measures for geometrically finite manifolds, which brings us back
+to the analogy between $\mg(\no_d)$ and infinite volume geometrically finite manifolds.
+In the case of $\no_{1,3}$ (i.e. the real projective plane with $3$ punctures), Gamburd, Magee, and Ronan have proved a counting result for simple closed curves by constructing a conformal measure of non-integer Hausdorff dimension on the limit set (\cite[Theorem 10]{10.4007/annals.2019.190.3.2}), and then using that conformal measure to count simple closed curves (\cite[Theorem 2]{10.1093/imrn/rny112}).
+
+\subsection*{Interval exchange transformations with flips}
+
+Teichm\"uller spaces of non-orientable surfaces also show up in the context of \emph{interval exchange transformations with flips}.
+The dynamics of interval exchange transformations are closely related to the dynamics of horizontal/vertical flow on an associated quadratic differential, which is related to the geodesic flow on the Teichm\"uller surface via Masur's criterion (a version of which holds in the non-orientable setting as well).
+IETs with flips do not have very good recurrence properties: in fact, almost all of them (with respect to the Lebesgue measure) have a periodic point (see \cite{nogueira_1989}) and the set of minimal IETs with flips have a lower Hausdorff dimension (see \cite{skripchenko2018hausdorff}).
+To understand the IETs which are uniquely ergodic, one is naturally led to determine which ``quadratic differentials'' on non-orientable surfaces are recurrent.
+A necessary but not sufficient condition for recurrence of a Teichm\"uller geodesic is that its forward and backward limit points lie in the limit set.
+From this perspective, Theorems \ref{thm:rational-approximation} and \ref{cor:geolimset} can
+be seen as a statement about the closure of the recurrent set.
+Constructing a measure supported on the closure of the recurrent set can be then used to answer questions about uniquely ergodic IETs with flips.
+
+\subsection*{Another paper on mapping class group orbit closures}
+A few days after the first version of this paper was posted on arXiv, the author was notified of another recent paper by Erlandsson, Gendulphe, Pasquinelli, and Souto \cite{erlandsson2021mapping} which proves the Conjecture 9.1 of \cite{gendulphe_whats_2017}, i.e. a stronger version of \autoref{thm:rational-approximation}.
+The techniques they use are significantly different, relying on careful analysis of train track charts carrying various measured laminations.
+Using this result, they show minimal invariant subset of $\pmf(\no_g)$, and the limit set of $\mcg(\no_g)$ are both equal to $\pmf^+(\no_g)$.
+
+Their methods are stronger than the ones in this paper, because while they analyze the train track charts carrying the measured foliations, we study the dynamics of foliations by studying the dynamics of the first return map on a transverse interval.
+While this reduction makes the analysis significantly simpler, and works for most foliations (like uniquely ergodic foliations), it does not work for all foliations.
+In particular, for certain foliations, the dynamics of the first return map do not fully capture the dynamics of the foliation.
+% The authors of the other paper get around this limitation by directly analyzing the train tracks associated to the foliation, which fully captures their dynamics.
+
+While this paper was being written, neither the author, nor the authors of \cite{erlandsson2021mapping} were aware of each others' work.
+
+\subsection*{Organization of the paper}
+Section \ref{sec:backgr-meas-foli} contains the background on non-orientable surfaces and measured foliations, and section \ref{sec:backgr-limit-sets} contains the background on limit sets of mapping class subgroups.
+These sections can be skipped and later referred to if some notation or definition is unclear.
+Section \ref{sec:lower-bound-limit-set} contains the proof of \autoref{thm:rational-approximation}, section \ref{sec:upper-bound-limit-set} contains the proof of Theorem \ref{cor:geolimset}, and section \ref{sec:fail-quasi-conv} contains the proof of \autoref{thm:qc-fail}.
+Sections \ref{sec:lower-bound-limit-set}, \ref{sec:upper-bound-limit-set}, and \ref{sec:fail-quasi-conv} are independent of each other, and can be read in any order.
+
+\subsection*{Acknowledgments}
+The author would like to thank Alex Wright for introducing him to the problem, and also Jon Chaika, Christopher Zhang, and Bradley Zykoski, for several helpful conversations throughout the course of the project.
+The author also would like to thank the creators of \texttt{surface-dynamics} \cite{vincent_delecroix_2021_5057590}, which helped with many of the experiments that guided the results in this paper.
+
+%%% Local Variables:
+%%% TeX-master: "main"
+%%% End:

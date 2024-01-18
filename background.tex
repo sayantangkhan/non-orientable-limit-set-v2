@@ -1,0 +1,297 @@
+\section{Background}
+\label{sec:background}
+
+\subsection{Non-orientable surfaces and measured foliations}
+\label{sec:backgr-meas-foli}
+
+For the purposes of this paper, the most convenient way to think about non-orientable surfaces will be to attach \emph{crosscaps} to orientable surfaces.
+Given a surface $S$, attaching a crosscap is the operation of deleting the interior of a small embedded disc, and gluing the boundary $S^1$ via the antipodal map.
+Attaching $k$ crosscaps to a genus $g$ surface results in a genus $2g+k$ non-orientable surface $\no_{2g+k}$ (i.e. the non-orientable surface obtained by taking the connect sum of $2g+k$ copies of $\mathbb{RP}^2$).
+Associated to each cross cap is a one-sided curve, which is the image of the boundary under the quotient map.
+We say that a curve intersects the crosscap if it intersects the associated one-sided curve.
+% In particular, any non-orientable surface can be obtained by just attaching $1$ or $2$ crosscaps to an orientable surface.
+
+Consider the set $\scc$ of simple closed curves on a non-orientable surface $\no$.
+The elements of $\scc$ can be classified into two types.
+\begin{description}
+\item[Two sided curves] Tubular neighbourhoods are cylinders.
+\item[One sided curves] Tubular neighbourhoods are Möbius bands.
+\end{description}
+The subset of two sided curves in denoted by $\scc^+$ and one sided curves by $\scc^-$.
+Since these two types are topologically distinct, they form invariant subspaces with respect to the mapping class group action.
+If we think of our non-orientable surface as an orientable subsurface with crosscaps attached, a two-sided curve is one that intersects an even number of crosscaps, and a one-sided curve is one that intersects an odd number of crosscaps.
+
+The orientable double cover of $\no_g$ is the orientable surface $\os_{g-1}$, and comes with an orientation reversing involution $\iota$.
+Since this is an orientation double cover, the subgroup of $\pi_1(\no_g)$ corresponding to this cover is characteristic, i.e. left invariant by every homeomorphism induced automorphism of the fundamental group.
+A useful consequence of this fact is that one can lift mapping classes uniquely.
+\begin{fact}
+  Any self homeomorphism of $\no_g$ lifts to a unique orientation preserving self homeomorphism of $\os_{g-1}$, and as a consequence, one has the injective homomorphism induced by the covering map $p$.
+  \begin{align*}
+    p^{\ast}: \mcg(\no_d) \hookrightarrow \mcg^+(\os_{d-1})
+  \end{align*}
+  Furthermore, this inclusion preserves the mapping class type, i.e. finite order, reducible and pseudo-Anosov maps in $\mcg(\no_g)$ stay finite order, reducible, and pseudo-Anosov in $\mcg(\os_{g-1})$.
+\end{fact}
+
+One also obtains a map from $\teich(\no_g)$ to $\teich(\os_{g-1})$ using the fact that mapping classes can be lifted canonically.
+Given a point $(p, \varphi)$ in $\teich(\no_g)$, where $p$ is a hyperbolic surface homeomorphic to $\no_g$, and $\varphi$ is an isotopy class of homeomorphism from $\no_g$ to $p$, we define the image of $(p, \varphi)$ in $\teich(\os_{g-1})$ to be $(\widetilde{p}, \widetilde{\varphi})$, where $\widetilde{p}$ is the orientation double cover of $p$, and $\widetilde{\varphi}$ is the orientation preserving lift of the homeomorphism $\varphi$.
+One can also explicitly describe the image of this map.
+To do so, we consider the extended Teichmüller space of $\os_{g-1}$, i.e. also allowing orientation reversing markings.
+This space has two connected components, one for each orientation, and there is a canonical involution, given by reversing the orientation, that exchanges the two connected components.
+We denote this conjugation map by $\overline{\cdot}$.
+There is another involution, induced by the orientation reversing deck transformation of $\os_{g-1}$, which we denote by $\iota^{\ast}$.
+This map also exchanges the two components of the extended Teichmüller space.
+The image of $\teich(\no_g)$ is precisely the set of points fixed by the composition of these two maps, i.e. $\overline{\iota^{\ast}}$.
+We skip the proof of these two facts, since they follow by relatively elementary covering space arguments, and summarize the result in the following theorem.
+
+\begin{theorem}[Embedding Teichm\"uller spaces]
+  \label{thm:embedding-teich}
+  Given a point $(p, \varphi)$ in $\teich(\no_g)$, there is a unique point $(\widetilde{p}, \widetilde{\varphi})$ in $\teich(\os_{g-1})$, where $\widetilde{p}$ is the pullback of the metric, and $\widetilde{\varphi}$ is the unique orientation preserving lift of the marking. The image of the inclusion map is the intersection of the invariant set of $\overline{\iota^\ast}$ with the connected component of the extended Teichmüller space corresponding to orientation preserving maps.
+\end{theorem}
+
+It turns out that the image of $\teich(\no_g)$ in $\teich(\os_{g-1})$ is an isometrically embedded submanifold, and the geodesic flow can be represented by the action of the diagonal subgroup of $SL(2, \mathbb{R})$.
+
+To understand the Teichm\"uller geodesic flow on $\teich(\no_g)$, we need to determine what the cotangent vectors look like: let $X$ be a point in $\teich(\no_{g})$ and let $\wt{X}$ be the corresponding point in $\teich(\os_{g-1})$.
+Then the map on the extended Teichmüller space induced by the orientation reversing deck transformation maps $\wt{X}$ to $\overline{\wt{X}}$, i.e. the conjugate Riemann surface. Following that with the canonical conjugation map brings us back to $\wt{X}$.
+Let $q$ be a cotangent vector at $\overline{\wt{X}}$, i.e. an anti-holomorphic quadratic differential on the Riemann surface $\overline{\wt{X}}$.
+Pulling back $q$ along the canonical conjugation map gives a holomorphic quadratic differential on $X$.
+In local coordinate chart on $\wt{X}$, this looks like $q(z) dz^2$ if on the corresponding chart on $\overline{\wt{X}}$ it looked like $q(\overline{z}) dz^2$.
+We want this to equal $\iota^{\ast}q$, which will also be a holomorphic quadratic differential on $\wt{X}$.
+If that happens, then $\iota^{\ast} q$ is a cotangent vector to the point $X$ in $\teich(\no_g)$.
+
+\begin{example}[A cotangent vector to a point in $\teich(\no_3)$]
+  Consider the quadratic differential $q$ on a genus two Riemann surface pictured in \autoref{fig:dqd-example}.
+  \begin{figure}[h]
+    \centering
+    \incfig[0.45]{dqd-example}
+    \caption{A quadratic differential $q$ on $\os_2$ given by the slit torus construction.}
+    \label{fig:dqd-example}
+  \end{figure}
+
+  Observe that this particular quadratic differential is the global square of an abelian differential, so it makes sense to talk about the pairing between $\sqrt{q}$ and the homology classes $\{a, a^{\prime}, b, b^{\prime}, c, c^{\prime}\}$.
+  Recall that the action of a mapping class like $\iota$ is merely relabelling homology classes: in this case $\iota$ swaps $a$ with $-a^{\prime}$, $b$ with $b^{\prime}$, and $c$ with $-c^{\prime}$.
+  That gives us the following expressions involving $\sqrt{q}$.
+  \begin{align}
+    \label{eq:back-12}
+    \langle \iota^{\ast}\sqrt{q}, a \rangle &= \langle \sqrt{q}, -a^{\prime} \rangle \\
+    \langle \iota^{\ast}\sqrt{q}, b \rangle &= \langle \sqrt{q}, b^{\prime} \rangle \\
+    \langle \iota^{\ast}\sqrt{q}, c \rangle &= \langle \sqrt{q}, -c^{\prime} \rangle
+  \end{align}
+  On the other hand, the conjugation action conjugates the complex value of each pairing.
+  \begin{align}
+    \label{eq:back-13}
+    \langle \overline{\sqrt{q}}, a \rangle &= \overline{  \langle \sqrt{q}, a \rangle } \\
+    \langle \overline{\sqrt{q}}, b \rangle &= \overline{  \langle \sqrt{q}, b \rangle } \\
+    \langle \overline{\sqrt{q}}, c \rangle &= \overline{  \langle \sqrt{q}, c \rangle }
+  \end{align}
+  For $q$ to be invariant under $\overline{\iota}$, both of the above set of equations must be satisfied, which imposes certain conditions on $q$.
+  For instance, if the complex lengths of $a$ and $a^{\prime}$ to be conjugates of each other, the complex lengths of $b$ and $b^{\prime}$ to be negative conjugates of each other, and forces the complex length of $c$ and $c'$ to be real.
+  Only the quadratic differentials satisfying these constraints will be the cotangent vectors to points in the image of $\teich(\no_3)$.
+
+  To realize the quadratic differential directly as an object on $\no_3$, we can quotient out the flat surface given by $q$ by the orientation reversing deck transformation.
+  Doing that for our example gives the non-orientable flat surface gives the picture seen in \autoref{fig:dqd-no3}.
+  \begin{figure}[h]
+    \centering
+    \incfig[0.45]{dqd-no3}
+    \caption{A quadratic differential on $\no_3$.}
+    \label{fig:dqd-no3}
+  \end{figure}
+\end{example}
+This example suggests what the right definition of a quadratic differential on a non-orientable surface ought to be: in the flat picture, rather than allowing gluing via just the maps $z \mapsto \pm z + c$, we also allow $z \mapsto \pm \overline{z} + c$.
+This leads to the definition of \emph{dianalytic quadratic differentials} (which we'll abbreviate to DQDs).
+
+\begin{definition}[Dianalytic quadratic differential (adapted from \autocite{Wright2015})]
+  A dianalytic quadratic differential is the quotient of a collection of polygons in $\mathbb{C}$, modulo
+  certain equivalences.  The quotienting satisfies the following conditions.
+  \begin{enumerate}[(1)]
+  \item The interiors of the polygons are disjoint.
+  \item Each edge is identified with exactly one other edge, and the mapping must be of one of the following
+    four forms: $z \mapsto z + c$, $z \mapsto -z + c$, $z \mapsto \overline{z} + c$, or
+    $z \mapsto -\overline{z} + c$.
+  \item Extending the edge identification map to a small enough open neighbourhood of a point on the edge
+    should not map it to an open neighbourhood of the image of the point: in other words, it should get mapped
+    to the ``other side'' of the edge.
+  \end{enumerate}
+  Two such quotiented collections of polygons are considered the same if they differ by a composition of the following
+  moves.
+  \begin{enumerate}[(1)]
+  \item A polygon may be translated, rotated by $\pi$ radians, or reflected across the real or imaginary axis.
+  \item A polygon may be cut along a straight line to form two polygons, or two polygons sharing an edge may
+    be glued together to form a single polygon.
+  \end{enumerate}
+\end{definition}
+
+Given a DQD, we can pull it back to the orientation double cover, getting an actual quadratic differential: this operation corresponds to identifying a cotangent vector to a point in $\teich(\no_g)$ to the corresponding cotangent vector in $\teich(\os_{g-1})$.
+
+To verify that $\teich(\no_g)$ is isometrically embedded, all we need to do is verify that the Teichm\"uller geodesic flow takes the quadratic differentials satisfying the symmetry condition $\iota^{\ast}(q) = \overline{q}$ to quadratic differentials that satisfy the symmetry conditions.
+
+\begin{lemma}
+  \label{lem:gt-invariance}
+  If $q$ satisfies $\iota^{\ast}(q) = \overline{q}$, then for any $t$, $\iota^{\ast}(g_tq) = \overline{g_tq}$.
+\end{lemma}
+\begin{proof}
+  Recall that if $q$ satisfies the given condition, we must have the following hold for any homology class $a$.
+  \begin{equation}
+    \label{eq:back-14}
+    \langle \sqrt{q}, \iota(a) \rangle = \overline{ \langle \sqrt{q}, a \rangle}
+  \end{equation}
+  If $q$ is not the global square of an abelian differential, we may have to pass to the holonomy double
+  cover. Observe now what $g_t$ does to $q$.
+  \begin{equation}
+    \label{eq:back-15}
+    \langle \sqrt{g_t q}, \iota(a) \rangle = e^t \mathrm{Re} \langle \sqrt{q}, \iota(a) \rangle + i e^{-t} \mathrm{Im}\langle \sqrt{q}, \iota(a) \rangle
+  \end{equation}
+  Using \eqref{eq:back-14}, we simplify \eqref{eq:back-15} to the following.
+  \begin{align}
+    \label{eq:back-16}
+    \langle \sqrt{g_t q}, \iota(a) \rangle &= e^t \mathrm{Re} \langle \sqrt{q}, a \rangle - i e^{-t} \mathrm{Im}\langle \sqrt{q}, a \rangle \\
+                                           &= \overline{\langle \sqrt{g_tq}, a \rangle}
+  \end{align}
+  This proves the lemma.
+\end{proof}
+\begin{remark}
+  The key idea that diagonal matrices commute:
+  the conjugation action is really multiplication by $
+  \begin{pmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{pmatrix}
+  $ which happens to commute with the diagonal matrices of determinant $1$, which are exactly the matrices
+  corresponding to geodesic flow. On the other hand, the conjugation matrix does not commute with the horocycle
+  flow matrices, and that shows that the horocycle flow is not well defined on the cotangent bundle
+  of $\teich(\no_g)$.
+\end{remark}
+Lemma \ref{lem:gt-invariance} shows that the Teichm\"uller geodesic flow for the cotangent bundle of $\teich(\no_g)$ is the restriction of the geodesic flow for the ambient space $\teich(\os_{g-1})$.
+
+\autoref{thm:embedding-teich} gives us an alternative perspective into the action of $\mcg(\no_g)$ on $\teich(\no_g)$.
+$\mcg(\no_g)$ can be thought of as the subgroup of $\mcg(\os_{g-1})$ that stabilizes a totally real isometrically embedded submanifold $\teich(\no_g)$.
+With this perspective, $\mcg(\no_g)$ can be thought of as the higher dimensional generalization of the subgroups obtained by stabilizing Teichmüller discs, i.e. Veech groups.
+
+We now state a few classical results about measured foliations on non-orientable surfaces that show why the theory diverges significantly from the orientable case.
+
+A measured foliation on a non-orientable surface $\no_g$ is singular foliation along with an associated transverse measure, up to equivalence by Whitehead moves.
+Any leaf of a measured foliation can either be non-compact or compact: in the former case, the closure of the non-compact leaf fills out a subsurface.
+Restricted to the subsurface given by the closure of a non-compact leaf, the foliation is minimal, i.e. the orbit of every point under the flow given by the foliation is dense.
+For a compact leaf, there are two possibilities for the topology of the subsurface containing it: if the closed leaf is the core curve or the boundary curve of an embedded M\"obius strip, then the subsurface is the maximal neighbourhood of the periodic leaf that is foliated by periodic leaves as well, and this turns out to be an embedded M\"obius strip.
+If the compact leaf is not the core curve or the boundary curve of an embedded M\"obius strip, then it is the core curve of an embedded cylinder, and the maximal neighbourhood of the periodic leaf foliated by periodic leaf is an embedded cylinder.
+The identification of leaves with associated subsurfaces lets us decompose a measured foliation into its minimal components.
+Note the slightly confusing terminology: when the minimal component is a M\"obius strip or a cylinder, then the foliation restricted to the component is not minimal, but when the minimal component has higher genus, then the foliation restricted to that component indeed is minimal.
+
+We denote the set of measured foliations on $\no_g$ by $\mf(\no_g)$, the set of foliations whose minimal components do not contain a M\"obius strip by $\mf^+(\no_g)$, and the set of foliations whose minimal components contain at least one M\"obius strip by $\mf^-(\no_g)$.
+Via the standard identification between simple closed curves and measured foliations, we can associate $\mathbb{Q}$-weighted two-sided multicurves on $\no_g$ to a subset of $\mf^+(\no_g)$, denoted by $\mf^+(\no_g, \mathbb{Q})$.
+
+Quotienting out $\mf(\no_g)$ by the $\mathbb{R_+}$-action given by scaling the transverse measure gives us the set of projective measured foliations $\pmf(\no_g)$.
+The subsets $\mf^-(\no_g)$, $\mf^+(\no_g)$, and $\mf^+(\no_g, \QQ)$ are $\mathbb{R}$-invariant, and thus descend to their projective versions $\pmf^-(\no_g)$, $\pmf^+(\no_g)$, and $\pmf^+(\no_g, \QQ)$.
+The set $\pmf(\no_g)$ is the boundary of the Teichm\"uller space of $\no_g$, and admits a continuous mapping class group action.
+It is when considering the mapping class group action that we see differences between the orientable and the non-orientable case.
+
+\begin{theorem}[Proposition 8.9 of \cite{gendulphe_whats_2017}]
+  \label{thm:full-non-minimal}
+  The action of $\mcg(\no_g)$ (for $g \geq 2$) on $\pmf(\no_g)$ is not minimal.
+  In fact, the action is not even topologically transitive.
+\end{theorem}
+
+Compare this to the case of $\mcg(\os_g)$.
+\begin{theorem}[Theorem 6.19 of \cite{fathi2012thurston}]
+  \label{thm:orientable-orbit-closure}
+  The action of $\mcg(\os_g)$ on $\pmf(\os_g)$ is minimal.
+\end{theorem}
+
+\begin{remark}
+  The proof of non minimality and topological non-transitivity in the non-orientable case follow from the fact that one can construct a $\mcg(\no_g)$-invariant continuous function on $\mf(\no_g)$.
+  That is because starting with a foliation in $\mf^+(\no_g)$, it is impossible to approximate an element of $\mf^-(\no_g)$ since one does not have Dehn twists about one-sided curves.
+\end{remark}
+
+One can now consider subspaces of $\mf(\no_g)$ where the $\mcg(\no_g)$ action might be nicer. There are two natural subspaces: $\mf^+(\no_g)$, and $\mf^{-}(\no_g)$.
+Danthony-Nogueira proved the following theorem about $\mf^{-}(\no_g)$ in \cite{ASENS_1990_4_23_3_469_0}.
+
+\begin{theorem}[Theorem II of \cite{ASENS_1990_4_23_3_469_0}]
+  \label{thm:DN90-2}
+  $\mf^{-}(\no_g)$ is an open dense subset of $\mf(\no_g)$ of full Thurston measure.
+\end{theorem}
+
+\autoref{thm:DN90-2} means that the $\mcg(\no_g)$-orbit closure in $\pmf(\no_g)$ of any point in $\teich(\no_g)$ is contained in $\pmf^+(\no_g)$.
+In the case of $\mcg(\os_g)$, $\pmf^+(\os_g) = \pmf(\os_g)$, and the orbit closure is actually all of $\pmf(\os_g)$.
+\begin{corollary}[Corollary of \autoref{thm:orientable-orbit-closure}]
+  For any $x \in \teich(\os_g)$, $\overline{\mcg(\os_g) \cdot x} \cap \pmf(\os_g) = \pmf(\os_g)$.
+\end{corollary}
+
+\autoref{thm:full-non-minimal} and \autoref{thm:DN90-2} suggest that studying the $\mcg(\no_g)$ dynamics restricted to $\mf^{-}(\no_g)$ will be hard since one will not have minimality, or ergodicity with respect to any measure with full support.
+In Section \ref{sec:lower-bound-limit-set}, we get a lower bound for the set on which $\mcg(\no_g)$ acts minimally.
+
+\subsection{Limit sets of mapping class subgroups}
+\label{sec:backgr-limit-sets}
+
+The first results on limit sets of subgroups of mapping class groups were obtained by Masur for handlebody subgroups \cite{masur_1986}, and McCarthy-Papadopoulos for general mapping class subgroups \cite{McCarthy1989}.
+They defined two distinct notions of limit sets; while they did not give distinct names to the two different definitions, we will do so for the sake of clarity.
+\begin{definition}[Dynamical limit set]
+  Given a subgroup $\Gamma$ of the mapping class group, the dynamical limit set $\dynlim(\Gamma)$ is the minimal closed invariant subset of $\pmf$ under the action of $\Gamma$.
+\end{definition}
+\begin{definition}[Geometric limit set]
+  Given a subgroup $\Gamma$ of the mapping class group, and a point $x$ in the Teichmüller space, its boundary orbit closure $\Lambda_{\mathrm{geo}, x}(\Gamma)$ is intersection of its orbit closure with the Thurston boundary, i.e. $\overline{\Gamma x} \cap \pmf$.
+  The geometric limit set is the union of all boundary orbit closures, as we vary $x$ in the Teichmüller space, i.e. $\geolim(\Gamma) = \bigcup_{x \in \teich} \Lambda_{\mathrm{geo}, x}(\Gamma)$.
+\end{definition}
+
+\begin{remark}
+  The specific family of subgroups considered by McCarthy-Papadopoulos were subgroups containing at least two non-commuting pseudo-Anosov mapping classes, in which case the dynamical limit set is unique.
+  The mapping class groups $\mcg(\no_{g})$ considered as a subgroup of $\mcg(\os_{g-1})$ certainly satisfies this property, letting us talk about \emph{the} dynamical limit set.
+\end{remark}
+
+Both of these definitions are natural generalizations of the limit sets of Fuchsian groups acting on $\HH^2$.
+In the hyperbolic setting, the two notions coincide, but for mapping class subgroups, the dynamical limit set may be a proper subset of the geometric limit set.
+
+For simple enough subgroups, one can explicitly work out $\dynlim(\Gamma)$ and $\geolim(\Gamma)$: for instance, when $\Gamma$ is the stabilizer of the Teichmüller disc associated to a Veech surface, $\dynlim(\Gamma)$ is the visual boundary of the Teichmüller disc, which by Veech dichotomy, only consists of either uniquely ergodic directions on the Veech surface, or the cylinder directions, where the coefficients on the cylinders are their moduli in the surface.
+On the other hand, $\geolim(\Gamma)$ consists of all the points in $\dynlim(\Gamma)$, but it additionally contains all possible convex combinations of the cylinders appearing in $\dynlim(\Gamma)$ (see Section 2.1 of \cite{2007math......2034K}).
+
+The gap between $\geolim$ and $\dynlim$ suggests the following operation on subsets of $\pmf$, which we will call \emph{saturation}.
+\begin{definition}[Saturation]
+  Given a projective measured foliation $\lambda$, we define its saturation $\expansion(\lambda)$ to be the image in $\pmf$ of set of all non-zero measures invariant measures on the topological foliation associated to $\lambda$.
+  Given a subset $\Lambda$, we define its saturation $\expansion(\Lambda)$ to be the union of saturations of the projective measured laminations contained in $\Lambda$.
+\end{definition}
+Observe that for a uniquely ergodic foliation $\lambda$, $\expansion(\lambda) = \{\lambda\}$, for a minimal but not uniquely ergodic $\lambda$, $\expansion(\lambda)$ is the convex hull of all the ergodic measures supported on the topological lamination associated to $\lambda$, and for a foliation with all periodic leaves, $\expansion(\lambda)$ consists of all foliations that can be obtained by assigning various weights to the core curves of the cylinders.
+
+Going back to the example of the stabilizer of the Teichmüller disc of a Veech surface, we see that $\geolim(\Gamma) = \expansion(\dynlim(\Gamma))$.
+One may ask if this is always the case.
+\begin{question}
+  Is $\geolim(\Gamma) = \expansion(\dynlim(\Gamma))$ for all $\Gamma$?
+\end{question}
+We know from \autoref{thm:rational-approximation} that $\geolim(\Gamma)$ is contained in $\expansion(\dynlim(\Gamma))$ when $\Gamma = \mcg(\no_g)$.
+
+McCarthy-Papadopoulos also formulated an equivalent definition of $\dynlim(\Gamma)$, which is easier to work with in practice.
+
+\begin{untheorem}[Theorem 4.1 of \cite{McCarthy1989}]
+  \label{thm:equivalence-of-limit-sets}
+  $\dynlim(\Gamma)$ is the closure in $\pmf$ of the stable and unstable foliations of all the pseudo-Anosov mapping classes in $\Gamma$.
+\end{untheorem}
+
+\subsection*{List of notation}
+Here we describe some of the more commonly used symbols in the paper.
+\begin{itemize}
+\item[] $\os_g$: The compact orientable surface of genus $g$.
+\item[] $\no_{g}$: The compact non-orientable surface of genus $g$.
+\item[] $\iota$: The deck transformation of the orientation double cover of a non-orientable surface.
+\item[] $\teich(S)$: The Teichm\"uller space of $S$.
+\item[] $\systole(\no_d)$: The set of points in $\teich(\no_d)$ where no one-sided curve is shorter than
+  $\varepsilon$.
+% \item[] $g_t$: The Teichm\"uller geodesic flow on quadratic differentials.
+\item[] $\mcg(S)$: The mapping class group of $S$.
+% \item[] $\scc(S)$: The set of all simple closed curves on $S$.
+\item[] $\mf(S)$: The space of measured foliations on $S$.
+\item[] $\pmf(S)$: The space of projective measured foliations on $S$.
+\item[] $\mf^+(\no_d)$, $\pmf^+(\no_d)$: The set of (projective) measured foliations on $\no_d$ containing
+  no one-sided leaves.
+\item[] $\mf^-(\no_d)$, $\pmf^-(\no_d)$: The set of (projective) measured foliations on $\no_d$ containing
+  some one-sided leaf.
+\item[] $\mf(S; \QQ)$, $\pmf(S; \QQ)$: The set of all (projective) weighted rational multicurves on $S$.
+\item[] $\geolim(\Lambda)$: The geometric limit set of the discrete group $\Lambda$.
+\item[] $\dynlim(\Lambda)$: The dynamical limit set of the discrete group $\Lambda$.
+\item[] $\ell_i(\gamma)$: The hyperbolic length of $\gamma$ on the surface $m_i$, where $\left\{ m_i \right\}$ is a sequence in the Teichmüller space. We use this when we are only talking about hyperbolic lengths. When talking about both hyperbolic and flat lengths, we disambiguate them using the following symbols.
+\item[] $\lhyp(M, \gamma)$: The hyperbolic length of $\gamma$ with respect to the hyperbolic structure on $M \in \teich(S)$. We will suppress $M$ when it is clear from context.
+\item[] $\lflat(q, \gamma)$: The flat length of $\gamma$ with respect to the flat structure given by the DQD $q$. We will suppress $q$ when it is clear from context.
+\item[] $\mu_{c}$: The probability measure on a transverse arc given by the closed curve $c$.
+\end{itemize}
+
+
+
+%%% Local Variables:
+%%% TeX-master: "main"
+%%% End:

@@ -1,0 +1,205 @@
+\section{Lower bound for the limit set}
+\label{sec:lower-bound-limit-set}
+
+A natural lower bound for $\dynlim(\no_g)$ is the closure of the set of rational two-sided multicurves $\pmf^+(\no_g, \QQ)$.
+For any $\lambda \in \pmf^+(\no_g, \QQ)$, and any psuedo-Anosov $\gamma$, conjugating $\gamma$ with large enough powers of the Dehn multi-twist given by $\lambda$ gives us a sequence of pseudo-Anosov maps whose stable foliation approaches $\lambda$, which shows that $\dynlim(\no_g)$ must contain $\lambda$.
+Note that the same argument does not work if $\lambda \in \pmf^-(\no_g, \QQ)$, since one cannot Dehn twist about one-sided curves.
+In Section \ref{sec:upper-bound-limit-set}, we show that the geometric limit set is indeed contained in the complement of $\pmf^-(\no_g)$.
+
+In \cite{gendulphe_whats_2017}, Gendulphe made the following conjecture about $\overline{\pmf^+(\no_g, \QQ)}$.
+\begin{conjecture}[Conjecture 9.1 of \cite{gendulphe_whats_2017}]
+  \label{conj:gendulphe-1}
+  For $g \geq 4$, $\pmf^+(\no_g) = \overline{\pmf^+(\no_g, \QQ)}$.
+\end{conjecture}
+We prove a slightly weaker version of the above conjecture, by describing a subset of the foliations that can be approximated by multicurves in $\pmf^+(\no_g, \QQ)$.
+To state the theorem, we need to define what it means for a minimal foliation to be orientable.
+\begin{definition}[Orientable foliation]
+  A local orientation on a foliation is the choice of a locally constant tangent direction on the leaves in a small open set.
+  If the local orientation can be extended to an entire minimal foliation, the foliation is said to be orientable.
+\end{definition}
+In the setting of orientable surfaces, the vertical foliations of translation surfaces are orientable, while there are some directions in half-translation surfaces where the foliation is non-orientable.
+There exist similar examples of orientable and non-orientable foliations on non-orientable surfaces.
+
+Having defined the notion of orientable foliations, we can state the main theorem of this section.
+\begin{theorem}
+  \label{thm:rational-approximation}
+  A foliation $\lambda \in \pmf^+(\no_g)$ can be approximated by foliations in $\pmf^+(\no_g, \QQ)$ if all the minimal components $\lambda_j$ of $\lambda$ satisfy one of the following criteria.
+  \begin{enumerate}[(i)]
+  \item $\lambda_j$ is periodic.
+  \item $\lambda_j$ is ergodic and orientable.
+  \item $\lambda_j$ is uniquely ergodic.
+  \end{enumerate}
+  Furthermore, if $\lambda_j$ is minimal, but not uniquely ergodic, there exists some other foliation $\lambda_j^{\prime}$ supported on the same topological foliation as $\lambda_j$ that can be approximated by elements of $\pmf^+(\no_g, \QQ)$.
+\end{theorem}
+
+Before we prove this result, we need to define the \emph{orbit measure} associated to simple curve, and define what it means for an orbit measure to be \emph{almost invariant}.
+Consider an arc $\eta$ transverse to a measured foliation $\lambda$.
+We assign one of the sides of $\eta$ to be the ``up'' direction, and the other side to be the ``down'' direction.
+This lets us define the first return map to $T$.
+\begin{definition}[First return map]
+  The first return map $T$ maps a point $p \in \eta$ to the point obtained by flowing along the foliation in the ``up'' direction until the flow intersects $\eta$ again.
+  The point of intersection is defined to be $T(p)$.
+  If the flow terminates at a singularity, $T(p)$ is left undefined: there are only countable many points in $\eta$ such that this happens.
+\end{definition}
+Since $\lambda$ is a measured foliation, it defines a measure on $\eta$: we can scale it so that it is a probability measure.
+It follows from the definition of transverse measures that the measure is $T$-invariant.
+It is a classical result of Katok \cite{zbMATH03467479}  and Veech \cite{Veech1978} that the set of $T$-invariant probability measures is a finite dimensional simplex contained in the Banach space of bounded signed measures on $\eta$.
+Given an orbit of a point $p$ under the $T$-action of length $L$, we construct a probability measure on $\eta$, called the orbit measure of $p$.
+\begin{definition}[Orbit measure]
+  The orbit measure of length $L$ associated to the point $p$ is the following probability measure on $\eta$.
+  \begin{align*}
+    \mu_{p, L} \coloneqq \frac{1}{L} \sum_{i=0}^{L-1} \delta_{T^i(p)}
+  \end{align*}
+  Here, $\delta_{x}$ is the Dirac delta measure at the point $x$.
+\end{definition}
+One might expect that if a point $p$ equidistributes, then a long orbit measure starting at $p$ will be ``close'' to an invariant measure.
+We formalize this notion by metrizing the Banach space of signed finite measures on $\eta$.
+\begin{definition}[Lèvy-Prokhorov metric]
+  Define $\norm{\cdot}_{\mathrm{BL}}$ denote the bounded Lipschitz norm on the space of continuous functions on $\eta$.
+  \begin{align*}
+    \norm{f}_{\mathrm{BL}} \coloneqq \norm{f}_{\infty} + \sup_{x \neq y} \frac{\left| f(x) - f(y) \right|}{\left| x - y \right|}
+  \end{align*}
+\end{definition}
+Then the Lèvy-Prokhorov distance $d_{\mathrm{LP}}$ between the probability measures $\mu_1$ and $\mu_2$ is defined to be the following.
+\begin{align*}
+  d_{\mathrm{LP}}(\mu_1, \mu_2) \coloneqq \sup_{\norm{f}_{\mathrm{BL}} \leq 1} \int f (\dd \mu_1 - \dd \mu_2)
+\end{align*}
+Using the Lèvy-Prokhorov metric, we can define what it means for a probability measure to be $\varepsilon$-almost $T$-invariant.
+\begin{definition}[$\varepsilon$-almost $T$-invariance]
+  A measure $\mu$ is $\varepsilon$-almost $T$-invariant if $d_{\mathrm{LP}}(\mu, T \mu) \leq \varepsilon$. Here $T \mu$ is the pushforward of $\mu$ under $T$.
+\end{definition}
+We state the following easy fact about orbit measures without proof.
+\begin{fact}
+  An orbit measure of length $L$ is $\frac{2}{L}$-almost $T$-invariant.
+\end{fact}
+The following lemma shows that a long orbit measure is close to an invariant measure.
+\begin{lemma}
+  \label{lem:long-orbit-is-almost-invariant}
+  Let $\left\{ n_j \right\}$ be a sequence of positive integers and let $\{\mu_{ij}\}$ be orbit measures such that $1 \leq i \leq n_j$ and $d(\mu_{ij}, T{\mu}_{ij}) \leq l_j$, where $\lim_{j \to \infty} l_j = 0$.
+  For any $\varepsilon > 0$, there exists an $J$ large enough such that for all $j > J$, $\mu_{ij}$ is within distance $\varepsilon$ of an invariant measure.
+\end{lemma}
+\begin{proof}
+  Let $A_k$ be the closure of all the $\mu_{ij}$ such that $j \geq k$.
+  The set $A_k$ is compact, because it is a closed subset of a compact set, and we have that $\bigcap_{k=1}^{\infty} A_k$ is contained in the set of invariant measures.
+  By compactness, we have that for some large enough $J$, $A_J$ must be in a $\varepsilon$-neighbourhood of the set of invariant measures, and therefore every $\mu_{ij}$ for $j > J$ must distance at most $\varepsilon$ away from an invariant measure.
+\end{proof}
+We now sketch a proof of the following lemma about simplices in finite dimensional normed spaces.
+\begin{lemma}
+  \label{lem:finite-normed}
+  Let $V$ be a finite dimensional normed vector space, and $S$ be a simplex in $V$.
+  Let $\{p_1, \ldots, p_n\}$ be points in $S$ such that they are all at least distance $\varepsilon$ from a vertex $v$.
+  Then there exists a positive constant $k$ such that any convex combination of $\{p_i\}$ is distance at least $\dfrac{\varepsilon}{k}$ from $v$.
+\end{lemma}
+\begin{proof}[Sketch of proof]
+  We shift the simplex so that the vertex $v$ is at the origin.
+  It will also suffice to let $\{p_1, \ldots, p_n\}$ be the vectors joining $0$ to the other vertices scaled to have norm $\varepsilon$.
+  The convex combinations of $\{p_1, \ldots, p_n\}$ will form a compact set not containing $0$.
+  Since the norm is a continuous function, the norm will achieve a minimum $\varepsilon^{\prime}$ on that compact set, and the minimum will not be $0$.
+  Then $k = \dfrac{\varepsilon^{\prime}}{\varepsilon}$ is the required value of $k$.
+\end{proof}
+
+We now prove a lemma that gives us a criterion for deducing when a long orbit measure is close to an ergodic measure.
+\begin{lemma}
+  \label{lem:convexity-argument}
+  Let $\{n_i\}$ be a sequence of positive integers, and let $\{p_{ij}\}$ and $\{L_{ij}\}$ be points in $\eta$ and positive integers respectively, where $1 \leq j \leq n_i$ and $\min_j L_{ij}$ goes to $\infty$ as $i$ goes to $\infty$.
+  Consider the following sequence of probability measures, indexed by $i$.
+  \begin{align*}
+    \mu_i \coloneqq \frac{\sum_{j=1}^{n_i} L_{ij} \cdot \mu_{p_{ij}, L_{ij}}}{\sum_{j=1}^{n_i} L_{ij}}
+  \end{align*}
+  If the sequence $\{\mu_i\}$ converges to an ergodic measure $\nu$, then there exists a subsequence of the orbit measures $\mu_{p_{ij}, L_{ij}}$ also converging to $\nu$.
+\end{lemma}
+\begin{proof}
+  Suppose for the sake of a contradiction that no subsequence of $\mu_{p_{ij}, L_{ij}}$ converged to $\nu$.
+  That would mean there exists a small enough $\varepsilon > 0$ and a large enough $i_0$ such that for all $i > i_0$, the measures $\mu_{p_{ij}, L_{ij}}$ are more than distance $\varepsilon$ from $\nu$.
+  Since $\min_{j} L_{ij}$ goes to $\infty$, there exists some other large enough $i_1 > i_0$ such that for all $i > i_1$, $\mu_{p_{ij}, L_{ij}}$ is within distance $\frac{\varepsilon}{k}$ of the simplex of invariant probability measures, where $k$ is a large integer we will pick later: this is a consequence of \autoref{lem:long-orbit-is-almost-invariant}.
+  Using this, we decompose $\mu_{p_{ij}, L_{ij}}$ as the sum of an invariant measure $\iota_{ij}$ and a signed measure $e_{ij}$, such that $d_{\mathrm{LP}}(0, e_{ij}) \leq \frac{\varepsilon}{k}$.
+  \begin{align*}
+    \mu_{p_{ij}, L_{ij}} = \iota_{ij} + e_{ij}
+  \end{align*}
+  Observe that the weighted average of $\mu_{p_{ij}, L_{ij}}$ will differ from the weighted average of $\iota_{ij}$ by at most $\frac{\varepsilon}{k}$.
+  Also note that all the invariant measures $\iota_{ij}$ are distance at least $\varepsilon - \frac{\varepsilon}{k}$ from $\nu$.
+  Since $\nu$ is the vertex of a finite-dimensional convex set, we know from \autoref{lem:finite-normed} that any weighted average of the $\iota_{ij}$ must be at least distance $\frac{\varepsilon - \frac{\varepsilon}{k}}{k^{\prime}}$ from $\nu$, where the multiplicative factor $k^{\prime}$ only depends on the geometry of the convex set of invariant probability measures, and not $\varepsilon$ or $k$.
+  By picking $k > 2k^{\prime}$ we can ensure that any weighted average of the $\mu_{p_{ij}, L_{ij}}$ must be at least distance $\frac{\varepsilon}{2k^{\prime}}$ from $\nu$.
+  But this would contradict our hypothesis that the measures $\mu_i$ converge to $\nu$.
+  That would that there exists some subsequence of $\mu_{p_{ij}, L_{ij}}$ that converges to $\nu$, which proves the lemma.
+\end{proof}
+
+We now have everything we need to prove \autoref{thm:rational-approximation}.
+\begin{proof}[Proof of \autoref{thm:rational-approximation}]
+  If a minimal component $\lambda_j$ is periodic, then the proof is straightforward.
+  Since $\lambda$ contains no one-sided component, the core curve of $\lambda_j$ must be two-sided, possibly with an irrational coefficient.
+  Approximating the core curve with rational coefficients proves the result in case (i).
+
+  In case (ii), we have that $\lambda_j$ is not periodic, but an ergodic orientable foliation.
+  Pick an arc $\eta_0$ transverse to $\lambda_j$ such that the leaf passing through the left endpoint $p_0$ of $\eta_0$ equidistributes with respect to the ergodic transverse measure of $\lambda_j$.
+  We can find such a leaf because almost every leaf equidistributes with respect to the ergodic measure.
+  We now inductively define a sequence of points $\{p_i\}$, sequence of sub-intervals $\eta_i$, and a sequence of segments $\{a_i\}$ of the leaf passing through $p_0$.
+  Let $p_1$ be the first return of the leaf going up through $p_0$ to the interval $\eta_0$.
+  Define the sub-interval $\eta_1$ to be the sub-interval whose left endpoint is $p_0$ and right endpoint is $p_1$.
+  Let $a_1$ be the segment of the leaf starting at $p_0$ and ending at $p_1$.
+  Given a point $p_i$, define $p_{i+1}$ to be the first return to the interval $\eta_{i}$, $\eta_{i+1}$ to be the interval whose left endpoint is $p_0$ and right endpoint is $p_{i+1}$, and $a_{i+1}$ to be the segment of the leaf starting at $p_i$ and ending at $p_{i+1}$.
+  % Let $A_{i}$ be the concatenation of the leaf segments $\{a_1, \ldots, a_i\}$.
+
+  Since we have assumed $\lambda_j$ is an orientable foliation, we have that the leaf we are working with always enters $\eta_0$ from the bottom, and exits from the top.
+  If we pick $\eta_0$ to be small enough, we can pick a local orientation, and keep track of how a positively oriented frame returns to each $p_i$, i.e. with or without the orientation flipped (see \autoref{fig:two-possibilities}).
+  \begin{figure}[h]
+    \centering
+    \incfig[0.45]{two-possibilities}
+    \caption{Two possibilities for first return to $\eta_i$: on the left, the arc returns without the local orientation flipping, and on the right, the arc returns with the local orientation flipped.}
+    \label{fig:two-possibilities}
+  \end{figure}
+  If the flow returns infinitely often without the orientation flipped, we join the endpoint $p_i$ to $p_0$ by going left along $\eta_i$ to get a simple closed curve that is two-sided.
+  Furthermore, the geodesic tightening of the resulting curve is very close to the original curve, because the initial and final tangent vectors can be made arbitrarily close since they both face the ``up'' direction: the Anosov closing lemma then tells us that an orbit of the geodesic flow that approximately closes up can be perturbed by a small amount to exactly close up.
+  This gives us a long geodesic that equidistributes with respect to the ergodic measure, and therefore an approximation by two-sided curves.
+
+  If the flow does not return without the orientation flipped infinitely often, it must always return with the orientation flipped after some large enough $i_0$.
+  In that case, consider the simple two-sided curves $c_i$ obtained by concatenating $a_i$ with the arc on $\eta_{i-1}$ joining $p_{i-1}$ and $p_i$ (see \autoref{fig:comes-with-flip}).
+  \begin{figure}[h]
+    \centering
+    \incfig[0.75]{comes-with-flip}
+    \caption{The curve $c_i$ is colored blue. Since the leaf from $p_0$ returns with the local orientation flipped to both $p_{i-1}$ and $p_{i}$, the curve $c_i$ is two-sided.}
+    \label{fig:comes-with-flip}
+  \end{figure}
+  We have that as $i$ goes to $\infty$, the length of $c_i$ must go to $\infty$ as well, otherwise a subsequence would converge to a closed vertical curve starting at $p_0$, which cannot happen since the leaf through $p_0$ equidistributes.
+  Also, note that the average of the curves $c_i$ weighted by their lengths for $i^{\prime} < i < i^{\prime \prime}$ where $i^{\prime \prime} \gg i^{\prime}$ is close to the ergodic measure, since we assumed that the leaf through $p_0$ equidistributes.
+  This lets us invoke \autoref{lem:convexity-argument} to claim that there is a subsequence of $c_i$ whose orbit measures converge to the ergodic measure.
+  Consequently, the geodesic representatives of $c_i$ converge to $\lambda_j$, since the geodesic tightening is close to the original curve, by the virtue of the initial and final tangent vectors being arbitrarily close.
+  This resolves the two cases that can appear in the case of an orientable foliation, proving the result for case (ii).
+
+  For case (iii), we define the points $p_i$, the nested intervals $\eta_i$, and the arcs $a_i$ in a similar manner as to case (ii).
+  The key difference is that we no longer have that the foliation is orientable, which means the leaf can approach $p_i$ in one of four possible ways: from the ``up'' or the ``down'' direction, and with or without the orientation flipped.
+
+  In case that the leaf approaches $p_i$ from the ``down'' direction without the orientation flipped infinitely often, the same closing argument as case (ii) works.
+  Suppose now that the leaf approaches $p_i$ from the ``up'' direction, but without the orientation flipping, infinitely often.
+  We then construct simple two-sided curves by concatenating the flow with the arc joining $p_i$ to $p_0$.
+  % \begin{figure}[h]
+  %   \centering
+  %   \includegraphics{example-image-b}
+  %   \caption{Constructing the curve $c_i$ when returning from the ``up'' direction.}
+  %   \label{fig:coming-from-above}
+  % \end{figure}
+  While this curve does equidistribute with respect to the ergodic measure, it is not necessary that its geodesic tightening will do so.
+  Denote the geodesic tightening by $c_i^{\prime}$: we have that its intersection number with $\lambda_j$ goes to $0$ as $i$ goes to $\infty$.
+  By the compactness of the space of transverse probability measures, we must have that $\mu_{c_i^{\prime}}$ converges to some projective measured foliation $\gamma$ which has $0$ intersection number with $\lambda_j$, but is still supported on a subset of the support of $\lambda_j$.
+  This means $\gamma$ must be another projective measured foliation in the topological conjugacy class of $\lambda_j$, i.e. is supported on the same underlying foliation.
+  This proves the furthermore case of theorem.
+  If $\lambda_j$ is actually uniquely ergodic, there is only one measure in the simplex of invariant probability measures, namely the uniquely ergodic one, and therefore $\mu_{g_i}$ is forced to converge to it.
+
+  Suppose now that neither of the first two scenarios occur, i.e. the leaf returns to $p_i$ from the ``up'' or ``down'' direction, but with the orientation always flipped.
+  We deal with this case like we did with the second subcase of case (ii).
+  See \autoref{fig:case3-surgery} for the construction of the two-sided curves $c_i$.
+  \begin{figure}[h]
+    \centering
+    \incfig[0.75]{case-3-surgery}
+    \caption{Construction of the blue curve $c_i$ when the leaf always returns with orientation flipped from the ``up'' or ``down'' direction.}
+    \label{fig:case3-surgery}
+  \end{figure}
+  We have that the geodesic tightenings of the curves $c_i$ are close to the original curve by the Anosov closing lemma, and that the weighted averages of the $c_i$ converge the ergodic measure, which means by \autoref{lem:convexity-argument} we have a subsequence $\mu_{c_i}$ that converges to the ergodic measure.
+  This proves the result for case (iii), and therefore the theorem.
+\end{proof}
+
+
+
+%%% Local Variables:
+%%% TeX-master: "main"
+%%% End:
