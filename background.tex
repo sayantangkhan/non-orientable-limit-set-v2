@@ -84,7 +84,7 @@ If that happens, then $\iota^{\ast} q$ is a cotangent vector to the point $X$ in
     \langle \overline{\sqrt{q}}, c \rangle &= \overline{  \langle \sqrt{q}, c \rangle }
   \end{align}
   For $q$ to be invariant under $\overline{\iota}$, both of the above set of equations must be satisfied, which imposes certain conditions on $q$.
-  For instance, if the complex lengths of $a$ and $a^{\prime}$ to be conjugates of each other, the complex lengths of $b$ and $b^{\prime}$ to be negative conjugates of each other, and forces the complex length of $c$ and $c'$ to be real.
+  For instance, the complex lengths of $a$ and $a^{\prime}$ must be conjugates of each other, the complex lengths of $b$ and $b^{\prime}$ must be negative conjugates of each other, and the complex length of $c$ and $c'$ must be real.
   Only the quadratic differentials satisfying these constraints will be the cotangent vectors to points in the image of $\teich(\no_3)$.
 
   To realize the quadratic differential directly as an object on $\no_3$, we can quotient out the flat surface given by $q$ by the orientation reversing deck transformation.
@@ -168,7 +168,7 @@ With this perspective, $\mcg(\no_g)$ can be thought of as the higher dimensional
 
 We now state a few classical results about measured foliations on non-orientable surfaces that show why the theory diverges significantly from the orientable case.
 
-A measured foliation on a non-orientable surface $\no_g$ is singular foliation along with an associated transverse measure, up to equivalence by Whitehead moves.
+A measured foliation on a non-orientable surface $\no_g$ is singular foliation along with an associated transverse measure, up to equivalence by Whitehead moves\footnote{A Whitehead move on a singular foliation is the process of collapsing a compact leaf joining two singularities to a single point, or the inverse move.}.
 Any leaf of a measured foliation can either be non-compact or compact: in the former case, the closure of the non-compact leaf fills out a subsurface.
 Restricted to the subsurface given by the closure of a non-compact leaf, the foliation is minimal, i.e. the orbit of every point under the flow given by the foliation is dense.
 For a compact leaf, there are two possibilities for the topology of the subsurface containing it: if the closed leaf is the core curve or the boundary curve of an embedded M\"obius strip, then the subsurface is the maximal neighbourhood of the periodic leaf that is foliated by periodic leaves as well, and this turns out to be an embedded M\"obius strip.
@@ -197,7 +197,7 @@ Compare this to the case of $\mcg(\os_g)$.
 \end{theorem}
 
 \begin{remark}
-  The proof of non minimality and topological non-transitivity in the non-orientable case follow from the fact that one can construct a $\mcg(\no_g)$-invariant continuous function on $\mf(\no_g)$.
+  The proof of non minimality and topological non-transitivity in the non-orientable case follow from the fact that one can construct a $\mcg(\no_g)$-invariant non-constant continuous function on $\mf(\no_g)$.
   That is because starting with a foliation in $\mf^+(\no_g)$, it is impossible to approximate an element of $\mf^-(\no_g)$ since one does not have Dehn twists about one-sided curves.
 \end{remark}
 
@@ -226,6 +226,11 @@ They defined two distinct notions of limit sets; while they did not give distinc
 \begin{definition}[Dynamical limit set]
   Given a subgroup $\Gamma$ of the mapping class group, the dynamical limit set $\dynlim(\Gamma)$ is the minimal closed invariant subset of $\pmf$ under the action of $\Gamma$.
 \end{definition}
+
+\begin{remark}
+  In the case where $\Gamma$ contains two non-commuting pseudo-Anosovs, there is a unique minimal invariant closed invariant subset of $\pmf$: this is Theorem 4.1 of \textcite{McCarthy1989}.
+\end{remark}
+
 \begin{definition}[Geometric limit set]
   Given a subgroup $\Gamma$ of the mapping class group, and a point $x$ in the Teichmüller space, its boundary orbit closure $\Lambda_{\mathrm{geo}, x}(\Gamma)$ is intersection of its orbit closure with the Thurston boundary, i.e. $\overline{\Gamma x} \cap \pmf$.
   The geometric limit set is the union of all boundary orbit closures, as we vary $x$ in the Teichmüller space, i.e. $\geolim(\Gamma) = \bigcup_{x \in \teich} \Lambda_{\mathrm{geo}, x}(\Gamma)$.
